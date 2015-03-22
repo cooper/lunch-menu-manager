@@ -1,0 +1,58 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+table.lunch-calendar {
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+table.lunch-calendar {
+    width: 1000px;
+    background-color: #eee;
+    margin: 0px auto;
+}
+
+table.lunch-calendar caption {
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: left;
+}
+
+table.lunch-calendar thead {
+    color: #fff;
+}
+
+table.lunch-calendar td {
+    border: 1px solid #999;
+    vertical-align: top;
+}
+
+table.lunch-calendar thead td {
+    background-color: #333;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+}
+
+table.lunch-calendar tbody td {
+    height: 90px;
+    padding: 5px;
+    font-size: smaller;
+    text-transform: lowercase;
+    line-height: 1em;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+span.day-number {
+    font-size: 200%;
+    font-weight: bold;
+    display: inline-block;
+    height: 90px;
+    float: left;
+    margin-right: 5px;
+    line-height: normal;
+}

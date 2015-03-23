@@ -10,6 +10,7 @@
     <script type="text/javascript" src="scripts/mootools.js"></script>
     <script type="text/javascript" src="scripts/calendar.js"></script>
     <script type="text/javascript" src="scripts/menu-editor.js"></script>
+    <script type="text/javascript" src="scripts/administrator-tools.js"></script>
 </head>
 <body>
     <?php

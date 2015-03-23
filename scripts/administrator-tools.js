@@ -27,4 +27,11 @@ function initializeAdministatorTools() {
         overlay.setStyle('display', 'block');
     });
     
+    
+    // done button click
+    $('admin-window-done').addEvent('click', function (e) {
+        e.preventDefault();
+        overlay.setStyle('display', 'none');
+    });
+    
 }

@@ -50,7 +50,7 @@ function nextMonth() {
         <div id="admin-window-padding">
             <br /><br />
             <img src="images/loading.gif" alt="Loading" /><br />
-            Please wait as the printable menu is generated...
+            Please wait while the printable menu is generated...
         </div>
     </div>
 </div>

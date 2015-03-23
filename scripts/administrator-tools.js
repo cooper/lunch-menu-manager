@@ -34,8 +34,9 @@ function initializeAdministatorTools() {
             onSuccess: function (data) {
                 adminWindow.removeChild(printLoading);
                 var padded = new Element('div', { id: 'admin-window-padding' });
-                padded.innerHTML = 'Download';
+                padded.innerHTML = 'if it didnt work click here';
                 adminWindow.appendChild(padded);
+                window.location = data.generator;
             }
         }).get({
             year:   getCurrentYear(),

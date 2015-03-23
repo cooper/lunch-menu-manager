@@ -11,6 +11,8 @@ var MenuDay = new Class({
         this.month = month;
         this.day   = day;
         this.date  = new Date(year, month, day);
+        this.breakfast = '';
+        this.lunch     = '';
     },
     
     // property breakfast

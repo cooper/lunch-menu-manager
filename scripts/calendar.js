@@ -50,6 +50,12 @@ var MenuDay = new Class({
         return months[this.month] + ' ' + this.day;
     },
     
+    // date string for API
+    // e.g. 3-9-1997
+    apiDateString: function () {
+        return (this.month + 1) + '-' + this.day + '-' + this.year;
+    },
+    
     // text for the calendar view
     // if in breakfast mode, returns breakfast
     // if in lunch mode, returns lunch
@@ -89,7 +95,8 @@ function injectCalendarData(data) {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
-        var dayData = data[menuDay.month + '-' + menuDay.day + '-' + menuDay.year];
+        console.log(menuDay.apiDateString());
+        var dayData = data[menuDay.apiDateString()];
         if (!dayData) return;
         menuDay.breakfast = dayData['breakfast'];
         menuDay.lunch = dayData['lunch']

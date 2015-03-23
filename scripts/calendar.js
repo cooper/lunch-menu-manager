@@ -1,4 +1,5 @@
 document.addEvent('domready', fetchCalendar);
+document.addEvent('domready', createMenuDays);
                   
 var months = [
     'January',   'February', 'March',    'April',
@@ -86,6 +87,35 @@ function fetchCalendar() {
     }).get({
         year:  getCurrentYear(),
         month: getCurrentMonth()
+    });
+}
+
+// create menu day objects
+function createMenuDays() {
+    var previousDay;
+    $$('table.lunch-calendar tbody td').each(function (td) {
+        
+        // fake day
+        if (!td.data('year'))
+            return;
+        
+        // create menu day object
+        var menuDay = new MenuDay(
+            td.data('year'),
+            td.data('month') - 1,
+            td.data('day')
+        );
+        menuDay.td = td;
+        menuDay.menuItems = td.getElementsByClassName('menu-items')[0];
+        td.store('menuDay', menuDay);
+        
+        // relative days
+        if (previousDay) {
+            menuDay.previousDay = previousDay;
+            previousDay.nextDay = menuDay;
+        }
+        previousDay = menuDay;
+        
     });
 }
 

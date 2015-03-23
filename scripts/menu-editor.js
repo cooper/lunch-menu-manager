@@ -8,31 +8,17 @@ document.addEvent('keydown', function (e) {
 function initializeMenuEditor() {
     
     // listen for clicks on the calendar days
-    var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
+        
+        // fake day
         if (!td.data('year'))
             return;
         
-        var menuDay = new MenuDay(
-            td.data('year'),
-            td.data('month') - 1,
-            td.data('day')
-        );
-        menuDay.td = td;
-        menuDay.menuItems = td.getElementsByClassName('menu-items')[0];
-        td.store('menuDay', menuDay);
-        
+        // add click listener
+        var menuDay = td.retrieve('menuDay');
         td.addEvent('click', function (e) {
             showMenuEditor(menuDay);
         });
-        
-        // relative days
-        if (previousDay) {
-            menuDay.previousDay = previousDay;
-            previousDay.nextDay = menuDay;
-        }
-        previousDay = menuDay;
-        
     });
     
     // done button click

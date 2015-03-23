@@ -36,7 +36,8 @@ var MenuDay = new Class({
             month:      this.month + 1,
             day:        this.day,
             breakfast:  this.breakfast,
-            lunch:      this.lunch
+            lunch:      this.lunch,
+            salad:      this.salad
         });
     },
 

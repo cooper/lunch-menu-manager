@@ -14,7 +14,7 @@ $st = $db->prepare('SELECT * FROM menu WHERE year=? AND month=?');
 $st->bindValue(1, $year, SQLITE3_INTEGER);
 $st->bindValue(2, $year, SQLITE3_INTEGER);
 $results = $st->execute();
-print_r($results);
+print_r($results->fetchArray());
 
 echo json_encode(array(
     '3-2-2015' => array('breakfast' => 'a1', 'lunch' => 'a2'),

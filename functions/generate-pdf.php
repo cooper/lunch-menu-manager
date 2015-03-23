@@ -11,7 +11,8 @@ array_pop($calendar_php); // remove functions/
 $calendar_php = implode($calendar_php, '/') . '/calendar.php';
 
 $pdf = new Pdf("http://localhost:{$_SERVER['SERVER_PORT']}$calendar_php?year={$_GET['year']}&month={$_GET['month']}");
+$pdf->setOptions(array('orientation' => 'landscape'));
 $pdf->saveAs('../cache/menu.pdf');
-$pdf->send('menu.pdf');
+$pdf->send();
 
 ?>

@@ -58,7 +58,7 @@ var MenuDay = new Class({
 });
 
 function getCurrentMode() {
-    if (document.body.hasClass('mode-breakfast'))
+    if ($$('.lunch-calendar')[0].hasClass('mode-breakfast'))
         return 'breakfast';
     return 'lunch';
 }

@@ -10,8 +10,8 @@ $month     = $month % 12;
 $monthName = date('F', mktime(0, 0, 0, $month, 10));
 
 function draw_calendar ($month, $year) {
-	$running_day       = date('w',mktime(0,0,0,$month,1,$year));
-	$days_in_month     = date('t',mktime(0,0,0,$month,1,$year));
+	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));
+	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_this_week = 1;
 	$day_counter       = 0;
 
@@ -28,12 +28,14 @@ function draw_calendar ($month, $year) {
     
     
 	for($list_day = 1; $list_day <= $days_in_month; $list_day++) {
-		$calendar.= '<td>';
-
+        
+        // ignore Saturday and Sunday
+        if ($running_day != 0 && $running_day != 6) {
+            $calendar.= '<td>';
             $calendar.= '<span class="day-number">'.$list_day.'</span>';
             // TODO: add the lunch stuff
-        
-		$calendar .= '</td>';
+            $calendar .= '</td>';
+        }
     
         // end of the week
 		if ($running_day == 6) {

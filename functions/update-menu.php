@@ -1,7 +1,7 @@
 <?php
 phpinfo();
 
-$db = new SQLiteDatabase('../db/menu.db');
+$db = new SQLite3('../db/menu.db');
 if (!$db)
     die("Opening database failed");
 

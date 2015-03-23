@@ -1,7 +1,7 @@
 document.addEvent('domready', initializeMenuEditor);
 
 function initializeMenuEditor() {
-    document.body.addEvent('keyup:keys(esc)', hideMenuEditor);
+    document.addEvent('keyup:keys(esc)', hideMenuEditor);
     
     // listen for clicks on the calendar days
     var previousDay;

@@ -42,7 +42,7 @@ function showMenuEditor(menuDay) {
     
     // if breakfast is empty, probably adding a new day; focus it.
     if (!breakfast.innerText.length)
-        breakfast.setFocus();
+        breakfast.focus();
     
     // show
     overlay.setStyle('display', 'block');

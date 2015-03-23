@@ -75,12 +75,9 @@ function showMenuEditor(menuDay) {
     doneBut.store('menuDay', menuDay);
     
     // add the data
-    if (menuDay.breakfast.length)
-        breakfast.innerText = menuDay.breakfast;
-    if (menuDay.lunch.length)
-        lunch.innerText = menuDay.lunch;
-    if (menuDay.salad.length)
-        salad.setAttribute('value', menuDay.salad);
+    breakfast.innerText = menuDay.breakfast;
+    lunch.innerText = menuDay.lunch;
+    salad.setAttribute('value', menuDay.salad);
     
     // back arrow
     if (menuDay.previousDay) {
@@ -110,7 +107,13 @@ function showMenuEditor(menuDay) {
 }
 
 function updateMenuEditor() {
-    var menuDay = $('menu-editor-done').retrieve('menuDay');
+    var menuDay   = $('menu-editor-done').retrieve('menuDay'),
+        breakfast = $('breakfast-textarea'),
+        lunch     = $('lunch-textarea'),
+        salad     = $('salad-input');
+    menuDay.breakfast = breakfast.innerText;
+    menuDay.lunch     = lunch.innerText;
+    menuDay.salad     = salad.getAttribute('value');
     if (menuDay)
         menuDay.update();
 }

@@ -6,7 +6,7 @@
 
 $year      = isset($_GET['year'])  ? $_GET['year']  + 0 : date('Y');
 $month     = isset($_GET['month']) ? $_GET['month'] + 0 : date('n');
-$month     = $month % 12;
+$month     = $month % 12; if (!$month) $month = 12;
 $monthName = date('F', mktime(0, 0, 0, $month, 10));
 
 function draw_calendar ($month, $year) {

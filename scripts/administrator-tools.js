@@ -8,5 +8,9 @@ function initializeAdministatorTools() {
         calendar.removeClass('mode-' + oldMode);
         calendar.addClass('mode-' + newMode);
         refreshCalendar();
+        
+        var ucfirst = oldMode.charAt(0).toUpperCase() + oldMode.substr(1);
+        $('mode-trigger').innerText = ucfirst;
+        
     });
 }

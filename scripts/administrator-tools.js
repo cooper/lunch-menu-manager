@@ -1,5 +1,6 @@
 document.addEvent('domready', initializeAdministatorTools);
 
+var printLoading;
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
     
@@ -21,8 +22,8 @@ function initializeAdministatorTools() {
     });
     
     var overlay      = $('admin-overlay'),
-        adminWindow  = $('admin-window'),
-        printLoading = $('admin-window-padding');
+        adminWindow  = $('admin-window');
+    printLoading     = $('admin-window-padding');
     
     // print button click
     $('print-button').addEvent('click', function (e) {

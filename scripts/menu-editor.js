@@ -1,6 +1,7 @@
 document.addEvent('domready', initializeMenuEditor);
 
 function initializeMenuEditor() {
+    document.body.addEvent('keyup:keys(esc)', hideMenuEditor);
     
     // listen for clicks on the calendar days
     var previousDay;
@@ -31,7 +32,6 @@ function initializeMenuEditor() {
     var doneBut = $('menu-editor-done');
     doneBut.addEvent('click', function (e) {
         e.preventDefault();
-        doneBut.retrieve('menuDay').update();
         hideMenuEditor();
     });
     
@@ -87,5 +87,8 @@ function showMenuEditor(menuDay) {
 }
 
 function hideMenuEditor() {
+    var menuDay = $('menu-editor-done').retrieve('menuDay');
+    if (menuDay)
+        menuDay.update();
     $('menu-editor-overlay').setStyle('display', 'none');
 }

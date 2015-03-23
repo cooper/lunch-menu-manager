@@ -40,3 +40,15 @@ function nextMonth() {
         </ul>
     </div>
 </div>
+
+<div id="admin-overlay">
+    <div id="admin-window">
+        <h2 id="admin-window-title">
+            <span>Print menu</span>
+            <a id="admin-window-done" href="#">Cancel</a>
+        </h2>
+        <div id="admin-window-padding">
+            print stuff here
+        </div>
+    </div>
+</div>

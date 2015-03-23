@@ -43,3 +43,53 @@ ul.administrator-tools li a {
 ul.administrator-tools li a:hover {
     background-color: #b73939;
 }
+
+#admin-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#admin-window {
+    margin: 50px auto;
+    width: 600px;
+    min-height: 500px;
+    background-color: #fff;
+    border: 1px solid #111;
+    padding-bottom: 20px;
+}
+
+#admin-window-title {
+    background-color: #d64141;
+    border-bottom: 1px solid #111;
+    color: #fff;
+    margin: 0;
+    padding: 0 15px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+#admin-window-padding {
+    padding: 5px 10px 10px 10px;
+}
+
+#admin-window-done {
+    background-color: #111;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}

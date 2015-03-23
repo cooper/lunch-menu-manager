@@ -2,6 +2,8 @@ document.addEvent('domready', initializeAdministatorTools);
 
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
+    
+    // trigger between breakfast and lunch
     $('mode-trigger').addEvent('click', function (e) {
         e.preventDefault();
         var oldMode = getCurrentMode();
@@ -17,4 +19,12 @@ function initializeAdministatorTools() {
         $('caption-mode').innerText = ucfirst2;
         
     });
+    
+    // print button click
+    var overlay = $('admin-overlay');
+    $('print-button').addEvent('click', function (e) {
+        e.preventDefault();
+        overlay.setStyle('display', 'block');
+    });
+    
 }

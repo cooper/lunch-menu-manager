@@ -68,7 +68,8 @@ function initializeAdministatorTools() {
 }
 
 function hideAdminWindow() {
-    var printLoading = adminWindow.retrieve('printLoading');
+    var printLoading = adminWindow.retrieve('printLoading'),
+        adminWindow  = $('admin-window');
 
     // replace the content with the loading view
     overlay.setStyle('display', 'none');

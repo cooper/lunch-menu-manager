@@ -3,7 +3,7 @@
     <a id="menu-right-arrow" href="#">March 3 &rarr;</a>
     <div id="menu-editor-window">
         <h2 id="menu-editor-title">
-            March 2, 2015
+            <span>March 2, 2015</span>
             <a id="menu-editor-done" href="#">Done</a>
         </h2>
         <div id="menu-editor-padding">

@@ -14,7 +14,7 @@ function initializeMenuEditor() {
 
 function showMenuEditor(menuDay) {
     var overlay  = $('menu-editor-overlay'),
-        titleBar = $('menu-editor-title'),
+        titleBar = $('menu-editor-title').getElementsByTagName('span')[0],
         doneBut  = $('menu-editor-done');
     titleBar.innerText = menuDay.prettyName();
     doneBut.store('menuDay', menuDay);

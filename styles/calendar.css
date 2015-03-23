@@ -13,6 +13,7 @@ table.lunch-calendar {
     width: 1000px;
     background-color: #eee;
     margin: 0px auto;
+    cursor: default;
 }
 
 table.lunch-calendar caption {
@@ -45,6 +46,7 @@ table.lunch-calendar tbody td {
     text-transform: lowercase;
     line-height: 1em;
     font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
 }
 
 span.day-number {

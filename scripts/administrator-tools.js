@@ -34,7 +34,13 @@ function initializeAdministatorTools() {
             onSuccess: function (data) {
                 adminWindow.removeChild(printLoading);
                 var padded = new Element('div', { id: 'admin-window-padding' });
-                padded.innerHTML = 'if it didnt work click here';
+                padded.innerHTML = '                                \
+                <div style="margin-top: 50px;">                     \
+                    Your menu was generated.<br />                  \
+                    If it was not downloaded automatically,         \
+                    click <a href="'+ data.generator +'">here</a>.  \
+                </div>                                              \
+                ';
                 adminWindow.appendChild(padded);
                 window.location = data.generator;
             }

@@ -10,6 +10,14 @@ function initializeMenuEditor() {
         });
     });
     
+    // done button click
+    var doneBut = $('menu-editor-done');
+    doneBut.addEvent('click', function (e) {
+        e.preventDefault();
+        doneBut.retrieve('menuDay').update();
+        hideMenuEditor();
+    });
+    
 }
 
 function showMenuEditor(menuDay) {

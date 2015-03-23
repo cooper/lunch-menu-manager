@@ -6,7 +6,7 @@ table.lunch-calendar {
     border-collapse: collapse;
     table-layout: fixed;
     overflow-y: hidden;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 table.lunch-calendar {

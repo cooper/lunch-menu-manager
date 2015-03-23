@@ -39,6 +39,25 @@ function initializeMenuEditor() {
         hideMenuEditor();
     });
     
+
+    // left arrow click
+    $('menu-left-arrow').addEvent('click', function (e) {
+        e.preventDefault();
+        var menuDay = doneBut.retrieve('menuDay');
+        updateMenuEditor();
+        if (menuDay && menuDay.previousDay)
+            showMenuEditor(menuDay.previousDay);
+    });
+    
+    // right arrow click
+    $('menu-right-arrow').addEvent('click', function (e) {
+        e.preventDefault();
+        var menuDay = doneBut.retrieve('menuDay');
+        updateMenuEditor();
+        if (menuDay && menuDay.nextDay)
+            showMenuEditor(menuDay.nextDay);
+    });
+    
 }
 
 function showMenuEditor(menuDay) {
@@ -90,9 +109,13 @@ function showMenuEditor(menuDay) {
     
 }
 
-function hideMenuEditor() {
+function updateMenuEditor() {
     var menuDay = $('menu-editor-done').retrieve('menuDay');
     if (menuDay)
         menuDay.update();
+}
+
+function hideMenuEditor() {
+    updateMenuEditor();
     $('menu-editor-overlay').setStyle('display', 'none');
 }

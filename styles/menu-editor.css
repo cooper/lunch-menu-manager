@@ -89,3 +89,7 @@ input.input-meal-extra {
 #menu-right-arrow {
     right: 10px;
 }
+
+table.lunch-calendar tbody td {
+    cursor: pointer !important;
+}

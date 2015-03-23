@@ -48,7 +48,9 @@ function nextMonth() {
             <a id="admin-window-done" href="#">Cancel</a>
         </h2>
         <div id="admin-window-padding">
-            print stuff here
+            Please wait as the printable menu is generated...
+            <br /><br />
+            <img src="images/loading.gif" alt="Loading" />
         </div>
     </div>
 </div>

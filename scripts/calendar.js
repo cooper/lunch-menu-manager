@@ -98,9 +98,9 @@ function injectCalendarData(data) {
         console.log(menuDay.apiDateString());
         var dayData = data[menuDay.apiDateString()];
         if (!dayData) return;
-        menuDay.breakfast = dayData['breakfast'];
-        menuDay.lunch = dayData['lunch']
-        menuDay.salad = dayData['salad'];
+        ['breakfast', 'lunch', 'salad'].each(function (i) {
+            menuDay[i] = typeof dayData[i] == 'undefined' ? '' : dayData[i];
+        });
     });
     
     // refresh the displayed menu

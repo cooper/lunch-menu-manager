@@ -4,7 +4,7 @@ $db = new SQLite3('../db/menu.db');
 if (!$db)
     die("Opening database failed");
 
-foreach ($required in array('year', 'month', 'day', 'breakfast', 'lunch', 'salad')) {
+foreach (array('year', 'month', 'day', 'breakfast', 'lunch', 'salad') as $required) {
     if (isset($_POST[$required]))
         continue;
     die("Missing required option '$required'");

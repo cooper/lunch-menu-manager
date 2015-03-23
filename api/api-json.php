@@ -9,5 +9,5 @@ if (isset($json_result))
     echo $json_result;
 
 if (isset($_GET['callback']))
-    echo ')';
+    echo ');';
 ?>

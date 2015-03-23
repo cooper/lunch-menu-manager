@@ -10,15 +10,9 @@ array_pop($calendar_php); // remove generate-pdf.php
 array_pop($calendar_php); // remove functions/
 $calendar_php = implode($calendar_php, '/') . '/calendar.php';
 
-    echo $calendar_php."\n";
-
-$pdf = new Pdf('http://localhost:'.$_SERVER['SERVER_PORT']."$calendar_php?year={$_GET['year']}&month={$_GET['month']}");
-print_r($_SERVER);
+$pdf = new Pdf("http://localhost:{$_SERVER['SERVER_PORT']}$calendar_php?year={$_GET['year']}&month={$_GET['month']}");
 print_r($pdf);
 $pdf->saveAs('../cache/menu.pdf');
-
-echo json_encode(array(
-    'file' => 'menu.pdf'
-));
+$pdf->send('menu.pdf');
 
 ?>

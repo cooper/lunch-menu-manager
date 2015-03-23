@@ -50,6 +50,7 @@ function draw_calendar ($month, $year) {
             // start another row, unless this is the last day
             if (($day_counter + 3) >= $days_in_month) {
                 $month_over = true; // force end of month
+                echo "MONTH OVER";
             }
             else {
                 $calendar.= '<tr>';

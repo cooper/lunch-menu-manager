@@ -16,7 +16,7 @@ $st->bindValue(2, $month, SQLITE3_INTEGER);
 $results = $st->execute();
 
 // turn into a JSON map
-$map = array();
+$map = array('success' => true);
 while ($row = $results->fetchArray()) {
     $map[ $row['month'].'-'.$row['month'].'-'.$row['year'] ] = array(
         'breakfast' => $row['breakfast'],

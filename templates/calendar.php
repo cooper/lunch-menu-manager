@@ -13,7 +13,7 @@ function draw_calendar ($month, $year) {
 	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_this_week = 1;
-    $m_f_in_this_week  = 1;
+    $m_f_in_this_week  = 0;
 	$day_counter       = 0;
 
     $calendar = '';

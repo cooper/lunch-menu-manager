@@ -11,15 +11,9 @@ if (!$db)
     die("Opening database failed");
 
 $st = $db->prepare('SELECT * FROM menu WHERE year=? AND month=?');
-$st->bindValue(1, $year, SQLITE3_INTEGER);
-$st->bindValue(2, $year, SQLITE3_INTEGER);
+$st->bindValue(1, $year,  SQLITE3_INTEGER);
+$st->bindValue(2, $month, SQLITE3_INTEGER);
 $results = $st->execute();
 print_r($results->fetchArray());
-
-echo json_encode(array(
-    '3-2-2015' => array('breakfast' => 'a1', 'lunch' => 'a2'),
-    '3-3-2015' => array('breakfast' => 'b1', 'lunch' => 'b2'),
-    '3-4-2015' => array('breakfast' => 'c1', 'lunch' => 'c2')
-));
 
 ?>

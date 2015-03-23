@@ -17,14 +17,12 @@ function nextMonth() {
     global $year, $month;
     $newYear  = $year;
     $newMonth = $month;
-    echo "PREVIOUS YEAR: $newYear";
     if ($month == 12) {
         $newYear++;
         $newMonth = 1;
     }
     else
         $newMonth++;
-    echo "NEW YEAR: $newYear";
     return "administrator.php?year=$newYear&month=$newMonth";
 }
 

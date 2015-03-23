@@ -41,12 +41,12 @@ function showMenuEditor(menuDay) {
     if (menuDay.salad.length)
         salad.setAttribute('value', menuDay.salad);
     
+    // show
+    overlay.setStyle('display', 'block');
+    
     // if breakfast is empty, probably adding a new day; focus it.
     if (!breakfast.innerText.length)
         breakfast.focus();
-    
-    // show
-    overlay.setStyle('display', 'block');
     
 }
 

@@ -19,6 +19,7 @@ function initializeMenuEditor() {
             td.data('day')
         );
         menuDay.td = td;
+        menuDay.menuItems = td.getElementsByClassName('menu-items')[0];
         
         td.addEvent('click', function (e) {
             showMenuEditor(menuDay);
@@ -123,7 +124,7 @@ function updateMenuEditor() {
         menuDay.update();
     
     // update calendar
-    menuDay.td.innerText = menuDay.displayText();
+    menuDay.menuItems.innerText = menuDay.displayText();
     
 }
 

@@ -13,6 +13,7 @@ function draw_calendar ($month, $year) {
 	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_this_week = 1;
+    $m_f_in_this_week  = 1;
 	$day_counter       = 0;
 
     $calendar = '';
@@ -22,8 +23,10 @@ function draw_calendar ($month, $year) {
 
     // blank days
 	for($x = 0; $x < $running_day; $x++) {
-        if ($x != 0 && $x != 6)
+        if ($x != 0 && $x != 6) {
             $calendar.= '<td></td>';
+            $m_f_in_this_week++;
+        }
 		$days_in_this_week++;
     }
     
@@ -36,6 +39,7 @@ function draw_calendar ($month, $year) {
             $calendar.= '<span class="day-number">'.$list_day.'</span>';
             // TODO: add the lunch stuff
             $calendar .= '</td>';
+            $m_f_in_this_week++;
         }
     
         // end of the week
@@ -49,6 +53,7 @@ function draw_calendar ($month, $year) {
             
 			$running_day = -1;
 			$days_in_this_week = 0;
+            $m_f_in_this_week  = 0;
         }
         
 		$days_in_this_week++;
@@ -57,8 +62,8 @@ function draw_calendar ($month, $year) {
     }
 
 	// empty days at the end
-	if ($days_in_this_week < 6) {
-		for ($x = 1; $x <= (6 - $days_in_this_week); $x++) {
+	if ($m_f_in_this_week < 6) {
+		for ($x = 1; $x <= (6 - $m_f_in_this_week); $x++) {
 			$calendar.= '<td></td>';
         }
     }

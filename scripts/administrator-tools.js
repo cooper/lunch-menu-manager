@@ -20,18 +20,37 @@ function initializeAdministatorTools() {
         
     });
     
+    var overlay      = $('admin-overlay'),
+        adminWindow  = $('admin-window'),
+        printLoading = $('admin-window-padding');
+    
     // print button click
-    var overlay = $('admin-overlay');
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();
         overlay.setStyle('display', 'block');
+        var request = new Request.JSON({
+            url: 'functions/generate-pdf.php',
+            onSuccess: function (data) {
+                adminWindow.removeChild(printLoading);
+            }
+        }).get({
+            year:   getCurrentYear(),
+            month:  getCurrentMonth(),
+            mode:   getCurrentMode()
+        });
+        
     });
     
     
     // done button click
     $('admin-window-done').addEvent('click', function (e) {
         e.preventDefault();
+        
+        // replace the content with the loading view
         overlay.setStyle('display', 'none');
+        adminWindow.removeChild($('admin-window-padding'));
+        adminWindow.appendChild(printLoading);
+        
     });
     
 }

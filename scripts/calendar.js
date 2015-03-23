@@ -90,6 +90,7 @@ function injectCalendarData(data) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
         var dayData = data[menuDay.month + '-' + menuDay.day + '-' + menuDay.year];
+        if (!dayData) return;
         menuDay.breakfast = dayData['breakfast'];
         menuDay.lunch = dayData['lunch']
         menuDay.salad = dayData['salad'];

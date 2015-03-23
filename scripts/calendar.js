@@ -125,7 +125,6 @@ function injectCalendarData(data) {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
-        console.log(menuDay.apiDateString());
         var dayData = data[menuDay.apiDateString()];
         if (!dayData) return;
         ['breakfast', 'lunch', 'salad'].each(function (i) {

@@ -6,7 +6,11 @@ function initializeMenuEditor() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         td.addEvent('click', function (e) {
             e.preventDefault();
-            var menuDay = new MenuDay(2015, 2, 22);
+            var menuDay = new MenuDay(
+                td.data('year'),
+                td.data('month') - 1,
+                td.data('day')
+            );
             showMenuEditor(menuDay);
         });
     });

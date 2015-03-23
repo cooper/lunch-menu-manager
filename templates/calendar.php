@@ -5,11 +5,13 @@
 // days   are 1-31
 
 $year      = isset($_GET['year'])  ? $_GET['year']  + 0 : date('Y');
-$month     = isset($_GET['month']) ? $_GET['month'] + 1 : date('n');
+$month     = isset($_GET['month']) ? $_GET['month'] + 0 : date('n');
 $month     = $month % 12;
 $monthName = date('F', mktime(0, 0, 0, $month, 10));
 
 function draw_calendar ($month, $year) {
+    global $month, $year;
+    
 	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_this_week = 1;
@@ -41,7 +43,7 @@ function draw_calendar ($month, $year) {
         
         // ignore Saturday and Sunday
         if ($running_day != 0 && $running_day != 6) {
-            $calendar.= '<td>';
+            $calendar.= '<td data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'">';
             $calendar.= '<span class="day-number">'.$list_day.'</span>';
             // TODO: add the lunch stuff
             $calendar .= '</td>';

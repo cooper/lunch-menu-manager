@@ -29,7 +29,7 @@ var MenuDay = new Class({
             }
         }).post({
             year:       this.year,
-            month:      this.month,
+            month:      this.month + 1,
             day:        this.day,
             breakfast:  this.breakfast,
             lunch:      this.lunch

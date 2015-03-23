@@ -1,5 +1,4 @@
 <?php
-phpinfo();
 
 $db = new SQLite3('../db/menu.db');
 if (!$db)

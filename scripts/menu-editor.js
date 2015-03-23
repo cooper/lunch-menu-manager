@@ -4,7 +4,8 @@ function initializeMenuEditor() {
     
     // listen for clicks on the calendar days
     $$('table.lunch-calendar tbody td').each(function (td) {
-        td.addEvent('click', function () {
+        td.addEvent('click', function (e) {
+            e.preventDefault();
             var menuDay = new MenuDay(2015, 2, 22);
             showMenuEditor(menuDay);
         });

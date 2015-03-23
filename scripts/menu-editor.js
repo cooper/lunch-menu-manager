@@ -1,6 +1,7 @@
 document.addEvent('domready', initializeMenuEditor);
 
 document.addEvent('keydown', function (e) {
+    if (e.event) e = e.event;
     if (e.keyCode == 27) hideMenuEditor();
 });
 

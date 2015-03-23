@@ -9,8 +9,11 @@ function initializeAdministatorTools() {
         calendar.addClass('mode-' + newMode);
         refreshCalendar();
         
-        var ucfirst = oldMode.charAt(0).toUpperCase() + oldMode.substr(1);
-        $('mode-trigger').innerText = ucfirst;
+        // update displayed mode
+        var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
+            ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
+        $('mode-trigger').innerText = ucfirst1;
+        $('caption-mode').innerText = ucfirst2;
         
     });
 }

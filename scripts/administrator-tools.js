@@ -1,6 +1,5 @@
 document.addEvent('domready', initializeAdministatorTools);
 
-var printLoading;
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
     
@@ -22,8 +21,9 @@ function initializeAdministatorTools() {
     });
     
     var overlay      = $('admin-overlay'),
-        adminWindow  = $('admin-window');
-    printLoading     = $('admin-window-padding');
+        adminWindow  = $('admin-window'),
+        printLoading = $('admin-window-padding');
+    adminWindow.store('printLoading', printLoading);
     
     // print button click
     $('print-button').addEvent('click', function (e) {
@@ -33,6 +33,9 @@ function initializeAdministatorTools() {
             url: 'functions/generate-pdf.php',
             onSuccess: function (data) {
                 adminWindow.removeChild(printLoading);
+                var padded = new Element('div', { id: 'admin-window-padding' });
+                padded.innerHTML = 'Download';
+                adminWindow.appendChild(padded);
             }
         }).get({
             year:   getCurrentYear(),
@@ -45,6 +48,7 @@ function initializeAdministatorTools() {
     
     // done button click
     $('admin-window-done').addEvent('click', function (e) {
+        var printLoading = adminWindow.retrieve('printLoading');
         e.preventDefault();
         
         // replace the content with the loading view

@@ -1,5 +1,11 @@
 document.addEvent('domready', initializeAdministatorTools);
 
+// escape from print
+document.addEvent('keydown', function (e) {
+    if (e.event) e = e.event;
+    if (e.keyCode == 27) hideAdminWindow();
+});
+
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
     
@@ -35,7 +41,7 @@ function initializeAdministatorTools() {
                 adminWindow.removeChild(printLoading);
                 var padded = new Element('div', { id: 'admin-window-padding' });
                 padded.innerHTML = '                                \
-                <div style="margin-top: 50px;">                     \
+                <div style="margin-top: 100px;">                    \
                     Your menu was generated.<br />                  \
                     If it was not downloaded automatically,         \
                     click <a href="'+ data.generator +'">here</a>.  \
@@ -55,14 +61,17 @@ function initializeAdministatorTools() {
     
     // done button click
     $('admin-window-done').addEvent('click', function (e) {
-        var printLoading = adminWindow.retrieve('printLoading');
         e.preventDefault();
-        
-        // replace the content with the loading view
-        overlay.setStyle('display', 'none');
-        adminWindow.removeChild($('admin-window-padding'));
-        adminWindow.appendChild(printLoading);
-        
+        hideAdminWindow();
     });
     
+}
+
+function hideAdminWindow() {
+    var printLoading = adminWindow.retrieve('printLoading');
+
+    // replace the content with the loading view
+    overlay.setStyle('display', 'none');
+    adminWindow.removeChild($('admin-window-padding'));
+    adminWindow.appendChild(printLoading);
 }

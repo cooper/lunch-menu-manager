@@ -100,6 +100,7 @@ function updateMenuEditor() {
         breakfast = $('breakfast-textarea'),
         lunch     = $('lunch-textarea'),
         salad     = $('salad-input');
+    if (!menuDay) return;
     
     // update the menu day object
     menuDay.breakfast = breakfast.value;

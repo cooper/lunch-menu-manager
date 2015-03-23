@@ -1,5 +1,21 @@
+<?php
+
+// years  are YYYY
+// months are 1-12
+// days   are 1-31
+
+$year      = isset($_GET['year'])  ? $_GET['year']  + 0 : date('Y');
+$month     = isset($_GET['month']) ? $_GET['month'] + 1 : date('n');
+$monthName = date('F', mktime(0, 0, 0, $month, 10));
+
+?>
+
 <table class="lunch-calendar">
-    <caption>March 2015 &mdash; Lunch</caption>
+    <caption>
+        <?php echo("$monthName $year"); ?>
+        &mdash;
+        <?php echo($breakfast ? 'Breakfast' : 'Lunch'); ?>
+    </caption>
     <thead>
         <tr>
             <td>Monday</td>

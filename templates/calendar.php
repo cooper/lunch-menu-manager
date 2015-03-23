@@ -22,9 +22,8 @@ function draw_calendar ($month, $year) {
 
     // blank days
 	for($x = 0; $x < $running_day; $x++) {
-        if ($x == 0 && $x == 6)
-            continue;
-		$calendar.= '<td></td>';
+        if ($x != 0 && $x != 6)
+            $calendar.= '<td></td>';
 		$days_in_this_week++;
     }
     

@@ -31,8 +31,7 @@ function draw_calendar ($month, $year) {
     }
     
     
-    $month_over = false;
-	for($list_day = 1; $list_day <= $days_in_month || $month_over; $list_day++) {
+	for ($list_day = 1; $list_day <= $days_in_month; $list_day++) {
         
         // ignore Saturday and Sunday
         if ($running_day != 0 && $running_day != 6) {
@@ -49,7 +48,7 @@ function draw_calendar ($month, $year) {
             
             // start another row, unless this is the last day
             if (($day_counter + 3) == $days_in_month) {
-                $month_over = true;
+                $list_day = 50; // force end of month
             }
             else {
                 $calendar.= '<tr>';

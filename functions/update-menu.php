@@ -30,6 +30,6 @@ $st->bindValue(':salad',        $_POST['salad'],         SQLITE3_TEXT   );
 $st->bindValue(':timestamp',    time(),                  SQLITE3_INTEGER);
 $st->execute();
 
-echo json_encode(array('error' => SQLite3::lastErrorMsg()));
+echo json_encode(array('error' => $db->lastErrorMsg()));
 
 ?>

@@ -91,11 +91,10 @@ function draw_calendar ($month, $year) {
 
 ?>
 
-<table class="lunch-calendar">
+<table class="lunch-calendar mode-lunch">
     <caption>
         <?php echo("$monthName $year"); ?>
-        &mdash;
-        <?php echo($breakfast ? 'Breakfast' : 'Lunch'); ?>
+        &mdash; Lunch
     </caption>
     <thead>
         <tr>

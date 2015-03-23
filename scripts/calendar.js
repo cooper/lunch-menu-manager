@@ -52,7 +52,20 @@ var MenuDay = new Class({
     // if in breakfast mode, returns breakfast
     // if in lunch mode, returns lunch
     displayText: function () {
-        return this.lunch;
+        return getCurrentMode() == 'breakfast' ? this.breakfast : this.lunch;
     }
     
 });
+
+function getCurrentMode() {
+    if (document.body.hasClass('mode-breakfast'))
+        return 'breakfast';
+    return 'lunch';
+}
+
+// refresh the calendar items
+function refreshCalendar() {
+    $$('table.lunch-calendar tbody td').each(function (td) {
+        td.menuDay.menuItems.value = td.menuDay.displayText();
+    });
+}

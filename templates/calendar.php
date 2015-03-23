@@ -71,7 +71,7 @@ function draw_calendar($month,$year){
 	return $calendar;
 }
 
-echo draw_calendar(3, 2015);
+echo draw_calendar($month, $year);
 
 ?>
 

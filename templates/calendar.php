@@ -18,7 +18,7 @@ function draw_calendar ($month, $year) {
     $calendar = '';
     
 	/* row for week one */
-	$calendar.= '<tr';
+	$calendar.= '<tr>';
 
     // blank days
 	for($x = 0; $x < $running_day; $x++) {

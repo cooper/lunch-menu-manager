@@ -30,6 +30,9 @@ var MenuDay = new Class({
             url: 'functions/update-menu.php',
             onSuccess: function (data) {
                 if (data.error) alert('Error: ' + data.error);
+            },
+            onError: function (text, error) {
+                alert('An error occured. Please refresh the page. ' + error);
             }
         }).post({
             year:       this.year,

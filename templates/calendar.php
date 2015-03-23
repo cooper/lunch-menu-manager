@@ -47,7 +47,7 @@ function draw_calendar ($month, $year) {
 			$calendar.= '</tr>';
             
             // start another row, unless this is the last day
-            if (($day_counter + 3) == $days_in_month) {
+            if (($day_counter + 3) >= $days_in_month) {
                 $list_day = 50; // force end of month
             }
             else {

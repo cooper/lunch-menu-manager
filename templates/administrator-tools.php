@@ -45,11 +45,11 @@ function nextMonth() {
     <div id="admin-window">
         <h2 id="admin-window-title">
             <span>Print menu</span>
-            <a id="admin-window-done" href="#">Cancel</a>
+            <a id="admin-window-done" href="#">Done</a>
         </h2>
         <div id="admin-window-padding">
             <br /><br />
-            <img src="images/loading.gif" alt="Loading" />
+            <img src="images/loading.gif" alt="Loading" /><br />
             Please wait as the printable menu is generated...
         </div>
     </div>

@@ -20,6 +20,7 @@ function initializeMenuEditor() {
         );
         menuDay.td = td;
         menuDay.menuItems = td.getElementsByClassName('menu-items')[0];
+        td.store('menuDay', menuDay);
         
         td.addEvent('click', function (e) {
             showMenuEditor(menuDay);

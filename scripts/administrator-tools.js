@@ -2,7 +2,7 @@ document.addEvent('domready', initializeAdministatorTools);
 
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
-    $('mode-trigger').addEvent('click', function () {
+    $('mode-trigger').addEvent('click', function (e) {
         e.preventDefault();
         var oldMode = getCurrentMode();
         var newMode = oldMode == 'lunch' ? 'breakfast' : 'lunch';

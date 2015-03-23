@@ -46,6 +46,13 @@ var MenuDay = new Class({
     // e.g. March 22
     shortName: function () {
         return months[this.month] + ' ' + this.day;
+    },
+    
+    // text for the calendar view
+    // if in breakfast mode, returns breakfast
+    // if in lunch mode, returns lunch
+    displayText: function () {
+        return this.lunch;
     }
     
 });

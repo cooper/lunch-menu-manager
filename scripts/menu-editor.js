@@ -18,6 +18,7 @@ function initializeMenuEditor() {
             td.data('month') - 1,
             td.data('day')
         );
+        menuDay.td = td;
         
         td.addEvent('click', function (e) {
             showMenuEditor(menuDay);
@@ -111,11 +112,19 @@ function updateMenuEditor() {
         breakfast = $('breakfast-textarea'),
         lunch     = $('lunch-textarea'),
         salad     = $('salad-input');
+    
+    // update the menu day object
     menuDay.breakfast = breakfast.value;
     menuDay.lunch = lunch.value;
     menuDay.salad = salad.value;
+    
+    // update in database
     if (menuDay)
         menuDay.update();
+    
+    // update calendar
+    menuDay.td.innerText = menuDay.displayText();
+    
 }
 
 function hideMenuEditor() {

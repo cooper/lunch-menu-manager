@@ -6,13 +6,13 @@ function initializeMenuEditor() {
     var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
         var notADay = typeof td.data('year') == 'undefined';
-        var menuDay = new MenuDay(
+        
+        var menuDay;
+        if (!notADay) menuDay = new MenuDay(
             td.data('year'),
             td.data('month') - 1,
             td.data('day')
         );
-        if (notADay)
-            menuDay = undefined;
         
         td.addEvent('click', function (e) {
             e.preventDefault();

@@ -10,7 +10,7 @@ function previousMonth() {
     }
     else
         $newMonth--;
-    return pathinfo(__FILE__, PATHINFO_FILENAME)."?year=$newYear&month=$newMonth";
+    return "administrator.php?year=$newYear&month=$newMonth";
 }
 
 function nextMonth() {
@@ -23,7 +23,7 @@ function nextMonth() {
     }
     else
         $newMonth++;
-    return pathinfo(__FILE__, PATHINFO_FILENAME)."?year=$newYear&month=$newMonth";
+    return "administrator.php?year=$newYear&month=$newMonth";
 }
 
 ?>

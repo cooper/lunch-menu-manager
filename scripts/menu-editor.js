@@ -30,6 +30,5 @@ function showMenuEditor(menuDay) {
 }
 
 function hideMenuEditor() {
-    var overlay = $$('.menu-editor-overlay')[0];
-    overlay.setStyle('display', 'none');
+    $('menu-editor-overlay').setStyle('display', 'none');
 }

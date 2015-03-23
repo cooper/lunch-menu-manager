@@ -25,9 +25,8 @@ function draw_calendar ($month, $year) {
 
     // if the month starts on a saturday,
     // just skip the entire first week
-    if ($running_day == 6) {
+    if ($running_day == 6)
         $running_day = 1;
-    }
     
     // blank days
 	for ($x = 0; $x < $running_day; $x++) {
@@ -91,7 +90,7 @@ function draw_calendar ($month, $year) {
 
 ?>
 
-<table class="lunch-calendar mode-lunch">
+<table class="lunch-calendar mode-lunch" data-year="<?php echo $year; ?>" data-month="<?php echo $month; ?>">
     <caption>
         <?php echo("$monthName $year"); ?>
         &mdash; <span id="caption-mode">Lunch</span>

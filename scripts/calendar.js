@@ -1,3 +1,5 @@
+document.addEvent('domready', fetchCalendar);
+                  
 var months = [
     'January',   'February', 'March',    'April',
     'May',       'June',     'July',     'August',
@@ -20,11 +22,11 @@ var MenuDay = new Class({
     // property lunch
     // property salad
     
-    // update the menu for this day
+    // save the menu for this day
     // using Request API
     update: function () {
         var request = new Request.JSON({
-            url: 'update-menu.php',
+            url: 'functions/update-menu.php',
             onSuccess: function (data) {
             }
         }).post({
@@ -63,7 +65,42 @@ function getCurrentMode() {
     return 'lunch';
 }
 
-// refresh the calendar items
+function getCurrentYear() {
+    return $$('.lunch-calendar')[0].data('year');
+}
+
+function getCurrentMonth() {
+    return $$('.lunch-calendar')[0].data('month');
+}
+
+function fetchCalendar() {
+    var request = new Request.JSON({
+        url: 'api/fetch-month.php',
+        onSuccess: injectCalendarData
+    }).get({
+        year:  getCurrentYear(),
+        month: getCurrentMonth()
+    });
+}
+
+function injectCalendarData(data) {
+    
+    // update each menu day
+    $$('table.lunch-calendar tbody td').each(function (td) {
+        var menuDay = td.retrieve('menuDay');
+        if (!menuDay) return;
+        var dayData = data[menuDay.month + '-' + menuDay.day + '-' + menuDay.year];
+        menuDay.breakfast = dayData['breakfast'];
+        menuDay.lunch = dayData['lunch']
+        menuDay.salad = dayData['salad'];
+    });
+    
+    // refresh the displayed menu
+    refreshCalendar();
+    
+}
+
+// refresh the calendar for the current mode
 function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');

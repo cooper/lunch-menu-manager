@@ -30,7 +30,7 @@ function draw_calendar ($month, $year) {
 		$days_in_this_week++;
     }
     
-    
+    $month_over = false;
 	for ($list_day = 1; $list_day <= $days_in_month; $list_day++) {
         
         // ignore Saturday and Sunday
@@ -43,7 +43,6 @@ function draw_calendar ($month, $year) {
         }
     
         // end of the week
-        $month_over = false;
 		if ($running_day == 6) {
 			$calendar.= '</tr>';
             
@@ -71,7 +70,7 @@ function draw_calendar ($month, $year) {
     }
 
 	// empty days at the end
-	if ($m_f_in_this_week < 5) {
+	if (!$month_over && $m_f_in_this_week < 5) {
 		for ($x = 1; $x <= (5 - $m_f_in_this_week); $x++) {
 			$calendar.= '<td></td>';
         }

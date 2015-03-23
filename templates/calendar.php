@@ -81,10 +81,7 @@ function draw_calendar ($month, $year) {
         }
     }
 
-	/* final row */
 	$calendar.= '</tr>';
-
-	/* all done, return result */
 	return $calendar;
 }
 

@@ -33,7 +33,7 @@ function nextMonth() {
         <ul class="administrator-tools">
             <li><a href="<?php echo previousMonth(); ?>" title="Previous month">&larr;</a></li>
             <li><a href="<?php echo nextMonth(); ?>" title="Next month">&rarr;</a></li>
-            <li><a id="mode-trigger" href="#" title="Toggle between breakfast and lunch">Breakfast</a></li>
+            <li><a id="mode-trigger" href="#" title="Toggle between breakfast and lunch" style="width: 70px;">Breakfast</a></li>
             <li><a id="print-button" href="#" title="Print this month's menu">Print</a></li>
             <li><a id="email-button" href="#" title="Send this month's menu via email">E-mail</a></li>
             <li><a href="#" title="Log out of administrator panel">Log out</a></li>

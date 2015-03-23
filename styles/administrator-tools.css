@@ -24,6 +24,7 @@ ul.administrator-tools li {
     padding: 0;
     margin: 0;
     border-right: 1px solid #802727;
+    text-align: center;
 }
 
 ul.administrator-tools li:last-child {

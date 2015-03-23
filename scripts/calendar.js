@@ -68,6 +68,6 @@ function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
-        menuDay.menuItems.value = menuDay.displayText();
+        menuDay.menuItems.innerText = menuDay.displayText();
     });
 }

@@ -63,7 +63,7 @@ function showMenuEditor(menuDay) {
     
     // back arrow
     if (menuDay.previousDay) {
-        leftArr.innerText = menuDay.previousDay.shortName();
+        leftArr.innerHTML = '&larr; ' + menuDay.previousDay.shortName();
         leftArr.setStyle('display', 'block');
     }
     else {
@@ -72,7 +72,7 @@ function showMenuEditor(menuDay) {
     
     // forward arrow
     if (menuDay.nextDay) {
-        rightArr.innerText = menuDay.nextDay.shortName();
+        rightArr.innerHTML = menuDay.nextDay.shortName() + ' &rarr;';
         rightArr.setStyle('display', 'block');
     }
     else {

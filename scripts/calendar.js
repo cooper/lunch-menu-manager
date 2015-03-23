@@ -39,7 +39,7 @@ var MenuDay = new Class({
     // pretty date name
     // e.g. March 22, 2015
     prettyName: function () {
-        this.shortName() + ', ' + this.year;
+        return this.shortName() + ', ' + this.year;
     },
     
     // short date name

@@ -5,11 +5,6 @@ function initializeMenuEditor() {
     // listen for clicks on the calendar days
     var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
-        
-        // ignore blank days
-        if (typeof td.data('year') == 'undefined')
-            return;
-        
        var menuDay = new MenuDay(
             td.data('year'),
             td.data('month') - 1,
@@ -18,6 +13,11 @@ function initializeMenuEditor() {
         
         td.addEvent('click', function (e) {
             e.preventDefault();
+            
+            // ignore blank days
+            if (typeof td.data('year') == 'undefined')
+                return;
+
             showMenuEditor(menuDay);
         });
         

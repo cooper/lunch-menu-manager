@@ -21,12 +21,30 @@ function initializeMenuEditor() {
 }
 
 function showMenuEditor(menuDay) {
-    var overlay  = $('menu-editor-overlay'),
-        titleBar = $('menu-editor-title').getElementsByTagName('span')[0],
-        doneBut  = $('menu-editor-done');
+    var overlay   = $('menu-editor-overlay'),
+        titleBar  = $('menu-editor-title').getElementsByTagName('span')[0],
+        doneBut   = $('menu-editor-done'),
+        breakfast = $('breakfast-textarea');
+    
+    // set title and store day for done button
     titleBar.innerText = menuDay.prettyName();
     doneBut.store('menuDay', menuDay);
+    
+    // add the data
+    if (menuDay.breakfast.length)
+        breakfast.innerText = menuDay.breakfast;
+    if (menuDay.lunch.length)
+        lunch.innerText = menuDay.lunch;
+    if (menuDay.salad.length)
+        salad.setAttribute('value', menuDay.salad);
+    
+    // if breakfast is empty, probably adding a new day; focus it.
+    if (!breakfast.innerText.length)
+        breakfast.setFocus();
+    
+    // show
     overlay.setStyle('display', 'block');
+    
 }
 
 function hideMenuEditor() {

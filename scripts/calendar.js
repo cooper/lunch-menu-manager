@@ -15,6 +15,7 @@ var MenuDay = new Class({
     
     // property breakfast
     // property lunch
+    // property salad
     
     // update the menu for this day
     // using Request API

@@ -9,11 +9,11 @@
         <div id="menu-editor-padding">
         <form id="menu-editor">
             <h3>Breakfast</h3>
-            <textarea class="input-meal"></textarea>
+            <textarea class="input-meal" id="breakfast-textarea"></textarea>
             <h3>Lunch</h3>
-            <textarea class="input-meal"></textarea>
+            <textarea class="input-meal" id="lunch-textarea"></textarea>
             <h3>Salad</h3>
-            <input type="text" class="input-meal-extra" />
+            <input type="text" class="input-meal-extra" id="salad-input" />
         </form>
         </div>
     </div>

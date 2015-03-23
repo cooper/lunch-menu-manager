@@ -5,7 +5,7 @@ function initializeMenuEditor() {
     // listen for clicks on the calendar days
     var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
-        if (typeof td.data('year') == 'undefined')
+        if (!td.data('year'))
             return;
         
         var menuDay = new MenuDay(

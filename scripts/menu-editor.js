@@ -10,13 +10,14 @@ function initializeMenuEditor() {
         if (typeof td.data('year') == 'undefined')
             return;
         
+       var menuDay = new MenuDay(
+            td.data('year'),
+            td.data('month') - 1,
+            td.data('day')
+        );
+        
         td.addEvent('click', function (e) {
             e.preventDefault();
-            var menuDay = new MenuDay(
-                td.data('year'),
-                td.data('month') - 1,
-                td.data('day')
-            );
             showMenuEditor(menuDay);
         });
         

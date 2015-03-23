@@ -21,8 +21,14 @@ function draw_calendar ($month, $year) {
 	/* row for week one */
 	$calendar.= '<tr>';
 
+    // if the month starts on a saturday or sunday,
+    // just skip the entire first week
+    if ($running_day == 0 || $running_day == 6) {
+        $running_day = 1;
+    }
+    
     // blank days
-	for($x = 0; $x < $running_day; $x++) {
+	for ($x = 0; $x < $running_day; $x++) {
         if ($x != 0 && $x != 6) {
             $calendar.= '<td></td>';
             $m_f_in_this_week++;

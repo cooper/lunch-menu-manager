@@ -8,7 +8,7 @@ function initializeMenuEditor() {
         
         // ignore blank days
         if (typeof td.data('year') == 'undefined')
-            continue;
+            return;
         
         td.addEvent('click', function (e) {
             e.preventDefault();

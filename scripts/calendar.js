@@ -66,6 +66,7 @@ function getCurrentMode() {
 // refresh the calendar items
 function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
+        if (!td.menuDay) return;
         td.menuDay.menuItems.value = td.menuDay.displayText();
     });
 }

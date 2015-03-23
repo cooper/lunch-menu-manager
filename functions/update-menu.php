@@ -13,21 +13,21 @@ foreach (array('year', 'month', 'day', 'breakfast', 'lunch', 'salad') as $requir
 $db->query('CREATE TABLE IF NOT EXISTS menu (year INT, month INT, day INT, breakfast TEXT, lunch TEXT, salad TEXT, set_timestamp INT)');
 
 // delete any previous records
-$st = @$db->prepare('DELETE FROM menu WHERE year=:year AND month=:month AND day=:day');
-$st->bindValue(':year',  intval($_POST['year']),     SQLITE3_INTEGER);
-$st->bindValue(':month', intval($_POST['month']),    SQLITE3_INTEGER);
-$st->bindValue(':day',   intval($_POST['day']),      SQLITE3_INTEGER);
+$st = @$db->prepare('DELETE FROM menu WHERE year=? AND month=? AND day=?');
+$st->bindValue(1,  intval($_POST['year']),     SQLITE3_INTEGER);
+$st->bindValue(2, intval($_POST['month']),    SQLITE3_INTEGER);
+$st->bindValue(3,   intval($_POST['day']),      SQLITE3_INTEGER);
 $st->execute();
 
 // insert the new records
-$db->prepare('INSERT INTO menu (year, month, day, breakfast, lunch, salad, set_timestamp) VALUES (:year, :month, :day, :breakfast, :lunch, :salad, :timestamp)');
-$st->bindValue(':year',         intval($_POST['year']),  SQLITE3_INTEGER);
-$st->bindValue(':month',        intval($_POST['month']), SQLITE3_INTEGER);
-$st->bindValue(':day',          intval($_POST['day']),   SQLITE3_INTEGER);
-$st->bindValue(':breakfast',    $_POST['breakfast'],     SQLITE3_TEXT   );
-$st->bindValue(':lunch',        $_POST['lunch'],         SQLITE3_TEXT   );
-$st->bindValue(':salad',        $_POST['salad'],         SQLITE3_TEXT   );
-$st->bindValue(':timestamp',    time(),                  SQLITE3_INTEGER);
+$db->prepare('INSERT INTO menu (year, month, day, breakfast, lunch, salad, set_timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)');
+$st->bindValue(1, intval($_POST['year']),  SQLITE3_INTEGER);
+$st->bindValue(2, intval($_POST['month']), SQLITE3_INTEGER);
+$st->bindValue(3, intval($_POST['day']),   SQLITE3_INTEGER);
+$st->bindValue(4, $_POST['breakfast'],     SQLITE3_TEXT   );
+$st->bindValue(5, $_POST['lunch'],         SQLITE3_TEXT   );
+$st->bindValue(6, $_POST['salad'],         SQLITE3_TEXT   );
+$st->bindValue(7, time(),                  SQLITE3_INTEGER);
 $st->execute();
 
 if ($db->lastErrorCode())

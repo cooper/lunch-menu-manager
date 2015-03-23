@@ -29,6 +29,7 @@ var MenuDay = new Class({
         var request = new Request.JSON({
             url: 'functions/update-menu.php',
             onSuccess: function (data) {
+                if (data.error) alert('Error: ' + data.error);
             }
         }).post({
             year:       this.year,

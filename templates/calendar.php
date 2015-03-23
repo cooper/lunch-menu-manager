@@ -56,8 +56,8 @@ function draw_calendar ($month, $year) {
     }
 
 	// empty days at the end
-	if ($days_in_this_week < 8) {
-		for ($x = 1; $x <= (8 - $days_in_this_week); $x++) {
+	if ($days_in_this_week < 6) {
+		for ($x = 1; $x <= (6 - $days_in_this_week); $x++) {
 			$calendar.= '<td></td>';
         }
     }

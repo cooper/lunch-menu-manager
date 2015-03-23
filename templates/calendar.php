@@ -47,7 +47,8 @@ function draw_calendar ($month, $year) {
 			$calendar.= '</tr>';
             
             // start another row, unless this is the last day
-			if (($day_counter + 1) != $days_in_month) {
+            $next_school_day = $day_counter + 3;
+			if ($next_school_day != $days_in_month) {
 				$calendar.= '<tr>';
             }
             

@@ -24,7 +24,9 @@ function showMenuEditor(menuDay) {
     var overlay   = $('menu-editor-overlay'),
         titleBar  = $('menu-editor-title').getElementsByTagName('span')[0],
         doneBut   = $('menu-editor-done'),
-        breakfast = $('breakfast-textarea');
+        breakfast = $('breakfast-textarea'),
+        lunch     = $('lunch-textarea'),
+        salad     = $('salad-input');
     
     // set title and store day for done button
     titleBar.innerText = menuDay.prettyName();

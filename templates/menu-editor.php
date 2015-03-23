@@ -1,13 +1,13 @@
-<div class="menu-editor-overlay">
-    <a class="menu-left-arrow" href="#">&larr; February 27</a>
-    <a class="menu-right-arrow" href="#">March 3 &rarr;</a>
-    <div class="menu-editor-window">
-        <h2>
+<div id="menu-editor-overlay">
+    <a id="menu-left-arrow" href="#">&larr; February 27</a>
+    <a id="menu-right-arrow" href="#">March 3 &rarr;</a>
+    <div id="menu-editor-window">
+        <h2 id="menu-editor-title">
             March 2, 2015
-            <a class="menu-editor-done" href="#">Done</a>
+            <a id="menu-editor-done" href="#">Done</a>
         </h2>
-        <div class="menu-editor-padding">
-        <form class="menu-editor">
+        <div id="menu-editor-padding">
+        <form id="menu-editor">
             <h3>Breakfast</h3>
             <textarea class="input-meal"></textarea>
             <h3>Lunch</h3>

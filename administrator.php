@@ -7,6 +7,9 @@
     <link href="styles/menu-editor.css" type="text/css" rel="stylesheet" />
     <link href="styles/administrator-tools.css" type="text/css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/mootools.js"></script>
+    <script type="text/javascript" src="scripts/calendar.js"></script>
+    <script type="text/javascript" src="scripts/menu-editor.js"></script>
 </head>
 <body>
     <?php

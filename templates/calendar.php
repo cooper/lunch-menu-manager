@@ -43,12 +43,13 @@ function draw_calendar ($month, $year) {
         }
     
         // end of the week
+        $month_over = false;
 		if ($running_day == 6) {
 			$calendar.= '</tr>';
             
             // start another row, unless this is the last day
             if (($day_counter + 3) >= $days_in_month) {
-                $list_day = 50; // force end of month
+                $month_over = true; // force end of month
             }
             else {
                 $calendar.= '<tr>';
@@ -62,6 +63,10 @@ function draw_calendar ($month, $year) {
 		$days_in_this_week++;
         $running_day++;
         $day_counter++;
+        
+        if ($month_over)
+            break;
+        
     }
 
 	// empty days at the end

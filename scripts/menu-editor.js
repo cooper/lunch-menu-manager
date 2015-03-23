@@ -5,27 +5,21 @@ function initializeMenuEditor() {
     // listen for clicks on the calendar days
     var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
-        var notADay = typeof td.data('year') == 'undefined';
+        if (typeof td.data('year') == 'undefined')
+            return;
         
-        var menuDay;
-        if (!notADay) menuDay = new MenuDay(
+        var menuDay = new MenuDay(
             td.data('year'),
             td.data('month') - 1,
             td.data('day')
         );
         
         td.addEvent('click', function (e) {
-            e.preventDefault();
-            
-            // ignore blank days
-            if (notADay)
-                return;
-
             showMenuEditor(menuDay);
         });
         
         // relative days
-        if (menuDay && previousDay) {
+        if (previousDay) {
             menuDay.previousDay = previousDay;
             previousDay.nextDay = menuDay;
         }

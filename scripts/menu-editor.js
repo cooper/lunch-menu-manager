@@ -3,7 +3,13 @@ document.addEvent('domready', initializeMenuEditor);
 function initializeMenuEditor() {
     
     // listen for clicks on the calendar days
+    var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
+        
+        // ignore blank days
+        if (typeof td.data('year') == 'undefined')
+            continue;
+        
         td.addEvent('click', function (e) {
             e.preventDefault();
             var menuDay = new MenuDay(
@@ -13,6 +19,13 @@ function initializeMenuEditor() {
             );
             showMenuEditor(menuDay);
         });
+        
+        // relative days
+        menuDay.previousDay = previousDay;
+        if (previousDay)
+            previousDay.nextDay = menuDay;
+        previousDay = menuDay;
+        
     });
     
     // done button click
@@ -31,7 +44,9 @@ function showMenuEditor(menuDay) {
         doneBut   = $('menu-editor-done'),
         breakfast = $('breakfast-textarea'),
         lunch     = $('lunch-textarea'),
-        salad     = $('salad-input');
+        salad     = $('salad-input'),
+        leftArr   = $('menu-left-arrow'),
+        rightArr  = $('menu-right-arrow');
     
     // set title and store day for done button
     titleBar.innerText = menuDay.prettyName();
@@ -44,6 +59,24 @@ function showMenuEditor(menuDay) {
         lunch.innerText = menuDay.lunch;
     if (menuDay.salad.length)
         salad.setAttribute('value', menuDay.salad);
+    
+    // back arrow
+    if (menuDay.previousDay) {
+        leftArr.innerText = menuDay.previousDay.shortName();
+        leftArr.setStyle('display', 'block');
+    }
+    else {
+        leftArr.setStyle('display', 'none');
+    }
+    
+    // forward arrow
+    if (menuDay.nextDay) {
+        rightArr.innerText = menuDay.nextDay.shortName();
+        rightArr.setStyle('display', 'block');
+    }
+    else {
+        rightArr.setStyle('display', 'none');
+    }
     
     // show
     overlay.setStyle('display', 'block');

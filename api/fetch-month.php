@@ -14,6 +14,18 @@ $st = $db->prepare('SELECT * FROM menu WHERE year=? AND month=?');
 $st->bindValue(1, $year,  SQLITE3_INTEGER);
 $st->bindValue(2, $month, SQLITE3_INTEGER);
 $results = $st->execute();
-print_r($results->fetchArray());
+
+// turn into a JSON map
+$map = array();
+while ($row = $result->fetchArray()) {
+    $map[ $row['month'].'-'.$row['month'].'-'.$row['year'] ] = array(
+        'breakfast' => $row['breakfast'],
+        'lunch'     => $row['lunch'],
+        'salad'     => $row['salad'],
+        'timestamp' => $row['set_timestamp']
+    );
+}
+
+echo json_encode($map);
 
 ?>

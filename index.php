@@ -23,7 +23,7 @@
         #a {
             margin: 50px auto;
             display: block;
-            width: 300px;
+            width: 250px;
         }
 
         td {
@@ -32,6 +32,9 @@
         input[type=text], input[type=password] {
             width: 150px;
             padding: 3px;
+        }
+        form {
+            margin-top: 20px;
         }
         #box {
             width: 500px;

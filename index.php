@@ -17,15 +17,9 @@
             font-family: sans-serif;
         }
         #logo {
-            width: 100%;
+            width: 400px;
             border: none;
         }
-        #a {
-            margin: 50px auto;
-            display: block;
-            width: 250px;
-        }
-
         td {
             text-align: left;
         }

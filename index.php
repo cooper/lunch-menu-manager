@@ -1,3 +1,10 @@
+<?php
+    require_once('functions/session.php');
+    if (isset($_SESSION['logged_in'])) {
+        header('Location: administrator.php');
+        die();
+    }
+?>
 <!doctype html>
 <html>
 <head>
@@ -17,11 +24,33 @@
             display: block;
             width: 500px;
         }
+        form {
+            margin: auto;
+        }
+        input[type=text] {
+            width: 100px;
+        }
     </style>
 </head>
 <body>
     <a id="a" href="https://github.com/cooper/lunch-menu-manager">
         <img src="images/lmm.png" alt="lmm" id="logo" />
     </a>
+    <form action="login.php" method="post">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="password" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="Login" /></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

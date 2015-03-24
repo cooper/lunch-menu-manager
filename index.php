@@ -26,6 +26,7 @@
         input[type=text], input[type=password] {
             width: 150px;
             padding: 3px;
+            margin-left: 20px;
         }
         form {
             margin-top: 20px;

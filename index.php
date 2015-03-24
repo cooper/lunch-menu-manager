@@ -31,8 +31,12 @@
             margin: auto;
             text-align: center;
         }
+        td {
+            text-align: left;
+        }
         input[type=text] {
             width: 150px;
+            padding: 3px;
         }
     </style>
 </head>

@@ -25,12 +25,7 @@
             display: block;
             width: 500px;
         }
-        form {
-            display: block;
-            width: 300px;
-            margin: auto;
-            text-align: center;
-        }
+
         td {
             text-align: left;
         }
@@ -38,26 +33,32 @@
             width: 150px;
             padding: 3px;
         }
+        #box {
+            width: 500px;
+            padding: 30px;
+            border: 1px solid rgb(190, 210, 220);
+            background-color: white;
+        }
     </style>
 </head>
 <body>
-    <a id="a" href="https://github.com/cooper/lunch-menu-manager">
-        <img src="images/lmm.png" alt="lmm" id="logo" />
-    </a>
-    <form action="login.php" method="post">
-        <table>
-            <tr>
-                <td>Username</td>
-                <td><input type="text" name="username" /></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" /></td>
-            </tr>
-            <tr>
-                <td><input type="submit" name="submit" value="Login" /></td>
-            </tr>
-        </table>
-    </form>
+    <div id="box">
+        <img src="images/lmm.png" alt="lmm" />
+        <form action="login.php" method="post">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="submit" value="Login" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>

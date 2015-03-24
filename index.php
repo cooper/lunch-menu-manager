@@ -7,15 +7,16 @@
     <style type="text/css">
         #logo {
             width: 500px;
-            margin: 50px auto;
-        }
-        a img {
             border: none;
+        }
+        #a {
+            margin: 50px auto;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <a href="https://github.com/cooper/lunch-menu-manager">
+    <a id="a" href="https://github.com/cooper/lunch-menu-manager">
         <img src="images/lmm.png" alt="lmm" id="logo" />
     </a>
 </body>

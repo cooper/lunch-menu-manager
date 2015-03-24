@@ -31,7 +31,7 @@
             margin: auto;
         }
         input[type=text] {
-            width: 100px;
+            width: 200px;
         }
     </style>
 </head>

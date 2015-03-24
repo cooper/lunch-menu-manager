@@ -25,6 +25,8 @@
             width: 500px;
         }
         form {
+            display: block;
+            width: 500px;
             margin: auto;
         }
         input[type=text] {
@@ -47,7 +49,6 @@
                 <td><input type="text" name="password" /></td>
             </tr>
             <tr>
-                <td></td>
                 <td><input type="submit" name="submit" value="Login" /></td>
             </tr>
         </table>

@@ -27,11 +27,12 @@
         }
         form {
             display: block;
-            width: 500px;
+            width: 300px;
             margin: auto;
+            text-align: center;
         }
         input[type=text] {
-            width: 200px;
+            width: 150px;
         }
     </style>
 </head>

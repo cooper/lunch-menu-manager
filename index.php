@@ -6,12 +6,13 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <style type="text/css">
         #logo {
-            width: 500px;
+            width: 100%;
             border: none;
         }
         #a {
             margin: 50px auto;
-            display: inline-block;
+            display: block;
+            width: 500px;
         }
     </style>
 </head>

@@ -66,7 +66,8 @@ var MenuDay = new Class({
     // if in breakfast mode, returns breakfast
     // if in lunch mode, returns lunch
     displayText: function () {
-        return getCurrentMode() == 'breakfast' ? this.breakfast : this.lunch;
+        return getCurrentMode() == 'breakfast' ? this.breakfast :
+        this.lunch + (this.salad.length ? "\n" + this.salad + 'salad' : '');
     }
     
 });

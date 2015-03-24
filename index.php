@@ -7,7 +7,7 @@
     <style type="text/css">
         #logo {
             width: 500px;
-            margin-top: 200px;
+            margin: 50px auto;
         }
         a img {
             border: none;

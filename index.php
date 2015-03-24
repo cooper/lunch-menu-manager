@@ -27,6 +27,14 @@
             width: 150px;
             padding: 3px;
             margin-left: 20px;
+            border: 1px solid rgb(190, 210, 220);
+        }
+        input[type=submit] {
+            width: 50px;
+            margin-top: 10px;
+            height: 25px;
+            background-color: #fff;
+            border: 1px solid rgb(190, 210, 220);
         }
         form {
             margin-top: 20px;

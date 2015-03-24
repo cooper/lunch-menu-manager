@@ -11,7 +11,7 @@
         }
         #a {
             margin: 50px auto;
-            display: block;
+            display: inline-block;
         }
     </style>
 </head>

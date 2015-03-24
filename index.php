@@ -36,6 +36,9 @@
             background-color: #fff;
             border: 1px solid rgb(190, 210, 220);
         }
+        input[type=submit]:hover {
+            background-color: rgb(240, 250, 255);
+        }
         form {
             margin-top: 20px;
         }

@@ -1,3 +1,7 @@
+<?php
+    $LOGIN_REQUIRED = true;
+    require_once('functions/session.php');
+?>
 <!doctype html>
 <html>
 <head>

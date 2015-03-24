@@ -1,5 +1,6 @@
 <?php
 
+$LOGIN_REQUIRED = true;
 require_once('session.php');
 
 // determine URI for service to access

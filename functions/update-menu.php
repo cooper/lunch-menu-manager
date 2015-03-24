@@ -1,5 +1,8 @@
 <?php
 
+$LOGIN_REQUIRED = true;
+require_once('session.php');
+
 $db = new SQLite3('../db/menu.db');
 if (!$db)
     die("Opening database failed");

@@ -5,6 +5,9 @@
     <title>lmm</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <style type="text/css">
+        body {
+            background-color: rgb(240, 250, 255);
+        }
         #logo {
             width: 100%;
             border: none;

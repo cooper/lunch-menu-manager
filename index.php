@@ -34,7 +34,7 @@
         td {
             text-align: left;
         }
-        input[type=text] {
+        input[type=text], input[type=password] {
             width: 150px;
             padding: 3px;
         }

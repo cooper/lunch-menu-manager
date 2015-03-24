@@ -14,6 +14,7 @@
     <style type="text/css">
         body {
             background-color: rgb(240, 250, 255);
+            font-family: sans-serif;
         }
         #logo {
             width: 100%;

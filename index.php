@@ -23,7 +23,7 @@
         #a {
             margin: 50px auto;
             display: block;
-            width: 500px;
+            width: 300px;
         }
 
         td {
@@ -38,12 +38,15 @@
             padding: 30px;
             border: 1px solid rgb(190, 210, 220);
             background-color: white;
+            margin: 50px auto;
         }
     </style>
 </head>
 <body>
     <div id="box">
-        <img src="images/lmm.png" alt="lmm" />
+        <div style="text-align: center">
+            <img src="images/lmm.png" alt="lmm" id="logo" />
+        </div>
         <form action="login.php" method="post">
             <table>
                 <tr>

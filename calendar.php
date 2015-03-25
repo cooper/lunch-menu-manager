@@ -1,9 +1,13 @@
+<?php
+    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'blue';
+?>
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>Menu calendar</title>
     <link href="styles/calendar.css" type="text/css" rel="stylesheet" />
+    <link href="styles/<?php echo $theme; ?>/calendar.css" type="text/css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <script type="text/javascript" src="scripts/mootools.js"></script>

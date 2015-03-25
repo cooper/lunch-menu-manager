@@ -13,15 +13,10 @@
     margin: 50px auto;
     width: 600px;
     min-height: 500px;
-    background-color: #fff;
-    border: 1px solid #111;
     padding-bottom: 20px;
 }
 
 #menu-editor-title {
-    background-color: #d64141;
-    border-bottom: 1px solid #111;
-    color: #fff;
     margin: 0;
     padding: 0 15px;
     height: 50px;
@@ -34,9 +29,7 @@
 }
 
 #menu-editor-done {
-    background-color: #111;
     padding: 5px 10px;
-    border-radius: 5px;
     font-size: 14px;
     display: inline-block;
     float: right;
@@ -44,8 +37,6 @@
     line-height: 25px;
     margin-top: 8px;
     text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
 }
 
 #menu-editor {
@@ -58,12 +49,10 @@
 textarea.input-meal {
     width: 572px;
     height: 100px;
-    border: 1px solid #aaa;
     font-size: 16px;
 }
 
 input.input-meal-extra {
-    border: 1px solid #aaa;
     font-size: 16px;
 }
 
@@ -72,13 +61,10 @@ input.input-meal-extra {
     position: absolute;
     top: 250px;
     font-size: 25px;
-    background-color: #111;
-    border-radius: 5px;
     display: inline-block;
     float: right;
     margin-top: 8px;
     text-decoration: none;
-    color: #fff;
     padding: 10px 15px;
 }
 

@@ -1,6 +1,7 @@
 <?php
     $LOGIN_REQUIRED = true;
     require_once('functions/session.php');
+    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'blue';
 ?>
 <!doctype html>
 <html>
@@ -10,6 +11,9 @@
     <link href="styles/calendar.css" type="text/css" rel="stylesheet" />
     <link href="styles/menu-editor.css" type="text/css" rel="stylesheet" />
     <link href="styles/administrator-tools.css" type="text/css" rel="stylesheet" />
+    <link href="styles/<?php echo $theme; ?>/calendar.css" type="text/css" rel="stylesheet" />
+    <link href="styles/<?php echo $theme; ?>/menu-editor.css" type="text/css" rel="stylesheet" />
+    <link href="styles/<?php echo $theme; ?>/administrator-tools.css" type="text/css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <script type="text/javascript" src="scripts/mootools.js"></script>

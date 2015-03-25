@@ -1,11 +1,12 @@
 ul.administrator-tools {
     background-color: #fff;
-    border: 1px solid rgb(25, 60, 75);
+    border: 1px solid rgb(190, 210, 220);
     border-top: none;
+    font-size: smaller;
 }
 
 ul.administrator-tools li {
-    border-right: 1px solid rgb(25, 60, 75);
+    border-right: 1px solid rgb(190, 210, 220);
 }
 
 ul.administrator-tools li:last-child {
@@ -13,11 +14,11 @@ ul.administrator-tools li:last-child {
 }
 
 ul.administrator-tools li a {
-    color: #111;
+    color: rgb(25, 60, 75);
 }
 
 ul.administrator-tools li a:hover {
-    background-color: rgb(190, 210, 220);
+    background-color: rgb(240, 250, 255);
 }
 
 #admin-overlay {

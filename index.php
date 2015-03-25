@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>lmm</title>
+    <title>Lmm</title>
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <style type="text/css">
         body {

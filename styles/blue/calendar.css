@@ -3,7 +3,7 @@ body {
 }
 
 table.lunch-calendar {
-    background-color: rgb(252, 255, 255);
+    background-color: #fff;
     border: 1px solid rgb(190, 210, 220);
 }
 
@@ -11,16 +11,15 @@ table.lunch-calendar caption {
     color: #111;
 }
 
-table.lunch-calendar thead {
-    color: #fff;
-}
 
 table.lunch-calendar td {
     border: 1px solid rgb(190, 210, 220);
 }
 
 table.lunch-calendar thead td {
-    background-color: rgb(50, 100, 125);
+    background-color: rgb(7, 154, 203);
+    color: #fff;
+    font-weight: normal;
 }
 
 table.lunch-calendar tbody td {

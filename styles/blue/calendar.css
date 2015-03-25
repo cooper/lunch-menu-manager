@@ -1,9 +1,13 @@
+body {
+    background-color: rgb(240, 250, 255);
+}
+
 table.lunch-calendar {
-    background-color: #eee;
+    background-color: #fff;
 }
 
 table.lunch-calendar caption {
-    color: inherit;
+    color: #111;
 }
 
 table.lunch-calendar thead {
@@ -11,11 +15,11 @@ table.lunch-calendar thead {
 }
 
 table.lunch-calendar td {
-    border: 1px solid #999;
+    border: 1px solid rgb(190, 210, 220);
 }
 
 table.lunch-calendar thead td {
-    background-color: #333;
+    background-color: rgb(50, 100, 125);
 }
 
 table.lunch-calendar tbody td {
@@ -23,5 +27,5 @@ table.lunch-calendar tbody td {
 }
 
 span.day-number {
-    color: inherit;
+    color: #111;
 }

@@ -21,7 +21,6 @@ Lmm is a centralized solution that turns an ongoing multi-step process into one 
 Login screen
 
 ![Login](http://i.imgur.com/VBLIFWs.png)
-![Login](http://i.imgur.com/VBLIFWs.png)
 
 Administrator calendar, red and black theme
 

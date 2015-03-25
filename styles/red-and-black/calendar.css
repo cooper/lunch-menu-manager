@@ -17,6 +17,7 @@ table.lunch-calendar td {
 
 table.lunch-calendar thead td {
     background-color: #333;
+    font-weight: bold;
 }
 
 table.lunch-calendar tbody td {

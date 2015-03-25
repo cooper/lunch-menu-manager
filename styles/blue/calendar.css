@@ -23,9 +23,5 @@ table.lunch-calendar thead td {
 }
 
 table.lunch-calendar tbody td {
-    color: inherit;
-}
-
-span.day-number {
-    color: #111;
+    color: rgb(25, 60, 75);
 }

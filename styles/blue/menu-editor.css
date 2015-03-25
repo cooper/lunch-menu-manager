@@ -4,7 +4,7 @@
 }
 
 #menu-editor-title {
-    background-color: rgb(50, 100, 125);
+    background-color: rgb(7, 154, 203);
     border-bottom: 1px solid rgb(25, 60, 75);
     color: #fff;
 }
@@ -24,7 +24,7 @@ input.input-meal-extra {
 }
 
 #menu-left-arrow, #menu-right-arrow {
-    background-color: rgb(50, 100, 125);
+    background-color: rgb(7, 154, 203);
     border: 1px solid rgb(25, 60, 75);
     color: #fff;
 }

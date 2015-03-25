@@ -1,0 +1,42 @@
+ul.administrator-tools {
+    background-color: #fff;
+    border: 1px solid rgb(25, 60, 75);
+    border-top: none;
+}
+
+ul.administrator-tools li {
+    border-right: 1px solid rgb(25, 60, 75);
+}
+
+ul.administrator-tools li:last-child {
+    border-right: none;
+}
+
+ul.administrator-tools li a {
+    color: #111;
+}
+
+ul.administrator-tools li a:hover {
+    background-color: rgb(190, 210, 220);
+}
+
+#admin-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#admin-window {
+    background-color: #fff;
+    border: 1px solid rgb(25, 60, 75);
+}
+
+#admin-window-title {
+    background-color: rgb(50, 100, 125);
+    border-bottom: 1px solid rgb(25, 60, 75);
+    color: #fff;
+}
+
+#admin-window-done {
+    background-color: #fff;
+    border: 1px solid rgb(25, 60, 75);
+    color: rgb(25, 60, 75);
+}

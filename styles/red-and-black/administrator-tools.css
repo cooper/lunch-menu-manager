@@ -1,0 +1,45 @@
+ul.administrator-tools {
+    background-color: #d64141;
+    border: 1px solid #802727;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.administrator-tools li {
+    border-right: 1px solid #802727;
+}
+
+ul.administrator-tools li:last-child {
+    border-right: none;
+}
+
+ul.administrator-tools li a {
+    color: #fff;
+}
+
+ul.administrator-tools li a:hover {
+    background-color: #b73939;
+}
+
+#admin-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#admin-window {
+    background-color: #fff;
+    border: 1px solid #111;
+}
+
+#admin-window-title {
+    background-color: #d64141;
+    border-bottom: 1px solid #111;
+    color: #fff;
+}
+
+#admin-window-done {
+    background-color: #111;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+}

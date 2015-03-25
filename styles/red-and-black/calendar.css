@@ -1,5 +1,6 @@
 table.lunch-calendar {
-    background-color: #eee;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid #999;
 }
 
 table.lunch-calendar caption {

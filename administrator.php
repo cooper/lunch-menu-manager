@@ -1,7 +1,7 @@
 <?php
     $LOGIN_REQUIRED = true;
     require_once('functions/session.php');
-    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'blue';
+    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
 ?>
 <!doctype html>
 <html>

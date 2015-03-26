@@ -6,13 +6,13 @@ table.lunch-calendar {
     border-collapse: collapse;
     table-layout: fixed;
     overflow-y: hidden;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 table.lunch-calendar {
     width: 1000px;
-    background-color: #eee;
     margin: 0px auto;
+    cursor: default;
 }
 
 table.lunch-calendar caption {
@@ -22,20 +22,14 @@ table.lunch-calendar caption {
     text-align: left;
 }
 
-table.lunch-calendar thead {
-    color: #fff;
-}
-
 table.lunch-calendar td {
-    border: 1px solid #999;
     vertical-align: top;
 }
 
 table.lunch-calendar thead td {
-    background-color: #333;
     text-align: center;
     padding: 8px;
-    font-weight: bold;
+    border: none;
 }
 
 table.lunch-calendar tbody td {
@@ -45,6 +39,7 @@ table.lunch-calendar tbody td {
     text-transform: lowercase;
     line-height: 1em;
     font-family: Helvetica, Arial, sans-serif;
+    cursor: default;
 }
 
 span.day-number {

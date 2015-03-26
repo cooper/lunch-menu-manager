@@ -1,0 +1,3 @@
+functions/composer.*
+cache/*.pdf
+verify_login.php

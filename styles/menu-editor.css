@@ -1,4 +1,4 @@
-div.menu-editor-overlay {
+#menu-editor-overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -6,22 +6,17 @@ div.menu-editor-overlay {
     right: 0;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
-    _display: none;
+    display: none;
 }
 
-div.menu-editor-window {
+#menu-editor-window {
     margin: 50px auto;
     width: 600px;
     min-height: 500px;
-    background-color: #fff;
-    border: 1px solid #111;
     padding-bottom: 20px;
 }
 
-div.menu-editor-window h2 {
-    background-color: #d64141;
-    border-bottom: 1px solid #111;
-    color: #fff;
+#menu-editor-title {
     margin: 0;
     padding: 0 15px;
     height: 50px;
@@ -29,14 +24,12 @@ div.menu-editor-window h2 {
     font-weight: bold;
 }
 
-div.menu-editor-padding {
+#menu-editor-padding {
     padding: 5px 10px 10px 10px;
 }
 
-a.menu-editor-done {
-    background-color: #111;
+#menu-editor-done {
     padding: 5px 10px;
-    border-radius: 5px;
     font-size: 14px;
     display: inline-block;
     float: right;
@@ -44,48 +37,45 @@ a.menu-editor-done {
     line-height: 25px;
     margin-top: 8px;
     text-decoration: none;
-    text-transform: uppercase;
-    color: #fff;
 }
 
-form.menu-editor {
+#menu-editor {
 }
 
-form.menu-editor h2 {
+#menu-editor h2 {
     margin: 10px 0;
 }
 
 textarea.input-meal {
     width: 572px;
     height: 100px;
-    border: 1px solid #aaa;
     font-size: 16px;
 }
 
 input.input-meal-extra {
-    border: 1px solid #aaa;
     font-size: 16px;
 }
 
-a.menu-left-arrow, a.menu-right-arrow {
+#menu-left-arrow, #menu-right-arrow {
     display: block;
     position: absolute;
     top: 250px;
     font-size: 25px;
-    background-color: #111;
-    border-radius: 5px;
     display: inline-block;
     float: right;
     margin-top: 8px;
     text-decoration: none;
-    color: #fff;
     padding: 10px 15px;
 }
 
-a.menu-left-arrow {
+#menu-left-arrow {
     left: 10px;
 }
 
-a.menu-right-arrow {
+#menu-right-arrow {
     right: 10px;
+}
+
+table.lunch-calendar tbody td {
+    cursor: pointer !important;
 }

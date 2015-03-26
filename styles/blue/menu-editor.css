@@ -1,0 +1,30 @@
+#menu-editor-window {
+    background-color: #fff;
+    border: 1px solid rgb(25, 60, 75);
+}
+
+#menu-editor-title {
+    background-color: rgb(50, 100, 125);
+    border-bottom: 1px solid rgb(25, 60, 75);
+    color: #fff;
+}
+
+#menu-editor-done {
+    background-color: #fff;
+    border: 1px solid rgb(25, 60, 75);
+    color: rgb(25, 60, 75);
+}
+
+textarea.input-meal {
+    border: 1px solid rgb(190, 210, 220);
+}
+
+input.input-meal-extra {
+    border: 1px solid rgb(190, 210, 220);
+}
+
+#menu-left-arrow, #menu-right-arrow {
+    background-color: rgb(50, 100, 125);
+    border: 1px solid rgb(25, 60, 75);
+    color: #fff;
+}

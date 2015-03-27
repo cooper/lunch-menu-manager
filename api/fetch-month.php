@@ -2,9 +2,7 @@
 
 // fetch all the menu information for a given month
 
-$year      = isset($_GET['year'])  ? $_GET['year']  + 0 : date('Y');
-$month     = isset($_GET['month']) ? $_GET['month'] + 0 : date('n');
-$month     = $month % 12; if (!$month) $month = 12;
+require_once('../functions/date-input.php');
 
 $db = new SQLite3('../db/menu.db');
 if (!$db)

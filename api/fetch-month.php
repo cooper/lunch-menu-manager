@@ -2,7 +2,7 @@
 
 // fetch all the menu information for a given month
 
-require_once('../functions/date-input.php');
+require_once(__DIR__.'/../functions/date-input.php');
 
 $db = new SQLite3('../db/menu.db');
 if (!$db)

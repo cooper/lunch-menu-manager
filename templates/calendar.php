@@ -1,6 +1,6 @@
 <?php
 
-require_once('../functions/date-input.php');
+require_once(__DIR__.'/../functions/date-input.php');
 
 function draw_calendar ($month, $year) {
     global $month, $year;

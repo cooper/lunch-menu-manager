@@ -42,7 +42,7 @@ function draw_calendar ($month, $year) {
         
         // ignore Saturday and Sunday
         if ($running_day != 0 && $running_day != 6) {
-            $calendar.= '<td data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'">';
+            $calendar.= '<td data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'" class="edit-button">';
             $calendar .= '<span class="day-number">'.$list_day.'</span>';
             $calendar .= '<span class="menu-items"></span>';
             // TODO: add the lunch stuff

@@ -38,7 +38,6 @@ function draw_calendar ($month, $year) {
             $calendar.= '<td data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'" class="edit-button">';
             $calendar .= '<span class="day-number">'.$list_day.'</span>';
             $calendar .= '<span class="menu-items"></span>';
-            // TODO: add the lunch stuff
             $calendar .= '</td>';
             $m_f_in_this_week++;
         }
@@ -78,12 +77,17 @@ function draw_calendar ($month, $year) {
 	return $calendar;
 }
 
+$mode = $_GET['mode'] == 'breakfast' ? 'breakfast' : 'lunch';
+
 ?>
 
-<table class="lunch-calendar mode-lunch" data-year="<?php echo $year; ?>" data-month="<?php echo $month; ?>">
+<table class="lunch-calendar mode-<?php echo $mode; ?>" data-year="<?php echo $year; ?>" data-month="<?php echo $month; ?>">
     <caption>
         <?php echo("$monthName $year"); ?>
-        &mdash; <span id="caption-mode">Lunch</span>
+        &mdash;
+        <span id="caption-mode">
+            <?php echo ucfirst($mode); ?>
+        </span>
     </caption>
     <thead>
         <tr>

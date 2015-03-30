@@ -15,6 +15,7 @@ $st->bindValue(3, $day,   SQLITE3_INTEGER);
 $results = $st->execute();
 
 // turn into a JSON map
+$row = $results->fetchArray();
 $map = array(
     'success'   => true,
     'breakfast' => $row['breakfast'],

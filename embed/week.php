@@ -3,9 +3,13 @@
 // fetch the whole month; we will extract
 // the data we need from it.
 
+// prevent passing parameters to fetch-month.php.
+$_GET = array();
+
 $json_silent = true;
 require_once(__DIR__.'/../api/fetch-month.php');
 $month_data = $json_result;
+print_r($month_data);
 
 // using Friday leaves it short one day,
 // so we're actually using Saturday here.

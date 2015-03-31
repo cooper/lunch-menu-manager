@@ -9,7 +9,6 @@ $_GET = array();
 $json_silent = true;
 require_once(__DIR__.'/../api/fetch-month.php');
 $month_data = $json_result;
-print_r($month_data);
 
 // using Friday leaves it short one day,
 // so we're actually using Saturday here.
@@ -25,10 +24,7 @@ $period = new DatePeriod($monday, $interval, $friday);
 
 print_r($period);
 foreach ($period as $date) {
-    echo $date->format('Y-m-d');
-    echo "\n";
-    print_r($month_data[ $date->format('n-j-Y') ]);
-    echo "\n\n";
+    $day_data = $month_data[ $date->format('n-j-Y') ];
 }
 
 ?>

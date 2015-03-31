@@ -3,7 +3,7 @@
 $year   = date('Y');
 $month  = date('n');
 $monday = new DateTime('@'.strtotime('monday this week'));
-$friday = new DateTime('@'.strtotime('friday this week'));
+$friday = new DateTime('@'.strtotime('saturday this week'));
 
 $interval = DateInterval::createFromDateString('1 day');
 $period = new DatePeriod($monday, $interval, $friday);

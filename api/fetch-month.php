@@ -24,7 +24,7 @@ while ($row = $results->fetchArray()) {
     );
 }
 
-$json_result = json_encode($map);
+$json_result = $map;
 require_once('api-json.php');
 
 ?>

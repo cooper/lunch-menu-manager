@@ -9,7 +9,7 @@ $interval = DateInterval::createFromDateString('day');
 $period = new DatePeriod($monday, $interval, $friday);
 print_r($period);
 foreach ($period as $date) {
-    echo $dt->format('Y-m-d');
+    echo $date->format('Y-m-d');
 }
 
 ?>

@@ -8,8 +8,8 @@ $friday = new DateTime('@'.strtotime('friday this week'));
 $interval = DateInterval::createFromDateString('1 day');
 $period = new DatePeriod($monday, $interval, $friday);
 print_r($period);
-#foreach ($period as $date) {
-#    echo $date->format('Y-m-d');
-#}
+foreach ($period as $date) {
+    echo $date->format('Y-m-d');
+}
 
 ?>

@@ -27,7 +27,7 @@ print_r($period);
 foreach ($period as $date) {
     echo $date->format('Y-m-d');
     echo "\n";
-    print_r($month_data[ $date->format('Y-n-j') ]);
+    print_r($month_data[ $date->format('n-j-Y') ]);
     echo "\n\n";
 }
 

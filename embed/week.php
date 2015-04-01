@@ -1,14 +1,21 @@
 <?php
 
-// fetch the whole month; we will extract
-// the data we need from it.
-
 // prevent passing parameters to fetch-month.php.
 $_GET = array();
 
+// fetch the current and next month.
+
+// current month
 $json_silent = true;
-require_once(__DIR__.'/../api/fetch-month.php');
-$month_data = $json_result;
+require(__DIR__.'/../api/fetch-month.php');
+$month_data_1 = $json_result;
+
+// next month
+$month = date('n') + 1; // could be 13, but date-input.php handles that.
+require(__DIR__.'/../api/fetch-month.php');
+$month_data_2 = $json_result;
+
+$month_data = array_merge($month_data_1, $month_data_2);
 
 // using Friday leaves it short one day,
 // so we're actually using Saturday here.
@@ -51,12 +58,12 @@ $period = new DatePeriod($monday, $interval, $friday);
         // lunch + salad
         $lunch = $day_data['lunch'];
         if (isset($day_data['salad']))
-            $lunch .= "\n".$day_data['salad'];
-        $lunch = str_replace("\n", "<br />", htmlentities($lunch));
+            $lunch .= "\n{$day_data['salad']} salad";
+        $lunch = str_replace("\n", "<br />\n", htmlentities($lunch));
 
         // breakfast
         $bfast = $day_data['breakfast'];
-        $bfast = str_replace("\n", "<br />", htmlentities($bfast));
+        $bfast = str_replace("\n", "<br />\n", htmlentities($bfast));
         
 ?>
 
@@ -68,11 +75,15 @@ $period = new DatePeriod($monday, $interval, $friday);
     <tr class="day">
         <td>
             <h3>Breakfast</h3>
-            <?php echo $bfast; ?>
+            <span style="text-transform: lowercase;">
+                <?php echo $bfast; ?>
+            </span>
         </td>
         <td>
             <h3>Lunch</h3>
-            <?php echo $lunch; ?>
+            <span style="text-transform: lowercase;">
+                <?php echo $lunch; ?>
+            </span>
         </td>
     </tr>
             

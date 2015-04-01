@@ -33,7 +33,7 @@ body {
 }
 
 #weekly-calendar tr.today td {
-    background-color: #ededed;
+    background-color: #ddd;
 }
 
 #weekly-calendar h3 {

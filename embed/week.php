@@ -40,8 +40,7 @@ $period = new DatePeriod($monday, $interval, $friday);
         $day_data = $month_data[ $date->format('n-j-Y') ];
         
         // fill in missing data with N/A
-        $defaults = array('breakfast', 'lunch');
-        array_fill_keys($defaults, 'N/A');
+        $defaults = array('breakfast' => 'N/A', 'lunch' => 'N/A');
         $day_data = $day_data ? array_merge($defaults, $day_data) : $defaults;
         
         // lunch + salad

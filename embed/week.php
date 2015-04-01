@@ -23,59 +23,58 @@ $interval = DateInterval::createFromDateString('1 day');
 $period = new DatePeriod($monday, $interval, $friday);
 
 ?>
-
 <!doctype html>
 <html>
 
 <head>
+    <meta charset="utf-8" />
     <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css" />
     <link href="../styles/red-and-black/weekly.css" rel="stylesheet" type="text/css" />
 </head>
     
 <body>
-        <table id="weekly-calendar">
+<table id="weekly-calendar">
 <?php
 
     foreach ($period as $date) {
         $day_data = $month_data[ $date->format('n-j-Y') ];
-        if (!$day_data) $day_data = array();
+        
+        // fill in missing data with N/A
+        $defaults = array('breakfast', 'lunch');
+        array_fill_keys($defaults, 'N/A');
+        $day_data = $day_data ? array_merge($defaults, $day_data) : $defaults;
         
         // lunch + salad
         $lunch = $day_data['lunch'];
-        if (isset($lunch)) {
-            $salad = $day_data['salad'];
-            if (isset($salad))
-                $lunch .= "\n".$salad;
-            $lunch = str_replace("\n", "<br />", htmlentities($lunch));
-        }
-        else $lunch = 'N/A';
+        if (isset($day_data['salad']))
+            $lunch .= "\n".$day_data['salad'];
+        $lunch = str_replace("\n", "<br />", htmlentities($lunch));
+
         
         // breakfast
         $bfast = $day_data['breakfast'];
-        if (isset($bfast))
-            $bfast = str_replace("\n", "<br />", htmlentities($bfast));
-        else $bfast = 'N/A';
+        $bfast = str_replace("\n", "<br />", htmlentities($bfast));
         
 ?>
 
-            <tr class="title">
-                <td colspan="2">
-                    <?php echo $date->format('l, F j'); ?>
-                </td>
-            </tr>
-            <tr class="day">
-                <td>
-                    <h3>Breakfast</h3>
-                    <?php echo $bfast_html; ?>
-                </td>
-                <td>
-                    <h3>Lunch</h3>
-                    <?php echo $lunch_html; ?>
-                </td>
-            </tr>
+    <tr class="title">
+        <td colspan="2">
+            <?php echo $date->format('l, F j'); ?>
+        </td>
+    </tr>
+    <tr class="day">
+        <td>
+            <h3>Breakfast</h3>
+            <?php echo $bfast_html; ?>
+        </td>
+        <td>
+            <h3>Lunch</h3>
+            <?php echo $lunch_html; ?>
+        </td>
+    </tr>
             
 <?php } ?>
-        </table>
+</table>
 </body>
     
 </html>

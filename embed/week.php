@@ -3,19 +3,25 @@
 // prevent passing parameters to fetch-month.php.
 $_GET = array();
 
-// fetch the current and next month.
+// fetch the previous, current, and upcoming months.
 
 // current month
 $json_silent = true;
 require __DIR__.'/../api/fetch-month.php';
 $month_data_1 = $json_result;
 
-// next month
-$month = date('n') + 1; // could be 13, but date-input.php handles that.
+// previous month
+$month = date('n');
+if (!$month) $month = 12; // 1 - 1 = 0 = December
 require __DIR__.'/../api/fetch-month.php';
 $month_data_2 = $json_result;
 
-$month_data = array_merge($month_data_1, $month_data_2);
+// next month
+$month = date('n') + 1; // could be 13, but date-input.php handles that.
+require __DIR__.'/../api/fetch-month.php';
+$month_data_3 = $json_result;
+
+$month_data = array_merge($month_data_1, $month_data_2, $month_data_3);
 
 // using Friday leaves it short one day,
 // so we're actually using Saturday here.

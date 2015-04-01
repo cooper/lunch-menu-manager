@@ -64,11 +64,11 @@ $period = new DatePeriod($monday, $interval, $friday);
     <tr class="day">
         <td>
             <h3>Breakfast</h3>
-            <?php echo $bfast_html; ?>
+            <?php echo $bfast; ?>
         </td>
         <td>
             <h3>Lunch</h3>
-            <?php echo $lunch_html; ?>
+            <?php echo $bfast; ?>
         </td>
     </tr>
             

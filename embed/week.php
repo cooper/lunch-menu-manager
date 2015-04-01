@@ -7,12 +7,12 @@ $_GET = array();
 
 // current month
 $json_silent = true;
-require(__DIR__.'/../api/fetch-month.php');
+require __DIR__.'/../api/fetch-month.php';
 $month_data_1 = $json_result;
 
 // next month
 $month = date('n') + 1; // could be 13, but date-input.php handles that.
-require(__DIR__.'/../api/fetch-month.php');
+require __DIR__.'/../api/fetch-month.php';
 $month_data_2 = $json_result;
 
 $month_data = array_merge($month_data_1, $month_data_2);

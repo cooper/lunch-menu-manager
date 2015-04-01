@@ -37,11 +37,16 @@ $period = new DatePeriod($monday, $interval, $friday);
 <?php
 
     foreach ($period as $date) {
-        $day_data = $month_data[ $date->format('n-j-Y') ];
+        $dstr = $date->format('n-j-Y');
+        $day_data = isset($month_data[$dstr]) ? $month_data[$dstr] : array();
         
         // fill in missing data with N/A
-        $defaults = array('breakfast' => 'N/A', 'lunch' => 'N/A');
-        $day_data = $day_data ? array_merge($defaults, $day_data) : $defaults;
+        $defaults = array(
+            'breakfast' => 'N/A',
+            'lunch'     => 'N/A'
+            // salad is explicitly checked for
+        );
+        $day_data = array_merge($defaults, $day_data);
         
         // lunch + salad
         $lunch = $day_data['lunch'];
@@ -49,7 +54,6 @@ $period = new DatePeriod($monday, $interval, $friday);
             $lunch .= "\n".$day_data['salad'];
         $lunch = str_replace("\n", "<br />", htmlentities($lunch));
 
-        
         // breakfast
         $bfast = $day_data['breakfast'];
         $bfast = str_replace("\n", "<br />", htmlentities($bfast));
@@ -68,7 +72,7 @@ $period = new DatePeriod($monday, $interval, $friday);
         </td>
         <td>
             <h3>Lunch</h3>
-            <?php echo $bfast; ?>
+            <?php echo $lunch; ?>
         </td>
     </tr>
             

@@ -11,7 +11,7 @@ require __DIR__.'/../api/fetch-month.php';
 $month_data_1 = $json_result;
 
 // previous month
-$month = date('n');
+$month = date('n') - 1;
 if (!$month) $month = 12; // 1 - 1 = 0 = December
 require __DIR__.'/../api/fetch-month.php';
 $month_data_2 = $json_result;

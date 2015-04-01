@@ -78,7 +78,10 @@ $period = new DatePeriod($monday, $interval, $friday);
 
     <tr class="title">
         <td colspan="2">
-            <?php echo $date->format('l, F j'); ?>
+            <?php
+                echo $date->format('l, F j');
+                if ($is_today) echo " &mdash; Today";
+            ?>
         </td>
     </tr>
     <tr class="day<?php if ($is_today) echo " today"; ?>">

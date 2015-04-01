@@ -53,6 +53,9 @@ $period = new DatePeriod($monday, $interval, $friday);
         $dstr = $date->format('n-j-Y');
         $day_data = isset($month_data[$dstr]) ? $month_data[$dstr] : array();
         
+        // is this today?
+        $is_today = $date->format('Y-m-d') == date('Y-m-d');
+        
         // fill in missing data with N/A
         $defaults = array(
             'breakfast' => 'N/A',
@@ -78,7 +81,7 @@ $period = new DatePeriod($monday, $interval, $friday);
             <?php echo $date->format('l, F j'); ?>
         </td>
     </tr>
-    <tr class="day">
+    <tr class="day<?php if ($is_today) echo " today"; ?>">
         <td>
             <h3>Breakfast</h3>
             <span style="text-transform: lowercase;">

@@ -32,6 +32,10 @@ body {
     padding: 15px 10px;
 }
 
+#weekly-calendar tr.today td {
+    background-color: #eee;
+}
+
 #weekly-calendar h3 {
     margin: 0 0 5px 0;
     padding: 0;

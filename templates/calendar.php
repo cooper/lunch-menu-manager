@@ -77,7 +77,8 @@ function draw_calendar ($month, $year) {
 	return $calendar;
 }
 
-$mode = $_GET['mode'] == 'breakfast' ? 'breakfast' : 'lunch';
+$mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
+    'breakfast' : 'lunch';
 
 ?>
 

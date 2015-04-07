@@ -3,6 +3,7 @@
 // fetch all the menu information for a given month
 
 require_once(__DIR__.'/../functions/date-input.php');
+require_once(__DIR__.'/../functions/utils.php');
 
 $db = new SQLite3('../db/menu.db');
 if (!$db)
@@ -18,10 +19,10 @@ $results = $st->execute();
 $row = $results->fetchArray();
 $map = array(
     'success'   => true,
-    'breakfast' => $row['breakfast'],
-    'lunch'     => $row['lunch'],
-    'salad'     => $row['salad'],
-    'timestamp' => $row['set_timestamp']
+    'breakfast' => empty2null($row['breakfast']),
+    'lunch'     => empty2null($row['lunch']),
+    'salad'     => empty2null($row['salad']),
+    'timestamp' => empty2null($row['set_timestamp'])
 );
 
 $json_result = $map;

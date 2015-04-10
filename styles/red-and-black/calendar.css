@@ -20,6 +20,10 @@ table.lunch-calendar thead td {
     font-weight: bold;
 }
 
+table.lunch-calendar thead tr.consistent td {
+    background-color: #862020 !important;
+}
+
 table.lunch-calendar tbody td {
     color: inherit;
 }

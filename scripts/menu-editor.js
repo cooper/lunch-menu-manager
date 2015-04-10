@@ -103,9 +103,9 @@ function updateMenuEditor() {
     if (!menuDay) return;
     
     // update the menu day object
-    menuDay.breakfast = breakfast.value;
-    menuDay.lunch = lunch.value;
-    menuDay.salad = salad.value;
+    menuDay.breakfast = breakfast.value.trim();
+    menuDay.lunch = lunch.value.trim();
+    menuDay.salad = salad.value.trim();
     
     // update in database
     if (menuDay)

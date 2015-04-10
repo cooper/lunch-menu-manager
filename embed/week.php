@@ -57,12 +57,10 @@ $period = new DatePeriod($monday, $interval, $friday);
         $is_today = $date->format('Y-m-d') == date('Y-m-d');
         
         // fill in missing data with N/A
-        $defaults = array(
-            'breakfast' => 'N/A',
-            'lunch'     => 'N/A'
-            // salad is explicitly checked for
-        );
-        $day_data = array_merge($defaults, $day_data);
+        if (!isset($day_data['breakfast']))
+            $day_data['breakfast'] = 'N/A';
+        if (!isset($day_data['lunch']))
+            $day_data['lunch'] = 'N/A';
         
         // lunch + salad
         $lunch = $day_data['lunch'];
@@ -98,8 +96,16 @@ $period = new DatePeriod($monday, $interval, $friday);
             </span>
         </td>
     </tr>
-            
+       
 <?php } ?>
+    
+    <tr class="full">
+        <td colspan="2">
+            <a target="_blank" href="../calendar.php?ref=week">
+                Open the full menu for <?php echo $monthName; ?> in a new tab
+            </a>
+        </td>
+    </tr>
 </table>
 </body>
     

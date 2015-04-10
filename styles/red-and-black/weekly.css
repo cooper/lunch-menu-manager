@@ -25,6 +25,18 @@ body {
     background-color: #862020;
 }
 
+#weekly-calendar tr.full td {
+    padding: 10px;
+    background-color: #fff;
+    font-size smaller;
+    _text-align: center;
+}
+
+#weekly-calendar a {
+    color: #d52323;
+    text-decoration: none;
+}
+
 #weekly-calendar tr.day {
 }
 

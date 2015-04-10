@@ -79,6 +79,7 @@ function draw_calendar ($month, $year) {
 
 $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
     'breakfast' : 'lunch';
+$consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
 
 ?>
 
@@ -91,7 +92,7 @@ $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
         </span>
     </caption>
     <thead>
-        <tr>
+        <tr<?php if ($consistent) echo ' class="consistent"' ?>>
             <td>Monday</td>
             <td>Tuesday</td>
             <td>Wednesday</td>

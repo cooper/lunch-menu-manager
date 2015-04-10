@@ -134,7 +134,7 @@ function injectCalendarData(data) {
         var dayData = data[menuDay.apiDateString()];
         if (!dayData) return;
         ['breakfast', 'lunch', 'salad'].each(function (i) {
-            menuDay[i] = typeof dayData[i] == 'undefined' ? '' : dayData[i];
+            menuDay[i] = !dayData[i] ? '' : dayData[i];
         });
     });
     

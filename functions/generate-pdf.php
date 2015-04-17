@@ -4,7 +4,9 @@ $LOGIN_REQUIRED = true;
 require_once('session.php');
 
 // determine URI for service to access
-$calendar_php = explode($_SERVER['DOCUMENT_URI'], '/');
+$url = isset($_SERVER['URL']) ? $_SERVER['URL'] : $_SERVER['DOCUMENT_URI'];
+$calendar_php = explode('/', $url);
+
 array_pop($calendar_php); // remove generate-pdf.php
 array_pop($calendar_php); // remove functions/
 $calendar_php = implode($calendar_php, '/') . '/calendar.php';

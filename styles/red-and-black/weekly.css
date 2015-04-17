@@ -29,7 +29,7 @@ body {
     padding: 10px;
     background-color: #fff;
     font-size smaller;
-    _text-align: center;
+    text-align: center;
 }
 
 #weekly-calendar a {

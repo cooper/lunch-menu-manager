@@ -38,6 +38,7 @@ function initializeAdministatorTools() {
         var request = new Request.JSON({
             url: 'functions/generate-pdf.php',
             onSuccess: function (data) {
+                console.log(data);
                 adminWindow.removeChild(printLoading);
                 var padded = new Element('div', { id: 'admin-window-padding' });
                 padded.innerHTML = '                                \
@@ -48,7 +49,11 @@ function initializeAdministatorTools() {
                 </div>                                              \
                 ';
                 adminWindow.appendChild(padded);
+                console.log('Generator: ' + data.generator);
                 window.location = data.generator;
+            },
+            onFailure: function (error) {
+                alert('Please reload the page. Error: ' + error);
             }
         }).get({
             year:   getCurrentYear(),

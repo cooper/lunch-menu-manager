@@ -6,6 +6,23 @@ document.addEvent('keydown', function (e) {
     if (e.keyCode == 27) hideAdminWindow();
 });
 
+var printingInstructions = '                            \
+<div style="margin-top: 100px;">                        \
+    Your PDF menu was generated.<br />                  \
+    You can now print it by opening it in PDF software  \
+    such as Adobe Reader or Foxit Reader. From there,   \
+    choose Print from the File menu.                    \
+</div>                                                  \
+';
+
+var sharingInstructions = '                         \
+<div style="margin-top: 100px;">                    \
+    Your PDF menu was generated.<br />              \
+    You can now share it by attaching the PDF file  \
+    to an e-mail.                                   \
+</div>                                              \
+';
+
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
     
@@ -34,35 +51,12 @@ function initializeAdministatorTools() {
     // print button click
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();
-        overlay.setStyle('display', 'block');
-        var request = new Request.JSON({
-            url: 'functions/generate-pdf.php',
-            onSuccess: function (data) {
-                console.log(data);
-                adminWindow.removeChild(printLoading);
-                var padded = new Element('div', { id: 'admin-window-padding' });
-                padded.innerHTML = '                                \
-                <div style="margin-top: 100px;">                    \
-                    Your menu was generated.<br />                  \
-                    If it was not downloaded automatically,         \
-                    click <a href="'+ data.generator +'">here</a>.  \
-                </div>                                              \
-                ';
-                adminWindow.appendChild(padded);
-                console.log('Generator: ' + data.generator);
-                window.location = data.generator;
-            },
-            onFailure: function (error) {
-                alert('Please reload the page. Error: ' + error);
-            }
-        }).get({
-            year:   getCurrentYear(),
-            month:  getCurrentMonth(),
-            mode:   getCurrentMode()
-        });
-        
+        printOrShare(printingInstructions);
     });
-    
+    $('email-button').addEvent('click', function (e) {
+        e.preventDefault();
+        printOrShare(sharingInstructions);
+    });
     
     // done button click
     $('admin-window-done').addEvent('click', function (e) {
@@ -70,6 +64,29 @@ function initializeAdministatorTools() {
         hideAdminWindow();
     });
     
+}
+
+function printOrShare(innerHTML) {
+    overlay.setStyle('display', 'block');
+    var request = new Request.JSON({
+        url: 'functions/generate-pdf.php',
+        onSuccess: function (data) {
+            console.log(data);
+            adminWindow.removeChild(printLoading);
+            var padded = new Element('div', { id: 'admin-window-padding' });
+            padded.innerHTML = innerHTML;
+            adminWindow.appendChild(padded);
+            console.log('Generator: ' + data.generator);
+            window.location = data.generator;
+        },
+        onFailure: function (error) {
+            alert('Please reload the page. Error: ' + error);
+        }
+    }).get({
+        year:   getCurrentYear(),
+        month:  getCurrentMonth(),
+        mode:   getCurrentMode()
+    });
 }
 
 function hideAdminWindow() {

@@ -35,7 +35,7 @@ function nextMonth() {
             <li><a href="<?php echo nextMonth(); ?>" title="Next month">&rarr;</a></li>
             <li><a id="mode-trigger" href="#" title="Toggle between breakfast and lunch" style="width: 70px;">Breakfast</a></li>
             <li><a id="print-button" href="#" title="Print this month's menu">Print</a></li>
-            <!--<li><a id="email-button" href="#" title="Send this month's menu via email">E-mail</a></li>-->
+            <li><a id="email-button" href="#" title="Share this month's menu, such as via email">Share</a></li>
             <li><a href="logout.php" title="Log out of administrator panel">Log out</a></li>
         </ul>
     </div>
@@ -44,7 +44,7 @@ function nextMonth() {
 <div id="admin-overlay">
     <div id="admin-window">
         <h2 id="admin-window-title">
-            <span>Print menu</span>
+            <span>Printing and sharing</span>
             <a id="admin-window-done" href="#">Done</a>
         </h2>
         <div id="admin-window-padding">

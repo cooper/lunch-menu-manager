@@ -23,7 +23,7 @@ table.lunch-calendar caption {
 }
 
 table.lunch-calendar.administrator {
-    text-align: left;
+    text-align: left !important;
 }
 
 table.lunch-calendar td {

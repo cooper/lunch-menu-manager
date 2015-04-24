@@ -67,6 +67,10 @@ function initializeAdministatorTools() {
 }
 
 function printOrShare(innerHTML) {
+    var overlay      = $('admin-overlay'),
+        adminWindow  = $('admin-window'),
+        printLoading = $('admin-window-padding');
+    
     overlay.setStyle('display', 'block');
     var request = new Request.JSON({
         url: 'functions/generate-pdf.php',

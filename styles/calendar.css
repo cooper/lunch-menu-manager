@@ -19,7 +19,7 @@ table.lunch-calendar caption {
     font-size: 30px;
     font-weight: bold;
     padding: 10px 0;
-    text-align: left;
+    text-align: center;
 }
 
 table.lunch-calendar.administrator {

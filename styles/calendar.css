@@ -24,6 +24,7 @@ table.lunch-calendar caption {
 
 table.lunch-calendar.administrator caption {
     text-align: left !important;
+    font-size: 25px !important;
 }
 
 table.lunch-calendar td {

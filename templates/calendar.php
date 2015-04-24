@@ -87,9 +87,11 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
     <caption>
         <?php echo("$monthName $year"); ?>
         &mdash;
+        <?php if ($administrator) { ?>
         <span id="caption-mode">
             <?php echo ucfirst($mode); ?>
         </span>
+        <?php } ?>
     </caption>
     <thead>
         <tr<?php if ($consistent) echo ' class="consistent"' ?>>

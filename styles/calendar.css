@@ -22,7 +22,7 @@ table.lunch-calendar caption {
     text-align: center;
 }
 
-table.lunch-calendar.administrator {
+table.lunch-calendar.administrator caption {
     text-align: left !important;
 }
 

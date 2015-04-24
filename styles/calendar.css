@@ -16,9 +16,13 @@ table.lunch-calendar {
 }
 
 table.lunch-calendar caption {
-    font-size: larger;
+    font-size: 30px;
     font-weight: bold;
     padding: 10px 0;
+    text-align: left;
+}
+
+table.lunch-calendar.administrator {
     text-align: left;
 }
 

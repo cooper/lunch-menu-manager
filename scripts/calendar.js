@@ -131,8 +131,8 @@ function injectCalendarData(data) {
     // notes for the month
     if (typeof data.notes != 'undefined' && data.notes.length)
         currentNotes = data.notes;
-    else
-        currentNotes = undefined;
+    //else
+        //currentNotes = undefined;
     
     // update each menu day
     $$('table.lunch-calendar tbody td').each(function (td) {

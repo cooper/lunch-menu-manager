@@ -106,6 +106,7 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
         <?php echo draw_calendar($month, $year); ?>
         <tr>
             <td id="month-notes" colspan="5">
+                test
             </td>
         </tr>
     </tbody>

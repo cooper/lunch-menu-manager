@@ -47,8 +47,7 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
-#month-notes {
-    background-color: transparent;
+#month-notes td {
     border: none;
     text-align: center;
 }

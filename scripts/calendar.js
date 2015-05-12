@@ -156,7 +156,7 @@ function refreshCalendar() {
     // notes for the month
     if (typeof currentNotes != 'undefined' && currentNotes.length) {
         $('menu-notes').setStyle('display', 'table-cell');
-        $$('menu-notes td')[0].innerText = currentNotes;
+        $$('#menu-notes td')[0].innerText = currentNotes;
     }
     else {
         $('menu-notes').setStyle('display', 'none');

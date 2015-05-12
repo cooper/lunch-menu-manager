@@ -47,6 +47,12 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
+#month-notes {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
 span.day-number {
     font-size: 200%;
     font-weight: bold;

@@ -34,6 +34,7 @@ function nextMonth() {
             <li><a href="<?php echo previousMonth(); ?>" title="Previous month">&larr;</a></li>
             <li><a href="<?php echo nextMonth(); ?>" title="Next month">&rarr;</a></li>
             <li><a id="mode-trigger" href="#" title="Toggle between breakfast and lunch" style="width: 70px;">Breakfast</a></li>
+            <li><a id="notes-button" href="#" title="Change the notes on the bottom of this calendar" /></li>
             <li><a id="print-button" href="#" title="Print this month's menu">Print</a></li>
             <li><a id="email-button" href="#" title="Share this month's menu, such as via email">Share</a></li>
             <li><a href="logout.php" title="Log out of administrator panel">Log out</a></li>

@@ -52,6 +52,10 @@ table.lunch-calendar tbody td {
     display: none;
 }
 
+#menu-notes td {
+    vertical-align: middle;
+}
+
 span.day-number {
     font-size: 200%;
     font-weight: bold;

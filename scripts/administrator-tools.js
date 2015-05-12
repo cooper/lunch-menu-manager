@@ -48,6 +48,12 @@ function initializeAdministatorTools() {
         printLoading = $('admin-window-padding');
     adminWindow.store('printLoading', printLoading);
     
+    // notes button click
+    $('notes-button').addEvent('click', function (e) {
+        e.preventDefault();
+        showNotesEditor();
+    });
+    
     // print button click
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();
@@ -91,6 +97,13 @@ function printOrShare(innerHTML) {
         month:  getCurrentMonth(),
         mode:   getCurrentMode()
     });
+}
+
+function showNotesEditor() {
+    var overlay  = $('notes-overlay'),
+    adminWindow  = $('notes-window');
+    overlay.setStyle('display', 'block');
+    
 }
 
 function hideAdminWindow() {

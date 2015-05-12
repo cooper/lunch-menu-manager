@@ -125,16 +125,14 @@ function createMenuDays() {
     });
 }
 
+var currentNotes;
 function injectCalendarData(data) {
     
     // notes for the month
-    if (typeof data.notes != 'undefined' && data.notes.length) {
-        $('menu-notes').setStyle('display', 'table-cell');
-        $('menu-notes').innerText = data.notes;
-    }
-    else {
-        $('menu-notes').setStyle('display', 'none');
-    }
+    if (typeof data.notes != 'undefined' && data.notes.length)
+        currentNotes = data.notes;
+    else
+        currentNotes = null;
     
     // update each menu day
     $$('table.lunch-calendar tbody td').each(function (td) {
@@ -154,9 +152,21 @@ function injectCalendarData(data) {
 
 // refresh the calendar for the current mode
 function refreshCalendar() {
+    
+    // notes for the month
+    if (typeof currentNotes != 'undefined' && currentNotes.length) {
+        $('menu-notes').setStyle('display', 'table-cell');
+        $('menu-notes').innerText = currentNotes;
+    }
+    else {
+        $('menu-notes').setStyle('display', 'none');
+    }
+    
+    // update menu text
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
         menuDay.menuItems.innerText = menuDay.displayText();
     });
+    
 }

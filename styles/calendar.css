@@ -47,9 +47,9 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
-#month-notes td {
-    border: none;
+#month-notes {
     text-align: center;
+    display: none;
 }
 
 span.day-number {

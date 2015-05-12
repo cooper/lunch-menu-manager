@@ -127,6 +127,15 @@ function createMenuDays() {
 
 function injectCalendarData(data) {
     
+    // notes for the month
+    if (typeof data.notes != 'undefined' && data.notes.length) {
+        $('menu-notes').setStyle('display', 'table-cell');
+        $('menu-notes').innerText = data.notes;
+    }
+    else {
+        $('menu-notes').setStyle('display', 'none');
+    }
+    
     // update each menu day
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');

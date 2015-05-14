@@ -21,22 +21,22 @@ ul.administrator-tools li a:hover {
     background-color: rgb(240, 250, 255);
 }
 
-#admin-overlay {
+.admin-overlay {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#admin-window {
+.admin-window {
     background-color: #fff;
     border: 1px solid rgb(25, 60, 75);
 }
 
-#admin-window-title {
+.admin-window-title {
     background-color: rgb(50, 100, 125);
     border-bottom: 1px solid rgb(25, 60, 75);
     color: #fff;
 }
 
-#admin-window-done {
+.admin-window-done {
     background-color: #fff;
     border: 1px solid rgb(25, 60, 75);
     color: rgb(25, 60, 75);

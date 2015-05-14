@@ -50,10 +50,9 @@ table.lunch-calendar tbody td {
 #menu-notes {
     text-align: center;
     display: none;
-}
-
-#menu-notes td {
-    vertical-align: middle;
+    width: 1000px;
+    padding: 0 20px;
+    margin: auto;
 }
 
 span.day-number {

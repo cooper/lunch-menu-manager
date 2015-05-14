@@ -63,9 +63,10 @@ function nextMonth() {
             <a class="admin-window-done" id="notes-window-done" href="#">Save</a>
         </h2>
         <div class="admin-window-padding" id="notes-window-padding">
-            <br /><br />
-            <img src="images/loading.gif" alt="Loading" /><br />
-            Please wait while the printable menu is generated...
+            The notes in the below box will be displayed at the
+            bottom of the menu for the current month.
+            <textarea>
+            </textarea>
         </div>
     </div>
 </div>

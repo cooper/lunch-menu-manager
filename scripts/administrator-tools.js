@@ -43,9 +43,9 @@ function initializeAdministatorTools() {
         
     });
     
-    var overlay      = $('admin-overlay'),
-        adminWindow  = $('admin-window'),
-        printLoading = $('admin-window-padding');
+    var overlay      = $('share-overlay'),
+        adminWindow  = $('share-window'),
+        printLoading = $('share-window-padding');
     adminWindow.store('printLoading', printLoading);
     
     // notes button click
@@ -65,7 +65,7 @@ function initializeAdministatorTools() {
     });
     
     // done button click
-    $('admin-window-done').addEvent('click', function (e) {
+    $('share-window-done').addEvent('click', function (e) {
         e.preventDefault();
         hideAdminWindow();
     });
@@ -73,9 +73,9 @@ function initializeAdministatorTools() {
 }
 
 function printOrShare(innerHTML) {
-    var overlay      = $('admin-overlay'),
-        adminWindow  = $('admin-window'),
-        printLoading = $('admin-window-padding');
+    var overlay      = $('share-overlay'),
+        adminWindow  = $('share-window'),
+        printLoading = $('share-window-padding');
     
     overlay.setStyle('display', 'block');
     var request = new Request.JSON({
@@ -83,7 +83,7 @@ function printOrShare(innerHTML) {
         onSuccess: function (data) {
             console.log(data);
             adminWindow.removeChild(printLoading);
-            var padded = new Element('div', { id: 'admin-window-padding' });
+            var padded = new Element('div', { 'class': 'admin-window-padding' });
             padded.innerHTML = innerHTML;
             adminWindow.appendChild(padded);
             console.log('Generator: ' + data.generator);
@@ -107,12 +107,12 @@ function showNotesEditor() {
 }
 
 function hideAdminWindow() {
-    var adminWindow  = $('admin-window'),
+    var adminWindow  = $('share-window'),
         printLoading = adminWindow.retrieve('printLoading'),
-        overlay      = $('admin-overlay');
+        overlay      = $('share-overlay');
 
     // replace the content with the loading view
     overlay.setStyle('display', 'none');
-    adminWindow.removeChild($('admin-window-padding'));
+    adminWindow.removeChild($('share-window-padding'));
     adminWindow.appendChild(printLoading);
 }

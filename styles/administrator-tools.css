@@ -29,7 +29,7 @@ ul.administrator-tools li a {
     text-decoration: none;
 }
 
-#admin-overlay {
+.admin-overlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -39,14 +39,14 @@ ul.administrator-tools li a {
     display: none;
 }
 
-#admin-window {
+.admin-window {
     margin: 50px auto;
     width: 600px;
     min-height: 500px;
     padding-bottom: 20px;
 }
 
-#admin-window-title {
+.admin-window-title {
     margin: 0;
     padding: 0 15px;
     height: 50px;
@@ -54,12 +54,12 @@ ul.administrator-tools li a {
     font-weight: bold;
 }
 
-#admin-window-padding {
+.admin-window-padding {
     padding: 5px 10px 10px 10px;
     text-align: center;
 }
 
-#admin-window-done {
+.admin-window-done {
     padding: 5px 10px;
     font-size: 14px;
     display: inline-block;

@@ -42,13 +42,27 @@ function nextMonth() {
     </div>
 </div>
 
-<div id="admin-overlay">
-    <div id="admin-window">
-        <h2 id="admin-window-title">
+<div class="admin-overlay" id="share-overlay">
+    <div class="admin-window" id="share-window">
+        <h2 class="admin-window-title" id="share-window-title">
             <span>Printing and sharing</span>
-            <a id="admin-window-done" href="#">Done</a>
+            <a class="admin-window-done" id="share-window-done" href="#">Done</a>
         </h2>
-        <div id="admin-window-padding">
+        <div class="admin-window-padding" id="share-window-padding">
+            <br /><br />
+            <img src="images/loading.gif" alt="Loading" /><br />
+            Please wait while the printable menu is generated...
+        </div>
+    </div>
+</div>
+
+<div class="admin-overlay" id="notes-overlay">
+    <div class="admin-window" id="notes-window">
+        <h2 class="admin-window-title" id="notes-window-title">
+            <span>Printing and sharing</span>
+            <a class="admin-window-done" id="notes-window-done" href="#">Save</a>
+        </h2>
+        <div class="admin-window-padding" id="notes-window-padding">
             <br /><br />
             <img src="images/loading.gif" alt="Loading" /><br />
             Please wait while the printable menu is generated...

@@ -51,8 +51,8 @@ table.lunch-calendar tbody td {
     text-align: center;
     display: none;
     width: 1000px;
-    padding: 10 20px;
-    margin: auto;
+    padding: 0 20px;
+    margin: 10px auto;
 }
 
 span.day-number {

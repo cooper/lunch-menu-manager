@@ -125,7 +125,7 @@ function createMenuDays() {
     });
 }
 
-var currentNotes = 'Frontier School Corporation is an Equal Opporunity Employer.';
+var currentNotes = 'Frontier School Corporation is an Equal Opportunity Employer.';
 function injectCalendarData(data) {
     
     // notes for the month

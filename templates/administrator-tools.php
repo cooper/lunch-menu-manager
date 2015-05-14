@@ -60,11 +60,13 @@ function nextMonth() {
     <div class="admin-window" id="notes-window">
         <h2 class="admin-window-title" id="notes-window-title">
             <span>Printing and sharing</span>
-            <a class="admin-window-done" id="notes-window-done" href="#">Save</a>
+            <a class="admin-window-done" id="notes-window-done" href="#">Done</a>
         </h2>
         <div class="admin-window-padding" id="notes-window-padding">
+            <br /><br />
             The notes in the below box will be displayed at the
             bottom of the menu for the current month.
+            <br />
             <textarea>
             </textarea>
         </div>

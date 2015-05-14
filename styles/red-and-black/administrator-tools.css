@@ -23,7 +23,7 @@ ul.administrator-tools li a:hover {
     background-color: #b73939;
 }
 
-#admin-overlay {
+.admin-overlay {
     background-color: rgba(0, 0, 0, 0.5);
 }
 

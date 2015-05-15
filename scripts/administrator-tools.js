@@ -70,6 +70,12 @@ function initializeAdministatorTools() {
         hideAdminWindow();
     });
     
+    // done button click
+    $('notes-window-done').addEvent('click', function (e) {
+        e.preventDefault();
+        hideNotesWindow();
+    });
+    
 }
 
 function printOrShare(innerHTML) {
@@ -115,4 +121,14 @@ function hideAdminWindow() {
     overlay.setStyle('display', 'none');
     adminWindow.removeChild($('share-window-padding'));
     adminWindow.appendChild(printLoading);
+}
+
+function hideNotesWindow() {
+    var adminWindow  = $('notes-window'),
+        overlay      = $('notes-overlay');
+
+    // replace the content with the loading view
+    overlay.setStyle('display', 'none');
+
+    // save it
 }

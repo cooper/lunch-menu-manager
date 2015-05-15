@@ -112,7 +112,7 @@ function showNotesEditor() {
     var overlay  = $('notes-overlay'),
     adminWindow  = $('notes-window');
     overlay.setStyle('display', 'block');
-    
+    $('notes-window-textarea').focus();
 }
 
 function hideShareWindow() {

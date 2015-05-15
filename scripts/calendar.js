@@ -162,6 +162,10 @@ function refreshCalendar() {
         $('menu-notes').setStyle('display', 'none');
     }
     
+    // notes in the admin thing, if it is present
+    if ($('notes-window-textarea'))
+        $('notes-window-textarea').innerText = currentNotes;
+
     // update menu text
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');

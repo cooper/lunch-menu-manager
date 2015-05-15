@@ -3,7 +3,10 @@ document.addEvent('domready', initializeAdministatorTools);
 // escape from print
 document.addEvent('keydown', function (e) {
     if (e.event) e = e.event;
-    if (e.keyCode == 27) hideAdminWindow();
+    if (e.keyCode == 27) {
+        hideShareWindow();
+        hideNotesWindow();
+    }
 });
 
 var printingInstructions = '                            \
@@ -67,7 +70,7 @@ function initializeAdministatorTools() {
     // done button click
     $('share-window-done').addEvent('click', function (e) {
         e.preventDefault();
-        hideAdminWindow();
+        hideShareWindow();
     });
     
     // done button click
@@ -112,7 +115,7 @@ function showNotesEditor() {
     
 }
 
-function hideAdminWindow() {
+function hideShareWindow() {
     var adminWindow  = $('share-window'),
         printLoading = adminWindow.retrieve('printLoading'),
         overlay      = $('share-overlay');

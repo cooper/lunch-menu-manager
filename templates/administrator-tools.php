@@ -59,7 +59,7 @@ function nextMonth() {
 <div class="admin-overlay" id="notes-overlay">
     <div class="admin-window" id="notes-window">
         <h2 class="admin-window-title" id="notes-window-title">
-            <span>Printing and sharing</span>
+            <span>Calendar notes</span>
             <a class="admin-window-done" id="notes-window-done" href="#">Done</a>
         </h2>
         <div class="admin-window-padding" id="notes-window-padding">
@@ -67,7 +67,7 @@ function nextMonth() {
             The notes in the below box will be displayed at the
             bottom of the menu for the current month.
             <br />
-            <textarea>
+            <textarea id="notes-window-textarea">
             </textarea>
         </div>
     </div>

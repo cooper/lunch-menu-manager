@@ -38,7 +38,7 @@ table.lunch-calendar thead td {
 }
 
 table.lunch-calendar tbody td {
-    height: 90px;
+    height: 100px;
     padding: 5px;
     font-size: smaller;
     text-transform: lowercase;

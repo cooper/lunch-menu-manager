@@ -53,8 +53,8 @@ table.lunch-calendar tbody td {
     width: 100%;
     padding: 20px;
     margin: 0 auto;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top: 1000px;
     left: 0;
     right: 0;
 }

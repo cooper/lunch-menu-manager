@@ -128,6 +128,7 @@ function saveNotes() {
         month:  getCurrentMonth(),
         notes:  $('notes-window-textarea').getProperty('value')
     });
+    reloadCalendar();
 }
 
 function showNotesEditor() {

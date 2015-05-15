@@ -66,7 +66,6 @@ function nextMonth() {
             <br /><br />
             The notes in the below box will be displayed at the
             bottom of the menu for the current month.
-            <br />
             <textarea id="notes-window-textarea">
             </textarea>
         </div>

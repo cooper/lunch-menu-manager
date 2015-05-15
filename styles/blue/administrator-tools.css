@@ -41,8 +41,3 @@ ul.administrator-tools li a:hover {
     border: 1px solid rgb(25, 60, 75);
     color: rgb(25, 60, 75);
 }
-
-#notes-window-textarea {
-    width: 100%;
-    height: 200px;
-}

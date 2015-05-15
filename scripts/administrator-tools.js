@@ -128,7 +128,8 @@ function saveNotes() {
         month:  getCurrentMonth(),
         notes:  $('notes-window-textarea').getProperty('value')
     });
-    reloadCalendar();
+    
+    refreshCalendar();
 }
 
 function showNotesEditor() {
@@ -155,6 +156,4 @@ function hideNotesWindow() {
 
     // replace the content with the loading view
     overlay.setStyle('display', 'none');
-
-    // save it
 }

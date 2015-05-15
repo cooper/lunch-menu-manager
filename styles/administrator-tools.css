@@ -74,4 +74,5 @@ ul.administrator-tools li a {
     width: 90%;
     height: 200px;
     margin: 35px auto;
+    display: block;
 }

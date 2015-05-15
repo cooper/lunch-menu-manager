@@ -71,7 +71,7 @@ ul.administrator-tools li a {
 }
 
 #notes-window-textarea {
-    width: 100%;
+    width: 90%;
     height: 200px;
-    margin: 25px auto;
+    margin: 35px auto;
 }

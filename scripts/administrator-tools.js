@@ -70,6 +70,7 @@ function initializeAdministatorTools() {
     // done button click
     $('share-window-done').addEvent('click', function (e) {
         e.preventDefault();
+        saveNotes();
         hideShareWindow();
     });
     
@@ -105,6 +106,27 @@ function printOrShare(innerHTML) {
         year:   getCurrentYear(),
         month:  getCurrentMonth(),
         mode:   getCurrentMode()
+    });
+}
+
+function saveNotes() {
+    var overlay  = $('notes-overlay'),
+    adminWindow  = $('notes-window');
+    
+    console.log('Saving notes: ' + $('notes-window-textarea').innerText);
+    overlay.setStyle('display', 'block');
+    var request = new Request.JSON({
+        url: 'functions/update-notes.php',
+        onSuccess: function (data) {
+            console.log(data);
+        },
+        onFailure: function (error) {
+            alert('Please reload the page. Error: ' + error);
+        }
+    }).post({
+        year:   getCurrentYear(),
+        month:  getCurrentMonth(),
+        notes:  $('notes-window-textarea').innerText
     });
 }
 

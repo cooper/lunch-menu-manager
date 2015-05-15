@@ -22,7 +22,7 @@ $st->bindValue(2, intval($_POST['month']),    SQLITE3_INTEGER);
 $st->execute();
 
 // insert the new records
-$st = $db->prepare('INSERT INTO notes (year, month, notes) VALUES (?, ?, ?)');
+$st = $db->prepare('INSERT INTO notes (year, month, notes, set_timestamp) VALUES (?, ?, ?, ?)');
 $st->bindValue(1, intval($_POST['year']),  SQLITE3_INTEGER);
 $st->bindValue(2, intval($_POST['month']), SQLITE3_INTEGER);
 $st->bindValue(3, $_POST['notes'],         SQLITE3_TEXT   );

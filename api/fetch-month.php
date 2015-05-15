@@ -33,7 +33,7 @@ $st->bindValue(2, $month, SQLITE3_INTEGER);
 $results = $st->execute();
 
 if ($row = $results->fetchArray())
-    $map['notes'] = print_r($row, true);//$row['notes'];
+    $map['notes'] = $row['notes'];
 
 $json_result = $map;
 require_once('api-json.php');

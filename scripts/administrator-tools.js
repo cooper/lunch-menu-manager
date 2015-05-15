@@ -113,7 +113,7 @@ function saveNotes() {
     var overlay  = $('notes-overlay'),
     adminWindow  = $('notes-window');
     
-    console.log('Saving notes: ' + $('notes-window-textarea').innerText);
+    console.log('Saving notes: ' + $('notes-window-textarea').getProperty('value'));
     overlay.setStyle('display', 'block');
     var request = new Request.JSON({
         url: 'functions/update-notes.php',
@@ -126,7 +126,7 @@ function saveNotes() {
     }).post({
         year:   getCurrentYear(),
         month:  getCurrentMonth(),
-        notes:  $('notes-window-textarea').innerText
+        notes:  $('notes-window-textarea').getProperty('value')
     });
 }
 

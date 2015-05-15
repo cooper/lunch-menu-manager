@@ -11,7 +11,7 @@ table.lunch-calendar {
 
 table.lunch-calendar {
     width: 1000px;
-    margin: 15px auto;
+    margin: 0px auto;
     cursor: default;
 }
 
@@ -35,6 +35,7 @@ table.lunch-calendar thead td {
     text-align: center;
     padding: 8px;
     border: none;
+    margin-bottom: 15px;
 }
 
 table.lunch-calendar tbody td {

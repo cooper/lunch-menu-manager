@@ -25,6 +25,16 @@ while ($row = $results->fetchArray()) {
     );
 }
 
+// fetch the notes for the month, if any
+
+$st = $db->prepare('SELECT * FROM notes WHERE year=? AND month=?');
+$st->bindValue(1, $year,  SQLITE3_INTEGER);
+$st->bindValue(2, $month, SQLITE3_INTEGER);
+$results = $st->execute();
+
+if ($row = $results->fetchArray())
+    $map['notes'] = $row['notes'];
+
 $json_result = $map;
 require_once('api-json.php');
 

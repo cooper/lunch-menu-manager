@@ -70,13 +70,13 @@ function initializeAdministatorTools() {
     // done button click
     $('share-window-done').addEvent('click', function (e) {
         e.preventDefault();
-        saveNotes();
         hideShareWindow();
     });
     
     // done button click
     $('notes-window-done').addEvent('click', function (e) {
         e.preventDefault();
+        saveNotes();
         hideNotesWindow();
     });
     

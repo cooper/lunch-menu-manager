@@ -10,30 +10,34 @@ if (!$db)
     die("Opening database failed");
 
 $st = $db->prepare('SELECT * FROM menu WHERE year=? AND month=?');
-$st->bindValue(1, $year,  SQLITE3_INTEGER);
-$st->bindValue(2, $month, SQLITE3_INTEGER);
-$results = $st->execute();
+if ($st) {
+    $st->bindValue(1, $year,  SQLITE3_INTEGER);
+    $st->bindValue(2, $month, SQLITE3_INTEGER);
+    $results = $st->execute();
 
-// turn into a JSON map
-$map = array('success' => true);
-while ($row = $results->fetchArray()) {
-    $map[ $row['month'].'-'.$row['day'].'-'.$row['year'] ] = array(
-        'breakfast' => empty2null($row['breakfast']),
-        'lunch'     => empty2null($row['lunch']),
-        'salad'     => empty2null($row['salad']),
-        'timestamp' => empty2null($row['set_timestamp'])
-    );
+    // turn into a JSON map
+    $map = array('success' => true);
+    while ($row = $results->fetchArray()) {
+        $map[ $row['month'].'-'.$row['day'].'-'.$row['year'] ] = array(
+            'breakfast' => empty2null($row['breakfast']),
+            'lunch'     => empty2null($row['lunch']),
+            'salad'     => empty2null($row['salad']),
+            'timestamp' => empty2null($row['set_timestamp'])
+        );
+    }
 }
 
 // fetch the notes for the month, if any
 
-$st = $db->prepare('SELECT * FROM notes WHERE year=? AND month=?');
-$st->bindValue(1, $year,  SQLITE3_INTEGER);
-$st->bindValue(2, $month, SQLITE3_INTEGER);
-$results = $st->execute();
+$st = @$db->prepare('SELECT * FROM notes WHERE year=? AND month=?');
+if ($st) {
+    $st->bindValue(1, $year,  SQLITE3_INTEGER);
+    $st->bindValue(2, $month, SQLITE3_INTEGER);
+    $results = $st->execute();
 
-if ($row = $results->fetchArray())
-    $map['notes'] = $row['notes'];
+    if ($row = $results->fetchArray())
+        $map['notes'] = $row['notes'];
+}
 
 $json_result = $map;
 require_once('api-json.php');

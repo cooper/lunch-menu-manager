@@ -9,6 +9,10 @@ table.lunch-calendar {
     /*white-space: nowrap;*/
 }
 
+table.lunch-calendar.administrator {
+    margin-top: 20px;
+}
+
 table.lunch-calendar {
     width: 1000px;
     margin: 0px auto;

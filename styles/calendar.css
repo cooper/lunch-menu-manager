@@ -34,6 +34,7 @@ table.lunch-calendar caption span.left {
     float: left;
     font-size: 20px;
     height: 40px;
+    padding-left: 30px;
 }
 
 table.lunch-calendar caption span.right {
@@ -42,6 +43,7 @@ table.lunch-calendar caption span.right {
     float: right;
     font-size: 20px;
     height: 40px;
+    padding-right: 30px;
 }
 
 /*

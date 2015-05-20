@@ -39,7 +39,7 @@ table.lunch-calendar caption span.left {
 table.lunch-calendar caption span.right {
     display: inline-block;
     line-height: 40px;
-    float: left;
+    float: right;
     font-size: 20px;
     height: 40px;
 }

@@ -85,6 +85,8 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
 
 <table class="lunch-calendar mode-<?php echo $mode; if (isset($administrator)) echo ' administrator'; ?>" data-year="<?= $year ?>" data-month="<?= $month ?>">
     <caption>
+        <span class="right" id="caption-mode"><?= ucfirst($mode) ?></span>
+        <span class="left">test</span>
         <?= "$monthName $year" ?>
     </caption>
     <thead>

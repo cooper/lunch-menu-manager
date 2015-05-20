@@ -24,6 +24,24 @@ table.lunch-calendar caption {
     font-weight: bold;
     padding: 25px 0;
     text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+
+table.lunch-calendar caption span.left {
+    display: inline-block;
+    line-height: 40px;
+    float: left;
+    font-size: 20px;
+    height: 40px;
+}
+
+table.lunch-calendar caption span.right {
+    display: inline-block;
+    line-height: 40px;
+    float: left;
+    font-size: 20px;
+    height: 40px;
 }
 
 /*

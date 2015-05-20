@@ -22,10 +22,12 @@ table.lunch-calendar caption {
     text-align: center;
 }
 
+/*
 table.lunch-calendar.administrator caption {
     text-align: left !important;
     font-size: 25px !important;
 }
+*/
 
 table.lunch-calendar td {
     vertical-align: top;

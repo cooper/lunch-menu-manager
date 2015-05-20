@@ -83,7 +83,7 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
 
 ?>
 
-<table class="lunch-calendar mode-<?php echo $mode; if ($administrator) echo ' administrator'; ?>" data-year="<?php echo $year; ?>" data-month="<?php echo $month; ?>">
+<table class="lunch-calendar mode-<?php echo $mode; if (isset($administrator)) echo ' administrator'; ?>" data-year="<?php echo $year; ?>" data-month="<?php echo $month; ?>">
     <caption>
         <?php echo("$monthName $year"); ?>
         <?php if (isset($administrator)) { ?>

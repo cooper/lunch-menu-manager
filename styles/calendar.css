@@ -80,6 +80,10 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
+table.lunch-calendar.administrator td.today {
+    background-color: #eee;
+}
+
 #menu-notes {
     text-align: center;
     display: none;

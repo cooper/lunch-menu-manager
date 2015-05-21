@@ -141,7 +141,7 @@ function showNotesEditor() {
     adminWindow  = $('notes-window');
     overlay.setStyle('display', 'block');
     $('notes-window-textarea').focus();
-    $('notes-window-padding').innerText = $('notes-window-padding').innerText.replace('the current month', getCurrentMonthName());
+    $('notes-window-padding').innerHTML = $('notes-window-padding').innerHTML.replace('the current month', getCurrentMonthName());
 }
 
 function hideShareWindow() {

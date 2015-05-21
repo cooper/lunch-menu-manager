@@ -71,7 +71,7 @@ function nextMonth() {
             The phrase in the below box will be displayed in the
             top left corner of <i>each</i> month; i.e. it will
             propagate to all months.<br />
-            <input type="text" id="notes-window-input" /><br />
+            Top left: <input type="text" id="notes-window-input" /><br />
             Click the Done button in the top right to save.
         </div>
     </div>

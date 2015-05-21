@@ -42,10 +42,8 @@ function initializeAdministatorTools() {
         var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
             ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
         $('mode-trigger').innerText = ucfirst1;
-        if ($('caption-mode')) {
+        if ($('caption-mode'))
             $('caption-mode').innerText = ucfirst2 + ' menu';
-            $('caption-mode').setStyle('width', '399px');
-        }
         
     });
     

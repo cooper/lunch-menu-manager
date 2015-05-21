@@ -44,7 +44,7 @@ function initializeAdministatorTools() {
         $('mode-trigger').innerText = ucfirst1;
         if ($('caption-mode')) {
             $('caption-mode').innerText = ucfirst2 + ' menu';
-            $('caption-mode').setStyle('width', '400px');
+            $('caption-mode').setStyle('width', '399px');
         }
         
     });

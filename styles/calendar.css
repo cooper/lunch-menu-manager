@@ -39,7 +39,7 @@ table.lunch-calendar caption span.left {
     left: 2px;
     top: 20px;
     text-align: left;
-    width: 150px;
+    width: 400px;
 }
 
 table.lunch-calendar caption span.right {
@@ -52,7 +52,7 @@ table.lunch-calendar caption span.right {
     right: 2px;
     top: 20px;
     text-align: right;
-    width: 150px;
+    width: 400px;
 }
 
 /*

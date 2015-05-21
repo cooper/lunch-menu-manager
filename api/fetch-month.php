@@ -45,7 +45,7 @@ $st = @$db->prepare('SELECT * FROM topLeft ORDER BY set_timestamp DESC LIMIT 1')
 if ($st) {
     $results = $st->execute();
     if ($row = $results->fetchArray())
-        $map['topLeft'] = $row['topLeft'];
+        $map['topLeft'] = $row['notes'];
 }
 
 $json_result = $map;

@@ -29,7 +29,7 @@ if ($st) {
 
 // fetch the notes for the month, if any
 
-$st = @$db->prepare('SELECT * FROM notes WHERE year=? AND month=?');
+$st = @$db->prepare('SELECT * FROM notes WHERE year=? AND month=? LIMIT 1');
 if ($st) {
     $st->bindValue(1, $year,  SQLITE3_INTEGER);
     $st->bindValue(2, $month, SQLITE3_INTEGER);
@@ -37,6 +37,14 @@ if ($st) {
 
     if ($row = $results->fetchArray())
         $map['notes'] = $row['notes'];
+}
+
+// fetch the notes for the month, if any
+
+$st = @$db->prepare('SELECT * FROM topLeft ORDER BY set_timestamp DESC LIMIT 1');
+if ($st) {
+    if ($row = $results->fetchArray())
+        $map['topLeft'] = $row['topLeft'];
 }
 
 $json_result = $map;

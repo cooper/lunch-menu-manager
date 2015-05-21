@@ -184,7 +184,7 @@ function refreshCalendar() {
     var captionLeft = $('caption-left');
     if (typeof currentTopLeft != 'undefined') {
         if (currentTopLeft.length)
-            captionLeft.setStyle('display', 'block');
+            captionLeft.setStyle('opacity', 1);
         captionLeft.innerText = currentNotes;
         
         // notes in the admin thing, if it is present
@@ -193,7 +193,7 @@ function refreshCalendar() {
         
     }
     else {
-        captionLeft.setStyle('display', 'none');
+        captionLeft.setStyle('opacity', 0);
     }
     
     // update menu text

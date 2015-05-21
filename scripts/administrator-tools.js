@@ -43,7 +43,7 @@ function initializeAdministatorTools() {
             ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
         $('mode-trigger').innerText = ucfirst1;
         if ($('caption-mode'))
-            $('caption-mode').innerText = ucfirst2;
+            $('caption-mode').innerText = ucfirst2 + ' menu';
         
     });
     

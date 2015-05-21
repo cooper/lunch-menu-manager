@@ -68,6 +68,9 @@ function nextMonth() {
             bottom of the menu for the currently displayed month,
             the current month.
             <textarea id="notes-window-textarea"></textarea>
+            The phrase in the below box will be displayed in the
+            top left corner of <i>each</i> month.<br />
+            <input type="text" id="notes-window-input" />
             Click the Done button in the top right to save.
         </div>
     </div>

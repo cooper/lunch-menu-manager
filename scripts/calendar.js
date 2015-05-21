@@ -188,8 +188,8 @@ function refreshCalendar() {
         captionLeft.innerText = currentNotes;
         
         // notes in the admin thing, if it is present
-        //if ($('notes-window-textarea'))
-          //  $('notes-window-textarea').innerText = currentNotes;
+        if ($('notes-window-input'))
+            $('notes-window-input').setProperty('value', currentTopLeft);
         
     }
     else {

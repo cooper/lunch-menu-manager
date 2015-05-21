@@ -118,6 +118,10 @@ function saveNotes() {
     window.currentNotes = notes;
     console.log('Saving notes: ' + notes);
     
+    var topLeft = $('notes-window-input').getProperty('value');
+    window.currentTopLeft = topLeft;
+    console.log('Saving top left: ' + topLeft);
+    
     overlay.setStyle('display', 'block');
     var request = new Request.JSON({
         url: 'functions/update-notes.php',
@@ -131,6 +135,18 @@ function saveNotes() {
         year:   getCurrentYear(),
         month:  getCurrentMonth(),
         notes:  notes
+    });
+    
+    var request2 = new Request.JSON({
+        url: 'functions/update-top.php',
+        onSuccess: function (data) {
+            console.log(data);
+        },
+        onFailure: function (error) {
+            alert('Please reload the page. Error: ' + error);
+        }
+    }).post({
+        notes: topLeft
     });
     
     refreshCalendar();

@@ -69,8 +69,9 @@ function nextMonth() {
             the current month.
             <textarea id="notes-window-textarea"></textarea>
             The phrase in the below box will be displayed in the
-            top left corner of <i>each</i> month.<br />
-            <input type="text" id="notes-window-input" />
+            top left corner of <i>each</i> month; i.e. it will
+            propagate to all months.<br />
+            <input type="text" id="notes-window-input" /><br />
             Click the Done button in the top right to save.
         </div>
     </div>

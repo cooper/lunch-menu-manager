@@ -129,7 +129,7 @@ function createMenuDays() {
     });
 }
 
-var currentNotes;
+var currentNotes, currentTopLeft;
 function injectCalendarData(data) {
     
     // notes for the month
@@ -137,6 +137,13 @@ function injectCalendarData(data) {
         currentNotes = data.notes;
     else
         currentNotes = undefined;
+    
+    
+    // top left
+    if (typeof data.topLeft != 'undefined' && data.topLeft.length)
+        currentTopLeft = data.topLeft;
+    else
+        currentTopLeft = undefined;
     
     // update each menu day
     $$('table.lunch-calendar tbody td').each(function (td) {
@@ -158,10 +165,11 @@ function injectCalendarData(data) {
 function refreshCalendar() {
     
     // notes for the month
+    var menuNotes = $('menu-notes');
     if (typeof currentNotes != 'undefined') {
         if (currentNotes.length)
-            $('menu-notes').setStyle('display', 'block');
-        $('menu-notes').innerText = currentNotes;
+            menuNotes.setStyle('display', 'block');
+        menuNotes.innerText = currentNotes;
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
@@ -169,9 +177,25 @@ function refreshCalendar() {
         
     }
     else {
-        $('menu-notes').setStyle('display', 'none');
+        menuNotes.setStyle('display', 'none');
     }
 
+    // top left
+    var captionLeft = $('caption-left');
+    if (typeof currentTopLeft != 'undefined') {
+        if (currentTopLeft.length)
+            captionLeft.setStyle('display', 'block');
+        captionLeft.innerText = currentNotes;
+        
+        // notes in the admin thing, if it is present
+        //if ($('notes-window-textarea'))
+          //  $('notes-window-textarea').innerText = currentNotes;
+        
+    }
+    else {
+        captionLeft.setStyle('display', 'none');
+    }
+    
     // update menu text
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');

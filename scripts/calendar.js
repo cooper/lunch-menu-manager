@@ -185,7 +185,7 @@ function refreshCalendar() {
     if (typeof currentTopLeft != 'undefined') {
         if (currentTopLeft.length)
             captionLeft.setStyle('opacity', 1);
-        captionLeft.innerText = currentNotes;
+        captionLeft.innerText = currentTopLeft;
         
         // notes in the admin thing, if it is present
         if ($('notes-window-input'))

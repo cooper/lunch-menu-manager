@@ -86,6 +86,10 @@ function getCurrentMonth() {
     return $$('.lunch-calendar')[0].data('month');
 }
 
+function getCurrentMonthName() {
+    return months[ getCurrentMonth() ];
+}
+
 function fetchCalendar() {
     var request = new Request.JSON({
         url: 'api/fetch-month.php',

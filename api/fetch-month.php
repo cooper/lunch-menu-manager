@@ -43,9 +43,9 @@ if ($st) {
 
 $st = @$db->prepare('SELECT * FROM topLeft ORDER BY set_timestamp DESC LIMIT 1');
 if ($st) {
-    if ($row = $results->fetchArray()) {
-        print_r($row);
-        $map['topLeft'] = $row['topLeft']; }
+    $results = $st->execute();
+    if ($row = $results->fetchArray())
+        $map['topLeft'] = $row['topLeft'];
 }
 
 $json_result = $map;

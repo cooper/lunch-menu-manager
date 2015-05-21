@@ -65,7 +65,8 @@ function nextMonth() {
         <div class="admin-window-padding" id="notes-window-padding">
             <br /><br />
             The notes in the below box will be displayed at the
-            bottom of the menu for this month, the current month.
+            bottom of the menu for the currently displayed month,
+            the current month.
             <textarea id="notes-window-textarea"></textarea>
             Click the Done button in the top right to save.
         </div>

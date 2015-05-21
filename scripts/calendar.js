@@ -87,7 +87,7 @@ function getCurrentMonth() {
 }
 
 function getCurrentMonthName() {
-    return months[ getCurrentMonth() ];
+    return months[ getCurrentMonth() - 1 ];
 }
 
 function fetchCalendar() {

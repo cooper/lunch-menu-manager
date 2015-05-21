@@ -41,8 +41,9 @@ if ($st) {
 
 // fetch the top left for the month, if any
 
-$st = $db->prepare('SELECT * FROM topLeft ORDER BY set_timestamp DESC LIMIT 1');
+$st = @$db->prepare('SELECT * FROM topLeft ORDER BY set_timestamp DESC LIMIT 1');
 if ($st) {
+    print_r($st);
     if ($row = $results->fetchArray())
         $map['topLeft'] = $row['topLeft'];
 }

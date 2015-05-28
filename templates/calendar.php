@@ -10,18 +10,24 @@ function draw_calendar ($month, $year) {
 	$days_in_this_week = 1;
     $m_f_in_this_week  = 1;
 	$day_counter       = 0;
+    $weeks_in_month    = 0;
 
     $calendar = '';
     
 	/* row for week one */
-	$calendar.= '<tr>';
 
     // if the month starts on a saturday,
     // just skip the entire first week
-    if ($running_day == 6)
-        $running_day = 1;
+    $skip_first_week = false;
+    if ($running_day != 6) {
+        $calendar .= '<tr>';
+    }
+    else {
+        $skip_first_week = true;
+    }
     
     // blank days
+    if (!$skip_first_week)
 	for ($x = 0; $x < $running_day; $x++) {
         if ($x != 0 && $x != 6) {
             $calendar.= '<td></td>';
@@ -46,7 +52,19 @@ function draw_calendar ($month, $year) {
     
         // end of the week
 		if ($running_day == 6) {
-			$calendar.= '</tr>';
+            
+            // if we're skipping, skip,
+            // and unset the skipper
+            if ($skip_first_week) {
+                $skip_first_week = false;
+            }
+            
+            // otherwise, close the week
+            // and increase the week count
+            else {
+                $calendar.= '</tr>';
+                $weeks_in_month++;
+            }
             
             // start another row, unless this is the last day
             if (($day_counter + 3) >= $days_in_month)
@@ -74,9 +92,25 @@ function draw_calendar ($month, $year) {
 			$calendar.= '<td></td>';
         }
     }
-
-	$calendar.= '</tr>';
-	return $calendar;
+    
+    // if we haven't ended the week, do so
+    if (substr($calendar, -5) != '</tr>') {
+        $calendar.= '</tr>';
+        $weeks_in_month++;
+    }
+    
+    // inject another week if there aren't enough
+    if ($weeks_in_month < 5) {
+        $calendar .= '<tr>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '</tr>';
+    }
+    
+    return $calendar;
 }
 
 $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
@@ -101,7 +135,7 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
         </tr>
     </thead>
     <tbody>
-        <?php echo draw_calendar($month, $year); ?>
+        <?= draw_calendar($month, $year) ?>
     </tbody>
 </table>
 <div id="menu-notes">

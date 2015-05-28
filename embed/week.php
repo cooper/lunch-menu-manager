@@ -86,13 +86,13 @@ $period = new DatePeriod($monday, $interval, $friday);
         <td>
             <h3>Breakfast</h3>
             <span style="text-transform: lowercase;">
-                <?php echo $bfast; ?>
+                <?= $bfast ?>
             </span>
         </td>
         <td>
             <h3>Lunch</h3>
             <span style="text-transform: lowercase;">
-                <?php echo $lunch; ?>
+                <?= $lunch ?>
             </span>
         </td>
     </tr>
@@ -102,7 +102,7 @@ $period = new DatePeriod($monday, $interval, $friday);
     <tr class="full">
         <td colspan="2">
             <a target="_blank" href="../calendar.php?ref=week">
-                Open the full menu for <?php echo $monthName; ?> in a new tab
+                Open the full menu for <?= $monthName ?> in a new tab
             </a>
         </td>
     </tr>

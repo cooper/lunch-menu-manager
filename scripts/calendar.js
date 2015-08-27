@@ -175,8 +175,7 @@ function getCalendarNotes() {
 function refreshCalendar() {
     
     // notes for the month
-    var menuNotes = $('menu-notes'),
-        notes = getCalendarNotes();
+    var menuNotes = $('menu-notes');
     if (typeof currentNotes != 'undefined') {
         if (currentNotes.length)
             menuNotes.setStyle('display', 'block');
@@ -184,7 +183,7 @@ function refreshCalendar() {
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
-            $('notes-window-textarea').setProperty('html', notes);
+            $('notes-window-textarea').setProperty('text', currentNotes);
         
     }
     else {

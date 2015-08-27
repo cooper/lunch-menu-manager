@@ -1,5 +1,36 @@
 <?php
-    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
+
+$theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
+$pdf = isset($_GET['pdf']);
+
+function previousMonth() {
+    $ref = isset($_GET['ref']) ? $_GET['ref'] : '';
+    global $year, $month;
+    $newYear  = $year;
+    $newMonth = $month;
+    if ($month == 1) {
+        $newYear--;
+        $newMonth = 12;
+    }
+    else
+        $newMonth--;
+    return "calendar.php?year=$newYear&month=$newMonth&ref=$ref";
+}
+
+function nextMonth() {
+    $ref = isset($_GET['ref']) ? $_GET['ref'] : '';
+    global $year, $month;
+    $newYear  = $year;
+    $newMonth = $month;
+    if ($month == 12) {
+        $newYear++;
+        $newMonth = 1;
+    }
+    else
+        $newMonth++;
+    return "calendar.php?year=$newYear&month=$newMonth&ref=$ref";
+}
+
 ?>
 <!doctype html>
 <html>

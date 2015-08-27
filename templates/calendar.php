@@ -138,5 +138,9 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
         <?= draw_calendar($month, $year) ?>
     </tbody>
 </table>
+<?php
+    if (!isset($administrator) && !isset($pdf))
+        require(__DIR__.'/footer-navigation.php');
+?>
 <div id="menu-notes">
 </div>

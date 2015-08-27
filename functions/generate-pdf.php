@@ -13,7 +13,8 @@ $calendar_php = implode($calendar_php, '/') . '/calendar.php';
 $calendar_php = "http://{$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']}$calendar_php";
 
 // add GET parameters
-$calendar_php .= "?year={$_GET['year']}";
+$calendar_php .= '?pdf=true';
+$calendar_php .= "&year={$_GET['year']}";
 $calendar_php .= "&month={$_GET['month']}";
 $calendar_php .= "&mode={$_GET['mode']}";
 

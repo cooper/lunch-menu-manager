@@ -105,3 +105,24 @@ span.day-number {
     margin-right: 5px;
     line-height: normal;
 }
+
+#menu-footer-navigation {
+    width: 1000px;
+    margin-bottom: 15px;
+}
+
+#menu-footer-navigation div {
+    padding: 8px;
+}
+
+#menu-footer-navigation .left {
+    clear: left;
+    float: left;
+    text-align: left;
+}
+
+#menu-footer-navigation .right {
+    clear: right;
+    float: right;
+    text-align: right;
+}

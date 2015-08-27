@@ -25,4 +25,5 @@ $nextNum = $next[0];
             <?= DateTime::createFromFormat('!m', $prevNum)->format('F') ?>
         </a>
     </div>
+    <div style="clear: both;"></div>
 </div>

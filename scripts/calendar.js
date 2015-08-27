@@ -161,19 +161,30 @@ function injectCalendarData(data) {
     
 }
 
+function getCalendarNotes() {
+    var notes = window.currentNotes || '';
+    return notes
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/\n/g, '<br />');
+}
+
 // refresh the calendar for the current mode
 function refreshCalendar() {
     
     // notes for the month
-    var menuNotes = $('menu-notes');
+    var menuNotes = $('menu-notes'),
+        notes = getCalendarNotes();
     if (typeof currentNotes != 'undefined') {
         if (currentNotes.length)
             menuNotes.setStyle('display', 'block');
-        menuNotes.setProperty('text', currentNotes);
+        menuNotes.setProperty('html', notes);
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
-            $('notes-window-textarea').setProperty('text', currentNotes);
+            $('notes-window-textarea').setProperty('html', notes);
         
     }
     else {

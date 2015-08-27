@@ -112,7 +112,7 @@ function updateMenuEditor() {
         menuDay.update();
     
     // update calendar
-    menuDay.menuItems.innerText = menuDay.displayText();
+    menuDay.menuItems.setProperty('text', menuDay.displayText());
     
 }
 

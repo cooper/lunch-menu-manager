@@ -169,11 +169,11 @@ function refreshCalendar() {
     if (typeof currentNotes != 'undefined') {
         if (currentNotes.length)
             menuNotes.setStyle('display', 'block');
-        menuNotes.innerText = currentNotes;
+        menuNotes.setProperty('text', currentNotes);
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
-            $('notes-window-textarea').innerText = currentNotes;
+            $('notes-window-textarea').setProperty('text', currentNotes);
         
     }
     else {
@@ -185,7 +185,7 @@ function refreshCalendar() {
     if (typeof currentTopLeft != 'undefined') {
         if (currentTopLeft.length)
             captionLeft.setStyle('opacity', 1);
-        captionLeft.innerText = currentTopLeft;
+        captionLeft.setProperty('text', currentTopLeft);
         
         // notes in the admin thing, if it is present
         if ($('notes-window-input'))
@@ -200,7 +200,7 @@ function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
-        menuDay.menuItems.innerText = menuDay.displayText();
+        menuDay.menuItems.setProperty('text', menuDay.displayText());
     });
     
 }

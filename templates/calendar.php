@@ -139,7 +139,6 @@ $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
     </tbody>
 </table>
 <?php
-    echo "admin:$administrator pdf:$pdf";
     if (!isset($administrator) && !isset($pdf))
         require(__DIR__.'/footer-navigation.php');
 ?>

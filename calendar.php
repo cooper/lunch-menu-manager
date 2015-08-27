@@ -1,7 +1,7 @@
 <?php
 
 $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
-$pdf = isset($_GET['pdf']);
+$pdf = isset($_GET['pdf']) ? true : null;
 
 function previousMonth() {
     $ref = isset($_GET['ref']) ? $_GET['ref'] : '';

@@ -10,7 +10,8 @@ function previousMonth($root = 'administrator.php') {
     }
     else
         $newMonth--;
-    return "$root?year=$newYear&month=$newMonth";
+    $ref = isset($_GET['ref']) ? '&ref='.$_GET['ref'] : '';
+    return "$root?year=$newYear&month=$newMonth$ref";
 }
 
 function nextMonth($root = 'administrator.php') {
@@ -23,7 +24,8 @@ function nextMonth($root = 'administrator.php') {
     }
     else
         $newMonth++;
-    return "$root?year=$newYear&month=$newMonth";
+    $ref = isset($_GET['ref']) ? '&ref='.$_GET['ref'] : '';
+    return "$root?year=$newYear&month=$newMonth$ref";
 }
 
 ?>

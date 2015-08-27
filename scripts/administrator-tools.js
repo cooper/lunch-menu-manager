@@ -41,9 +41,9 @@ function initializeAdministatorTools() {
         // update displayed mode
         var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
             ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
-        $('mode-trigger').innerText = ucfirst1;
+        $('mode-trigger').setProperty('text', ucfirst1);
         if ($('caption-mode'))
-            $('caption-mode').innerText = ucfirst2 + ' menu';
+            $('caption-mode').setProperty('text', ucfirst2 + ' menu');
         
     });
     
@@ -77,7 +77,6 @@ function initializeAdministatorTools() {
     // done button click
     $('notes-window-done').addEvent('click', function (e) {
         e.preventDefault();
-        saveNotes();
         hideNotesWindow();
     });
     
@@ -171,6 +170,7 @@ function hideShareWindow() {
 }
 
 function hideNotesWindow() {
+    saveNotes();
     var adminWindow  = $('notes-window'),
         overlay      = $('notes-overlay');
 

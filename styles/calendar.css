@@ -108,7 +108,8 @@ span.day-number {
 
 #menu-footer-navigation {
     width: 1000px;
-    margin-bottom: 15px;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 #menu-footer-navigation div {
@@ -125,4 +126,9 @@ span.day-number {
     clear: right;
     float: right;
     text-align: right;
+}
+
+#menu-footer-navigation a {
+    color: #000;
+    font-weight: bold;
 }

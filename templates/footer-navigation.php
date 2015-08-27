@@ -22,7 +22,7 @@ $nextNum = $next[0];
     <div class="left">
         <a href="<?= $prevURL ?>" title="Previous month">
             &larr;
-            <?= DateTime::createFromFormat('!m', $prevtNum)->format('F') ?>
+            <?= DateTime::createFromFormat('!m', $prevNum)->format('F') ?>
         </a>
     </div>
 </div>

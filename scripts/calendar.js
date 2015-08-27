@@ -179,7 +179,7 @@ function refreshCalendar() {
     if (typeof currentNotes != 'undefined') {
         if (currentNotes.length)
             menuNotes.setStyle('display', 'block');
-        menuNotes.setProperty('html', notes);
+        menuNotes.setProperty('html', getCalendarNotes());
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))

@@ -43,7 +43,7 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <span>
                 The notes in the below box will be displayed at the
                 bottom of the menu for the currently displayed month.
-                Please be aware that three or more lines may prevent
+                Please be aware that four or more lines may prevent
                 the printable calendar from fitting on a single page.
             </span>
             <textarea id="notes-window-textarea"></textarea>

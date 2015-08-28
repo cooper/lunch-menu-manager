@@ -89,7 +89,7 @@ table.lunch-calendar.administrator td.today {
     display: none;
     width: 100%;
     font-size: 90%;
-    margin: 20px auto 0px auto;
+    margin: 20px auto 5px auto;
 }
 
 span.day-number {

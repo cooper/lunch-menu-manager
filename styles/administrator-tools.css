@@ -92,3 +92,7 @@ ul.administrator-tools li a {
 #notes-window-padding span {
     font-size: small;
 }
+
+#notes-window-padding h3 {
+    margin: 10px 0;
+}

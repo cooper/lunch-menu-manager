@@ -45,11 +45,10 @@ require_once(__DIR__.'/../functions/month-nav.php');
             Please be aware that three or more lines may prevent
             the printable calendar from fitting on a single page.
             <textarea id="notes-window-textarea"></textarea>
-            The phrase in the below box will be displayed in the
-            top left corner of <i>each</i> month; i.e. it will
+            The name in the below box will be displayed in the
+            top left corner of <i>every</i> month; i.e. it will
             propagate to all months.<br />
-            Top left: <input type="text" id="notes-window-input" /><br />
-            Click the Done button in the top right to save.
+            Name: <input type="text" id="notes-window-input" /><br />
         </div>
     </div>
 </div>

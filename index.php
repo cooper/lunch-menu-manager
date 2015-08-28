@@ -51,7 +51,10 @@
         }
         #footer {
             margin: auto;
-            color: 1px solid rgb(121, 155, 172);
+            color: rgb(121, 155, 172);
+            text-align: center;
+            font-size: smaller;
+            line-height: 1.1em;
         }
     </style>
 </head>

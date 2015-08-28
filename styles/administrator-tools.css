@@ -84,3 +84,11 @@ ul.administrator-tools li a {
     margin: 20px 5px;
     width: 250px;
 }
+
+#notes-window-padding {
+    text-align: left;
+}
+
+#notes-window-padding span {
+    font-size: small;
+}

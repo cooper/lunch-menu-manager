@@ -47,14 +47,14 @@
             padding: 30px;
             border: 1px solid rgb(190, 210, 220);
             background-color: white;
-            margin: 50px auto;
+            margin: 50px auto 20px auto;
         }
         #footer {
             margin: auto;
             color: rgb(121, 155, 172);
             text-align: center;
-            font-size: smaller;
-            line-height: 1.1em;
+            font-size: 90%;
+            line-height: 1.4em;
         }
     </style>
 </head>

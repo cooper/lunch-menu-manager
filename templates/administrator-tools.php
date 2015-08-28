@@ -51,9 +51,9 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <span>
                 The name in the below box will be displayed in the
                 top left corner of <i>every</i> month; i.e. it will
-                propagate to all months.<br />
+                propagate to all months.
             </span>
-            <input type="text" id="notes-window-input" /><br />
+            <input type="text" id="notes-window-input" />
         </div>
     </div>
 </div>

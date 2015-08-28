@@ -71,7 +71,7 @@ ul.administrator-tools li a {
 }
 
 #notes-window-textarea {
-    width: 580px;
+    width: 95%;
     height: 200px;
     margin: 10px auto;
     display: block;
@@ -81,8 +81,9 @@ ul.administrator-tools li a {
 #notes-window-input {
     height: 20px;
     font-size: 14px;
-    margin: 10px 5px;
-    width: 250px;
+    margin: 10px auto;
+    width: 95%;
+    display: block;
 }
 
 #notes-window-padding {

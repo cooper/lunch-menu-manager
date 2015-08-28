@@ -80,7 +80,8 @@
         </form>
     </div>
     <div id="footer">
-        LMM version 1.1, last updated August 28, 2015
+        Revision 3 &ndash;
+        Last updated August 28, 2015
     </div>
 </body>
 </html>

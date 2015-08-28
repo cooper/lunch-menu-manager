@@ -47,11 +47,11 @@ require_once(__DIR__.'/../functions/month-nav.php');
                 the printable calendar from fitting on a single page.
             </span>
             <textarea id="notes-window-textarea"></textarea>
-            <h3>Name</h3>
+            <h3>Calendar name</h3>
             <span>
-                The name in the below box will be displayed in the
+                The phrase in the below box will be displayed in the
                 top left corner of <i>every</i> month; i.e. it will
-                propagate to all months.
+                propagate to all months. Useful for facility name.
             </span>
             <input type="text" id="notes-window-input" />
         </div>

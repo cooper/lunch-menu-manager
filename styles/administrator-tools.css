@@ -76,6 +76,7 @@ ul.administrator-tools li a {
     margin: 10px auto;
     display: block;
     font-size: 16px;
+    border: 1px solid #aaa;
 }
 
 #notes-window-input {
@@ -84,6 +85,7 @@ ul.administrator-tools li a {
     margin: 10px auto;
     width: 95%;
     display: block;
+    border: 1px solid #aaa;
 }
 
 #notes-window-padding {

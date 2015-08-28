@@ -80,8 +80,8 @@
         </form>
     </div>
     <div id="footer">
-        Revision 3 &ndash;
-        Last updated August 28, 2015
+        System Revision 3 &ndash;
+        Last Updated August 28, 2015
     </div>
 </body>
 </html>

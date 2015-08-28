@@ -14,7 +14,7 @@
             <textarea class="input-meal" id="lunch-textarea"></textarea>
             <h3>Salad</h3>
             <input type="text" class="input-meal-extra" id="salad-input" />
-            <span style="font-size: smaller;">("salad" is added automatically)</span>
+            <span style="font-size: smaller;">(the word "salad" is added automatically)</span>
         </form>
         </div>
     </div>

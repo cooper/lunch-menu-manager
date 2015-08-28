@@ -187,7 +187,7 @@ function refreshCalendar() {
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
-            $('notes-window-textarea').setProperty('text', currentNotes);
+            $('notes-window-textarea').setProperty('value', currentNotes);
         
     }
     else {

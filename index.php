@@ -49,6 +49,10 @@
             background-color: white;
             margin: 50px auto;
         }
+        #footer {
+            margin: auto;
+            color: 1px solid rgb(121, 155, 172);
+        }
     </style>
 </head>
 <body>
@@ -71,6 +75,10 @@
                 </tr>
             </table>
         </form>
+    </div>
+    <div id="footer">
+        System last updated<br />
+        August 28, 2015
     </div>
 </body>
 </html>

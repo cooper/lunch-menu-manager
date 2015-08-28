@@ -49,7 +49,7 @@ $period = new DatePeriod($monday, $interval, $friday);
 <table id="weekly-calendar">
 <?php
 
-    foreach ($period as $date) {
+    foreach ($period as $date):
         $dstr = $date->format('n-j-Y');
         $day_data = isset($month_data[$dstr]) ? $month_data[$dstr] : array();
         
@@ -97,7 +97,7 @@ $period = new DatePeriod($monday, $interval, $friday);
         </td>
     </tr>
        
-<?php } ?>
+<?php endforeach; ?>
     
     <tr class="full">
         <td colspan="2">

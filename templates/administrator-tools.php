@@ -39,7 +39,6 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <a class="admin-window-done" id="notes-window-done" href="#">Done</a>
         </h2>
         <div class="admin-window-padding" id="notes-window-padding">
-            <br /><br />
             <span>
                 The notes in the below box will be displayed at the
                 bottom of the menu for the currently displayed month.

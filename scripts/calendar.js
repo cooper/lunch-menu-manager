@@ -164,6 +164,10 @@ function injectCalendarData(data) {
 function getCalendarNotes() {
     var notes = window.currentNotes || '';
     return notes
+}
+
+function replaceNewlines(str) {
+    return str
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
@@ -179,7 +183,7 @@ function refreshCalendar() {
     if (typeof currentNotes != 'undefined') {
         if (currentNotes.length)
             menuNotes.setStyle('display', 'block');
-        menuNotes.setProperty('html', getCalendarNotes());
+        menuNotes.setProperty('html', replaceNewlines(currentNotes));
         
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
@@ -210,7 +214,7 @@ function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
-        menuDay.menuItems.setProperty('text', menuDay.displayText());
+        menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
     });
     
 }

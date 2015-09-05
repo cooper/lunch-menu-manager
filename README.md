@@ -22,17 +22,22 @@ Login screen
 
 ![Login](http://i.imgur.com/VBLIFWs.png)
 
+
 Administrator calendar, red and black theme
 
-![Calendar](http://i.imgur.com/BEFalg9.png)
+![Calendar](http://i.imgur.com/JQAIMRv.png)
 
 Menu editor, red and black theme
 
-![Menu editor](http://i.imgur.com/Gnw7I26.png)
+![Menu editor](http://i.imgur.com/U71ZzhX.png)
+
+Public calendar, custom theme
+
+![Calendar](http://i.imgur.com/5Kq1Ypo.png)
 
 Generated PDF calendar for printing
 
-![PDF](http://i.imgur.com/Eq1jijk.png)
+![PDF](http://i.imgur.com/dOTLqTG.png)
 
 
 

@@ -25,15 +25,15 @@ Login screen
 
 Administrator calendar, red and black theme
 
-![Calendar](http://i.imgur.com/JQAIMRv.png)
+![Calendar](http://i.imgur.com/bF1FvfU.png)
 
 Menu editor, red and black theme
 
-![Menu editor](http://i.imgur.com/U71ZzhX.png)
+![Menu editor](http://i.imgur.com/lXvLt0M.png)
 
 Public calendar, custom theme
 
-![Calendar](http://i.imgur.com/5Kq1Ypo.png)
+![Calendar](http://i.imgur.com/piJWIK1.png)
 
 Generated PDF calendar for printing
 

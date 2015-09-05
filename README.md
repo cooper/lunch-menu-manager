@@ -51,5 +51,6 @@ Create a file called `verify_password.php` in the root directory of Lmm with a s
 
 ## API
 
-Lmm provides a JSON-encoded API.
-Documentation for it will eventually be here.
+![API spec](http://i.imgur.com/m5vClj8.png)
+
+![API spec](http://i.imgur.com/mDevg3I.png)

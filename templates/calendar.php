@@ -43,7 +43,7 @@ function draw_calendar ($month, $year) {
         if ($running_day != 0 && $running_day != 6) {
             $is_today = "$year-$month-$list_day" == date('Y-n-j');
             $today_html = $is_today ? ' today' : '';
-            $calendar.= '<td data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'" data-running-day="'.$running_day.'" class="edit-button'.$today_html.'">';
+            $calendar.= '<td rowspan="2" data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'" data-running-day="'.$running_day.'" class="edit-button'.$today_html.'">';
             $calendar .= '<span class="day-number">'.$list_day.'</span>';
             $calendar .= '<span class="menu-items"></span>';
             $calendar .= '</td>';

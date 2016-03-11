@@ -4,7 +4,7 @@ require_once(__DIR__.'/../functions/date-input.php');
 
 function draw_calendar ($month, $year) {
     global $month, $year;
-    
+
 	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));
 	$days_in_this_week = 1;
@@ -13,7 +13,7 @@ function draw_calendar ($month, $year) {
     $weeks_in_month    = 0;
 
     $calendar = '';
-    
+
 	/* row for week one */
 
     // if the month starts on a saturday,
@@ -25,20 +25,20 @@ function draw_calendar ($month, $year) {
     else {
         $skip_first_week = true;
     }
-    
+
     // blank days
     if (!$skip_first_week)
 	for ($x = 0; $x < $running_day; $x++) {
         if ($x != 0 && $x != 6) {
-            $calendar.= '<td></td>';
+            $calendar.= '<td rowspan="2"></td>';
             $m_f_in_this_week++;
         }
 		$days_in_this_week++;
     }
-    
+
     $month_over = false;
 	for ($list_day = 1; $list_day <= $days_in_month; $list_day++) {
-        
+
         // ignore Saturday and Sunday
         if ($running_day != 0 && $running_day != 6) {
             $is_today = "$year-$month-$list_day" == date('Y-n-j');
@@ -49,67 +49,67 @@ function draw_calendar ($month, $year) {
             $calendar .= '</td>';
             $m_f_in_this_week++;
         }
-    
+
         // end of the week
 		if ($running_day == 6) {
-            
+
             // if we're skipping, skip,
             // and unset the skipper
             if ($skip_first_week) {
                 $skip_first_week = false;
             }
-            
+
             // otherwise, close the week
             // and increase the week count
             else {
                 $calendar.= '</tr>';
                 $weeks_in_month++;
             }
-            
+
             // start another row, unless this is the last day
             if (($day_counter + 3) >= $days_in_month)
                 $month_over = true; // force end of month
             else
                 $calendar.= '<tr>';
-            
+
 			$running_day = -1;
 			$days_in_this_week = 0;
             $m_f_in_this_week  = 0;
         }
-        
+
 		$days_in_this_week++;
         $running_day++;
         $day_counter++;
-        
+
         if ($month_over)
             break;
-        
+
     }
 
 	// empty days at the end
 	if (!$month_over && $m_f_in_this_week < 5) {
 		for ($x = 1; $x <= (5 - $m_f_in_this_week); $x++) {
-			$calendar.= '<td></td>';
+			$calendar.= '<td rowspan="2"></td>';
         }
     }
-    
+
     // if we haven't ended the week, do so
     if (substr($calendar, -5) != '</tr>') {
         $calendar.= '</tr>';
         $weeks_in_month++;
     }
-    
+
     // inject another week if there aren't enough
     if ($weeks_in_month < 5) {
         $calendar .= '<tr>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
+        $calendar .= '<td rowspan="2"></td>';
+        $calendar .= '<td rowspan="2"></td>';
+        $calendar .= '<td rowspan="2"></td>';
+        $calendar .= '<td rowspan="2"></td>';
+        $calendar .= '<td rowspan="2"></td>';
         $calendar .= '</tr>';
     }
-    
+
     return $calendar;
 }
 

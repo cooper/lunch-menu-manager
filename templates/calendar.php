@@ -30,7 +30,7 @@ function draw_calendar ($month, $year) {
     if (!$skip_first_week)
 	for ($x = 0; $x < $running_day; $x++) {
         if ($x != 0 && $x != 6) {
-            $calendar.= '<td rowspan="2"></td>';
+            $calendar.= '<td></td>';
             $m_f_in_this_week++;
         }
 		$days_in_this_week++;
@@ -43,7 +43,7 @@ function draw_calendar ($month, $year) {
         if ($running_day != 0 && $running_day != 6) {
             $is_today = "$year-$month-$list_day" == date('Y-n-j');
             $today_html = $is_today ? ' today' : '';
-            $calendar.= '<td rowspan="2" data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'" data-running-day="'.$running_day.'" class="edit-button'.$today_html.'">';
+            $calendar.= '<td data-year="'.$year.'" data-month="'.$month.'" data-day="'.$list_day.'" data-running-day="'.$running_day.'" class="edit-button'.$today_html.'">';
             $calendar .= '<span class="day-number">'.$list_day.'</span>';
             $calendar .= '<span class="menu-items"></span>';
             $calendar .= '</td>';
@@ -62,7 +62,7 @@ function draw_calendar ($month, $year) {
             // otherwise, close the week
             // and increase the week count
             else {
-                $calendar.= '</tr><tr></tr>';
+                $calendar.= '</tr>';
                 $weeks_in_month++;
             }
 
@@ -89,24 +89,24 @@ function draw_calendar ($month, $year) {
 	// empty days at the end
 	if (!$month_over && $m_f_in_this_week < 5) {
 		for ($x = 1; $x <= (5 - $m_f_in_this_week); $x++) {
-			$calendar.= '<td rowspan="2"></td>';
+			$calendar.= '<td></td>';
         }
     }
 
     // if we haven't ended the week, do so
     if (substr($calendar, -5) != '</tr>') {
-        $calendar.= '</tr><tr></tr>';
+        $calendar.= '</tr>';
         $weeks_in_month++;
     }
 
     // inject another week if there aren't enough
     if ($weeks_in_month < 5) {
         $calendar .= '<tr>';
-        $calendar .= '<td rowspan="2"></td>';
-        $calendar .= '<td rowspan="2"></td>';
-        $calendar .= '<td rowspan="2"></td>';
-        $calendar .= '<td rowspan="2"></td>';
-        $calendar .= '<td rowspan="2"></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
+        $calendar .= '<td></td>';
         $calendar .= '</tr>';
     }
 

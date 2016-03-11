@@ -62,7 +62,7 @@ function draw_calendar ($month, $year) {
             // otherwise, close the week
             // and increase the week count
             else {
-                $calendar.= '</tr>';
+                $calendar.= '</tr><tr></tr>';
                 $weeks_in_month++;
             }
 
@@ -95,7 +95,7 @@ function draw_calendar ($month, $year) {
 
     // if we haven't ended the week, do so
     if (substr($calendar, -5) != '</tr>') {
-        $calendar.= '</tr>';
+        $calendar.= '</tr><tr></tr>';
         $weeks_in_month++;
     }
 

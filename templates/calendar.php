@@ -5,15 +5,15 @@ require_once(__DIR__.'/../functions/date-input.php');
 function draw_calendar ($month, $year) {
     global $month, $year;
 
-	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));
-	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));
-	$days_in_this_week = 1;
-    $m_f_in_this_week  = 1;
-    $weeks_in_month    = 0;
-    $cell_id           = 1;
-    $calendar          = '';
+	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));     // day of the week (0-6)
+	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));     // # of days in month
+    $weeks_in_month    = 0;                                                // # of week row thus far (->5)
+    $cell_id           = 1;                                                // <td> cell ID (1-25)
+    $calendar          = '';                                               // HTML calendar output
 
-	/* row for week one */
+    /*####################
+    ### THE FIRST WEEK ###
+    #####################*/
 
     // if the month starts on a Saturday,
     // just skip the entire first week
@@ -28,16 +28,18 @@ function draw_calendar ($month, $year) {
     // if the month does not start on a Saturday (!$skip_first_week),
     // add and possible blank days at the beginning of the calendar.
     // these are days from the previous month.
-    if (!$skip_first_week) for ($x = 0; $x < $running_day; $x++) {
+    if (!$skip_first_week)
+        for ($x = 0; $x < $running_day; $x++) {
 
-        // if it's not Sunday or Saturday, add the cell.
-        if ($x != 0 && $x != 6) {
-            $calendar.= '<td data-cell="'. $cell_id++ .'"></td>';
-            $m_f_in_this_week++;
+            // if it's not Sunday or Saturday, add the cell.
+            if ($x != 0 && $x != 6)
+                $calendar.= '<td data-cell="'. $cell_id++ .'"></td>';
+
         }
 
-		$days_in_this_week++;
-    }
+    /*############################
+    ### CELLS FOR MON THRU FRI ###
+    ############################*/
 
     // start at the first, and move through the whole month.
     $month_over = false;
@@ -61,7 +63,6 @@ function draw_calendar ($month, $year) {
             $calendar .=      '<span class="menu-items"></span>';
             $calendar .= '</td>';
 
-            $m_f_in_this_week++;
         }
 
         // this is Saturday, the end of the week.
@@ -88,16 +89,13 @@ function draw_calendar ($month, $year) {
             // start a new week row if there are at least two more days
             // in the month (Sunday, Monday)
             elseif ($days_in_month - $list_day >= 2)
-                $calendar.= '<tr>';
+                $calendar .= '<tr>';
 
             // start the week over
 			$running_day = -1;
-			$days_in_this_week = 0;
-            $m_f_in_this_week  = 0;
 
         }
 
-		$days_in_this_week++;
         $running_day++;
 
         // this is the end of the month.
@@ -105,6 +103,10 @@ function draw_calendar ($month, $year) {
             break;
 
     }
+
+    /*#############################
+    ### FINISHING OFF THE MONTH ###
+    #############################*/
 
     // for whatever is left of the five weeks...
     while ($weeks_in_month < 5) {
@@ -128,8 +130,11 @@ function draw_calendar ($month, $year) {
     return $calendar;
 }
 
+// calendar menu mode. defaults to lunch.
 $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
     'breakfast' : 'lunch';
+
+// special styling when month view is opened from week view.
 $consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
 
 ?>

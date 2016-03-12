@@ -101,28 +101,23 @@ function draw_calendar ($month, $year) {
 
     }
 
-	// empty days at the end
-	if (!$month_over && $m_f_in_this_week < 5) {
-		for ($x = 1; $x <= (5 - $m_f_in_this_week); $x++) {
-			$calendar.= '<td></td>';
-        }
-    }
+    // for whatever is left of the five weeks...
+    while ($weeks_in_month < 5) {
 
-    // if we haven't ended the week, do so
-    if (substr($calendar, -5) != '</tr>') {
+        // for the current day of the week until Saturday...
+        while ($running_day < 6) {
+
+            // add empty cells for any M-F.
+            if ($running_day != 0 && $running_day != 6)
+                $calendar .= '<td></td>';
+
+            $running_day++;
+        }
+
+        // finish the week
         $calendar.= '</tr>';
         $weeks_in_month++;
-    }
 
-    // inject another week if there aren't enough
-    if ($weeks_in_month < 5) {
-        $calendar .= '<tr>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '<td></td>';
-        $calendar .= '</tr>';
     }
 
     return $calendar;

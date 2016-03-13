@@ -1,6 +1,8 @@
-ul.administrator-tools {
+div.administrator-tools-container {
     background-color: #d64141;
-    border: 1px solid #802727;
+}
+
+ul.administrator-tools {
     border-top: none;
     font-size: 90%;
 }

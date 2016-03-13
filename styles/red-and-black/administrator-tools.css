@@ -14,10 +14,6 @@ ul.administrator-tools li {
     border-right: 1px solid #111;
 }
 
-ul.administrator-tools li:last-child {
-    border-right: none;
-}
-
 ul.administrator-tools li a {
     color: #fff;
 }

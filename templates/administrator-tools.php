@@ -18,7 +18,7 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a href="<?= nextMonth() ?>" title="Next month">Next <i class="fa fa-chevron-right right"></i></a></li>
         </ul>
         <ul class="administrator-tools left">
-            <li><a><i class="fa fa-check-circle"></i> Saved at 11:30 am</a></li>
+            <li class="saved"><a><i class="fa fa-check-circle"></i> Saved at 11:30 am</a></li>
         </ul>
         <div style="clear: both;"></div>
     </div>

@@ -29,8 +29,8 @@ ul.center {
 
 /* align the month navigation buttons */
 ul.center li a             { width: 120px; }
-ul.center li a:first-child { text-align: right; }
-ul.center li a:last-child  { text-align: left; }
+ul.center li:first-child a { text-align: right; }
+ul.center li:last-child  a { text-align: left; }
 
 div.administrator-tools-container {
     position: absolute;

@@ -215,14 +215,6 @@ function statusSuccess() {
     // switch to success style
     $('status-li').setProperty('class', 'saved');
 
-    // update the span
-    $('status-text').setStyle('display', 'inline');
-    $('status-text').setProperty('html',
-        '&nbsp;&nbsp;saved <span style="font-size: small">at ' +
-        formatAMPM(new Date()) +
-        '</span>'
-    );
-
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-check-circle');
 

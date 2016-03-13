@@ -202,7 +202,7 @@ function statusLoading() {
     $('status-text').setStyle('display', 'none');
 
     // update the icon
-    $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-noth');
+    $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-notch');
 }
 
 // a process succeeded

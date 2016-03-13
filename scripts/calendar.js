@@ -34,6 +34,9 @@ var MenuDay = new Class({
                     statusError(data.error);
                     alert('Error: ' + data.error);
                 }
+                else {
+                    statusSuccess();
+                }
             },
             onError: function (text, error) {
                 statusError(error);

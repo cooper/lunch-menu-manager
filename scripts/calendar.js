@@ -1,6 +1,6 @@
 document.addEvent('domready', fetchCalendar);
 document.addEvent('domready', createMenuDays);
-                  
+
 var months = [
     'January',   'February', 'March',    'April',
     'May',       'June',     'July',     'August',
@@ -8,7 +8,7 @@ var months = [
 ];
 
 var MenuDay = new Class({
-    
+
     initialize: function (year, month, day) {
         this.year  = year;
         this.month = month;
@@ -18,11 +18,11 @@ var MenuDay = new Class({
         this.lunch     = '';
         this.salad     = '';
     },
-    
+
     // property breakfast
     // property lunch
     // property salad
-    
+
     // save the menu for this day
     // using Request API
     update: function () {
@@ -49,19 +49,19 @@ var MenuDay = new Class({
     prettyName: function () {
         return this.shortName() + ', ' + this.year;
     },
-    
+
     // short date name
     // e.g. March 22
     shortName: function () {
         return months[this.month] + ' ' + this.day;
     },
-    
+
     // date string for API
     // e.g. 3-9-1997
     apiDateString: function () {
         return (this.month + 1) + '-' + this.day + '-' + this.year;
     },
-    
+
     // text for the calendar view
     // if in breakfast mode, returns breakfast
     // if in lunch mode, returns lunch
@@ -69,7 +69,7 @@ var MenuDay = new Class({
         return getCurrentMode() == 'breakfast' ? this.breakfast :
         this.lunch + (this.salad.length ? "\n" + this.salad + ' salad' : '');
     }
-    
+
 });
 
 function getCurrentMode() {
@@ -104,11 +104,11 @@ function fetchCalendar() {
 function createMenuDays() {
     var previousDay;
     $$('table.lunch-calendar tbody td').each(function (td) {
-        
+
         // fake day
         if (!td.data('year'))
             return;
-        
+
         // create menu day object
         var menuDay = new MenuDay(
             td.data('year'),
@@ -118,33 +118,33 @@ function createMenuDays() {
         menuDay.td = td;
         menuDay.menuItems = td.getElementsByClassName('menu-items')[0];
         td.store('menuDay', menuDay);
-        
+
         // relative days
         if (previousDay) {
             menuDay.previousDay = previousDay;
             previousDay.nextDay = menuDay;
         }
         previousDay = menuDay;
-        
+
     });
 }
 
 var currentNotes, currentTopLeft;
 function injectCalendarData(data) {
-    
+
     // notes for the month
     if (typeof data.notes != 'undefined' && data.notes.length)
         currentNotes = data.notes;
     else
         currentNotes = undefined;
-    
-    
+
+
     // top left
     if (typeof data.topLeft != 'undefined' && data.topLeft.length)
         currentTopLeft = data.topLeft;
     else
         currentTopLeft = undefined;
-    
+
     // update each menu day
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
@@ -155,10 +155,10 @@ function injectCalendarData(data) {
             menuDay[i] = !dayData[i] ? '' : dayData[i];
         });
     });
-    
+
     // refresh the displayed menu
     refreshCalendar();
-    
+
 }
 
 function getCalendarNotes() {
@@ -177,21 +177,16 @@ function replaceNewlines(str) {
 
 // refresh the calendar for the current mode
 function refreshCalendar() {
-    
+
     // notes for the month
     var menuNotes = $('menu-notes');
     if (typeof currentNotes != 'undefined') {
-        if (currentNotes.length)
-            menuNotes.setStyle('display', 'block');
         menuNotes.setProperty('html', replaceNewlines(currentNotes));
-        
+
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))
             $('notes-window-textarea').setProperty('value', currentNotes);
-        
-    }
-    else {
-        menuNotes.setStyle('display', 'none');
+
     }
 
     // top left
@@ -200,21 +195,21 @@ function refreshCalendar() {
         if (currentTopLeft.length)
             captionLeft.setStyle('opacity', 1);
         captionLeft.setProperty('text', currentTopLeft);
-        
+
         // notes in the admin thing, if it is present
         if ($('notes-window-input'))
             $('notes-window-input').setProperty('value', currentTopLeft);
-        
+
     }
     else {
         captionLeft.setStyle('opacity', 0);
     }
-    
+
     // update menu text
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
         if (!menuDay) return;
         menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
     });
-    
+
 }

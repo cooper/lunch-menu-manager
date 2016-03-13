@@ -1,3 +1,5 @@
+
+/* left side menu */
 ul.left {
     float: left;
     text-align: left;
@@ -7,6 +9,7 @@ ul.left li {
     float: left;
 }
 
+/* right side menu */
 ul.right {
     float: right;
     text-align: right;
@@ -16,10 +19,18 @@ ul.right li {
     float: right;
 }
 
+/* month navigation menu */
+
 ul.center {
     margin: auto !important;
     text-align: center;
 }
+
+
+/* align the month navigation buttons */
+ul.center li             { width: 100px; }
+ul.center li:first-child { text-align: right; }
+ul.center li:last-child  { text-align: left; }
 
 div.administrator-tools-container {
     position: absolute;

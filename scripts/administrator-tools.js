@@ -121,12 +121,15 @@ function saveNotes() {
     console.log('Saving top left: ' + topLeft);
 
     overlay.setStyle('display', 'block');
+    statusLoading();
     var request = new Request.JSON({
         url: 'functions/update-notes.php',
         onSuccess: function (data) {
+            statusSuccess();
             console.log(data);
         },
         onFailure: function (error) {
+            statusError(error);
             alert('Please reload the page. Error: ' + error);
         }
     }).post({
@@ -135,12 +138,15 @@ function saveNotes() {
         notes:  notes
     });
 
+    statusLoading();
     var request2 = new Request.JSON({
         url: 'functions/update-top.php',
         onSuccess: function (data) {
+            statusSuccess();
             console.log(data);
         },
         onFailure: function (error) {
+            statusError(error);
             alert('Please reload the page. Error: ' + error);
         }
     }).post({
@@ -175,4 +181,62 @@ function hideNotesWindow() {
 
     // replace the content with the loading view
     overlay.setStyle('display', 'none');
+}
+
+/* STATUS */
+
+var permanentFailure = false;
+var inProgress = 0;
+
+// increments the activity indicator
+function statusLoading() {
+    if (permanentFailure) return;
+
+    // already in loading status
+    if (inProgress) return;
+    inProgress++;
+
+    // switch to default style
+    $('status-li').setProperty('class', 'logo');
+
+    // hide the span, show the logo
+    $('status-text').setStyle('display', 'none');
+    $('administrator-logo').setStyle('display', 'inline');
+
+    // update the icon
+    $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-noth');
+}
+
+// a process succeeded
+function statusSuccess() {
+    if (permanentFailure) return;
+
+    // still more in progress
+    if (--inProgress) return;
+
+    // switch to success style
+    $('status-li').setProperty('class', 'saved');
+
+    // hide the logo, show the span
+    $('administrator-logo').setStyle('display', 'none');
+    $('status-text').setStyle('display', 'inline');
+    $('status-text').setProperty('text', 'Saved');
+
+    // update the icon
+    $('status-icon').setProperty('class', 'fa fa-check-circle');
+
+}
+
+// a process failed
+function statusError(error) {
+    if (permanentFailure) return;
+    permanentFailure = true;
+
+    // switch to failed style
+    $('status-li').setProperty('class', 'failed');
+
+    // hide the logo, show the span
+    $('administrator-logo').setStyle('display', 'none');
+    $('status-text').setStyle('display', 'inline');
+    $('status-text').setProperty('text', 'Error');
 }

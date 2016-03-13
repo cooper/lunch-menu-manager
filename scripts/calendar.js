@@ -26,12 +26,17 @@ var MenuDay = new Class({
     // save the menu for this day
     // using Request API
     update: function () {
+        statusLoading();
         var request = new Request.JSON({
             url: 'functions/update-menu.php',
             onSuccess: function (data) {
-                if (data.error) alert('Error: ' + data.error);
+                if (data.error) {
+                    statusError(data.error);
+                    alert('Error: ' + data.error);
+                }
             },
             onError: function (text, error) {
+                statusError(error);
                 alert('An error occured. Please refresh the page. ' + error);
             }
         }).post({

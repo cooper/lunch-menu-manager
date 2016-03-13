@@ -26,7 +26,7 @@ $nextNum = $next[0];
             <li><a id="print-button" href="#" title="Print this month's menu"><i class="fa fa-print"></i> Print</a></li>
         </ul>
         <ul class="administrator-tools left">
-            <li class="logo"><a id="status-indicator">
+            <li id="status-li" class="logo"><a id="status-indicator">
                 <i id="status-icon" class="fa fa-check-circle"></i><span id="status-text"></span><img id="administrator-logo" class="administrator-logo" src="images/lmm-top.png" alt="lmm" />
             </a></li>
             <li><a><i class="fa fa-list"></i> Reminders</a></li>

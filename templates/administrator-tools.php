@@ -16,7 +16,8 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a id="print-button" href="#" title="Print this month's menu"><i class="fa fa-print"></i> Print</a></li>
         </ul>
         <ul class="administrator-tools left">
-            <li class="saved"><a><i class="fa fa-check-circle"></i> Saved at 11:30 am</a></li>
+            <li class="saved"><a><i class="fa fa-check-circle"></i> Saved</a></li>
+            <li><a><i class="fa fa-list"></i> Reminders</a></li>
         </ul>
         <ul class="administrator-tools center">
             <li><a href="<?= previousMonth() ?>" title="Previous month"><i class="fa fa-chevron-left"></i> Previous</a></li><li><a href="<?= nextMonth() ?>" title="Next month">Next <i class="fa fa-chevron-right right"></i></a></li>

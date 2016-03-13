@@ -2,10 +2,6 @@ ul.left {
     float: left;
 }
 
-ul.right {
-    float: right;
-}
-
 ul.center {
     margin: auto !important;
 }
@@ -27,6 +23,7 @@ div.administrator-tools-thousand {
 }
 
 ul.administrator-tools {
+    width: 333px; /* force the center over */
     margin: 0;
     padding: 0;
 }

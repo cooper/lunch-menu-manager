@@ -14,7 +14,7 @@ ul.administrator-tools li {
     border-right: 1px solid #222;
 }
 
-ul.administrator-tools:first-child {
+ul.administrator-tools li:first-child {
     border-left: 1px solid #222;
 }
 

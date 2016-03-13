@@ -218,7 +218,7 @@ function statusSuccess() {
     // update the span
     $('status-text').setStyle('display', 'inline');
     $('status-text').setProperty('html',
-        '&nbsp;nbsp;saved at <span style="font-size: small">' +
+        '&nbsp;&nbsp;saved at <span style="font-size: x-small">' +
         formatAMPM(new Date()) +
         '</span>'
     );

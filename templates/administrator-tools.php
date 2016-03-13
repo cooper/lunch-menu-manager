@@ -11,9 +11,9 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a id="mode-trigger" href="#" title="Toggle between breakfast and lunch" style="width: 70px;">Breakfast</a></li>
             <li><a id="notes-button" href="#" title="Change the notes on the bottom of this calendar">Notes</a></li>
             -->
-            <li><a id="print-button" href="#" title="Print this month's menu"><i class="fa fa-print"></i> Print</a></li>
-            <li><a id="email-button" href="#" title="Share this month's menu, such as via email"><i class="fa fa-share"></i> Share</a></li>
             <li><a href="logout.php" title="Log out of administrator panel"><i class="fa fa-sign-out"></i> Log out</a></li>
+            <li><a id="email-button" href="#" title="Share this month's menu, such as via email"><i class="fa fa-share"></i> Share</a></li>
+            <li><a id="print-button" href="#" title="Print this month's menu"><i class="fa fa-print"></i> Print</a></li>
         </ul>
         <ul class="administrator-tools left">
             <li class="saved"><a><i class="fa fa-check-circle"></i> Saved at 11:30 am</a></li>

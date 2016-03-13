@@ -5,7 +5,7 @@ require_once(__DIR__.'/../functions/month-nav.php');
 ?>
 
 <div class="administrator-tools-container">
-    <div style="width: 1000px; margin: auto; height: 100%;">
+    <div class="administrator-tools-thousand">
         <ul class="administrator-tools right">
             <li><a href="<?= previousMonth() ?>" title="Previous month">&larr;</a></li>
             <li><a href="<?= nextMonth() ?>" title="Next month">&rarr;</a></li>

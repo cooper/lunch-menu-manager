@@ -3,6 +3,11 @@ div.administrator-tools-container {
     border-bottom: 1px solid #802727;
 }
 
+div.administrator-tools-thousand {
+    border-right: 1px solid #802727;
+    border-left: 1px solid #802727;
+}
+
 ul.administrator-tools {
     border-top: none;
     font-size: 90%;

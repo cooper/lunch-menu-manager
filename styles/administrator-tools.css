@@ -8,6 +8,12 @@ div.administrator-tools-container {
     text-align: center;
 }
 
+div.administrator-tools-thousand {
+    width: 1000px;
+    height: 100%;
+    margin: auto;
+}
+
 ul.administrator-tools {
     margin: 0;
     padding: 0;

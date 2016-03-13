@@ -13,10 +13,10 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a id="email-button" href="#" title="Share this month's menu, such as via email"><i class="fa fa-share"></i> Share</a></li>
             <li><a href="logout.php" title="Log out of administrator panel"><i class="fa fa-sign-out"></i> Log out</a></li>
         </ul>
-        <ul class="administrator-tools left">
+        <ul class="administrator-tools">
             <li class="saved"><a><i class="fa fa-check-circle"></i> Saved at 11:30 am</a></li>
         </ul>
-        <ul class="administrator-tools center">
+        <ul class="administrator-tools">
             <li><a href="<?= previousMonth() ?>" title="Previous month"><i class="fa fa-chevron-left"></i> Previous</a></li>
             <li><a href="<?= nextMonth() ?>" title="Next month">Next <i class="fa fa-chevron-right right"></i></a></li>
         </ul>

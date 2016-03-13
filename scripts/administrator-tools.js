@@ -217,7 +217,7 @@ function statusSuccess() {
 
     // update the span
     $('status-text').setStyle('display', 'inline');
-    $('status-text').setProperty('text', ' saved');
+    $('status-text').setProperty('text', ' saved at ' + formatAMPM(new Date()));
 
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-check-circle');
@@ -239,4 +239,15 @@ function statusError(error) {
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-exclamation-triangle');
 
+}
+
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
 }

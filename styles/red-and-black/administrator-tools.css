@@ -6,6 +6,7 @@ div.administrator-tools-container {
 ul.administrator-tools {
     border-top: none;
     font-size: 90%;
+    display: block;
 }
 
 ul.administrator-tools li {

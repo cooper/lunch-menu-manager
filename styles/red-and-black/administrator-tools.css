@@ -7,7 +7,7 @@ div.administrator-tools-container {
 ul.administrator-tools {
     border-top: none;
     font-size: 90%;
-    display: block;
+    display: inline-block;
     border-left: 1px solid #111;
 }
 

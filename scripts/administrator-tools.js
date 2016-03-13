@@ -52,10 +52,10 @@ function initializeAdministatorTools() {
     adminWindow.store('printLoading', printLoading);
 
     // notes button click
-    $('notes-button').addEvent('click', function (e) {
-        e.preventDefault();
-        showNotesEditor();
-    });
+    // $('notes-button').addEvent('click', function (e) {
+    //     e.preventDefault();
+    //     showNotesEditor();
+    // });
 
     // print button click
     $('print-button').addEvent('click', function (e) {

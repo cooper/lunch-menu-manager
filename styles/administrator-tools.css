@@ -28,7 +28,7 @@ ul.center {
 
 
 /* align the month navigation buttons */
-ul.center li             { width: 100px; }
+ul.center li             { width: 150px; }
 ul.center li:first-child { text-align: right; }
 ul.center li:last-child  { text-align: left; }
 

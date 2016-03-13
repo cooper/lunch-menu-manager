@@ -4,19 +4,16 @@ body {
 
 i.fa {
     text-align: left;
-    width: 1.35em;
+    width: 1.3em;
 }
 
-.left {
-    float: left;
+i.fa.center {
+    text-align: center !important;
+    vertical-align: middle;
 }
 
-.right {
-    float: right;
-}
-
-.center {
-    margin: auto;
+i.fa.right {
+    text-align: right !important;
 }
 
 table.lunch-calendar {

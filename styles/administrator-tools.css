@@ -1,3 +1,15 @@
+ul.left {
+    float: left;
+}
+
+ul.right {
+    float: right;
+}
+
+ul.center {
+    margin: auto;
+}
+
 div.administrator-tools-container {
     position: absolute;
     top: 0;

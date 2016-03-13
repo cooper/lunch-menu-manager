@@ -231,11 +231,11 @@ function statusError(error) {
     permanentFailure = true;
 
     // switch to failed style
-    $('status-li').setProperty('class', ' failed');
+    $('status-li').setProperty('class', 'failed');
 
     // update the span
     $('status-text').setStyle('display', 'inline');
-    $('status-text').setProperty('text', 'Error');
+    $('status-text').setProperty('text', ' ERROR');
 
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-exclamation-triangle');

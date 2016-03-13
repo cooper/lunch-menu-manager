@@ -20,7 +20,7 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a><i class="fa fa-list"></i> Reminders</a></li>
         </ul>
         <ul class="administrator-tools center">
-            <li><a href="<?= previousMonth() ?>" title="Previous month"><i class="fa fa-chevron-left"></i> Previous</a></li><li><a href="<?= nextMonth() ?>" title="Next month">Next <i class="fa fa-chevron-right right"></i></a></li>
+            <li><a href="<?= previousMonth() ?>" title="Previous month"><i class="fa fa-chevron-left"></i> <?= DateTime::createFromFormat('!m', $prevNum)->format('F') ?></a></li><li><a href="<?= nextMonth() ?>" title="Next month"><?= DateTime::createFromFormat('!m', $nextNum)->format('F') ?> <i class="fa fa-chevron-right right"></i></a></li>
         </ul>
         <div style="clear: both;"></div>
     </div>

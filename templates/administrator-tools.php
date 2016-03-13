@@ -27,7 +27,9 @@ $nextNum = $next[0];
         </ul>
         <ul class="administrator-tools left">
             <li id="status-li" class="logo"><a id="status-indicator">
-                <i id="status-icon" class="fa fa-check-circle"></i><span id="status-text"></span><img id="administrator-logo" class="administrator-logo" src="images/lmm-top.png" alt="lmm" />
+                <i id="status-icon" class="fa fa-check-circle"></i>
+                <img id="administrator-logo" class="administrator-logo" src="images/lmm-top.png" alt="lmm" />
+                <span id="status-text"></span>
             </a></li>
             <li><a><i class="fa fa-list"></i> Reminders</a></li>
         </ul>

@@ -1,6 +1,6 @@
 div.administrator-tools-container {
     background-color: #555;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid #333;
     text-align: center;
 }
 
@@ -11,15 +11,15 @@ ul.administrator-tools {
 }
 
 ul.administrator-tools li {
-    border-right: 1px solid #444;
+    border-right: 1px solid #333;
 }
 
 ul.administrator-tools.left li:first-child, ul.administrator-tools.center li:first-child {
-    border-left: 1px solid #444;
+    border-left: 1px solid #333;
 }
 
 ul.administrator-tools.right li:last-child {
-    border-left: 1px solid #444;
+    border-left: 1px solid #333;
 }
 
 

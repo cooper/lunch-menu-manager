@@ -20,7 +20,7 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li>Next</li>
         </ul>-->
         <ul class="administrator-tools left">
-            <li>Saved at 11:30 am</li>
+            <li><a>Saved at 11:30 am</a></li>
         </ul>
     </div>
 </div>

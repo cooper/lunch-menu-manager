@@ -186,7 +186,7 @@ function hideNotesWindow() {
 /* STATUS */
 
 var permanentFailure = false;
-var gress = 0;
+var inProgress = 0;
 
 // increments the activity indicator
 function statusLoading() {

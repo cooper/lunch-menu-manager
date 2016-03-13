@@ -4,6 +4,7 @@ div.administrator-tools-container {
     left: 0;
     right: 0;
     height: 50px;
+    width: 100%;
 }
 
 ul.administrator-tools {

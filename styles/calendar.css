@@ -2,6 +2,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+i.fa {
+    text-align: left;
+    width: 1.35em;
+}
+
 .left {
     float: left;
 }

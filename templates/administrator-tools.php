@@ -28,7 +28,12 @@ $nextNum = $next[0];
             <li><a><i class="fa fa-list"></i> Reminders</a></li>
         </ul>
         <ul class="administrator-tools center">
-            <li><a href="<?= $prevURL ?>" title="Previous month"><i class="fa fa-chevron-left"></i> <?= DateTime::createFromFormat('!m', $prevNum)->format('F') ?></a></li><li><a href="<?= $nextURL ?>" title="Next month"><?= DateTime::createFromFormat('!m', $nextNum)->format('F') ?> <i class="fa fa-chevron-right right"></i></a></li>
+            <li><a href="<?= $prevURL ?>" title="Previous month">
+                <i class="fa fa-chevron-left" style="float: left;"></i>
+                <?= DateTime::createFromFormat('!m', $prevNum)->format('F') ?>
+            </a></li><li><a href="<?= $nextURL ?>" title="Next month">
+                <i class="fa fa-chevron-right right" style="float: right"></i>
+                <?= DateTime::createFromFormat('!m', $nextNum)->format('F') ?></a></li>
         </ul>
         <div style="clear: both;"></div>
     </div>

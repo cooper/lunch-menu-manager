@@ -1,11 +1,11 @@
 div.administrator-tools-container {
-    background-color: #d64141;
-    border-bottom: 1px solid #802727;
+    background-color: #444;
+    border-bottom: 1px solid #111;
 }
 
 div.administrator-tools-thousand {
-    border-right: 1px solid #802727;
-    border-left: 1px solid #802727;
+    border-right: 1px solid #111;
+    border-left: 1px solid #111;
 }
 
 ul.administrator-tools {
@@ -15,7 +15,7 @@ ul.administrator-tools {
 }
 
 ul.administrator-tools li {
-    border-right: 1px solid #802727;
+    border-right: 1px solid #111;
 }
 
 ul.administrator-tools li:last-child {

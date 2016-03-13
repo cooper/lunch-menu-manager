@@ -11,7 +11,6 @@ div.administrator-tools-container {
 ul.administrator-tools {
     margin: 0;
     padding: 0;
-    clear: both;
 }
 
 ul.administrator-tools li {

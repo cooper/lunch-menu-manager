@@ -32,6 +32,13 @@ ul.center li a             { width: 120px; }
 ul.center li:first-child a { text-align: right; }
 ul.center li:last-child  a { text-align: left; }
 
+/* fix chevron arrows in center navigation */
+ul.center li i.fa {
+    display: inline-block;
+    height: 100%;
+    line-height: 100%;
+}
+
 div.administrator-tools-container {
     position: absolute;
     top: 0;

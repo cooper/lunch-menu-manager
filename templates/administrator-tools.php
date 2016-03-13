@@ -1,12 +1,12 @@
 <?php
-    
+
 require_once(__DIR__.'/../functions/month-nav.php');
 
 ?>
 
 <div class="administrator-tools-container">
     <div style="width: 1000px; margin: auto;">
-        <ul class="administrator-tools">
+        <ul class="administrator-tools right">
             <li><a href="<?= previousMonth() ?>" title="Previous month">&larr;</a></li>
             <li><a href="<?= nextMonth() ?>" title="Next month">&rarr;</a></li>
             <li><a id="mode-trigger" href="#" title="Toggle between breakfast and lunch" style="width: 70px;">Breakfast</a></li>
@@ -14,6 +14,13 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a id="print-button" href="#" title="Print this month's menu">Print</a></li>
             <li><a id="email-button" href="#" title="Share this month's menu, such as via email">Share</a></li>
             <li><a href="logout.php" title="Log out of administrator panel">Log out</a></li>
+        </ul>
+        <ul class="administrator-tools">
+            <li>Previous</li>
+            <li>Next</li>
+        </ul>
+        <ul class="administrator-tools left">
+            <li>Saved at 11:30 am</li>
         </ul>
     </div>
 </div>

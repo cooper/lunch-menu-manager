@@ -10,6 +10,10 @@ body {
     float: right;
 }
 
+.center {
+    margin: auto;
+}
+
 table.lunch-calendar {
     border-collapse: collapse;
     table-layout: fixed;

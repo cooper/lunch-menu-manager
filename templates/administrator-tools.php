@@ -15,10 +15,10 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a id="email-button" href="#" title="Share this month's menu, such as via email">Share</a></li>
             <li><a href="logout.php" title="Log out of administrator panel">Log out</a></li>
         </ul>
-        <ul class="administrator-tools">
+        <!--<ul class="administrator-tools">
             <li>Previous</li>
             <li>Next</li>
-        </ul>
+        </ul>-->
         <ul class="administrator-tools left">
             <li>Saved at 11:30 am</li>
         </ul>

@@ -100,7 +100,7 @@ span.day-number {
     width: 100%;
     font-size: 90%;
     margin: 20px auto 5px auto;
-    min-height: 100px;
+    min-height: 50px;
 }
 
 /* PUBLIC CALENDAR NAVIGATION */

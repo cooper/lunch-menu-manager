@@ -135,7 +135,7 @@ $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
     'breakfast' : 'lunch';
 
 // special styling when month view is opened from week view.
-$consistent = isset($_GET['ref']) && $_GET['ref'] == 'week';
+$consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == 'week');
 
 ?>
 

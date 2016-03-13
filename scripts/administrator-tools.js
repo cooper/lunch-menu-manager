@@ -186,15 +186,14 @@ function hideNotesWindow() {
 /* STATUS */
 
 var permanentFailure = false;
-var inProgress = 0;
+var gress = 0;
 
 // increments the activity indicator
 function statusLoading() {
     if (permanentFailure) return;
 
     // already in loading status
-    if (inProgress) return;
-    inProgress++;
+    if (inProgress++) return;
 
     // switch to default style
     $('status-li').setProperty('class', 'logo');

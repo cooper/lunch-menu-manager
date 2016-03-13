@@ -12,6 +12,8 @@ $nextNum = $next[0];
 
 ?>
 
+<!-- TOP BAR -->
+
 <div class="administrator-tools-container">
     <div class="administrator-tools-thousand">
         <ul class="administrator-tools right">
@@ -24,7 +26,9 @@ $nextNum = $next[0];
             <li><a id="print-button" href="#" title="Print this month's menu"><i class="fa fa-print"></i> Print</a></li>
         </ul>
         <ul class="administrator-tools left">
+            <li class="logo"><a><i class="fa fa-check-circle"></i> lmm</a></li>
             <li class="saved"><a><i class="fa fa-check-circle"></i> Saved</a></li>
+            <li class="failed"><a><i class="fa fa-check-circle"></i> Error/a></li>
             <li><a><i class="fa fa-list"></i> Reminders</a></li>
         </ul>
         <ul class="administrator-tools center">
@@ -38,6 +42,8 @@ $nextNum = $next[0];
         <div style="clear: both;"></div>
     </div>
 </div>
+
+<!-- OVERLAY WINDOWS -->
 
 <div class="admin-overlay" id="share-overlay">
     <div class="admin-window" id="share-window">

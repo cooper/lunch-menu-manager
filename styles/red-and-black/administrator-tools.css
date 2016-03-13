@@ -1,6 +1,7 @@
 div.administrator-tools-container {
     background-color: #444;
     border-bottom: 1px solid #111;
+    text-align: center;
 }
 
 ul.administrator-tools {

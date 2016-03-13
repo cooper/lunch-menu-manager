@@ -3,9 +3,17 @@ ul.left {
     text-align: left;
 }
 
+ul.left li {
+    float: left;
+}
+
 ul.right {
     float: right;
     text-align: right;
+}
+
+ul.right li {
+    float: right;
 }
 
 ul.center {

@@ -37,6 +37,7 @@ ul.center li i.fa {
     display: inline-block;
     height: 100%;
     line-height: 100%;
+    vertical-align: middle;
 }
 
 div.administrator-tools-container {

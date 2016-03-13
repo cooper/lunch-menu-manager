@@ -199,9 +199,8 @@ function statusLoading() {
     // switch to default style
     $('status-li').setProperty('class', 'logo');
 
-    // hide the span, show the logo
+    // hide the span
     $('status-text').setStyle('display', 'none');
-    $('administrator-logo').setStyle('display', 'inline');
 
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-noth');
@@ -217,10 +216,9 @@ function statusSuccess() {
     // switch to success style
     $('status-li').setProperty('class', 'saved');
 
-    // hide the logo, show the span
-    $('administrator-logo').setStyle('display', 'none');
+    // update the span
     $('status-text').setStyle('display', 'inline');
-    $('status-text').setProperty('text', 'Saved');
+    $('status-text').setProperty('text', ' saved');
 
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-check-circle');
@@ -233,10 +231,13 @@ function statusError(error) {
     permanentFailure = true;
 
     // switch to failed style
-    $('status-li').setProperty('class', 'failed');
+    $('status-li').setProperty('class', ' failed');
 
-    // hide the logo, show the span
-    $('administrator-logo').setStyle('display', 'none');
+    // update the span
     $('status-text').setStyle('display', 'inline');
     $('status-text').setProperty('text', 'Error');
+
+    // update the icon
+    $('status-icon').setProperty('class', 'fa fa-exclamation-triangle');
+
 }

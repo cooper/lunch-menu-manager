@@ -28,16 +28,16 @@ ul.center {
 
 
 /* align the month navigation buttons */
-ul.center li a             { width: 120px; }
-ul.center li:first-child a { text-align: right; }
-ul.center li:last-child  a { text-align: left; }
+ul.center li a             {
+    width: 120px;
+    text-align: center;
+}
 
 /* fix chevron arrows in center navigation */
 ul.center li i.fa {
     display: inline-block;
-    height: 100%;
-    line-height: 100%;
-    vertical-align: middle;
+    height: 20px;
+    margin-top: 8px;
 }
 
 div.administrator-tools-container {

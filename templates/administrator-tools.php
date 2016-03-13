@@ -23,6 +23,7 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li><a>Saved at 11:30 am</a></li>
             <li><a>Hi</a></li>
         </ul>
+        <div style="clear: both;"></div>
     </div>
 </div>
 

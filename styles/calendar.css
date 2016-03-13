@@ -9,10 +9,6 @@ table.lunch-calendar {
     /*white-space: nowrap;*/
 }
 
-table.lunch-calendar.administrator {
-    margin-top: 30px;
-}
-
 table.lunch-calendar {
     width: 1000px;
     margin: 0px auto;
@@ -53,13 +49,6 @@ table.lunch-calendar caption span.right {
     float: right;
 }
 
-/*
-table.lunch-calendar.administrator caption {
-    text-align: left !important;
-    font-size: 25px !important;
-}
-*/
-
 table.lunch-calendar td {
     vertical-align: top;
 }
@@ -80,18 +69,6 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
-table.lunch-calendar.administrator td.today {
-    background-color: #eee;
-}
-
-#menu-notes {
-    text-align: center;
-    display: none;
-    width: 100%;
-    font-size: 90%;
-    margin: 20px auto 5px auto;
-}
-
 span.day-number {
     font-size: 200%;
     font-weight: bold;
@@ -101,6 +78,18 @@ span.day-number {
     margin-right: 5px;
     line-height: normal;
 }
+
+/* FOOTER NOTES */
+
+#menu-notes {
+    text-align: center;
+    display: none;
+    width: 100%;
+    font-size: 90%;
+    margin: 20px auto 5px auto;
+}
+
+/* PUBLIC CALENDAR NAVIGATION */
 
 #menu-footer-navigation {
     width: 1000px;
@@ -128,4 +117,14 @@ span.day-number {
     color: #000;
     font-weight: bold;
     text-decoration: none;
+}
+
+/* ADMIN MODE */
+
+table.lunch-calendar.administrator {
+    margin-top: 50px;
+}
+
+table.lunch-calendar.administrator td.today {
+    background-color: #eee;
 }

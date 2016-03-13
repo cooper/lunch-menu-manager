@@ -7,7 +7,7 @@ ul.right {
 }
 
 ul.center {
-    margin: auto;
+    margin: auto !important;
 }
 
 div.administrator-tools-container {

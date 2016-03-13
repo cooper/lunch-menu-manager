@@ -1,13 +1,16 @@
 ul.left {
     float: left;
+    text-align: left;
 }
 
 ul.right {
     float: right;
+    text-align: right;
 }
 
 ul.center {
     margin: auto !important;
+    text-align: center;
 }
 
 div.administrator-tools-container {

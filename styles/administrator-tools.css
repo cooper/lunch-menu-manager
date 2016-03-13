@@ -2,6 +2,10 @@ ul.left {
     float: left;
 }
 
+ul.right {
+    float: right;
+}
+
 ul.center {
     margin: auto !important;
 }

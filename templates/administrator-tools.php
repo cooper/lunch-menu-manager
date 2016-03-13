@@ -6,6 +6,9 @@ require_once(__DIR__.'/../functions/month-nav.php');
 
 <div class="administrator-tools-container">
     <div style="width: 1000px; margin: auto;">
+        <ul class="administrator-tools left">
+            <li><a>Saved at 11:30 am</a></li>
+        </ul>
         <ul class="administrator-tools right">
             <li><a href="<?= previousMonth() ?>" title="Previous month">&larr;</a></li>
             <li><a href="<?= nextMonth() ?>" title="Next month">&rarr;</a></li>
@@ -19,9 +22,6 @@ require_once(__DIR__.'/../functions/month-nav.php');
             <li>Previous</li>
             <li>Next</li>
         </ul>-->
-        <ul class="administrator-tools left">
-            <li><a>Saved at 11:30 am</a></li>
-        </ul>
     </div>
 </div>
 

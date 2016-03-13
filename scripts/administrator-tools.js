@@ -28,36 +28,35 @@ var sharingInstructions = '                         \
 
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
-    
+
     // trigger between breakfast and lunch
-    $('mode-trigger').addEvent('click', function (e) {
+    $('caption-mode').addEvent('click', function (e) {
         e.preventDefault();
         var oldMode = getCurrentMode();
         var newMode = oldMode == 'lunch' ? 'breakfast' : 'lunch';
         calendar.removeClass('mode-' + oldMode);
         calendar.addClass('mode-' + newMode);
         refreshCalendar();
-        
+
         // update displayed mode
         var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
             ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
-        $('mode-trigger').setProperty('text', ucfirst1);
         if ($('caption-mode'))
             $('caption-mode').setProperty('text', ucfirst2 + ' menu');
-        
+
     });
-    
+
     var overlay      = $('share-overlay'),
         adminWindow  = $('share-window'),
         printLoading = $('share-window-padding');
     adminWindow.store('printLoading', printLoading);
-    
+
     // notes button click
     $('notes-button').addEvent('click', function (e) {
         e.preventDefault();
         showNotesEditor();
     });
-    
+
     // print button click
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();
@@ -67,26 +66,26 @@ function initializeAdministatorTools() {
         e.preventDefault();
         printOrShare(sharingInstructions);
     });
-    
+
     // done button click
     $('share-window-done').addEvent('click', function (e) {
         e.preventDefault();
         hideShareWindow();
     });
-    
+
     // done button click
     $('notes-window-done').addEvent('click', function (e) {
         e.preventDefault();
         hideNotesWindow();
     });
-    
+
 }
 
 function printOrShare(innerHTML) {
     var overlay      = $('share-overlay'),
         adminWindow  = $('share-window'),
         printLoading = $('share-window-padding');
-    
+
     overlay.setStyle('display', 'block');
     var request = new Request.JSON({
         url: 'functions/generate-pdf.php',
@@ -112,15 +111,15 @@ function printOrShare(innerHTML) {
 function saveNotes() {
     var overlay  = $('notes-overlay'),
     adminWindow  = $('notes-window');
-    
+
     var notes = $('notes-window-textarea').getProperty('value');
     window.currentNotes = notes;
     console.log('Saving notes: ' + notes);
-    
+
     var topLeft = $('notes-window-input').getProperty('value');
     window.currentTopLeft = topLeft;
     console.log('Saving top left: ' + topLeft);
-    
+
     overlay.setStyle('display', 'block');
     var request = new Request.JSON({
         url: 'functions/update-notes.php',
@@ -135,7 +134,7 @@ function saveNotes() {
         month:  getCurrentMonth(),
         notes:  notes
     });
-    
+
     var request2 = new Request.JSON({
         url: 'functions/update-top.php',
         onSuccess: function (data) {
@@ -147,7 +146,7 @@ function saveNotes() {
     }).post({
         notes: topLeft
     });
-    
+
     refreshCalendar();
 }
 

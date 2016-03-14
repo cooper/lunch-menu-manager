@@ -47,7 +47,7 @@ table.lunch-calendar caption span.right {
     height: 40px;
     font-weight: normal;
     width: 350px;
-    position: relative;
+    position: absolute;
 }
 
 table.lunch-calendar caption span.left {

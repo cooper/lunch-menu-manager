@@ -51,6 +51,7 @@ ul.administrator-tools li a:hover {
     border: 1px solid #555;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
+    user-select: none;
 }
 
 #caption-mode-toggle:hover,

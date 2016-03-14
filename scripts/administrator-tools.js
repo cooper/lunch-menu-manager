@@ -20,6 +20,12 @@ var sharingInstructions = '                         \
     to an e-mail.                                   \
 ';
 
+var footerNotes = '
+This text will be displayed in the footer of the        \
+calendar for the selected month. Printed menus may      \
+span two pages if these footnotes exceed five lines.    \
+';
+
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
 
@@ -169,11 +175,22 @@ function saveNotes() {
     refreshCalendar();
 }
 
+// function showNotesEditor() {
+//     var overlay  = $('notes-overlay'),
+//     adminWindow  = $('notes-window');
+//     overlay.setStyle('display', 'block');
+//     $('notes-window-textarea').focus();
+// }
+
+// footer notes
 function showNotesEditor() {
-    var overlay  = $('notes-overlay'),
-    adminWindow  = $('notes-window');
-    overlay.setStyle('display', 'block');
-    $('notes-window-textarea').focus();
+    var win     = createWindow('Footnotes');
+    var padding = new Element('div', { class: 'admin-window-padding', text: msg });
+    var span    = new Element('span', { text: footerNotes });
+    var area    = new Element('textarea');
+    padding.adopt(span, area);
+    win.adopt(padding);
+    presentAnyWindow(win);
 }
 
 function hideNotesWindow() {

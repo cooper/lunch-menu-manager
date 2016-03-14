@@ -14,11 +14,13 @@
 }
 
 .admin-window-done {
-    background-color: #555;
+    background-color: #333;
     text-transform: uppercase;
     color: #fff;
+    border: 1px solid #222;
 }
 
 .admin-window-done:hover {
-    background-color: #333;
+    background-color: #222;
+    border: 1px solid #111;
 }

@@ -173,5 +173,5 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
 ?>
 <div id="menu-notes">
     <div id="menu-notes-edit"><i class="fa fa-pencil"></i> Edit footer</div>
-    <span id="menu-notes-notes"></span>
+    <span id="menu-notes-notes"><? if ($administrator) echo "(no footer text)"; ?></span>
 </div>

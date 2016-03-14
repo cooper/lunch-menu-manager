@@ -263,13 +263,13 @@ function formatAMPM(date) {
 ### WINDOWS ###
 #############*/
 
-function createWindow (title) {
+function createWindow (titleText) {
     var win = new Element('div', { class: 'admin-window' });
 
     // title bar
     var title = new Element('h2', { class: 'admin-window-title' });
-    var span  = new Element('span', { text: title });
-    var done  = new Element('a', { href: '#', text: 'Done' });
+    var span  = new Element('span', { text: titleText });
+    var done  = new Element('a', { class: 'admin-window-done', href: '#', text: 'Done' });
     done.addEvent('click', closeWindow);
     title.adopt(span, done);
     win.adopt(title);

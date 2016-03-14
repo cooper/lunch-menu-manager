@@ -183,9 +183,9 @@ function createEditorWindow () {
 
     /* typing events */
     var updatePreviews = function () {
-        prev1.getElement('.menu-items').setProperty('text', breakArea.value.trim());
-        prev2.getElement('.menu-items').setProperty('text', lunchArea.value +
-            (input.value.trim().length ? "\n" + input.value.trim() + ' salad' : ''));
+        prev1.getElement('.menu-items').setProperty('html', replaceNewlines(lunchArea.value.trim()));
+        prev2.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value +
+            (input.value.trim().length ? "\n" + input.value.trim() + ' salad' : '')));
     };
 
     Object.each({

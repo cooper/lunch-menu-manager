@@ -183,6 +183,7 @@ ul.administrator-tools li a {
     line-height: 20px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
+    font-size: 12px;
     _display: none;
 }
 
@@ -197,5 +198,6 @@ ul.administrator-tools li a {
     line-height: 20px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
+    font-size: 12px;
     _display: none;
 }

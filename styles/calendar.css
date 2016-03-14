@@ -111,21 +111,6 @@ span.day-number {
     min-height: 50px;
 }
 
-#menu-notes-edit { /* this must stay in calendar.css for display: none */
-    position: absolute;
-    left: 35%;
-    top: -20px;
-    width: 30%;
-    margin: auto;
-    text-align: center;
-    text-transform: none;
-    height: 20px;
-    line-height: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    display: none;
-}
-
 /* PUBLIC CALENDAR NAVIGATION */
 
 #menu-footer-navigation {

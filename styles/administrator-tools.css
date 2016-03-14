@@ -172,7 +172,24 @@ ul.administrator-tools li a {
     cursor: pointer;
 }
 
+#menu-notes-edit {
+    border: 1px solid #555;
+    position: absolute;
+    left: 35%;
+    top: -20px;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    text-transform: none;
+    height: 20px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: none;
+}
+
 #caption-mode-toggle {
+    border: 1px solid #555;
     position: absolute;
     top: 0;
     right: 0;
@@ -189,6 +206,7 @@ ul.administrator-tools li a {
 }
 
 #caption-name-edit {
+    border: 1px solid #555;
     position: absolute;
     top: 0;
     left: 0;

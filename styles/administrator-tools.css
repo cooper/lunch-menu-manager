@@ -203,3 +203,7 @@ ul.administrator-tools li a {
     font-weight: normal;
     display: none;
 }
+
+#caption-mode-container, #caption-left-container {
+    cursor: pointer;
+}

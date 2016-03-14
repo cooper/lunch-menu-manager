@@ -149,7 +149,6 @@ ul.administrator-tools li a {
 }
 
 #caption-mode-toggle {
-    border: 1px solid #555;
     position: absolute;
     top: 0;
     right: 0;
@@ -158,15 +157,12 @@ ul.administrator-tools li a {
     text-transform: none;
     height: 20px;
     line-height: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
     font-size: 13px;
     font-weight: normal;
     display: none;
 }
 
 #caption-name-edit {
-    border: 1px solid #555;
     position: absolute;
     top: 0;
     left: 0;
@@ -175,8 +171,6 @@ ul.administrator-tools li a {
     text-transform: none;
     height: 20px;
     line-height: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
     font-size: 13px;
     font-weight: normal;
     display: none;

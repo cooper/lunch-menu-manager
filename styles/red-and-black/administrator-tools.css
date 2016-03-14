@@ -35,3 +35,13 @@ ul.administrator-tools li a {
 ul.administrator-tools li a:hover {
     background-color: #333;
 }
+
+#caption-mode-container, #caption-left-container {
+    border: 1px solid #555;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+#caption-mode-container:hover, #caption-left-container:hover {
+    background-color: #222;
+}

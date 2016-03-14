@@ -154,9 +154,15 @@ function createEditorWindow () {
 
 
     // previews
+    var table = new Element('table', { class: 'lunch-calendar' });
+    var body  = new Element('tbody');
+    var row   = new Element('tr');
     var cell  = document.getElement('td[data-day="1"]').clone();
     var prev1 = new Element('div', { class: 'preview' });
-                prev1.adopt(cell);
+                row.adopt(cell);
+                body.adopt(row);
+                table.adopt(body);
+                prev1.adopt(table);
     var prev2 = prev1.clone();
 
     // wrappers

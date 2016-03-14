@@ -196,7 +196,7 @@ function statusLoading() {
     if (inProgress++) return;
 
     // switch to default style
-    $('status-li').setProperty('class', 'logo');
+    $('status-li').removeProperty('class');
 
     // hide the span
     $('status-text').setStyle('display', 'none');

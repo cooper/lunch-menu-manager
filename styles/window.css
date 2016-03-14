@@ -45,7 +45,7 @@
 
 .admin-window.editor h3 {
     width: auto;
-    margin: 0;
+    margin: 10px 0;
     padding: 0px 10px;
     height: 35px;
     line-height: 35px;
@@ -61,6 +61,7 @@
     height: 35px;
     width: 220px;
     text-align: left;
+    font-size: smaller;
 }
 
 .admin-window.editor textarea {
@@ -70,8 +71,8 @@
     height: 150px;
     padding: 4px;
     margin: 0 auto;
-    display: block;
     font-size: 16px;
+    display: block;
 }
 
 .admin-window-editor .clear {

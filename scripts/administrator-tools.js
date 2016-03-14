@@ -78,7 +78,7 @@ function initializeAdministatorTools() {
         printLoading = $('share-window-padding');
     adminWindow.store('printLoading', printLoading);
 
-    // print button click
+    // print/share button click
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();
         printOrShare(printingInstructions);
@@ -93,14 +93,16 @@ function initializeAdministatorTools() {
         e.preventDefault();
         hideShareWindow();
     });
-
-    // done button click
     $('notes-window-done').addEvent('click', function (e) {
         e.preventDefault();
         hideNotesWindow();
     });
 
 }
+
+/*##################
+### PDF DOWNLOAD ###
+##################*/
 
 function printOrShare(innerHTML) {
     var overlay      = $('share-overlay'),
@@ -128,6 +130,21 @@ function printOrShare(innerHTML) {
         mode:   getCurrentMode()
     });
 }
+
+function hideShareWindow() {
+    var adminWindow  = $('share-window'),
+        printLoading = adminWindow.retrieve('printLoading'),
+        overlay      = $('share-overlay');
+
+    // replace the content with the loading view
+    overlay.setStyle('display', 'none');
+    adminWindow.removeChild($('share-window-padding'));
+    adminWindow.appendChild(printLoading);
+}
+
+/*###########
+### NOTES ###
+###########*/
 
 function saveNotes() {
     var overlay  = $('notes-overlay'),
@@ -184,17 +201,6 @@ function showNotesEditor() {
     $('notes-window-textarea').focus();
 }
 
-function hideShareWindow() {
-    var adminWindow  = $('share-window'),
-        printLoading = adminWindow.retrieve('printLoading'),
-        overlay      = $('share-overlay');
-
-    // replace the content with the loading view
-    overlay.setStyle('display', 'none');
-    adminWindow.removeChild($('share-window-padding'));
-    adminWindow.appendChild(printLoading);
-}
-
 function hideNotesWindow() {
     saveNotes();
     var adminWindow  = $('notes-window'),
@@ -204,7 +210,9 @@ function hideNotesWindow() {
     overlay.setStyle('display', 'none');
 }
 
-/* STATUS */
+/*############
+### STATUS ###
+############*/
 
 var permanentFailure = false;
 var inProgress = 0;

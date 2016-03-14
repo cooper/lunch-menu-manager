@@ -115,7 +115,8 @@ function showMenuEditor (menuDay) {
     breakArea.value = menuDay.breakfast;
     lunchArea.value = menuDay.lunch;
     saladInput.value = menuDay.salad;
-
+    win.updatePreviews();
+    
     // if breakfast is empty, probably adding a new day; focus it
     if (!breakArea.value.length)
         breakArea.focus();
@@ -205,6 +206,7 @@ function createEditorWindow () {
         prev2.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value +
             (input.value.trim().length ? "\n" + input.value.trim() + ' salad' : '')));
     };
+    win.updatePreviews = updatePreviews;
 
     Object.each({
         lunch: lunchArea,

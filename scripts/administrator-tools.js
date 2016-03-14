@@ -47,7 +47,7 @@ function initializeAdministatorTools() {
     });
 
     // footer notes edit
-    var menuNotes, footerEdit = $('menu-notes'), $('menu-notes-edit');
+    var menuNotes = $('menu-notes'), footerEdit = $('menu-notes-edit');
     menuNotes.addEvent('mouseenter', function () {
         footerEdit.setStyle('display', 'block');
     });

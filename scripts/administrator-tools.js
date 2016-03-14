@@ -271,8 +271,8 @@ function createWindow (title) {
     var span  = new Element('span', { text: title });
     var done  = new Element('a', { href: '#', text: 'Done' });
     done.addEvent('click', closeWindow);
-    title.adopt(span);
-    title.adopt(done);
+    title.adopt(span, done);
+    win.adopt(title);
 
     return win;
 }
@@ -280,6 +280,7 @@ function createWindow (title) {
 function presentAlert (title, msg) {
     var win = createWindow(title);
     var padding = new Element('div', { class: 'admin-window-padding', text: msg });
+    win.adopt(padding);
     presentAnyWindow(win);
 }
 
@@ -288,8 +289,8 @@ var presentedWindow;
 function presentAnyWindow (win) {
     if (presentedWindow) closeWindow();
     var overlay = new Element('div', { class: 'admin-overlay' });
-    overlay.appendChild(win);
-    document.body.appendChild(overlay);
+    overlay.adopt(win);
+    document.body.adopt(overlay);
     overlay.setStyle('display', 'block');
 }
 

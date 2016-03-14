@@ -154,15 +154,12 @@ function createEditorWindow () {
 
 
     // previews
-    var table = new Element('table', { class: 'lunch-calendar fake' });
-    var body  = new Element('tbody');
-    var row   = new Element('tr');
-    var cell  = document.getElement('td[data-day="1"]').clone();
-    var prev1 = new Element('div', { class: 'preview' });
-                row.adopt(cell);
-                body.adopt(row);
-                table.adopt(body);
-                prev1.adopt(table);
+    var cell  = new Element('div',  { class: 'preview-cell' });
+    var num   = new Element('span', { class: 'day-number', text: '1' });
+    var items = new Element('span', { class: 'menu-items' });
+    var prev1 = new Element('div',  { class: 'preview' });
+                cell.adopt(num, items);
+                prev1.adopt(cell);
     var prev2 = prev1.clone();
 
     // wrappers

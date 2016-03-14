@@ -87,3 +87,14 @@
     float: right;
     width: 230px;
 }
+
+.admin-window.editor .preview-cell {
+    height: 100px;
+    padding: 0;
+    text-transform: lowercase;
+    line-height: 1em;
+    font-family: Helvetica, Arial, sans-serif;
+    border: 1px solid #999;
+    width: 199px;
+    font-size: 13px;
+}

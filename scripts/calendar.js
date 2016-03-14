@@ -187,7 +187,7 @@ function replaceNewlines(str) {
 function refreshCalendar() {
 
     // notes for the month
-    var menuNotes = $('menu-notes');
+    var menuNotes = $('menu-notes-notes');
     if (typeof currentNotes != 'undefined') {
         menuNotes.setProperty('html', replaceNewlines(currentNotes));
 

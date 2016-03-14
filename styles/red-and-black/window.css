@@ -29,12 +29,11 @@
 /* MENU EDITOR */
 
 .admin-window.editor {
-    background-color: #444;
-    color: #fff;
 }
 
 .admin-window.editor h3 {
     background-color: #222;
+    color: #fff;
 }
 
 .admin-window.editor textarea, .admin-window.editor .input-wrap input {

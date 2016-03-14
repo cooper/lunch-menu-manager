@@ -136,6 +136,8 @@ function createEditorWindow () {
     var win = createWindow('Menu editor');
     win.addClass('editor');
 
+    var clear = new Element('div', { styles: { clear: 'both' } });
+
     // headings
     var lunchHead = new Element('h3', { text: 'Lunch' })
     var breakHead = new Element('h3', { text: 'Breakfast' });
@@ -173,10 +175,9 @@ function createEditorWindow () {
     // wrappers
     var lunchWrap = new Element('div', { class: 'wrap' });
     var breakWrap = new Element('div', { class: 'wrap' });
-    lunchWrap.adopt(lunchLeft, prev1);
-    breakWrap.adopt(breakLeft, prev2);
+    lunchWrap.adopt(lunchLeft, prev1, clear.clone());
+    breakWrap.adopt(breakLeft, prev2, clear.clone());
 
-    var clear = new Element('div', { styles: { clear: 'both' } });
     win.adopt(breakHead, breakWrap, lunchHead, lunchWrap, clear);
     return win;
 }

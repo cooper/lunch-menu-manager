@@ -29,21 +29,37 @@ var sharingInstructions = '                         \
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
 
-    // trigger between breakfast and lunch
-    $('caption-mode').addEvent('click', function (e) {
-        e.preventDefault();
-        var oldMode = getCurrentMode();
-        var newMode = oldMode == 'lunch' ? 'breakfast' : 'lunch';
-        calendar.removeClass('mode-' + oldMode);
-        calendar.addClass('mode-' + newMode);
-        refreshCalendar();
+    // toggle between breakfast and lunch
+    [ $('caption-mode'), $('caption-mode-toggle') ].each(function (thing) {
+        thing.addEvent('click', function (e) {
+            e.preventDefault();
+            var oldMode = getCurrentMode();
+            var newMode = oldMode == 'lunch' ? 'breakfast' : 'lunch';
+            calendar.removeClass('mode-' + oldMode);
+            calendar.addClass('mode-' + newMode);
+            refreshCalendar();
 
-        // update displayed mode
-        var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
-            ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
-        if ($('caption-mode'))
-            $('caption-mode').setProperty('text', ucfirst2 + ' menu');
+            // update displayed mode
+            var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
+                ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
+            if ($('caption-mode'))
+                $('caption-mode').setProperty('text', ucfirst2 + ' menu');
 
+        });
+    });
+    $('caption-mode').addEvent('mouseenter', function () {
+        $('caption-mode-toggle').setStyle('display', 'block');
+    });
+    $('caption-mode').addEvent('mouseleave', function () {
+        $('caption-mode-toggle').setStyle('display', 'none');
+    });
+
+    // institution name edit
+    $('caption-left').addEvent('mouseenter', function () {
+        $('caption-name-edit').setStyle('display', 'block');
+    });
+    $('caption-left').addEvent('mouseleave', function () {
+        $('caption-name-edit').setStyle('display', 'none');
     });
 
     // footer notes edit

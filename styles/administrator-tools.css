@@ -185,7 +185,7 @@ ul.administrator-tools li a {
     color: #fff;
     font-size: 13px;
     font-weight: normal;
-    _display: none;
+    display: none;
 }
 
 #caption-name-edit {
@@ -201,5 +201,5 @@ ul.administrator-tools li a {
     color: #fff;
     font-size: 13px;
     font-weight: normal;
-    _display: none;
+    display: none;
 }

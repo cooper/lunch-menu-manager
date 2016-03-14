@@ -30,6 +30,7 @@ function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
 
     // toggle between breakfast and lunch
+    var captionModeContainer = $('caption-mode-container');
     $('caption-mode-container').addEvent('click', function (e) {
         e.preventDefault();
         var oldMode = getCurrentMode();
@@ -45,19 +46,20 @@ function initializeAdministatorTools() {
             $('caption-mode').setProperty('text', ucfirst2 + ' menu');
 
     });
-
-    $('caption-mode-container').addEvent('mouseenter', function () {
+    captionModeContainer.addEvent('mouseenter', function () {
         $('caption-mode-toggle').setStyle('display', 'block');
     });
-    $('caption-mode-container').addEvent('mouseleave', function () {
+    captionModeContainer.addEvent('mouseleave', function () {
         $('caption-mode-toggle').setStyle('display', 'none');
     });
 
     // institution name edit
-    $('caption-left-container').addEvent('mouseenter', function () {
+    var captionLeftContainer = $('caption-left-container');
+    captionLeftContainer.addEvent('click', showNotesEditor);
+    captionLeftContainer.addEvent('mouseenter', function () {
         $('caption-name-edit').setStyle('display', 'block');
     });
-    $('caption-left-container').addEvent('mouseleave', function () {
+    captionLeftContainer.addEvent('mouseleave', function () {
         $('caption-name-edit').setStyle('display', 'none');
     });
 

@@ -90,8 +90,8 @@ function showMenuEditor (menuDay) {
     var larr, rarr;
     if (presentAnyWindow(win)) {
 
-        larr = new Element('div', { id: 'menu-left-arrow '});
-        rarr = new Element('div', { id: 'menu-right-arrow '});
+        larr = new Element('div', { id: 'menu-left-arrow' });
+        rarr = new Element('div', { id: 'menu-right-arrow' });
         win.parentElement.adopt(larr, rarr);
 
     }

@@ -20,7 +20,7 @@ var sharingInstructions = '                         \
     to an e-mail.                                   \
 ';
 
-var footerNotes = '
+var footerNotes = '                                     \
 This text will be displayed in the footer of the        \
 calendar for the selected month. Printed menus may      \
 span two pages if these footnotes exceed five lines.    \

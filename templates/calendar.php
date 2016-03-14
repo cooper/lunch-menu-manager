@@ -2,17 +2,16 @@
 
 require_once(__DIR__.'/../functions/date-input.php');
 
+$mainCellBody = '';
+$fillerCellBody = '';
+
 if ($administrator) {
     $mainCellBody   = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit menu</div>';
     $fillerCellBody = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit notes</div>';
 }
-else {
-    $mainCellBody = '';
-    $fillerCellBody = '';
-}
 
 function draw_calendar ($month, $year) {
-    global $month, $year;
+    global $month, $year, $mainCellBody, $fillerCellBody;
 
 	$running_day       = date('w', mktime(0, 0, 0, $month, 1, $year));     // day of the week (0-6)
 	$days_in_month     = date('t', mktime(0, 0, 0, $month, 1, $year));     // # of days in month

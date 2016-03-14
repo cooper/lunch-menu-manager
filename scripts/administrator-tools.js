@@ -11,8 +11,8 @@ document.addEvent('keydown', function (e) {
 
 var printingInstructions = '                            \
     Your PDF menu was generated.<br />                  \
-    You can now print it by opening it in PDF software  \
-    such as Adobe Reader or Foxit Reader. From there,   \
+    You can now print it by opening it in PDF reader    \
+    software. From there,                               \
     choose Print from the File menu.                    \
 ';
 

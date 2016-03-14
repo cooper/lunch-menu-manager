@@ -14,7 +14,7 @@
     <link href="styles/window.css" type="text/css" rel="stylesheet" />
     <link href="styles/<?= $theme ?>/calendar.css" type="text/css" rel="stylesheet" />
     <link href="styles/<?= $theme ?>/menu-editor.css" type="text/css" rel="stylesheet" />
-    <!--<link href="styles/<?= $theme ?>/window.css" type="text/css" rel="stylesheet" />-->
+    <link href="styles/<?= $theme ?>/window.css" type="text/css" rel="stylesheet" />
     <link href="styles/<?= $theme ?>/administrator-tools.css" type="text/css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />

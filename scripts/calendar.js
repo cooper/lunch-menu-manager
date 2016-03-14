@@ -99,7 +99,7 @@ function getCurrentMonthName() {
 }
 
 function isAdmin() {
-    return ($$('.lunch-calendar')[0].hasClass('administrator');
+    return $$('.lunch-calendar')[0].hasClass('administrator');
 }
 
 function fetchCalendar() {

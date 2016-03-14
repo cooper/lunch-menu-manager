@@ -163,6 +163,7 @@ function createEditorWindow () {
     lunchWrap.adopt(lunchLeft, prev1);
     breakWrap.adopt(breakLeft, prev2);
 
+    win.adopt(lunchHead, lunchWrap, breakHead, breakWrap);
     return win;
 }
 

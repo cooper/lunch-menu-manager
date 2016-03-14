@@ -295,5 +295,5 @@ function presentAnyWindow (win) {
 }
 
 function closeWindow () {
-    presentedWindow.parent.destroy();
+    presentedWindow.parentNode.destroy();
 }

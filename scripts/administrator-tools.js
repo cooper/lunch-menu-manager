@@ -10,20 +10,16 @@ document.addEvent('keydown', function (e) {
 });
 
 var printingInstructions = '                            \
-<div style="margin-top: 100px;">                        \
     Your PDF menu was generated.<br />                  \
     You can now print it by opening it in PDF software  \
     such as Adobe Reader or Foxit Reader. From there,   \
     choose Print from the File menu.                    \
-</div>                                                  \
 ';
 
 var sharingInstructions = '                         \
-<div style="margin-top: 100px;">                    \
     Your PDF menu was generated.<br />              \
     You can now share it by attaching the PDF file  \
     to an e-mail.                                   \
-</div>                                              \
 ';
 
 function initializeAdministatorTools() {

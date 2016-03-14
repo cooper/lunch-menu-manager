@@ -72,7 +72,6 @@ function showMenuEditor (menuDay) {
         $('menu-left-arrow').addEvent('click', function (e) {
             e.preventDefault();
             var menuDay = win.retrieve('menuDay');
-            updateMenuEditor();
             if (menuDay && menuDay.previousDay)
                 showMenuEditor(menuDay.previousDay);
         });
@@ -80,7 +79,6 @@ function showMenuEditor (menuDay) {
         // right arrow click
         $('menu-right-arrow').addEvent('click', function (e) {
             e.preventDefault();
-            updateMenuEditor();
             var menuDay = win.retrieve('menuDay');
             if (menuDay && menuDay.nextDay)
                 showMenuEditor(menuDay.nextDay);
@@ -109,24 +107,26 @@ function showMenuEditor (menuDay) {
         rarr.setStyle('display', 'none');
     }
 
-
+    win.beforeClose = saveMenu;
     return win;
 }
 
-function updateMenuEditor() {
-    return;
+function saveMenu() {
+    var win = document.getElement('.admin-window.editor');
+    if (!win) return;
 
-
-    var menuDay   = $('menu-editor-done').retrieve('menuDay'),
-        breakfast = $('breakfast-textarea'),
-        lunch     = $('lunch-textarea'),
-        salad     = $('salad-input');
+    var menuDay = min.menuDay;
     if (!menuDay) return;
 
+    // find inputs
+    var saladInput = win.getElement('input');
+    var textareas  = win.getElements('textarea');
+    var breakArea  = textareas[0], lunchArea = textareas[1];
+
     // update the menu day object
-    menuDay.breakfast = breakfast.value.trim();
-    menuDay.lunch = lunch.value.trim();
-    menuDay.salad = salad.value.trim();
+    menuDay.breakfast = breakArea.value.trim();
+    menuDay.lunch = lunchArea.value.trim();
+    menuDay.salad = saladInput.value.trim();
 
     // update in database
     if (menuDay)
@@ -138,7 +138,7 @@ function updateMenuEditor() {
 }
 
 function hideMenuEditor() {
-    updateMenuEditor();
+    saveMenu();
     $('menu-editor-overlay').setStyle('display', 'none');
 }
 

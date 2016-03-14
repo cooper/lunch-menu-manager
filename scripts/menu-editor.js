@@ -154,7 +154,9 @@ function createEditorWindow () {
 
 
     // previews
+    var cell  = document.getElement('td[data-day="1"]')[0].clone();
     var prev1 = new Element('div', { class: 'preview' });
+                prev1.adopt(cell);
     var prev2 = prev1.clone();
 
     // wrappers

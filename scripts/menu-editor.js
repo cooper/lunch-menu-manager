@@ -163,7 +163,8 @@ function createEditorWindow () {
     lunchWrap.adopt(lunchLeft, prev1);
     breakWrap.adopt(breakLeft, prev2);
 
-    win.adopt(breakHead, breakWrap, lunchHead, lunchWrap);
+    var clear = new Element('div', { styles: { clear: 'both' } });
+    win.adopt(breakHead, breakWrap, lunchHead, lunchWrap, clear);
     return win;
 }
 

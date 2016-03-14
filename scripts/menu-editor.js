@@ -155,10 +155,12 @@ function createEditorWindow () {
 
     // previews
     var cell  = new Element('div',  { class: 'preview-cell' });
+    var inner = new Element('div',  { class: 'inner' });
     var num   = new Element('span', { class: 'day-number', text: '1' });
     var items = new Element('span', { class: 'menu-items' });
     var prev1 = new Element('div',  { class: 'preview' });
-                cell.adopt(num, items);
+                inner.adopt(num, items);
+                cell.adopt(inner);
                 prev1.adopt(cell);
     var prev2 = prev1.clone();
 

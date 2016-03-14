@@ -97,4 +97,12 @@
     border: 1px solid #999;
     width: 199px;
     font-size: 13px;
+    background-color: rgb(252, 252, 252);
+    color: #000;
+}
+
+.admin-window.editor .preview-cell .inner {
+    padding: 5px;
+    width: auto;
+    height: 100%;
 }

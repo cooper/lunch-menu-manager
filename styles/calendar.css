@@ -85,7 +85,8 @@ table.lunch-calendar tbody td {
 
 table.lunch-calendar tbody td div.inner {
     padding: 5px;
-    position: absolute;
+    width: auto;
+    position: relative;
 }
 
 span.day-number {

@@ -158,8 +158,8 @@ function createEditorWindow () {
     var prev2 = prev1.clone();
 
     // wrappers
-    var lunchWrap
-    var breakWrap
+    var lunchWrap = new Element('div');
+    var breakWrap = new Element('div');
     lunchWrap.adopt(lunchLeft, prev1);
     breakWrap.adopt(breakLeft, prev2);
 

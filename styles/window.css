@@ -57,6 +57,10 @@
 
 .admin-window.editor h3 span {
     float: right;
+    display: inline-block;
+    height: 30px;
+    width: 230px;
+    text-align: left;
 }
 
 .admin-window.editor textarea {

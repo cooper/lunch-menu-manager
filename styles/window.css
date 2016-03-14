@@ -107,11 +107,11 @@
     height: 100%;
 }
 
-.admin-window-editor .input-wrap {
+.admin-window.editor .input-wrap {
     margin: 10px;
 }
 
-.admin-window-editor .input-wrap input {
+.admin-window.editor .input-wrap input {
     height: 30px;
     border: 1px solid #222;
     padding: 3px;

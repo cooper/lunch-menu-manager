@@ -1,5 +1,5 @@
 .admin-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .admin-window-done:hover {
-    background-color: #222;
+    background-color: #555;
     border: 1px solid #111;
 }
 
@@ -32,12 +32,12 @@
 }
 
 .admin-window.editor h3 {
-    background-color: #222;
+    background-color: #999;
     color: #fff;
 }
 
 .admin-window.editor textarea, .admin-window.editor .input-wrap input {
-    border: 1px solid #222;
+    border: 1px solid #999;
 }
 
 .admin-window.editor .preview {
@@ -45,5 +45,5 @@
 }
 
 .admin-window.editor .preview-cell {
-    border: 1px solid #222;
+    border: 1px solid #999;
 }

@@ -154,7 +154,7 @@ function createEditorWindow () {
 
 
     // previews
-    var table = new Element('table', { class: 'lunch-calendar' });
+    var table = new Element('table', { class: 'lunch-calendar fake' });
     var body  = new Element('tbody');
     var row   = new Element('tr');
     var cell  = document.getElement('td[data-day="1"]').clone();

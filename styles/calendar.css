@@ -29,6 +29,10 @@ table.lunch-calendar {
     cursor: default;
 }
 
+table.lunch-calendar.fake {
+    width: auto !important;
+}
+
 table.lunch-calendar caption {
     font-size: 30px;
     font-weight: bold;

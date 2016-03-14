@@ -28,31 +28,31 @@ function initializeMenuEditor() {
         });
     });
 
-    // done button click
-    var doneBut = $('menu-editor-done');
-    doneBut.addEvent('click', function (e) {
-        e.preventDefault();
-        hideMenuEditor();
-    });
-
-
-    // left arrow click
-    $('menu-left-arrow').addEvent('click', function (e) {
-        e.preventDefault();
-        var menuDay = doneBut.retrieve('menuDay');
-        updateMenuEditor();
-        if (menuDay && menuDay.previousDay)
-            showMenuEditor(menuDay.previousDay);
-    });
-
-    // right arrow click
-    $('menu-right-arrow').addEvent('click', function (e) {
-        e.preventDefault();
-        updateMenuEditor();
-        var menuDay = doneBut.retrieve('menuDay');
-        if (menuDay && menuDay.nextDay)
-            showMenuEditor(menuDay.nextDay);
-    });
+    // // done button click
+    // var doneBut = $('menu-editor-done');
+    // doneBut.addEvent('click', function (e) {
+    //     e.preventDefault();
+    //     hideMenuEditor();
+    // });
+    //
+    //
+    // // left arrow click
+    // $('menu-left-arrow').addEvent('click', function (e) {
+    //     e.preventDefault();
+    //     var menuDay = doneBut.retrieve('menuDay');
+    //     updateMenuEditor();
+    //     if (menuDay && menuDay.previousDay)
+    //         showMenuEditor(menuDay.previousDay);
+    // });
+    //
+    // // right arrow click
+    // $('menu-right-arrow').addEvent('click', function (e) {
+    //     e.preventDefault();
+    //     updateMenuEditor();
+    //     var menuDay = doneBut.retrieve('menuDay');
+    //     if (menuDay && menuDay.nextDay)
+    //         showMenuEditor(menuDay.nextDay);
+    // });
 
 }
 

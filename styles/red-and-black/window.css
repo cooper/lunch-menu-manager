@@ -49,7 +49,7 @@
 }
 
 #menu-left-arrow, #menu-right-arrow {
-    background-color: #111;
+    background-color: #333;
+    border: 1px solid #222;
     color: #fff;
-    border-radius: 5px;
 }

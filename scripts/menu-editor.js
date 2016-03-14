@@ -116,7 +116,7 @@ function showMenuEditor (menuDay) {
     lunchArea.value = menuDay.lunch;
     saladInput.value = menuDay.salad;
     win.updatePreviews();
-    
+
     // if breakfast is empty, probably adding a new day; focus it
     if (!breakArea.value.length)
         breakArea.focus();
@@ -202,8 +202,8 @@ function createEditorWindow () {
 
     /* typing events */
     var updatePreviews = function () {
-        prev1.getElement('.menu-items').setProperty('html', replaceNewlines(lunchArea.value.trim()));
-        prev2.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value +
+        prev2.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
+        prev1.getElement('.menu-items').setProperty('html', replaceNewlines(lunchArea.value +
             (input.value.trim().length ? "\n" + input.value.trim() + ' salad' : '')));
     };
     win.updatePreviews = updatePreviews;

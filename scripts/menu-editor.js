@@ -115,7 +115,7 @@ function saveMenu() {
     var win = document.getElement('.admin-window.editor');
     if (!win) return;
 
-    var menuDay = min.menuDay;
+    var menuDay = win.menuDay;
     if (!menuDay) return;
 
     // find inputs

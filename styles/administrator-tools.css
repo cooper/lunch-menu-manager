@@ -150,3 +150,18 @@ ul.administrator-tools li a {
 #notes-window-padding h3 {
     margin: 15px 0 5px 0;
 }
+
+/* CALENDAR EDIT BUTTONS */
+
+.calendar-cell-edit {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    text-transform: none;
+    height: 20px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}

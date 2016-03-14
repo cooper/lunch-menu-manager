@@ -75,12 +75,17 @@ table.lunch-calendar thead td {
 
 table.lunch-calendar tbody td {
     height: 100px;
-    padding: 5px;
+    padding: 0;
     font-size: smaller;
     text-transform: lowercase;
     line-height: 1em;
     font-family: Helvetica, Arial, sans-serif;
     cursor: default;
+}
+
+table.lunch-calendar tbody td div.inner {
+    padding: 5px;
+    position: absolute;
 }
 
 span.day-number {

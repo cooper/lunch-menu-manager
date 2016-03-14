@@ -280,7 +280,7 @@ function createWindow (titleText) {
 // shortcut for simple text alerts
 function presentAlert (title, msg) {
     var win = createWindow(title);
-    var padding = new Element('div', { class: 'admin-window-padding', text: msg });
+    var padding = new Element('div', { class: 'admin-window-alert', text: msg });
     win.adopt(padding);
     presentAnyWindow(win);
 }

@@ -143,6 +143,10 @@ span.day-number {
 
 /* ADMIN MODE */
 
+table.lunch-calendar.administrator tbody td {
+    cursor: pointer !important;
+}
+
 table.lunch-calendar.administrator {
     margin-top: 50px;
 }

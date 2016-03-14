@@ -206,8 +206,17 @@ function statusLoading() {
 }
 
 // a process succeeded
+var switchBack;
 function statusSuccess() {
     if (permanentFailure) return;
+
+    // switch back
+    if (switchBack) clearTimeout(switchBack);
+    switchBack = setTimeout(function () {
+        if (inProgress || !$('status-li').hasClass('saved')) return;
+        $('status-li').setProperty('class', 'logo');
+        switchBack = null;
+    }, 5000);
 
     // still more in progress
     if (--inProgress) return;

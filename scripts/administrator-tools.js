@@ -185,10 +185,10 @@ function saveNotes() {
 // footer notes
 function showNotesEditor() {
     var win     = createWindow('Footnotes');
-    var padding = new Element('div', { class: 'admin-window-padding', text: msg });
-    var span    = new Element('span', { text: footerNotes });
+    var padding = new Element('div', { class: 'admin-window-padding', text: footerNotes });
+    //var span    = new Element('span', { text: footerNotes });
     var area    = new Element('textarea');
-    padding.adopt(span, area);
+    padding.adopt(area);
     win.adopt(padding);
     presentAnyWindow(win);
 }

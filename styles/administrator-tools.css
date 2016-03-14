@@ -176,14 +176,14 @@ ul.administrator-tools li a {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30%;
+    padding: 0 5px;
     text-align: center;
     text-transform: none;
     height: 20px;
     line-height: 20px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     _display: none;
 }
 
@@ -191,13 +191,13 @@ ul.administrator-tools li a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 30%;
+    padding: 0 5px;
     text-align: center;
     text-transform: none;
     height: 20px;
     line-height: 20px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     _display: none;
 }

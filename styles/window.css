@@ -11,7 +11,6 @@
 .admin-window {
     margin: 50px auto;
     width: 600px;
-    position: relative;
 }
 
 .admin-window-title {
@@ -22,11 +21,8 @@
     font-size: 1.3em;
 }
 
-.admin-window-alert {
-    height: 300px;
-    position: absolute;
-    top: 50%;
-    margin-top: -150px;
+.admin-window-padding {
+    padding: 20px;
     text-align: center;
 }
 

@@ -95,10 +95,9 @@ function showMenuEditor (menuDay) {
         win.parentElement.adopt(larr, rarr);
 
     }
-    else {
-        larr = $('menu-left-arrow');
-        rarr = $('menu-right-arrow');
-    }
+
+    larr = $('menu-left-arrow');
+    rarr = $('menu-right-arrow');
 
     // back arrow
     if (menuDay.previousDay) {

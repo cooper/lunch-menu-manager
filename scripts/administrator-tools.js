@@ -300,6 +300,7 @@ function presentAnyWindow (win) {
     overlay.setStyle('display', 'block');
 
     presentedWindow = win;
+    return true;
 }
 
 // close the current window

@@ -5,6 +5,9 @@ var months = [
     'January',   'February', 'March',    'April',
     'May',       'June',     'July',     'August',
     'September', 'October',  'November', 'December'
+], weekdays = [
+    'Sunday',   'Monday',   'Tuesday',  'Wednesday',
+    'Thursday', 'Friday',   'Saturday'
 ];
 
 var MenuDay = new Class({
@@ -53,15 +56,21 @@ var MenuDay = new Class({
     },
 
     // pretty date name
-    // e.g. March 22, 2015
+    // e.g. Monday, March 14, 2016
     prettyName: function () {
-        return this.shortName() + ', ' + this.year;
+        return this.weekdayName() + ', ' + this.shortName() + ', ' + this.year;
     },
 
     // short date name
     // e.g. March 22
     shortName: function () {
         return months[this.month] + ' ' + this.day;
+    },
+
+    // weekday name
+    // e.g. Monday
+    weekdayName: function () {
+        return weekdays[this.date.getDay()]
     },
 
     // date string for API

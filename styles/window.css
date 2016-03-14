@@ -63,6 +63,11 @@
 }
 
 
+.admin-window.editor .left-side {
+    float: left;
+    width: 420px;
+}
+
 .admin-window.editor .right-side {
     float: right;
     width: 230px;

@@ -118,7 +118,9 @@ function showMenuEditor (menuDay) {
 
     // update the previews
     win.updatePreviews();
-    win.getElement('.day-number').setProperty('text', menuDay.day);
+    win.getElements('.day-number').each(function (el) {
+        el.setProperty('text', menuDay.day);
+    });
 
     // if breakfast is empty, probably adding a new day; focus it
     if (!breakArea.value.length)

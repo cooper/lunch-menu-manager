@@ -136,8 +136,9 @@ function createEditorWindow () {
     var win = createWindow('Menu editor');
     win.addClass('editor');
 
-    var left = new Element('div', { class: 'left-side' });
+    var left  = new Element('div', { class: 'left-side' });
     var right = new Element('div', { class: 'right-side' });
+    var clear = new Element('div', { styles: { clear: 'both' } });
 
     // headings
     var lunchHead = new Element('h3', { text: 'Lunch' })
@@ -148,7 +149,7 @@ function createEditorWindow () {
     var breakArea = new Element('textarea');
 
     left.adopt(breakHead, breakArea, lunchHead, lunchArea);
-    win.adopt(left, right);
+    win.adopt(left, right, clear);
 
     return win;
 }

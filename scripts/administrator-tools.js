@@ -106,7 +106,7 @@ function printOrShare(msg) {
             window.location = data.generator;
         },
         onFailure: function (error) {
-            alert('Failed to generate PDF. Please reload the page. Error: ' + error);
+            presentAlert('Error', 'Failed to generate PDF. Please reload the page. Error: ' + error);
         }
     }).get({
         year:   getCurrentYear(),
@@ -141,7 +141,7 @@ function saveNotes() {
         },
         onFailure: function (error) {
             statusError(error);
-            alert('Failed to update footer text. Please reload the page. Error: ' + error);
+            presentAlert('Error', 'Failed to update footer text. Please reload the page. Error: ' + error);
         }
     }).post({
         year:   getCurrentYear(),
@@ -158,7 +158,7 @@ function saveNotes() {
         },
         onFailure: function (error) {
             statusError(error);
-            alert('Failed to update institution name. Please reload the page. Error: ' + error);
+            presentAlert('Error', 'Failed to update institution name. Please reload the page. Error: ' + error);
         }
     }).post({
         notes: topLeft
@@ -277,6 +277,7 @@ function createWindow (titleText) {
     return win;
 }
 
+// shortcut for simple text alerts
 function presentAlert (title, msg) {
     var win = createWindow(title);
     var padding = new Element('div', { class: 'admin-window-padding', text: msg });
@@ -286,6 +287,7 @@ function presentAlert (title, msg) {
 
 var presentedWindow;
 
+// present a window atop an overlay
 function presentAnyWindow (win) {
     if (presentedWindow) closeWindow();
     var overlay = new Element('div', { class: 'admin-overlay' });
@@ -295,7 +297,16 @@ function presentAnyWindow (win) {
     presentedWindow = win;
 }
 
+// close the current window
 function closeWindow () {
+    if (!presentedWindow) return;
+
+    // do something first
+    var beforeClose = presentedWindow.beforeClose;
+    if (beforeClose) beforeClose();
+
+    // destroy the window
     presentedWindow.parentElement.destroy();
     presentedWindow = null;
+
 }

@@ -292,8 +292,10 @@ function presentAnyWindow (win) {
     overlay.adopt(win);
     document.body.adopt(overlay);
     overlay.setStyle('display', 'block');
+    presentedWindow = win;
 }
 
 function closeWindow () {
     presentedWindow.parentElement.destroy();
+    presentedWindow = null;
 }

@@ -281,3 +281,39 @@ function formatAMPM(date) {
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
 }
+
+/*#############
+### WINDOWS ###
+#############*/
+
+function createWindow (title) {
+    var win = new Element('div', { class: 'admin-window' });
+
+    // title bar
+    var title = new Element('h2', { class: 'admin-window-title' });
+    var span  = new Element('span', { text: title });
+    var done  = new Element('a', { href: '#', text: 'Done' });
+    title.adopt(span);
+    title.adopt(done);
+
+    return win;
+}
+
+function presentAlert (title, msg) {
+    var win = createWindow(title);
+    var padding = new Element('div', { class: 'admin-window-padding', text: msg });
+    presentAnyWindow(win);
+}
+
+var presentedWindow;
+
+function presentAnyWindow (win) {
+    if (presentedWindow) closeWindow();
+    var overlay = new Element('div', { class: 'admin-overlay' });
+    overlay.adoptChild(win);
+    overlay.setStyle('display', 'block');
+}
+
+function closeWindow() {
+    presentedWindow.parent.destroy();
+}

@@ -131,9 +131,21 @@ function hideMenuEditor() {
     $('menu-editor-overlay').setStyle('display', 'none');
 }
 
+
 function createEditorWindow () {
     var win = createWindow('Menu editor');
     win.addClass('editor');
+
+    // headings
+    var lunchHead = new Element('h3', { text: 'Lunch' })
+    var breakHead = new Element('h3', { text: 'Breakfast' });
+
+    // textareas
+    var lunchArea = new Element('textarea');
+    var breakArea = new Element('textarea');
+
+    win.adopt(breakHead, breakArea, lunchHead, lunchArea);
+
     return win;
 }
 

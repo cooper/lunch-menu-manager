@@ -36,3 +36,24 @@
     margin-top: 8px;
     text-decoration: none;
 }
+
+/* MENU EDITOR */
+
+.admin-window.editor {
+
+}
+
+.admin-window.editor h3 {
+    display: inline-block;
+    width: auto;
+    height: 25px;
+    line-height: 25px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.admin-window.editor textarea {
+    width: 100%;
+    border: none;
+    height: 150px;
+}

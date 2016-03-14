@@ -14,8 +14,11 @@
 }
 
 .admin-window-done {
-    background-color: #111;
-    border-radius: 5px;
+    background-color: #555;
     text-transform: uppercase;
     color: #fff;
+}
+
+.admin-window-done:hover {
+    background-color: #333;
 }

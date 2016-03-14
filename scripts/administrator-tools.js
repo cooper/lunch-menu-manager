@@ -10,14 +10,14 @@ document.addEvent('keydown', function (e) {
 });
 
 var printingInstructions = '                            \
-    Your PDF menu was generated.<br />                  \
+    Your PDF menu was generated.                        \
     You can now print it by opening it in PDF reader    \
     software. From there,                               \
     choose Print from the File menu.                    \
 ';
 
 var sharingInstructions = '                         \
-    Your PDF menu was generated.<br />              \
+    Your PDF menu was generated.                    \
     You can now share it by attaching the PDF file  \
     to an e-mail.                                   \
 ';

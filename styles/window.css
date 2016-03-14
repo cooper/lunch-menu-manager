@@ -124,3 +124,23 @@
     font-size: 16px;
     margin-right: 6px;
 }
+
+#menu-left-arrow, #menu-right-arrow {
+    display: block;
+    position: absolute;
+    top: 250px;
+    font-size: 25px;
+    display: inline-block;
+    float: right;
+    margin-top: 8px;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+#menu-left-arrow {
+    left: 10px;
+}
+
+#menu-right-arrow {
+    right: 10px;
+}

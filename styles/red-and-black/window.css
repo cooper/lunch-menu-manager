@@ -47,3 +47,9 @@
 .admin-window.editor .preview-cell {
     border: 1px solid #999;
 }
+
+#menu-left-arrow, #menu-right-arrow {
+    background-color: #111;
+    color: #fff;
+    border-radius: 5px;
+}

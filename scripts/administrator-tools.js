@@ -291,11 +291,14 @@ var presentedWindow;
 
 // present a window atop an overlay
 function presentAnyWindow (win) {
+    if (presentedWindow == win) return;
     if (presentedWindow) closeWindow();
+
     var overlay = new Element('div', { class: 'admin-overlay' });
     overlay.adopt(win);
     document.body.adopt(overlay);
     overlay.setStyle('display', 'block');
+
     presentedWindow = win;
 }
 

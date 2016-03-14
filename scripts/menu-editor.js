@@ -56,47 +56,6 @@ function initializeMenuEditor() {
 
 }
 
-// function showMenuEditor(menuDay) {
-//     presentEditor(menuDay);
-//     return;
-//
-//     var overlay   = $('menu-editor-overlay'),
-//         titleBar  = $('menu-editor-title').getElementsByTagName('span')[0],
-//         doneBut   = $('menu-editor-done'),
-//         breakfast = $('breakfast-textarea'),
-//         lunch     = $('lunch-textarea'),
-//         salad     = $('salad-input'),
-//         leftArr   = $('menu-left-arrow'),
-//         rightArr  = $('menu-right-arrow');
-//
-//
-//     // back arrow
-//     if (menuDay.previousDay) {
-//         leftArr.innerHTML = '&larr; ' + menuDay.previousDay.shortName();
-//         leftArr.setStyle('display', 'block');
-//     }
-//     else {
-//         leftArr.setStyle('display', 'none');
-//     }
-//
-//     // forward arrow
-//     if (menuDay.nextDay) {
-//         rightArr.innerHTML = menuDay.nextDay.shortName() + ' &rarr;';
-//         rightArr.setStyle('display', 'block');
-//     }
-//     else {
-//         rightArr.setStyle('display', 'none');
-//     }
-//
-//     // show
-//     overlay.setStyle('display', 'block');
-//
-//     // if breakfast is empty, probably adding a new day; focus it.
-//     if (!breakfast.value.length)
-//         breakfast.focus();
-//
-// }
-
 function showMenuEditor (menuDay) {
     // TODO: save the other info first
     var win = document.getElement('.admin-window.editor');
@@ -126,7 +85,41 @@ function showMenuEditor (menuDay) {
     if (!breakArea.value.length)
         breakArea.focus();
 
-    presentAnyWindow(win);
+    /* arrows */
+
+    var larr, rarr;
+    if (presentAnyWindow(win)) {
+
+        larr = new Element('div', { id: 'menu-left-arrow '});
+        rarr = new Element('div', { id: 'menu-right-arrow '});
+        win.parentElement.adopt(larr, rarr);
+
+    }
+    else {
+        larr = $('menu-left-arrow');
+        rarr = $('menu-right-arrow');
+    }
+
+    // back arrow
+    if (menuDay.previousDay) {
+        larr.innerHTML = '&larr; ' + menuDay.previousDay.shortName();
+        larr.setStyle('display', 'block');
+    }
+    else {
+        larr.setStyle('display', 'none');
+    }
+
+    // forward arrow
+    if (menuDay.nextDay) {
+        rarr.innerHTML = menuDay.nextDay.shortName() + ' &rarr;';
+        rarr.setStyle('display', 'block');
+    }
+    else {
+        rarr.setStyle('display', 'none');
+    }
+
+
+    return win;
 }
 
 function updateMenuEditor() {
@@ -206,6 +199,7 @@ function createEditorWindow () {
     win.adopt(breakHead, breakWrap, lunchHead, lunchWrap, clear);
 
     /* typing events */
+
     var updatePreviews = function () {
         prev2.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
         prev1.getElement('.menu-items').setProperty('html', replaceNewlines(lunchArea.value +

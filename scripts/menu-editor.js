@@ -180,6 +180,22 @@ function createEditorWindow () {
     breakWrap.adopt(breakLeft, prev2, clear.clone());
 
     win.adopt(breakHead, breakWrap, lunchHead, lunchWrap, clear);
+
+    /* typing events */
+    var updatePreviews = function () {
+        prev1.getElement('.menu-items').setProperty('text', breakArea.value.trim());
+        prev2.getElement('.menu-items').setProperty('text', lunchArea.value +
+            (input.value.trim().length ? "\n" + input.value.trim() + ' salad' : ''));
+    };
+
+    Object.each({
+        lunch: lunchArea,
+        breakfast: breakArea,
+        salad: input
+    }, function (el, name) {
+        el.addEvent('input', updatePreviews);
+    });
+
     return win;
 }
 

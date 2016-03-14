@@ -145,6 +145,7 @@ function createEditorWindow () {
     var prevHead2 = prevHead1.clone();
     lunchHead.adopt(prevHead1);
     breakHead.adopt(prevHead2);
+    breakHead.setStyle('margin-top', '0');
 
     // input
     var inputWrap = new Element('div', { class: 'input-wrap' });

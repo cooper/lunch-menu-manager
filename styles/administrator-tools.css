@@ -122,8 +122,6 @@ ul.administrator-tools li a {
     text-transform: none;
     height: 20px;
     line-height: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
     display: none;
 }
 
@@ -133,7 +131,6 @@ ul.administrator-tools li a {
 }
 
 #menu-notes-edit {
-    border: 1px solid #555;
     position: absolute;
     left: 35%;
     top: -20px;
@@ -143,8 +140,6 @@ ul.administrator-tools li a {
     text-transform: none;
     height: 20px;
     line-height: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
     display: none;
 }
 

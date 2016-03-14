@@ -36,12 +36,25 @@ ul.administrator-tools li a:hover {
     background-color: #333;
 }
 
-#caption-mode-toggle, #caption-name-edit {
+.calendar-cell-edit {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+.calendar-cell-edit:hover {
+    background: #222;
+}
+
+#caption-mode-toggle,
+#caption-name-edit,
+#menu-notes-edit {
     border: 1px solid #555;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
 }
 
-#caption-mode-toggle:hover, #caption-name-edit:hover {
+#caption-mode-toggle:hover,
+#caption-name-edit:hover,
+#menu-notes-edit:hover {
     background-color: #222;
 }

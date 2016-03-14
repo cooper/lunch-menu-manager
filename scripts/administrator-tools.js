@@ -196,7 +196,7 @@ function statusLoading() {
     if (inProgress++) return;
 
     // switch to default style
-    $('status-li').setProperty('class', 'logo');
+    new Fx.Morph('status-li').set('.logo').start();
 
     // hide the span
     $('status-text').setStyle('display', 'none');
@@ -214,7 +214,7 @@ function statusSuccess() {
     if (switchBack) clearTimeout(switchBack);
     switchBack = setTimeout(function () {
         if (inProgress || !$('status-li').hasClass('saved')) return;
-        $('status-li').setProperty('class', 'logo');
+        new Fx.Morph('status-li').set('.logo').start();
         switchBack = null;
     }, 5000);
 
@@ -222,7 +222,7 @@ function statusSuccess() {
     if (--inProgress) return;
 
     // switch to success style
-    $('status-li').setProperty('class', 'saved');
+    new Fx.Morph('status-li').set('.saved').start();
 
     // update the icon
     $('status-icon').setProperty('class', 'fa fa-check-circle');

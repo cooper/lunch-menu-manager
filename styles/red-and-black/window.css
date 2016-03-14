@@ -29,13 +29,16 @@
 /* MENU EDITOR */
 
 .admin-window.editor {
+    background-color: #333;
+    color: #fff;
 }
 
 .admin-window.editor h3 {
+    font-weight: 600;
 }
 
 .admin-window.editor textarea, admin-window.editor .input-wrap input {
-    border: 1px solid #555;
+    border: 1px solid #222;
 }
 
 .admin-window.editor .preview {
@@ -43,5 +46,5 @@
 }
 
 .admin-window.editor .preview-cell {
-    border: 1px solid #999;
+    border: 1px solid #222;
 }

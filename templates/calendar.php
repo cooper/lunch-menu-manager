@@ -2,6 +2,15 @@
 
 require_once(__DIR__.'/../functions/date-input.php');
 
+if ($administrator) {
+    $mainCellBody   = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit menu</div>';
+    $fillerCellBody = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit notes</div>';
+}
+else {
+    $mainCellBody = '';
+    $fillerCellBody = '';
+}
+
 function draw_calendar ($month, $year) {
     global $month, $year;
 
@@ -33,7 +42,7 @@ function draw_calendar ($month, $year) {
 
             // if it's not Sunday or Saturday, add the cell.
             if ($x != 0 && $x != 6)
-                $calendar.= '<td data-cell="'. $cell_id++ .'"></td>';
+                $calendar.= '<td data-cell="'. $cell_id++ .'">' . $fillerCellBody . '</td>';
 
         }
 
@@ -60,7 +69,7 @@ function draw_calendar ($month, $year) {
                           '" data-running-day="' . $running_day .
                           '" class="edit-button' . $today_html  . '">';
             $calendar .=      '<span class="day-number">'.$list_day.'</span>';
-            $calendar .=      '<span class="menu-items"></span>';
+            $calendar .=      '<span class="menu-items"></span>' . $mainCellBody;
             $calendar .= '</td>';
 
         }
@@ -116,7 +125,7 @@ function draw_calendar ($month, $year) {
 
             // add empty cells for any M-F.
             if ($running_day != 0 && $running_day != 6)
-                $calendar .= '<td data-cell="'. $cell_id++ .'"></td>';
+                $calendar .= '<td data-cell="'. $cell_id++ .'">' . $fillerCellBody . '</td>';
 
             $running_day++;
         }

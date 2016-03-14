@@ -6,28 +6,39 @@ document.addEvent('keydown', function (e) {
 });
 
 function initializeMenuEditor() {
-    
+
+    // listen for mouse events on the cells
+    $$('table.lunch-calendar tbody td div.inner').each(function (inner) {
+        var editButton = inner.getElement('.calendar-cell-edit');
+        inner.addEvent('mouseenter', function () {
+            editButton.setStyle('display', 'block');
+        });
+        inner.addEvent('mouseleave', function () {
+            editButton.setStyle('display', 'none');
+        });
+    });
+
     // listen for clicks on the calendar days
     $$('table.lunch-calendar tbody td').each(function (td) {
-        
+
         // fake day
         if (!td.data('year'))
             return;
-        
+
         // add click listener
         var menuDay = td.retrieve('menuDay');
         td.addEvent('click', function (e) {
             showMenuEditor(menuDay);
         });
     });
-    
+
     // done button click
     var doneBut = $('menu-editor-done');
     doneBut.addEvent('click', function (e) {
         e.preventDefault();
         hideMenuEditor();
     });
-    
+
 
     // left arrow click
     $('menu-left-arrow').addEvent('click', function (e) {
@@ -37,7 +48,7 @@ function initializeMenuEditor() {
         if (menuDay && menuDay.previousDay)
             showMenuEditor(menuDay.previousDay);
     });
-    
+
     // right arrow click
     $('menu-right-arrow').addEvent('click', function (e) {
         e.preventDefault();
@@ -46,7 +57,7 @@ function initializeMenuEditor() {
         if (menuDay && menuDay.nextDay)
             showMenuEditor(menuDay.nextDay);
     });
-    
+
 }
 
 function showMenuEditor(menuDay) {
@@ -58,16 +69,16 @@ function showMenuEditor(menuDay) {
         salad     = $('salad-input'),
         leftArr   = $('menu-left-arrow'),
         rightArr  = $('menu-right-arrow');
-    
+
     // set title and store day for done button
     titleBar.innerText = menuDay.prettyName();
     doneBut.store('menuDay', menuDay);
-    
+
     // add the data
     breakfast.value = menuDay.breakfast;
     lunch.value = menuDay.lunch;
     salad.value = menuDay.salad;
-    
+
     // back arrow
     if (menuDay.previousDay) {
         leftArr.innerHTML = '&larr; ' + menuDay.previousDay.shortName();
@@ -76,7 +87,7 @@ function showMenuEditor(menuDay) {
     else {
         leftArr.setStyle('display', 'none');
     }
-    
+
     // forward arrow
     if (menuDay.nextDay) {
         rightArr.innerHTML = menuDay.nextDay.shortName() + ' &rarr;';
@@ -85,14 +96,14 @@ function showMenuEditor(menuDay) {
     else {
         rightArr.setStyle('display', 'none');
     }
-    
+
     // show
     overlay.setStyle('display', 'block');
-    
+
     // if breakfast is empty, probably adding a new day; focus it.
     if (!breakfast.value.length)
         breakfast.focus();
-    
+
 }
 
 function updateMenuEditor() {
@@ -101,19 +112,19 @@ function updateMenuEditor() {
         lunch     = $('lunch-textarea'),
         salad     = $('salad-input');
     if (!menuDay) return;
-    
+
     // update the menu day object
     menuDay.breakfast = breakfast.value.trim();
     menuDay.lunch = lunch.value.trim();
     menuDay.salad = salad.value.trim();
-    
+
     // update in database
     if (menuDay)
         menuDay.update();
-    
+
     // update calendar
     menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
-    
+
 }
 
 function hideMenuEditor() {

@@ -162,6 +162,7 @@ ul.administrator-tools li a {
     text-transform: none;
     height: 20px;
     line-height: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
+    display: none;
 }

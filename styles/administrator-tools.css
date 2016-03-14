@@ -154,7 +154,7 @@ ul.administrator-tools li a {
 /* CALENDAR EDIT BUTTONS */
 
 .calendar-cell-edit {
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -162,6 +162,6 @@ ul.administrator-tools li a {
     text-transform: none;
     height: 20px;
     line-height: 20px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
 }

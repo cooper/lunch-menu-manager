@@ -98,15 +98,17 @@ function initializeAdministatorTools() {
 ##################*/
 
 function printOrShare(msg) {
-
+    statusLoading();
     var request = new Request.JSON({
         url: 'functions/generate-pdf.php',
         onSuccess: function (data) {
             presentAlert('Menu generated', msg);
             window.location = data.generator;
+            statusSuccess();
         },
         onFailure: function (error) {
             presentAlert('Error', 'Failed to generate PDF. Please reload the page. Error: ' + error);
+            statusError(error);
         }
     }).get({
         year:   getCurrentYear(),

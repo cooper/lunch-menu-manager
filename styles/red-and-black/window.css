@@ -1,5 +1,5 @@
 .admin-overlay {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .admin-window-done:hover {
-    background-color: #555;
+    background-color: #333;
     border: 1px solid #111;
 }
 

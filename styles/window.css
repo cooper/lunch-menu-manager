@@ -71,5 +71,9 @@
 .admin-window.editor .right-side {
     float: right;
     width: 230px;
-    height: 500px;
+    height: 300px;
+}
+
+.admin-window.editor .preview {
+    height: 150px;
 }

@@ -28,7 +28,18 @@
 
 /* MENU EDITOR */
 
-.admin-window {
+.admin-window.editor {
     background-color: #333;
     color: #fff;
+}
+
+.admin-window.editor textarea {
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+}
+
+.admin-window.editor .preview {
+    height: 150px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
 }

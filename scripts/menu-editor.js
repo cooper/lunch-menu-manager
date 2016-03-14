@@ -143,12 +143,19 @@ function createEditorWindow () {
     // headings
     var lunchHead = new Element('h3', { text: 'Lunch' })
     var breakHead = new Element('h3', { text: 'Breakfast' });
+    var prevHead1 = new Element('h3', { text: 'Preview' });
+    var prevHead2 = prevHead1.clone();
 
     // textareas
     var lunchArea = new Element('textarea');
     var breakArea = new Element('textarea');
 
+    // previews
+    var prev1 = new Element('div', { class: 'preview' });
+    var prev2 = prev1.clone();
+
     left.adopt(breakHead, breakArea, lunchHead, lunchArea);
+    right.adopt(prevHead1, prev1, prevHead2, prev2);
     win.adopt(left, right, clear);
 
     return win;

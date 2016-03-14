@@ -190,6 +190,7 @@ function showNotesEditor() {
     var area    = new Element('textarea');
     padding.adopt(area);
     win.adopt(padding);
+    win.addClass('notes-editor');
     presentAnyWindow(win);
 }
 

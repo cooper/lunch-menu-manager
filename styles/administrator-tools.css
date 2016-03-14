@@ -51,6 +51,7 @@ div.administrator-tools-container {
     height: 30px;
     width: 100%;
     text-align: center;
+    z-index: 6;
 }
 
 div.administrator-tools-thousand {

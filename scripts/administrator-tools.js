@@ -122,7 +122,7 @@ function printOrShare(innerHTML) {
             window.location = data.generator;
         },
         onFailure: function (error) {
-            alert('Please reload the page. Error: ' + error);
+            alert('Failed to generate PDF. Please reload the page. Error: ' + error);
         }
     }).get({
         year:   getCurrentYear(),
@@ -168,7 +168,7 @@ function saveNotes() {
         },
         onFailure: function (error) {
             statusError(error);
-            alert('Please reload the page. Error: ' + error);
+            alert('Failed to update footer text. Please reload the page. Error: ' + error);
         }
     }).post({
         year:   getCurrentYear(),
@@ -185,7 +185,7 @@ function saveNotes() {
         },
         onFailure: function (error) {
             statusError(error);
-            alert('Please reload the page. Error: ' + error);
+            alert('Failed to update institution name. Please reload the page. Error: ' + error);
         }
     }).post({
         notes: topLeft

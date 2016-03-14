@@ -32,7 +32,7 @@ var MenuDay = new Class({
             onSuccess: function (data) {
                 if (data.error) {
                     statusError(data.error);
-                    alert('Error: ' + data.error);
+                    alert('Failed to save recent changes. Please reload the page. Error: ' + data.error);
                 }
                 else {
                     statusSuccess();
@@ -40,7 +40,7 @@ var MenuDay = new Class({
             },
             onError: function (text, error) {
                 statusError(error);
-                alert('An error occured. Please refresh the page. ' + error);
+                alert('Failed to save recent changes. Please reload the page. Error: ' + error);
             }
         }).post({
             year:       this.year,

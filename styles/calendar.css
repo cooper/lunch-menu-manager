@@ -113,7 +113,7 @@ span.day-number {
 #menu-notes-edit { /* this must stay in calendar.css for display: none */
     position: absolute;
     left: 35%;
-    top: 0;
+    top: -20px;
     width: 30%;
     margin: auto;
     text-align: center;

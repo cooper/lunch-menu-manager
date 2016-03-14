@@ -134,6 +134,7 @@ function hideMenuEditor() {
 function createEditorWindow () {
     var win = createWindow('Menu editor');
     win.addClass('editor');
+    return win;
 }
 
 function presentEditor (menuDay) {

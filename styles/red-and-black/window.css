@@ -37,8 +37,13 @@
 }
 
 .admin-window.editor textarea {
+    border: 1px solid #222;
 }
 
 .admin-window.editor .preview {
     height: 150px;
+}
+
+.admin-window.editor .preview-cell {
+    border: 1px solid #222;
 }

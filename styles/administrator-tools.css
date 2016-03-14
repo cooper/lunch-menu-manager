@@ -171,3 +171,31 @@ ul.administrator-tools li a {
     position: relative;
     cursor: pointer;
 }
+
+#caption-mode-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    text-align: center;
+    text-transform: none;
+    height: 20px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    _display: none;
+}
+
+#caption-name-edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    text-align: center;
+    text-transform: none;
+    height: 20px;
+    line-height: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    _display: none;
+}

@@ -150,8 +150,8 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
 
 <table class="lunch-calendar mode-<?php echo $mode; if (isset($administrator)) echo ' administrator'; ?>" data-year="<?= $year ?>" data-month="<?= $month ?>">
     <caption>
-        <span class="right" id="caption-mode"><?= ucfirst($mode) ?> menu</span>
-        <span class="left" id="caption-left"></span>
+        <div class="right" id="caption-mode"><?= ucfirst($mode) ?> menu</span>
+        <div class="left" id="caption-left"></span>
         <?= "$monthName $year" ?>
     </caption>
     <thead>
@@ -172,6 +172,8 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
         require(__DIR__.'/footer-navigation.php');
 ?>
 <div id="menu-notes">
+    <? if ($administrator) ?>
     <div id="menu-notes-edit"><i class="fa fa-pencil"></i> Edit footer</div>
+    <? endif; ?>
     <span id="menu-notes-notes"><? if ($administrator) echo "(no footer text)"; ?></span>
 </div>

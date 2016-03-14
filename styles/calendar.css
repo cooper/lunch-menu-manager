@@ -39,24 +39,25 @@ table.lunch-calendar caption {
     position: relative;
 }
 
-table.lunch-calendar caption span.left,
-table.lunch-calendar caption span.right {
+table.lunch-calendar caption div.left,
+table.lunch-calendar caption div.right {
     display: inline-block;
     line-height: 50px;
     font-size: 20px;
     height: 40px;
     font-weight: normal;
     width: 350px;
+    position: relative;
 }
 
-table.lunch-calendar caption span.left {
+table.lunch-calendar caption div.left {
     left: 2px;
     top: 20px;
     text-align: left;
     float: left;
 }
 
-table.lunch-calendar caption span.right {
+table.lunch-calendar caption div.right {
     right: 2px;
     top: 20px;
     text-align: right;

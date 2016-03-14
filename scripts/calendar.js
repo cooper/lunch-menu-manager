@@ -98,6 +98,10 @@ function getCurrentMonthName() {
     return months[ getCurrentMonth() - 1 ];
 }
 
+function isAdmin() {
+    return ($$('.lunch-calendar')[0].hasClass('administrator');
+}
+
 function fetchCalendar() {
     var request = new Request.JSON({
         url: 'api/fetch-month.php',
@@ -189,7 +193,12 @@ function refreshCalendar() {
     // notes for the month
     var menuNotes = $('menu-notes-notes');
     if (typeof currentNotes != 'undefined') {
-        menuNotes.setProperty('html', replaceNewlines(currentNotes));
+
+        var notes = replaceNewlines(currentNotes);
+        if (isAdmin() && (!notes || !notes.length))
+            notes = '(no footer text)';
+
+        menuNotes.setProperty('html', notes);
 
         // notes in the admin thing, if it is present
         if ($('notes-window-textarea'))

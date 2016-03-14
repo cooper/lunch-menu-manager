@@ -136,27 +136,32 @@ function createEditorWindow () {
     var win = createWindow('Menu editor');
     win.addClass('editor');
 
-    var left  = new Element('div', { class: 'left-side' });
-    var right = new Element('div', { class: 'right-side' });
-    var clear = new Element('div', { styles: { clear: 'both' } });
-
     // headings
     var lunchHead = new Element('h3', { text: 'Lunch' })
     var breakHead = new Element('h3', { text: 'Breakfast' });
-    var prevHead1 = new Element('h3', { text: 'Preview' });
+    var prevHead1 = new Element('span', { text: 'Preview' });
     var prevHead2 = prevHead1.clone();
+    lunchHead.adopt(prevHead1);
+    breakHead.adopt(prevHead2);
 
     // textareas
+    var lunchLeft = new Element('div', { class: 'left-side' });
+    var breakLeft = new Element('div', { class: 'left-side' });
     var lunchArea = new Element('textarea');
     var breakArea = new Element('textarea');
+    lunchLeft.adopt(lunchArea);
+    breakLeft.adopt(breakArea);
+
 
     // previews
     var prev1 = new Element('div', { class: 'preview' });
     var prev2 = prev1.clone();
 
-    left.adopt(breakHead, breakArea, lunchHead, lunchArea);
-    right.adopt(prevHead1, prev1, prevHead2, prev2);
-    win.adopt(left, right, clear);
+    // wrappers
+    var lunchWrap
+    var breakWrap
+    lunchWrap.adopt(lunchLeft, prev1);
+    breakWrap.adopt(breakLeft, prev2);
 
     return win;
 }

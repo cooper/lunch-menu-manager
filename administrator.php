@@ -29,7 +29,6 @@
         $administrator = true;
         require_once('templates/calendar.php');
         require_once('templates/administrator-tools.php');
-        require_once('templates/menu-editor.php');
     ?>
 </body>
 </html>

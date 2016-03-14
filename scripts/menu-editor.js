@@ -1,10 +1,5 @@
 document.addEvent('domready', initializeMenuEditor);
 
-document.addEvent('keydown', function (e) {
-    if (e.event) e = e.event;
-    if (e.keyCode == 27) hideMenuEditor();
-});
-
 function initializeMenuEditor() {
 
     // listen for mouse events on the cells
@@ -28,6 +23,7 @@ function initializeMenuEditor() {
         // add click listener
         var menuDay = td.retrieve('menuDay');
         td.addEvent('click', function (e) {
+            e.preventDefault();
             showMenuEditor(menuDay);
         });
     });
@@ -61,6 +57,9 @@ function initializeMenuEditor() {
 }
 
 function showMenuEditor(menuDay) {
+    presentEditor(menuDay);
+    return;
+
     var overlay   = $('menu-editor-overlay'),
         titleBar  = $('menu-editor-title').getElementsByTagName('span')[0],
         doneBut   = $('menu-editor-done'),
@@ -130,4 +129,14 @@ function updateMenuEditor() {
 function hideMenuEditor() {
     updateMenuEditor();
     $('menu-editor-overlay').setStyle('display', 'none');
+}
+
+function createEditorWindow () {
+    var win = createWindow('Menu editor');
+    win.addClass('editor');
+}
+
+function presentEditor (menuDay) {
+    var win = createEditorWindow();
+    presentAnyWindow(win);
 }

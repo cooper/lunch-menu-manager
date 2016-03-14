@@ -10,7 +10,7 @@
 
 .admin-window {
     margin: 50px auto;
-    width: 700px;
+    width: 650px;
 }
 
 .admin-window-title {
@@ -22,7 +22,7 @@
 }
 
 .admin-window-padding {
-    padding: 30px 20px;
+    padding: 25px 20px;
     text-align: center;
 }
 

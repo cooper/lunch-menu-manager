@@ -56,53 +56,71 @@ function initializeMenuEditor() {
 
 }
 
-function showMenuEditor(menuDay) {
-    presentEditor(menuDay);
-    return;
+// function showMenuEditor(menuDay) {
+//     presentEditor(menuDay);
+//     return;
+//
+//     var overlay   = $('menu-editor-overlay'),
+//         titleBar  = $('menu-editor-title').getElementsByTagName('span')[0],
+//         doneBut   = $('menu-editor-done'),
+//         breakfast = $('breakfast-textarea'),
+//         lunch     = $('lunch-textarea'),
+//         salad     = $('salad-input'),
+//         leftArr   = $('menu-left-arrow'),
+//         rightArr  = $('menu-right-arrow');
+//
+//
+//     // back arrow
+//     if (menuDay.previousDay) {
+//         leftArr.innerHTML = '&larr; ' + menuDay.previousDay.shortName();
+//         leftArr.setStyle('display', 'block');
+//     }
+//     else {
+//         leftArr.setStyle('display', 'none');
+//     }
+//
+//     // forward arrow
+//     if (menuDay.nextDay) {
+//         rightArr.innerHTML = menuDay.nextDay.shortName() + ' &rarr;';
+//         rightArr.setStyle('display', 'block');
+//     }
+//     else {
+//         rightArr.setStyle('display', 'none');
+//     }
+//
+//     // show
+//     overlay.setStyle('display', 'block');
+//
+//     // if breakfast is empty, probably adding a new day; focus it.
+//     if (!breakfast.value.length)
+//         breakfast.focus();
+//
+// }
 
-    var overlay   = $('menu-editor-overlay'),
-        titleBar  = $('menu-editor-title').getElementsByTagName('span')[0],
-        doneBut   = $('menu-editor-done'),
-        breakfast = $('breakfast-textarea'),
-        lunch     = $('lunch-textarea'),
-        salad     = $('salad-input'),
-        leftArr   = $('menu-left-arrow'),
-        rightArr  = $('menu-right-arrow');
+function showMenuEditor (menuDay) {
+    // TODO: save the other info first
+    var win = document.getElement('.admin-window.editor');
+    if (!win) win = createEditorWindow();
 
-    // set title and store day for done button
-    titleBar.innerText = menuDay.prettyName();
-    doneBut.store('menuDay', menuDay);
+    // find inputs
+    var saladInput = win.getElement('input');
+    var textareas  = win.getElements('textarea');
+    var breakArea  = textareas[0], lunchArea = textareas[1];
+
+    // set title and store day
+    win.getElement('h2').setProperty('text', menuDay.prettyName());
+    win.store('menuDay', menuDay);
 
     // add the data
-    breakfast.value = menuDay.breakfast;
-    lunch.value = menuDay.lunch;
-    salad.value = menuDay.salad;
+    breakArea.value = menuDay.breakfast;
+    lunchArea.value = menuDay.lunch;
+    saladInput.value = menuDay.salad;
 
-    // back arrow
-    if (menuDay.previousDay) {
-        leftArr.innerHTML = '&larr; ' + menuDay.previousDay.shortName();
-        leftArr.setStyle('display', 'block');
-    }
-    else {
-        leftArr.setStyle('display', 'none');
-    }
+    // if breakfast is empty, probably adding a new day; focus it
+    if (!breakArea.value.length)
+        breakArea.focus();
 
-    // forward arrow
-    if (menuDay.nextDay) {
-        rightArr.innerHTML = menuDay.nextDay.shortName() + ' &rarr;';
-        rightArr.setStyle('display', 'block');
-    }
-    else {
-        rightArr.setStyle('display', 'none');
-    }
-
-    // show
-    overlay.setStyle('display', 'block');
-
-    // if breakfast is empty, probably adding a new day; focus it.
-    if (!breakfast.value.length)
-        breakfast.focus();
-
+    presentAnyWindow(win);
 }
 
 function updateMenuEditor() {
@@ -197,9 +215,4 @@ function createEditorWindow () {
     });
 
     return win;
-}
-
-function presentEditor (menuDay) {
-    var win = createEditorWindow();
-    presentAnyWindow(win);
 }

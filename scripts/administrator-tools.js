@@ -288,7 +288,7 @@ var presentedWindow;
 function presentAnyWindow (win) {
     if (presentedWindow) closeWindow();
     var overlay = new Element('div', { class: 'admin-overlay' });
-    overlay.adoptChild(win);
+    overlay.appendChild(win);
     overlay.setStyle('display', 'block');
 }
 

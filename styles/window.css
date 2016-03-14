@@ -53,6 +53,7 @@
     text-transform: uppercase;
     font-weight: normal;
     font-size: 1.1em;
+    clear: both;
 }
 
 .admin-window.editor h3 span {
@@ -73,6 +74,9 @@
     display: block;
 }
 
+.admin-window-editor .clear {
+    clear: both;
+}
 
 .admin-window.editor .left-side {
     float: left;

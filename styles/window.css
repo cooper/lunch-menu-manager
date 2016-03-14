@@ -135,6 +135,7 @@
     margin-top: 8px;
     text-decoration: none;
     padding: 10px 15px;
+    cursor: pointer;
 }
 
 #menu-left-arrow {

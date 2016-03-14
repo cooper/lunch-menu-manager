@@ -53,3 +53,7 @@
     border: 1px solid #222;
     color: #fff;
 }
+
+#menu-left-arrow:hover, #menu-right-arrow:hover {
+    background-color: #222;
+}

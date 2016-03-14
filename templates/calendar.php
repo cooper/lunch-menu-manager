@@ -172,7 +172,7 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
         require(__DIR__.'/footer-navigation.php');
 ?>
 <div id="menu-notes">
-    <? if ($administrator) ?>
+    <? if ($administrator): ?>
     <div id="menu-notes-edit"><i class="fa fa-pencil"></i> Edit footer</div>
     <? endif; ?>
     <span id="menu-notes-notes"><? if ($administrator) echo "(no footer text)"; ?></span>

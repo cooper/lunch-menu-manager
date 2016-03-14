@@ -76,6 +76,6 @@ input.input-meal-extra {
     right: 10px;
 }
 
-table.lunch-calendar tbody td.edit-button {
+table.lunch-calendar tbody td {
     cursor: pointer !important;
 }

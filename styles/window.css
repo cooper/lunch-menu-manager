@@ -47,8 +47,8 @@
     width: auto;
     margin: 0;
     padding: 0px 10px;
-    height: 30px;
-    line-height: 30px;
+    height: 35px;
+    line-height: 35px;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 1.1em;
@@ -58,7 +58,7 @@
 .admin-window.editor h3 span {
     float: right;
     display: inline-block;
-    height: 30px;
+    height: 35px;
     width: 220px;
     text-align: left;
 }
@@ -71,6 +71,7 @@
     padding: 4px;
     margin: 0 auto;
     display: block;
+    font-size: 16px;
 }
 
 .admin-window-editor .clear {
@@ -86,6 +87,7 @@
     height: 150px;
     float: right;
     width: 230px;
+    margin: auto;
 }
 
 .admin-window.editor .preview-cell {

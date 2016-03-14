@@ -26,20 +26,20 @@ var MenuDay = new Class({
     // save the menu for this day
     // using Request API
     update: function () {
-        statusLoading();
+        if (statusLoading) statusLoading();
         var request = new Request.JSON({
             url: 'functions/update-menu.php',
             onSuccess: function (data) {
                 if (data.error) {
-                    statusError(data.error);
+                    if (statusError) statusError(data.error);
                     alert('Error: ' + data.error);
                 }
                 else {
-                    statusSuccess();
+                    if (statusSuccess) statusSuccess();
                 }
             },
             onError: function (text, error) {
-                statusError(error);
+                if (statusError) statusError(error);
                 alert('An error occured. Please refresh the page. ' + error);
             }
         }).post({
@@ -103,9 +103,16 @@ function isAdmin() {
 }
 
 function fetchCalendar() {
+    if (statusLoading) statusLoading();
     var request = new Request.JSON({
         url: 'api/fetch-month.php',
-        onSuccess: injectCalendarData
+        onSuccess: function () {
+            if (statusSuccess) statusSuccess();
+            injectCalendarData();
+        },
+        onFailure: function (error) {
+            if (statusFailure) statusFailure(error);
+        }
     }).get({
         year:  getCurrentYear(),
         month: getCurrentMonth()

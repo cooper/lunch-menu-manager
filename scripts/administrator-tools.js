@@ -110,9 +110,11 @@ function printOrShare(innerHTML) {
         printLoading = $('share-window-padding');
 
     overlay.setStyle('display', 'block');
+    statusLoading();
     var request = new Request.JSON({
         url: 'functions/generate-pdf.php',
         onSuccess: function (data) {
+            statusSuccess();
             console.log(data);
             adminWindow.removeChild(printLoading);
             var padded = new Element('div', { 'class': 'admin-window-padding' });
@@ -122,6 +124,7 @@ function printOrShare(innerHTML) {
             window.location = data.generator;
         },
         onFailure: function (error) {
+            statusError(error);
             alert('Please reload the page. Error: ' + error);
         }
     }).get({

@@ -3,10 +3,8 @@ document.addEvent('domready', initializeAdministatorTools);
 // escape from print
 document.addEvent('keydown', function (e) {
     if (e.event) e = e.event;
-    if (e.keyCode == 27) {
-        hideShareWindow();
-        hideNotesWindow();
-    }
+    if (e.keyCode == 27)
+        closeWindow();
 });
 
 var printingInstructions = '                            \
@@ -87,7 +85,6 @@ function initializeAdministatorTools() {
     // done button click
     $('share-window-done').addEvent('click', function (e) {
         e.preventDefault();
-        hideShareWindow();
     });
     $('notes-window-done').addEvent('click', function (e) {
         e.preventDefault();
@@ -100,21 +97,12 @@ function initializeAdministatorTools() {
 ### PDF DOWNLOAD ###
 ##################*/
 
-function printOrShare(innerHTML) {
-    var overlay      = $('share-overlay'),
-        adminWindow  = $('share-window'),
-        printLoading = $('share-window-padding');
+function printOrShare(msg) {
 
-    overlay.setStyle('display', 'block');
     var request = new Request.JSON({
         url: 'functions/generate-pdf.php',
         onSuccess: function (data) {
-            console.log(data);
-            adminWindow.removeChild(printLoading);
-            var padded = new Element('div', { 'class': 'admin-window-padding' });
-            padded.innerHTML = innerHTML;
-            adminWindow.appendChild(padded);
-            console.log('Generator: ' + data.generator);
+            presentAlert('Menu generated', msg);
             window.location = data.generator;
         },
         onFailure: function (error) {
@@ -125,17 +113,6 @@ function printOrShare(innerHTML) {
         month:  getCurrentMonth(),
         mode:   getCurrentMode()
     });
-}
-
-function hideShareWindow() {
-    var adminWindow  = $('share-window'),
-        printLoading = adminWindow.retrieve('printLoading'),
-        overlay      = $('share-overlay');
-
-    // replace the content with the loading view
-    overlay.setStyle('display', 'none');
-    adminWindow.removeChild($('share-window-padding'));
-    adminWindow.appendChild(printLoading);
 }
 
 /*###########
@@ -293,6 +270,7 @@ function createWindow (title) {
     var title = new Element('h2', { class: 'admin-window-title' });
     var span  = new Element('span', { text: title });
     var done  = new Element('a', { href: '#', text: 'Done' });
+    done.addEvent('click', closeWindow);
     title.adopt(span);
     title.adopt(done);
 
@@ -314,6 +292,6 @@ function presentAnyWindow (win) {
     overlay.setStyle('display', 'block');
 }
 
-function closeWindow() {
+function closeWindow () {
     presentedWindow.parent.destroy();
 }

@@ -87,7 +87,6 @@
     height: 150px;
     float: right;
     width: 230px;
-    margin: auto;
 }
 
 .admin-window.editor .preview-cell {
@@ -101,6 +100,7 @@
     font-size: 13px;
     background-color: rgb(252, 252, 252);
     color: #000;
+    margin: auto;
 }
 
 .admin-window.editor .preview-cell .inner {

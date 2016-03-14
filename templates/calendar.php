@@ -150,12 +150,21 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
 
 <table class="lunch-calendar mode-<?php echo $mode; if (isset($administrator)) echo ' administrator'; ?>" data-year="<?= $year ?>" data-month="<?= $month ?>">
     <caption>
-        <? if ($administrator): ?>
-        <div id="caption-mode-toggle"><i class="fa fa-leaf"></i> Toggle menu mode</div>
-        <div id="caption-name-edit"><i class="fa fa-pencil"></i> Edit institution</div>
-        <? endif; ?>
-        <span class="right" id="caption-mode"><?= ucfirst($mode) ?> menu</span>
-        <span class="left" id="caption-left"></span>
+
+        <div id="caption-mode-container">
+            <? if ($administrator): ?>
+            <div id="caption-mode-toggle"><i class="fa fa-leaf"></i> Toggle menu mode</div>
+            <? endif; ?>
+            <span class="right" id="caption-mode"><?= ucfirst($mode) ?> menu</span>
+        </div>
+
+        <div id="caption-left-container">
+            <? if ($administrator): ?>
+            <div id="caption-name-edit"><i class="fa fa-pencil"></i> Edit institution</div>
+            <? endif; ?>
+            <span class="left" id="caption-left"></span>
+        </div>
+
         <?= "$monthName $year" ?>
     </caption>
     <thead>

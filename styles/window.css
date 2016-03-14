@@ -55,9 +55,13 @@
     font-size: 1.1em;
 }
 
+.admin-window.editor h3 span {
+    float: right;
+}
+
 .admin-window.editor textarea {
     box-sizing: border-box;
-    width: 95%;
+    width: 96%;
     border: none;
     height: 150px;
     padding: 4px;
@@ -71,12 +75,8 @@
     width: 420px;
 }
 
-.admin-window.editor .right-side {
-    float: right;
-    width: 230px;
-    height: 300px;
-}
-
 .admin-window.editor .preview {
     height: 150px;
+    float: right;
+    width: 230px;
 }

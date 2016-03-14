@@ -28,32 +28,6 @@ function initializeMenuEditor() {
         });
     });
 
-    // // done button click
-    // var doneBut = $('menu-editor-done');
-    // doneBut.addEvent('click', function (e) {
-    //     e.preventDefault();
-    //     hideMenuEditor();
-    // });
-    //
-    //
-    // // left arrow click
-    // $('menu-left-arrow').addEvent('click', function (e) {
-    //     e.preventDefault();
-    //     var menuDay = doneBut.retrieve('menuDay');
-    //     updateMenuEditor();
-    //     if (menuDay && menuDay.previousDay)
-    //         showMenuEditor(menuDay.previousDay);
-    // });
-    //
-    // // right arrow click
-    // $('menu-right-arrow').addEvent('click', function (e) {
-    //     e.preventDefault();
-    //     updateMenuEditor();
-    //     var menuDay = doneBut.retrieve('menuDay');
-    //     if (menuDay && menuDay.nextDay)
-    //         showMenuEditor(menuDay.nextDay);
-    // });
-
 }
 
 function showMenuEditor (menuDay) {
@@ -94,6 +68,24 @@ function showMenuEditor (menuDay) {
         rarr = new Element('div', { id: 'menu-right-arrow' });
         win.parentElement.adopt(larr, rarr);
 
+        // left arrow click
+        $('menu-left-arrow').addEvent('click', function (e) {
+            e.preventDefault();
+            var menuDay = win.retrieve('menuDay');
+            updateMenuEditor();
+            if (menuDay && menuDay.previousDay)
+                showMenuEditor(menuDay.previousDay);
+        });
+
+        // right arrow click
+        $('menu-right-arrow').addEvent('click', function (e) {
+            e.preventDefault();
+            updateMenuEditor();
+            var menuDay = win.retrieve('menuDay');
+            if (menuDay && menuDay.nextDay)
+                showMenuEditor(menuDay.nextDay);
+        });
+
     }
 
     larr = $('menu-left-arrow');
@@ -122,6 +114,9 @@ function showMenuEditor (menuDay) {
 }
 
 function updateMenuEditor() {
+    return;
+
+
     var menuDay   = $('menu-editor-done').retrieve('menuDay'),
         breakfast = $('breakfast-textarea'),
         lunch     = $('lunch-textarea'),

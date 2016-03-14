@@ -144,12 +144,18 @@ function createEditorWindow () {
     lunchHead.adopt(prevHead1);
     breakHead.adopt(prevHead2);
 
+    // input
+    var inputWrap = new Element('div', { class: 'input-wrap' });
+    var inputSpan = new Element('span', { text: ' salad' });
+    var input = new Element('input', { type: 'text' });
+    inputWrap.adopt(input, inputSpan);
+
     // textareas
     var lunchLeft = new Element('div', { class: 'left-side' });
     var breakLeft = new Element('div', { class: 'left-side' });
     var lunchArea = new Element('textarea');
     var breakArea = new Element('textarea');
-    lunchLeft.adopt(lunchArea);
+    lunchLeft.adopt(lunchArea, inputWrap);
     breakLeft.adopt(breakArea);
 
 

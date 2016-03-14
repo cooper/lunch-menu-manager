@@ -108,11 +108,11 @@
 }
 
 .admin-window.editor .input-wrap {
-    margin: 10px;
+    margin: 10px 15px 15px 8px;
 }
 
 .admin-window.editor .input-wrap input {
-    height: 30px;
+    height: 20px;
     border: 1px solid #222;
     padding: 3px;
     font-size: 16px;

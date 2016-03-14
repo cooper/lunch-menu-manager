@@ -48,8 +48,8 @@
     width: auto;
     margin: 0;
     padding: 0px 10px;
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 1.1em;
@@ -60,4 +60,11 @@
     width: 100%;
     border: none;
     height: 150px;
+}
+
+
+.admin-window.editor .right-side {
+    float: right;
+    width: 230px;
+    height: 500px;
 }

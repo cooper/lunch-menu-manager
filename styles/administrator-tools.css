@@ -171,18 +171,3 @@ ul.administrator-tools li a {
     position: relative;
     cursor: pointer;
 }
-
-#menu-notes-edit {
-    position: absolute;
-    left: 35%;
-    top: 0;
-    width: 30%;
-    margin: auto;
-    text-align: center;
-    text-transform: none;
-    height: 20px;
-    line-height: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    display: none;
-}

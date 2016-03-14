@@ -46,16 +46,20 @@ function initializeAdministatorTools() {
 
     });
 
+    // footer notes edit
+    var menuNotes, footerEdit = $('menu-notes'), $('menu-notes-edit');
+    menuNotes.addEvent('mouseenter', function () {
+        footerEdit.setStyle('display', 'block');
+    });
+    menuNotes.addEvent('mouseleave', function () {
+        footerEdit.setStyle('display', 'none');
+    });
+    menuNotes.addEvent('click', showNotesEditor);
+
     var overlay      = $('share-overlay'),
         adminWindow  = $('share-window'),
         printLoading = $('share-window-padding');
     adminWindow.store('printLoading', printLoading);
-
-    // notes button click
-    // $('notes-button').addEvent('click', function (e) {
-    //     e.preventDefault();
-    //     showNotesEditor();
-    // });
 
     // print button click
     $('print-button').addEvent('click', function (e) {

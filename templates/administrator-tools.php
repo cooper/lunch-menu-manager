@@ -31,7 +31,7 @@ $nextNum = $next[0];
                 <img id="administrator-logo" class="administrator-logo" src="images/lmm-top.png" alt="lmm" />
                 <span id="status-text"></span>
             </a></li>
-            <li><a><i class="fa fa-list"></i> Reminders</a></li>
+            <li><a title="View your reminders"><i class="fa fa-list"></i> Reminders</a></li>
         </ul>
         <ul class="administrator-tools center">
             <li><a href="<?= $prevURL ?>" title="Previous month">

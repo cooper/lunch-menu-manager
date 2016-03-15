@@ -162,27 +162,34 @@ function saveNotes() {
 // refreshCalendar();
 
 // footer notes
-function showNotesEditor() {
+function showNotesEditor(e) {
+    if (e) e.preventDefault();
+
     var win     = createWindow('Footnotes');
     var padding = new Element('div', { class: 'admin-window-padding', text: footerNotes });
-    //var span    = new Element('span', { text: footerNotes });
     var area    = new Element('textarea', { value: currentNotes });
+
     padding.adopt(area);
     win.adopt(padding);
     win.addClass('notes-editor');
     win.beforeClose = saveNotes;
+
     presentAnyWindow(win);
 }
 
 // institution name
-function showInstitutionEditor() {
+function showInstitutionEditor(e) {
+    if (e) e.preventDefault();
+
     var win     = createWindow('Institution name');
     var padding = new Element('div', { class: 'admin-window-padding', text: institutionNotes });
-    //var span    = new Element('span', { text: footerNotes });
-    var input   = new Element('input', { type: 'text' });
+    var input   = new Element('input', { type: 'text', value: currentTopLeft });
+
     padding.adopt(input);
     win.adopt(padding);
     win.addClass('notes-editor');
+    //win.beforeClose = saveTopLeft;
+
     presentAnyWindow(win);
 }
 

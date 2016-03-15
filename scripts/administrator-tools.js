@@ -122,6 +122,10 @@ function printOrShare(msg) {
 function saveNotes() {
     var win = document.getElement('.admin-window.notes-editor');
     var notes = win.getElement('textarea').getProperty('value');
+
+    // no change?
+    if (window.currentNotes == notes)
+        return;
     window.currentNotes = notes;
 
     statusLoading();
@@ -142,11 +146,16 @@ function saveNotes() {
     });
 
     refreshCalendar();
+    return true;
 }
 
 function saveTopLeft() {
     var win = document.getElement('.admin-window.notes-editor');
     var topLeft = win.getElement('input').getProperty('value');
+
+    // no change?
+    if (window.currentTopLeft == topLeft)
+        return false;
     window.currentTopLeft = topLeft;
 
     statusLoading();
@@ -165,6 +174,7 @@ function saveTopLeft() {
     });
 
     refreshCalendar();
+    return true;
 }
 
 // footer notes

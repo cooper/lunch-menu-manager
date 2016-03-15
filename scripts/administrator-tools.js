@@ -312,7 +312,8 @@ function presentAnyWindow (win) {
 }
 
 // close the current window
-function closeWindow () {
+function closeWindow (e) {
+    if (e) e.preventDefault();
     if (!presentedWindow) return;
 
     // do something first

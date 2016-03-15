@@ -29,7 +29,7 @@ span two pages if these footnotes exceed five lines.    \
 var institutionNotes = '                                \
 This text will be displayed in the upper left of the    \
 calendar. It is useful for the name of the cafeteria or \
-the institution.                                        \
+the institution. Changes are applied to all months.     \
 ';
 
 function initializeAdministatorTools() {
@@ -94,15 +94,6 @@ function initializeAdministatorTools() {
         printOrShare(sharingInstructions);
     });
 
-    // done button click
-    $('share-window-done').addEvent('click', function (e) {
-        e.preventDefault();
-    });
-    $('notes-window-done').addEvent('click', function (e) {
-        e.preventDefault();
-        hideNotesWindow();
-    });
-
 }
 
 /*##################
@@ -134,18 +125,9 @@ function printOrShare(msg) {
 ###########*/
 
 function saveNotes() {
-    var overlay  = $('notes-overlay'),
-    adminWindow  = $('notes-window');
+    var win = document.getElement('.admin-window.notes-editor');
+    var notes = win.getElement('textarea').getProperty('value');
 
-    var notes = $('notes-window-textarea').getProperty('value');
-    window.currentNotes = notes;
-    console.log('Saving notes: ' + notes);
-
-    var topLeft = $('notes-window-input').getProperty('value');
-    window.currentTopLeft = topLeft;
-    console.log('Saving top left: ' + topLeft);
-
-    overlay.setStyle('display', 'block');
     statusLoading();
     var request = new Request.JSON({
         url: 'functions/update-notes.php',
@@ -163,30 +145,25 @@ function saveNotes() {
         notes:  notes
     });
 
-    statusLoading();
-    var request2 = new Request.JSON({
-        url: 'functions/update-top.php',
-        onSuccess: function (data) {
-            statusSuccess();
-            console.log(data);
-        },
-        onFailure: function (error) {
-            statusError(error);
-            presentAlert('Error', 'Failed to update institution name. Please reload the page. Error: ' + error);
-        }
-    }).post({
-        notes: topLeft
-    });
-
     refreshCalendar();
 }
 
-// function showNotesEditor() {
-//     var overlay  = $('notes-overlay'),
-//     adminWindow  = $('notes-window');
-//     overlay.setStyle('display', 'block');
-//     $('notes-window-textarea').focus();
-// }
+// statusLoading();
+// var request2 = new Request.JSON({
+//     url: 'functions/update-top.php',
+//     onSuccess: function (data) {
+//         statusSuccess();
+//         console.log(data);
+//     },
+//     onFailure: function (error) {
+//         statusError(error);
+//         presentAlert('Error', 'Failed to update institution name. Please reload the page. Error: ' + error);
+//     }
+// }).post({
+//     notes: topLeft
+// });
+//
+// refreshCalendar();
 
 // footer notes
 function showNotesEditor() {
@@ -197,6 +174,7 @@ function showNotesEditor() {
     padding.adopt(area);
     win.adopt(padding);
     win.addClass('notes-editor');
+    win.beforeClose = saveNotes;
     presentAnyWindow(win);
 }
 
@@ -210,15 +188,6 @@ function showInstitutionEditor() {
     win.adopt(padding);
     win.addClass('notes-editor');
     presentAnyWindow(win);
-}
-
-function hideNotesWindow() {
-    saveNotes();
-    var adminWindow  = $('notes-window'),
-        overlay      = $('notes-overlay');
-
-    // replace the content with the loading view
-    overlay.setStyle('display', 'none');
 }
 
 /*############

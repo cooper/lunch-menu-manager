@@ -139,12 +139,6 @@ function saveMenu() {
 
 }
 
-function hideMenuEditor() {
-    saveMenu();
-    $('menu-editor-overlay').setStyle('display', 'none');
-}
-
-
 function createEditorWindow () {
     var win = createWindow('Menu editor');
     win.addClass('editor');

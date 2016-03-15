@@ -33,7 +33,7 @@ the institution. Changes are applied to all months.     \
 ';
 
 function initializeAdministatorTools() {
-    var calendar = $$('.lunch-calendar')[0];
+    var calendar = document.getElement('.lunch-calendar');
 
     // if a window is open on unload, ask to close it.
     document.body.onbeforeunload = function () {
@@ -42,54 +42,60 @@ function initializeAdministatorTools() {
     };
 
     // toggle between breakfast and lunch
-    var captionModeContainer = $('caption-mode-container');
-    $('caption-mode-container').addEvent('click', function (e) {
-        e.preventDefault();
-        var oldMode = getCurrentMode();
-        var newMode = oldMode == 'lunch' ? 'breakfast' : 'lunch';
-        calendar.removeClass('mode-' + oldMode);
-        calendar.addClass('mode-' + newMode);
-        refreshCalendar();
+    $('caption-mode-container').addEvents({
+        mouseenter: function () {
+            $('caption-mode-toggle').setStyle('display', 'block');
+        },
+        mouseleave: function () {
+            $('caption-mode-toggle').setStyle('display', 'none');
+        },
+        click: function (e) {
+            e.preventDefault();
+            var oldMode = getCurrentMode();
+            var newMode = oldMode == 'lunch' ? 'breakfast' : 'lunch';
+            calendar.removeClass('mode-' + oldMode);
+            calendar.addClass('mode-' + newMode);
+            refreshCalendar();
 
-        // update displayed mode
-        var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
-            ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
-        if ($('caption-mode'))
-            $('caption-mode').setProperty('text', ucfirst2 + ' menu');
+            // update displayed mode
+            var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
+                ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
+            if ($('caption-mode'))
+                $('caption-mode').setProperty('text', ucfirst2 + ' menu');
 
-    });
-    captionModeContainer.addEvent('mouseenter', function () {
-        $('caption-mode-toggle').setStyle('display', 'block');
-    });
-    captionModeContainer.addEvent('mouseleave', function () {
-        $('caption-mode-toggle').setStyle('display', 'none');
+        }
     });
 
     // institution name edit
-    var captionLeftContainer = $('caption-left-container');
-    captionLeftContainer.addEvent('click', showInstitutionEditor);
-    captionLeftContainer.addEvent('mouseenter', function () {
-        $('caption-name-edit').setStyle('display', 'block');
+    $('caption-left-container').addEvents({
+        mouseenter: function () {
+            $('caption-name-edit').setStyle('display', 'block');
+        },
+        mouseleave: function () {
+            $('caption-name-edit').setStyle('display', 'none');
+        },
+        click: showInstitutionEditor
     });
-    captionLeftContainer.addEvent('mouseleave', function () {
-        $('caption-name-edit').setStyle('display', 'none');
-    });
+
 
     // footer notes edit
-    var menuNotes = $('menu-notes'), footerEdit = $('menu-notes-edit');
-    menuNotes.addEvent('mouseenter', function () {
-        footerEdit.setStyle('display', 'block');
+    $('menu-notes').addEvents({
+        mouseenter: function () {
+            $('menu-notes-edit').setStyle('display', 'block');
+        },
+        mouseleave: function () {
+            $('menu-notes-edit').setStyle('display', 'none');
+        },
+        click: showNotesEditor
     });
-    menuNotes.addEvent('mouseleave', function () {
-        footerEdit.setStyle('display', 'none');
-    });
-    menuNotes.addEvent('click', showNotesEditor);
 
-    // print/share button click
+    // print button click
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();
         printOrShare(printingInstructions);
     });
+
+    // share button click
     $('email-button').addEvent('click', function (e) {
         e.preventDefault();
         printOrShare(sharingInstructions);
@@ -121,38 +127,23 @@ function printOrShare(msg) {
     });
 }
 
-/*###########
-### NOTES ###
-###########*/
+/*#################
+### INSTITUTION ###
+#################*/
 
-function saveNotes() {
-    var win = document.getElement('.admin-window.notes-editor');
-    var notes = win.getElement('textarea').getProperty('value');
+function showInstitutionEditor(e) {
+    if (e) e.preventDefault();
 
-    // no change?
-    if (window.currentNotes == notes)
-        return;
-    window.currentNotes = notes;
+    var win     = createWindow('Institution name');
+    var padding = new Element('div', { class: 'admin-window-padding', text: institutionNotes });
+    var input   = new Element('input', { type: 'text', value: currentTopLeft });
 
-    statusLoading();
-    var request = new Request.JSON({
-        url: 'functions/update-notes.php',
-        onSuccess: function (data) {
-            statusSuccess();
-            console.log(data);
-        },
-        onFailure: function (error) {
-            statusError(error);
-            presentAlert('Error', 'Failed to update footer text. Please reload the page. Error: ' + error);
-        }
-    }).post({
-        year:   getCurrentYear(),
-        month:  getCurrentMonth(),
-        notes:  notes
-    });
+    padding.adopt(input);
+    win.adopt(padding);
+    win.addClass('notes-editor');
+    win.beforeClose = saveTopLeft;
 
-    refreshCalendar();
-    return true;
+    presentAnyWindow(win);
 }
 
 function saveTopLeft() {
@@ -183,7 +174,10 @@ function saveTopLeft() {
     return true;
 }
 
-// footer notes
+/*##################
+### FOOTER NOTES ###
+##################*/
+
 function showNotesEditor(e) {
     if (e) e.preventDefault();
 
@@ -199,20 +193,34 @@ function showNotesEditor(e) {
     presentAnyWindow(win);
 }
 
-// institution name
-function showInstitutionEditor(e) {
-    if (e) e.preventDefault();
+function saveNotes() {
+    var win = document.getElement('.admin-window.notes-editor');
+    var notes = win.getElement('textarea').getProperty('value');
 
-    var win     = createWindow('Institution name');
-    var padding = new Element('div', { class: 'admin-window-padding', text: institutionNotes });
-    var input   = new Element('input', { type: 'text', value: currentTopLeft });
+    // no change?
+    if (window.currentNotes == notes)
+        return;
+    window.currentNotes = notes;
 
-    padding.adopt(input);
-    win.adopt(padding);
-    win.addClass('notes-editor');
-    win.beforeClose = saveTopLeft;
+    statusLoading();
+    var request = new Request.JSON({
+        url: 'functions/update-notes.php',
+        onSuccess: function (data) {
+            statusSuccess();
+            console.log(data);
+        },
+        onFailure: function (error) {
+            statusError(error);
+            presentAlert('Error', 'Failed to update footer text. Please reload the page. Error: ' + error);
+        }
+    }).post({
+        year:   getCurrentYear(),
+        month:  getCurrentMonth(),
+        notes:  notes
+    });
 
-    presentAnyWindow(win);
+    refreshCalendar();
+    return true;
 }
 
 /*############

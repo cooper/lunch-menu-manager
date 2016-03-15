@@ -90,17 +90,17 @@ var MenuDay = new Class({
 });
 
 function getCurrentMode() {
-    if ($$('.lunch-calendar')[0].hasClass('mode-breakfast'))
+    if (document.getElement('.lunch-calendar').hasClass('mode-breakfast'))
         return 'breakfast';
     return 'lunch';
 }
 
 function getCurrentYear() {
-    return $$('.lunch-calendar')[0].data('year');
+    return document.getElement('.lunch-calendar').data('year');
 }
 
 function getCurrentMonth() {
-    return $$('.lunch-calendar')[0].data('month');
+    return document.getElement('.lunch-calendar').data('month');
 }
 
 function getCurrentMonthName() {
@@ -108,7 +108,7 @@ function getCurrentMonthName() {
 }
 
 function isAdmin() {
-    return $$('.lunch-calendar')[0].hasClass('administrator');
+    return document.getElement('.lunch-calendar').hasClass('administrator');
 }
 
 function fetchCalendar() {
@@ -137,7 +137,7 @@ function createMenuDays() {
             td.data('day')
         );
         menuDay.td = td;
-        menuDay.menuItems = td.getElementsByClassName('menu-items')[0];
+        menuDay.menuItems = td.getElement('.menu-items');
         td.store('menuDay', menuDay);
 
         // relative days

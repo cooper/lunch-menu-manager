@@ -6137,10 +6137,3 @@ requires:
 		wrap();
 	}
 }());
-
-Element.implement({
-	setFocus: function(index) {
-		this.setAttribute('tabIndex',index || 0);
-		this.focus();
-	}
-});

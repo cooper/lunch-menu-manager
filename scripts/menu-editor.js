@@ -32,6 +32,8 @@ function initializeMenuEditor() {
 
 function showMenuEditor (menuDay) {
     var win = document.getElement('.admin-window.editor');
+    win.beforeClose = saveMenu;
+
     if (win)
         saveMenu();
     else
@@ -56,10 +58,6 @@ function showMenuEditor (menuDay) {
     win.getElements('.day-number').each(function (el) {
         el.setProperty('text', menuDay.day);
     });
-
-    // if breakfast is empty, probably adding a new day; focus it
-    if (!breakArea.value.length)
-        breakArea.setFocus();
 
     /* arrows */
 
@@ -109,7 +107,10 @@ function showMenuEditor (menuDay) {
         rarr.setStyle('display', 'none');
     }
 
-    win.beforeClose = saveMenu;
+    // if breakfast is empty, probably adding a new day; focus it
+    if (!breakArea.value.length)
+        breakArea.focus();
+
     return win;
 }
 

@@ -208,11 +208,6 @@ function refreshCalendar() {
             notes = '(no footer text)';
 
         menuNotes.setProperty('html', notes);
-
-        // notes in the admin thing, if it is present
-        if ($('notes-window-textarea'))
-            $('notes-window-textarea').setProperty('value', currentNotes);
-
     }
 
     // top left
@@ -221,11 +216,6 @@ function refreshCalendar() {
         if (currentTopLeft.length)
             captionLeft.setStyle('opacity', 1);
         captionLeft.setProperty('text', currentTopLeft);
-
-        // notes in the admin thing, if it is present
-        if ($('notes-window-input'))
-            $('notes-window-input').setProperty('value', currentTopLeft);
-
     }
     else {
         captionLeft.setStyle('opacity', 0);

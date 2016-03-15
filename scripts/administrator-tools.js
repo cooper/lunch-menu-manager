@@ -79,11 +79,6 @@ function initializeAdministatorTools() {
     });
     menuNotes.addEvent('click', showNotesEditor);
 
-    var overlay      = $('share-overlay'),
-        adminWindow  = $('share-window'),
-        printLoading = $('share-window-padding');
-    adminWindow.store('printLoading', printLoading);
-
     // print/share button click
     $('print-button').addEvent('click', function (e) {
         e.preventDefault();

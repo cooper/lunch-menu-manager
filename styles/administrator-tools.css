@@ -81,36 +81,6 @@ ul.administrator-tools li a {
     text-decoration: none;
 }
 
-#notes-window-textarea {
-    width: 95%;
-    height: 200px;
-    margin: 10px auto;
-    display: block;
-    font-size: 16px;
-    border: 1px solid #aaa;
-}
-
-#notes-window-input {
-    height: 20px;
-    font-size: 14px;
-    margin: 10px auto;
-    width: 95%;
-    display: block;
-    border: 1px solid #aaa;
-}
-
-#notes-window-padding {
-    text-align: left;
-}
-
-#notes-window-padding span {
-    font-size: small;
-}
-
-#notes-window-padding h3 {
-    margin: 15px 0 5px 0;
-}
-
 /* CALENDAR EDIT BUTTONS */
 
 .calendar-cell-edit {

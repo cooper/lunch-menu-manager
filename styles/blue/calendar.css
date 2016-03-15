@@ -10,6 +10,8 @@ table.lunch-calendar {
 table.lunch-calendar caption {
     color: #111;
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 

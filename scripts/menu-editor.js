@@ -125,10 +125,19 @@ function saveMenu() {
     var textareas  = win.getElements('textarea');
     var breakArea  = textareas[0], lunchArea = textareas[1];
 
+    var newBreak = breakArea.value.trim(),
+        newLunch = lunchArea.value.trim(),
+        newSalad = saladInput.value.trim();
+
+    // nothing has changed
+    if (newBreak == menuDay.breakfast &&
+        newLunch == menuDay.lunch && newSalad == menuDay.salad)
+        return false;
+
     // update the menu day object
-    menuDay.breakfast = breakArea.value.trim();
-    menuDay.lunch = lunchArea.value.trim();
-    menuDay.salad = saladInput.value.trim();
+    menuDay.breakfast = newBreak;
+    menuDay.lunch = newLunch;
+    menuDay.salad = newSalad;
 
     // update in database
     if (menuDay)
@@ -137,6 +146,7 @@ function saveMenu() {
     // update calendar
     menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
 
+    return true;
 }
 
 function createEditorWindow () {

@@ -14,16 +14,22 @@ var printingInstructions = '                            \
     choose Print from the File menu.                    \
 ';
 
-var sharingInstructions = '                         \
-    Your PDF menu was generated.                    \
-    You can now share it by attaching the PDF file  \
-    to an e-mail.                                   \
+var sharingInstructions = '                             \
+    Your PDF menu was generated.                        \
+    You can now share it by attaching the PDF file      \
+    to an e-mail.                                       \
 ';
 
 var footerNotes = '                                     \
 This text will be displayed in the footer of the        \
 calendar for the selected month. Printed menus may      \
 span two pages if these footnotes exceed five lines.    \
+';
+
+var institutionNotes = '                                \
+This text will be displayed in the upper left of the    \
+calendar. It is useful for the name of the cafeteria or \
+the institution.                                        \
 ';
 
 function initializeAdministatorTools() {
@@ -55,7 +61,7 @@ function initializeAdministatorTools() {
 
     // institution name edit
     var captionLeftContainer = $('caption-left-container');
-    captionLeftContainer.addEvent('click', showNotesEditor);
+    captionLeftContainer.addEvent('click', showInstitutionEditor);
     captionLeftContainer.addEvent('mouseenter', function () {
         $('caption-name-edit').setStyle('display', 'block');
     });
@@ -194,6 +200,18 @@ function showNotesEditor() {
     presentAnyWindow(win);
 }
 
+// institution name
+function showInstitutionEditor() {
+    var win     = createWindow('Institution name');
+    var padding = new Element('div', { class: 'admin-window-padding', text: institutionNotes });
+    //var span    = new Element('span', { text: footerNotes });
+    var input   = new Element('input', { type: 'text' });
+    padding.adopt(input);
+    win.adopt(padding);
+    win.addClass('notes-editor');
+    presentAnyWindow(win);
+}
+
 function hideNotesWindow() {
     saveNotes();
     var adminWindow  = $('notes-window'),
@@ -274,7 +292,7 @@ function formatAMPM(date) {
     var ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
     var strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
 }

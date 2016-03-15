@@ -35,6 +35,13 @@ the institution. Changes are applied to all months.     \
 function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
 
+    // if a window is open on unload, ask to close it.
+    document.addEvent('beforeunload', function (){
+        if (!document.getElement('.admin-window'))
+            return;
+        return 'Be sure to click "DONE" to save current changes!';
+    });
+
     // toggle between breakfast and lunch
     var captionModeContainer = $('caption-mode-container');
     $('caption-mode-container').addEvent('click', function (e) {

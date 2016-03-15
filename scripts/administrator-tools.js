@@ -127,6 +127,7 @@ function printOrShare(msg) {
 function saveNotes() {
     var win = document.getElement('.admin-window.notes-editor');
     var notes = win.getElement('textarea').getProperty('value');
+    window.currentNotes = notes;
 
     statusLoading();
     var request = new Request.JSON({
@@ -170,7 +171,7 @@ function showNotesEditor() {
     var win     = createWindow('Footnotes');
     var padding = new Element('div', { class: 'admin-window-padding', text: footerNotes });
     //var span    = new Element('span', { text: footerNotes });
-    var area    = new Element('textarea');
+    var area    = new Element('textarea', { value: currentNotes });
     padding.adopt(area);
     win.adopt(padding);
     win.addClass('notes-editor');

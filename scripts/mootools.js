@@ -161,7 +161,7 @@ var Type = this.Type = function(name, object){
 			object.prototype.$family = (function(){
 				return lower;
 			}).hide();
-			
+
 		}
 	}
 
@@ -1153,7 +1153,7 @@ this.Events = new Class({
 	addEvent: function(type, fn, internal){
 		type = removeOn(type);
 
-		
+
 
 		this.$events[type] = (this.$events[type] || []).include(fn);
 		if (internal) fn.internal = true;
@@ -2787,7 +2787,7 @@ Document.implement({
 	newElement: function(tag, props){
 		if (props){
 			if (props.checked != null) props.defaultChecked = props.checked;
-			if ((props.type == 'checkbox' || props.type == 'radio') && props.value == null) props.value = 'on'; 
+			if ((props.type == 'checkbox' || props.type == 'radio') && props.value == null) props.value = 'on';
 			/*<ltIE9>*/ // IE needs the type to be set before changing content of style element
 			if (!canChangeStyleHTML && tag == 'style'){
 				var styleElement = document.createElement('style');
@@ -4503,7 +4503,7 @@ Element.implement({
 		// This svg section under, calling `svgCalculateSize()`, can be removed when FF fixed the svg size bug.
 		// Bug info: https://bugzilla.mozilla.org/show_bug.cgi?id=530985
 		if (this.get('tag') == 'svg') return svgCalculateSize(this);
-		
+
 		var bounds = this.getBoundingClientRect();
 		return {x: bounds.width, y: bounds.height};
 	},
@@ -5821,8 +5821,8 @@ JSON.secure = true;
 
 JSON.decode = function(string, secure){
 	if (!string || typeOf(string) != 'string') return null;
-    
-	if (secure == null) secure = JSON.secure; 
+
+	if (secure == null) secure = JSON.secure;
 	if (secure){
 		if (JSON.parse) return JSON.parse(string);
 		if (!JSON.validate(string)) throw new Error('JSON could not decode the input; security is enabled and the value is not secure.');
@@ -6137,3 +6137,10 @@ requires:
 		wrap();
 	}
 }());
+
+Element.implement({
+	setFocus: function(index) {
+		this.setAttribute('tabIndex',index || 0);
+		this.focus();
+	}
+});

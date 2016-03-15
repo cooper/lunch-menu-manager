@@ -59,7 +59,7 @@ function showMenuEditor (menuDay) {
 
     // if breakfast is empty, probably adding a new day; focus it
     if (!breakArea.value.length)
-        breakArea.focus();
+        breakArea.setFocus();
 
     /* arrows */
 

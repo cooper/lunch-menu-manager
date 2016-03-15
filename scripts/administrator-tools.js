@@ -36,10 +36,10 @@ function initializeAdministatorTools() {
     var calendar = $$('.lunch-calendar')[0];
 
     // if a window is open on unload, ask to close it.
-    window.addEvent('beforeunload', function () {
+    document.body.onbeforeunload = function () {
         if (document.getElement('.admin-window'))
             return 'Be sure to click "DONE" to save current changes!';
-    });
+    };
 
     // toggle between breakfast and lunch
     var captionModeContainer = $('caption-mode-container');

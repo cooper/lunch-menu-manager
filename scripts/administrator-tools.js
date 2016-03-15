@@ -144,22 +144,28 @@ function saveNotes() {
     refreshCalendar();
 }
 
-// statusLoading();
-// var request2 = new Request.JSON({
-//     url: 'functions/update-top.php',
-//     onSuccess: function (data) {
-//         statusSuccess();
-//         console.log(data);
-//     },
-//     onFailure: function (error) {
-//         statusError(error);
-//         presentAlert('Error', 'Failed to update institution name. Please reload the page. Error: ' + error);
-//     }
-// }).post({
-//     notes: topLeft
-// });
-//
-// refreshCalendar();
+function saveTopLeft() {
+    var win = document.getElement('.admin-window.notes-editor');
+    var topLeft = win.getElement('input').getProperty('value');
+    window.currentTopLeft = topLeft;
+
+    statusLoading();
+    var request2 = new Request.JSON({
+        url: 'functions/update-top.php',
+        onSuccess: function (data) {
+            statusSuccess();
+            console.log(data);
+        },
+        onFailure: function (error) {
+            statusError(error);
+            presentAlert('Error', 'Failed to update institution name. Please reload the page. Error: ' + error);
+        }
+    }).post({
+        notes: topLeft
+    });
+
+    refreshCalendar();
+}
 
 // footer notes
 function showNotesEditor(e) {
@@ -188,7 +194,7 @@ function showInstitutionEditor(e) {
     padding.adopt(input);
     win.adopt(padding);
     win.addClass('notes-editor');
-    //win.beforeClose = saveTopLeft;
+    win.beforeClose = saveTopLeft;
 
     presentAnyWindow(win);
 }

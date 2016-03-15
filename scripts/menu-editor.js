@@ -31,13 +31,15 @@ function initializeMenuEditor() {
 }
 
 function showMenuEditor (menuDay) {
-    var win = document.getElement('.admin-window.editor');
-    win.beforeClose = saveMenu;
 
+    // find the window
+    var win = document.getElement('.admin-window.editor');
     if (win)
         saveMenu();
     else
         win = createEditorWindow();
+
+    win.beforeClose = saveMenu;
 
     // find inputs
     var saladInput = win.getElement('input');

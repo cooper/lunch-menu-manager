@@ -137,6 +137,8 @@
     padding: 10px 15px;
     cursor: pointer;
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 #menu-left-arrow {

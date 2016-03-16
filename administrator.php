@@ -2,7 +2,7 @@
     $LOGIN_REQUIRED = true;
     require_once('functions/session.php');
     require_once('functions/date-input.php');
-    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
+    $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'crimson';
 ?>
 <!doctype html>
 <html>

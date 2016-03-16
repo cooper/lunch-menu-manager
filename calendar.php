@@ -1,6 +1,6 @@
 <?php
 
-$theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
+$theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'crimson';
 $pdf = isset($_GET['pdf']) ? true : null;
 
 ?>

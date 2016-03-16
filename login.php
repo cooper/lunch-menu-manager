@@ -8,7 +8,7 @@ if (!isset($_POST['username']) || !isset($_POST['password']))
 
 if (verify_login($_POST['username'], $_POST['password'])) {
     $_SESSION['logged_in'] = true;
-    $_SESSION['theme'] = 'red-and-black';
+    $_SESSION['theme'] = 'crimson';
     header('Location: administrator.php');
 }
 else header('Location: index.php');

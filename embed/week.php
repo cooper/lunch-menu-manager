@@ -42,9 +42,9 @@ $period = new DatePeriod($monday, $interval, $friday);
 <head>
     <meta charset="utf-8" />
     <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css" />
-    <link href="../styles/red-and-black/weekly.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/crimson/weekly.css" rel="stylesheet" type="text/css" />
 </head>
-    
+
 <body>
 <table id="weekly-calendar">
 <?php
@@ -52,16 +52,16 @@ $period = new DatePeriod($monday, $interval, $friday);
     foreach ($period as $date):
         $dstr = $date->format('n-j-Y');
         $day_data = isset($month_data[$dstr]) ? $month_data[$dstr] : array();
-        
+
         // is this today?
         $is_today = $date->format('Y-m-d') == date('Y-m-d');
-        
+
         // fill in missing data with N/A
         if (!isset($day_data['breakfast']))
             $day_data['breakfast'] = 'N/A';
         if (!isset($day_data['lunch']))
             $day_data['lunch'] = 'N/A';
-        
+
         // lunch + salad
         $lunch = $day_data['lunch'];
         if (isset($day_data['salad']))
@@ -71,7 +71,7 @@ $period = new DatePeriod($monday, $interval, $friday);
         // breakfast
         $bfast = $day_data['breakfast'];
         $bfast = str_replace("\n", "<br />\n", htmlentities($bfast));
-        
+
 ?>
 
     <tr class="title">
@@ -96,9 +96,9 @@ $period = new DatePeriod($monday, $interval, $friday);
             </span>
         </td>
     </tr>
-       
+
 <?php endforeach; ?>
-    
+
     <tr class="full">
         <td colspan="2">
             <a target="_blank" href="../calendar.php?ref=week">
@@ -108,5 +108,5 @@ $period = new DatePeriod($monday, $interval, $friday);
     </tr>
 </table>
 </body>
-    
+
 </html>

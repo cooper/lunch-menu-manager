@@ -174,7 +174,8 @@ function injectCalendarData(data) {
         if (!menuDay) {
             var name = 'note-' + getCurrentMonth() + '-' +
                 td.data('cell') + '-' + getCurrentYear();
-            td.store('cellNotes', data[name].notes);
+            if (data[name])
+                td.store('cellNotes', data[name].notes);
             return;
         }
 
@@ -236,7 +237,7 @@ function refreshCalendar() {
         var menuDay   = td.retrieve('menuDay'),
             cellNotes = td.retrieve('cellNotes');
         if (!menuDay) {
-            if (cellNotes.length)
+            if (typeof cellNotes != 'undefined' && cellNotes.length)
                 td.getElement('.notes-items').setProperty('html',
                     replaceNewlines(cellNotes));
             return;

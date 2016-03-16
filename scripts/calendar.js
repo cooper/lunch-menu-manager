@@ -237,7 +237,7 @@ function refreshCalendar() {
         var menuDay   = td.retrieve('menuDay'),
             cellNotes = td.retrieve('cellNotes');
         if (!menuDay) {
-            if (cellNotes != null && cellNotes.length)
+            if (typeof cellNotes == 'string' && cellNotes.length)
                 td.getElement('.notes-items').setProperty('html',
                     replaceNewlines(cellNotes));
             return;

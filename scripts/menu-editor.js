@@ -17,8 +17,13 @@ function initializeMenuEditor() {
     $$('table.lunch-calendar tbody td').each(function (td) {
 
         // fake day
-        if (!td.data('year'))
+        if (!td.data('year')) {
+            td.addEvent('click', function (e) {
+                e.preventDefault();
+                showCellNotesEditor(td);
+            });
             return;
+        }
 
         // add click listener
         var menuDay = td.retrieve('menuDay');
@@ -219,4 +224,74 @@ function createEditorWindow () {
     });
 
     return win;
+}
+
+/*#########################
+### NON-MENU CELL NOTES ###
+#########################*/
+
+function showCellNotesEditor (td) {
+    var win = createCellEditorWindow();
+    win.beforeClose = saveCellNotes;
+
+    // find inputs
+    var saladInput = win.getElement('input');
+    var textareas  = win.getElements('textarea');
+    var breakArea  = textareas[0], lunchArea = textareas[1];
+
+    // update the previews
+    win.updatePreviews();
+
+    presentAnyWindow(win);
+
+    // if breakfast is empty, probably adding a new day; focus it
+    if (!breakArea.value.length)
+        breakArea.focus();
+
+    return win;
+}
+
+function createCellEditorWindow () {
+    var win = createWindow('Cell notes editor');
+    win.addClass('editor');
+
+    var clear = new Element('div', { styles: { clear: 'both' } });
+
+    // headings
+    var breakHead = new Element('h3', { text: 'Breakfast' });
+    var prevHead1 = new Element('span', { text: 'Preview' });
+    breakHead.adopt(prevHead1);
+    breakHead.setStyle('margin-top', '0');
+
+
+    // textareas
+    var breakLeft = new Element('div', { class: 'left-side' });
+    var breakArea = new Element('textarea');
+    breakLeft.adopt(breakArea);
+
+    // previews
+    var cell  = new Element('div',  { class: 'preview-cell' });
+    var inner = new Element('div',  { class: 'inner' });
+    var num   = new Element('span', { class: 'day-number', text: '1' });
+    var items = new Element('span', { class: 'menu-items' });
+    var prev1 = new Element('div',  { class: 'preview' });
+
+    // wrappers
+    var breakWrap = new Element('div', { class: 'wrap' });
+    breakWrap.adopt(breakLeft, prev2, clear.clone());
+
+    win.adopt(breakHead, breakWrap, clear);
+
+    // typing events
+    var updatePreviews = function () {
+        prev1.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
+    };
+    win.updatePreviews = updatePreviews;
+    breakArea.addEvent('input', updatePreviews);
+
+    return win;
+}
+
+function saveCellNotes () {
+    
 }

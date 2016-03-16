@@ -272,7 +272,7 @@ function createCellEditorWindow () {
     // previews
     var cell  = new Element('div',  { class: 'preview-cell' });
     var inner = new Element('div',  { class: 'inner' });
-    var items = new Element('span', { class: 'menu-items' });
+    var items = new Element('span', { class: 'notes-items' });
     var prev1 = new Element('div',  { class: 'preview' });
         inner.adopt(items);
         cell.adopt(inner);

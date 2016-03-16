@@ -34,7 +34,7 @@ ul.administrator-tools li a {
     color: #fff;
 }
 
-ul.administrator-tools li a:hover {
+ul.administrator-tools li a[href]:hover {
     background-color: #333;
 }
 

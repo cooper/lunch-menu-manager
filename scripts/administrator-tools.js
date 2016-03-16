@@ -37,7 +37,8 @@ function initializeAdministatorTools() {
 
     // if a window is open on unload, ask to close it.
     document.body.onbeforeunload = function () {
-        if (document.getElement('.admin-window'))
+        var win = document.getElement('.admin-window');
+        if (win && !win.hasClass('download'))
             return 'Be sure to click "DONE" to save current changes!';
     };
 
@@ -112,7 +113,7 @@ function printOrShare(msg) {
     var request = new Request.JSON({
         url: 'functions/generate-pdf.php',
         onSuccess: function (data) {
-            presentAlert('Menu generated', msg);
+            presentAlert('Menu generated', msg).addClass('download');
             window.location = data.generator;
             statusSuccess();
         },
@@ -323,6 +324,7 @@ function presentAlert (title, msg) {
     var padding = new Element('div', { class: 'admin-window-padding', text: msg });
     win.adopt(padding);
     presentAnyWindow(win);
+    return win;
 }
 
 var presentedWindow;

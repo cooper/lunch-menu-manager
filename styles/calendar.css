@@ -16,6 +16,10 @@ i.fa.right {
     text-align: right !important;
 }
 
+textarea, input[type=text] {
+    font-family: sans-serif;
+}
+
 table.lunch-calendar {
     border-collapse: collapse;
     table-layout: fixed;

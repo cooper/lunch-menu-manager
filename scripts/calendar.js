@@ -240,6 +240,7 @@ function refreshCalendar() {
                 td.getElement('.notes-items').setProperty('html',
                 replaceNewlines(cellNotes));
             return;
+        }
         else {
             menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
         }

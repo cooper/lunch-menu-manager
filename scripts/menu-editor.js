@@ -303,7 +303,8 @@ function saveCellNotes () {
 
     // nothing has changed
     var old = td.retrieve('cellNotes');
-    if (typeof old == 'string' && old == newNotes)
+    if (typeof old != 'string') old = '';
+    if (old == newNotes)
         return;
 
     // update database

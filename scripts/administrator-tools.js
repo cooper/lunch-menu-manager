@@ -244,7 +244,7 @@ function statusLoading() {
     $('status-text').setStyle('display', 'none');
 
     // update the icon
-    $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-notch');
+    $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-notch center');
 }
 
 // a process succeeded

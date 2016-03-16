@@ -275,6 +275,9 @@ function createCellEditorWindow () {
     var num   = new Element('span', { class: 'day-number', text: '1' });
     var items = new Element('span', { class: 'menu-items' });
     var prev1 = new Element('div',  { class: 'preview' });
+        inner.adopt(num, items);
+        cell.adopt(inner);
+        prev1.adopt(cell);
 
     // wrappers
     var breakWrap = new Element('div', { class: 'wrap' });

@@ -238,7 +238,7 @@ function showCellNotesEditor (td) {
     // find inputs
     var breakArea = win.getElement('textarea');
     var notes = td.retrieve('cellNotes');
-    if (notes.length)
+    if (typeof notes == 'string' && notes.length)
         breakArea.setProperty('value', notes);
 
     // update the previews
@@ -336,6 +336,6 @@ function saveCellNotes () {
     // update calendar
     td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
     td.store('cellNotes', newNotes);
-    
+
     return true;
 }

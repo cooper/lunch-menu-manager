@@ -8,7 +8,7 @@ $pdf = isset($_GET['pdf']) ? true : null;
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Menu calendar</title>
+    <title><?= "$monthName $year" ?> menu</title>
     <link href="styles/calendar.css" type="text/css" rel="stylesheet" />
     <link href="styles/<?= $theme ?>/calendar.css" type="text/css" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css" />

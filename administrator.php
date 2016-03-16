@@ -1,13 +1,14 @@
 <?php
     $LOGIN_REQUIRED = true;
     require_once('functions/session.php');
+    require_once('functions/date-input.php');
     $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'red-and-black';
 ?>
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Menu editor</title>
+    <title>LMM - <?= "$monthName $year" ?></title>
     <link href="styles/calendar.css" type="text/css" rel="stylesheet" />
     <link href="styles/administrator-tools.css" type="text/css" rel="stylesheet" />
     <link href="styles/window.css" type="text/css" rel="stylesheet" />

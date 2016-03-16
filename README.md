@@ -30,11 +30,11 @@ Login screen
 
 Administrator calendar, crimson theme
 
-![Calendar](http://i.imgur.com/CUGlvHJ.png)
+![Calendar](http://i.imgur.com/7LKHp4h.png)
 
 Menu editor, crimson theme
 
-![Menu editor](http://i.imgur.com/C8OTp3H.png)
+![Menu editor](http://i.imgur.com/bbjr0LH.png)
 
 Public calendar, crimson theme
 

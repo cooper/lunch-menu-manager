@@ -98,7 +98,7 @@ function showMenuEditor (menuDay) {
 
     // back arrow
     if (menuDay.previousDay) {
-        larr.innerHTML = '<i class="fa fa-chevron-left"></i> ' + menuDay.previousDay.shortName();
+        larr.innerHTML = '<i class="fa fa-chevron-left"></i>' + menuDay.previousDay.shortName();
         larr.setStyle('display', 'block');
     }
     else {
@@ -107,7 +107,7 @@ function showMenuEditor (menuDay) {
 
     // forward arrow
     if (menuDay.nextDay) {
-        rarr.innerHTML = menuDay.nextDay.shortName() + ' <i class="fa fa-chevron-right right"></i>';
+        rarr.innerHTML = menuDay.nextDay.shortName() + '<i class="fa fa-chevron-right right"></i>';
         rarr.setStyle('display', 'block');
     }
     else {

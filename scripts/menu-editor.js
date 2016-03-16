@@ -286,7 +286,7 @@ function createCellEditorWindow () {
 
     // typing events
     var updatePreviews = function () {
-        prev1.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
+        prev1.getElement('.notes-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
     };
     win.updatePreviews = updatePreviews;
     breakArea.addEvent('input', updatePreviews);

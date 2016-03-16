@@ -5,6 +5,7 @@ require_once(__DIR__.'/../functions/date-input.php');
 $mainCellBody = '';
 $fillerCellBody = '';
 
+$administrator = isset($administrator);
 if ($administrator) {
     $mainCellBody   = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit menu</div>';
     $fillerCellBody = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit notes</div>';
@@ -146,11 +147,11 @@ $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
     'breakfast' : 'lunch';
 
 // special styling when month view is opened from week view.
-$consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == 'week');
+$consistent = $administrator || (isset($_GET['ref']) && $_GET['ref'] == 'week');
 
 ?>
 
-<table class="lunch-calendar mode-<?php echo $mode; if (isset($administrator)) echo ' administrator'; ?>" data-year="<?= $year ?>" data-month="<?= $month ?>">
+<table class="lunch-calendar mode-<?php echo $mode; if ($administrator) echo ' administrator'; ?>" data-year="<?= $year ?>" data-month="<?= $month ?>">
     <caption>
 
         <div id="caption-mode-container">
@@ -183,7 +184,7 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
     </tbody>
 </table>
 <?php
-    if (!isset($administrator) && !isset($pdf))
+    if (!$administrator && !isset($pdf))
         require(__DIR__.'/footer-navigation.php');
 ?>
 <div id="menu-notes">

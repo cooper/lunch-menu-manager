@@ -302,7 +302,8 @@ function saveCellNotes () {
     var newNotes = area.value;
 
     // nothing has changed
-    if (td.retrieve('cellNotes') == newNotes)
+    var old = td.retrieve('cellNotes');
+    if (typeof old == 'string' && old == newNotes)
         return;
 
     // update database

@@ -278,7 +278,7 @@ function createCellEditorWindow () {
 
     // wrappers
     var breakWrap = new Element('div', { class: 'wrap' });
-    breakWrap.adopt(breakLeft, prev2, clear.clone());
+    breakWrap.adopt(breakLeft, prev1, clear.clone());
 
     win.adopt(breakHead, breakWrap, clear);
 
@@ -293,5 +293,5 @@ function createCellEditorWindow () {
 }
 
 function saveCellNotes () {
-    
+
 }

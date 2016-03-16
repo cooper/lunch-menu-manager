@@ -169,12 +169,22 @@ function injectCalendarData(data) {
     // update each menu day
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
-        if (!menuDay) return;
+
+        // no menu day? this cell might have other notes.
+        if (!menuDay) {
+            var name = 'note-' + getCurrentMonth() + '-' +
+                td.data('cell') + '-' + getCurrentYear();
+            td.store('cellNotes', data[name]);
+            return;
+        }
+
+        // inject meal info
         var dayData = data[menuDay.apiDateString()];
         if (!dayData) return;
         ['breakfast', 'lunch', 'salad'].each(function (i) {
             menuDay[i] = !dayData[i] ? '' : dayData[i];
         });
+
     });
 
     // refresh the displayed menu
@@ -224,8 +234,11 @@ function refreshCalendar() {
     // update menu text
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay = td.retrieve('menuDay');
-        if (!menuDay) return;
-        menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
+        if (!menuDay)
+            td.getElement('.notes-items').setProperty('html',
+                replaceNewlines(td.retrieve('cellNotes')));
+        else
+            menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
     });
 
 }

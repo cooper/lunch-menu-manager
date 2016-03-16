@@ -286,7 +286,7 @@ function createCellEditorWindow () {
 
     // typing events
     var updatePreviews = function () {
-        prev1.getElement('.notes-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
+        prev1.getElement('.notes-items').setProperty('html', replaceNewlines(breakArea.value);
     };
     win.updatePreviews = updatePreviews;
     breakArea.addEvent('input', updatePreviews);
@@ -295,5 +295,20 @@ function createCellEditorWindow () {
 }
 
 function saveCellNotes () {
+    var win = document.getElement('.admin-window.editor');
+    if (!win) return;
+    var td = win.retrieve('td');
+    if (!td) return;
 
+    // find inputs
+    var area = win.getElement('textarea');
+    var newNotes = area.value;
+
+    // update database
+    // TODO
+
+    // update calendar
+    td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
+
+    return true;
 }

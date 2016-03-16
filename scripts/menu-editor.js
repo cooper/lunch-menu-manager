@@ -259,11 +259,11 @@ function createCellEditorWindow () {
     var clear = new Element('div', { styles: { clear: 'both' } });
 
     // headings
-    var breakHead = new Element('h3', { text: 'Breakfast' });
+    var breakHead = new Element('h3', { text: 'Notes' });
     var prevHead1 = new Element('span', { text: 'Preview' });
     breakHead.adopt(prevHead1);
     breakHead.setStyle('margin-top', '0');
-
+    breakHead.setStyle('margin-bottom', '10px');
 
     // textareas
     var breakLeft = new Element('div', { class: 'left-side' });

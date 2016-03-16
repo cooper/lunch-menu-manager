@@ -324,7 +324,8 @@ function saveCellNotes () {
     }).post({
         year:       getCurrentYear(),
         month:      getCurrentMonth(),
-        cellID:     td.data('cell')
+        cellID:     td.data('cell'),
+        notes:      newNotes
     });
 
     // update calendar

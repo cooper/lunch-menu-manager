@@ -233,10 +233,11 @@ function refreshCalendar() {
 
     // update menu text
     $$('table.lunch-calendar tbody td').each(function (td) {
-        var menuDay = td.retrieve('menuDay');
-        if (!menuDay)
+        var menuDay   = td.retrieve('menuDay'),
+            cellNotes = td.retrieve('cellNotes');
+        if (!menuDay && cellNotes)
             td.getElement('.notes-items').setProperty('html',
-                replaceNewlines(td.retrieve('cellNotes')));
+                replaceNewlines(cellNotes));
         else
             menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
     });

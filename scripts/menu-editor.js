@@ -263,7 +263,6 @@ function createCellEditorWindow () {
     var prevHead1 = new Element('span', { text: 'Preview' });
     breakHead.adopt(prevHead1);
     breakHead.setStyle('margin-top', '0');
-    breakHead.setStyle('margin-bottom', '10px');
 
     // textareas
     var breakLeft = new Element('div', { class: 'left-side' });
@@ -282,6 +281,7 @@ function createCellEditorWindow () {
     // wrappers
     var breakWrap = new Element('div', { class: 'wrap' });
     breakWrap.adopt(breakLeft, prev1, clear.clone());
+    breakWrap.setStyle('margin-bottom', '10px');
 
     win.adopt(breakHead, breakWrap, clear);
 

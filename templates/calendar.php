@@ -152,16 +152,16 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
     <caption>
 
         <div id="caption-mode-container">
-            <? if ($administrator): ?>
+            <?php if ($administrator): ?>
             <div id="caption-mode-toggle"><i class="fa fa-leaf"></i> Toggle menu mode</div>
-            <? endif; ?>
+            <?php endif; ?>
             <span class="right" id="caption-mode"><?= ucfirst($mode) ?> menu</span>
         </div>
 
         <div id="caption-left-container">
-            <? if ($administrator): ?>
+            <?php if ($administrator): ?>
             <div id="caption-name-edit"><i class="fa fa-pencil"></i> Edit institution</div>
-            <? endif; ?>
+            <?php endif; ?>
             <span class="left" id="caption-left"></span>
         </div>
 
@@ -185,8 +185,8 @@ $consistent = isset($administrator) || (isset($_GET['ref']) && $_GET['ref'] == '
         require(__DIR__.'/footer-navigation.php');
 ?>
 <div id="menu-notes">
-    <? if ($administrator): ?>
+    <?php if ($administrator): ?>
     <div id="menu-notes-edit"><i class="fa fa-pencil"></i> Edit footer</div>
-    <? endif; ?>
-    <span id="menu-notes-notes"><? if ($administrator) echo "(no footer text)"; ?></span>
+    <?php endif; ?>
+    <span id="menu-notes-notes"><?php if ($administrator) echo "(no footer text)"; ?></span>
 </div>

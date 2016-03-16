@@ -245,11 +245,6 @@ function showCellNotesEditor (td) {
     win.updatePreviews();
 
     presentAnyWindow(win);
-
-    // if breakfast is empty, probably adding a new day; focus it
-    if (!breakArea.value.length)
-        breakArea.focus();
-
     return win;
 }
 

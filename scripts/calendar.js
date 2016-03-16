@@ -236,9 +236,9 @@ function refreshCalendar() {
         var menuDay   = td.retrieve('menuDay'),
             cellNotes = td.retrieve('cellNotes');
         if (!menuDay) {
-            if (cellNotes && cellNotes.length)
+            if (cellNotes)
                 td.getElement('.notes-items').setProperty('html',
-                replaceNewlines(cellNotes));
+                replaceNewlines(cellNotes.notes));
             return;
         }
         else {

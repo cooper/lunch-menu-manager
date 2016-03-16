@@ -245,6 +245,7 @@ function showCellNotesEditor (td) {
     win.updatePreviews();
 
     presentAnyWindow(win);
+    breakArea.focus();
     return win;
 }
 

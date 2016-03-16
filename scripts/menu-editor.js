@@ -236,9 +236,10 @@ function showCellNotesEditor (td) {
     win.td = td;
 
     // find inputs
-    var saladInput = win.getElement('input');
-    var textareas  = win.getElements('textarea');
-    var breakArea  = textareas[0], lunchArea = textareas[1];
+    var breakArea = win.getElement('textarea');
+    var notes = td.retrieve('cellNotes');
+    if (notes.length)
+        breakArea.setProperty('value', notes);
 
     // update the previews
     win.updatePreviews();
@@ -304,6 +305,10 @@ function saveCellNotes () {
     var area = win.getElement('textarea');
     var newNotes = area.value;
 
+    // nothing has changed
+    if (td.retrieve('cellNotes') == newNotes)
+        return;
+
     // update database
     statusLoading();
     var request = new Request.JSON({
@@ -330,6 +335,7 @@ function saveCellNotes () {
 
     // update calendar
     td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
-
+    td.store('cellNotes', newNotes);
+    
     return true;
 }

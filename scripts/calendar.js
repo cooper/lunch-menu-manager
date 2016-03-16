@@ -235,11 +235,14 @@ function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay   = td.retrieve('menuDay'),
             cellNotes = td.retrieve('cellNotes');
-        if (!menuDay && cellNotes && cellNotes.length)
-            td.getElement('.notes-items').setProperty('html',
+        if (!menuDay) {
+            if (cellNotes && cellNotes.length)
+                td.getElement('.notes-items').setProperty('html',
                 replaceNewlines(cellNotes));
-        else
+            return;
+        else {
             menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
+        }
     });
 
 }

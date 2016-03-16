@@ -41,7 +41,8 @@ function draw_calendar ($month, $year) {
 
             // if it's not Sunday or Saturday, add the cell.
             if ($x != 0 && $x != 6)
-                $calendar.= '<td data-cell="'. $cell_id++ .'"><div class="inner">' . $fillerCellBody . '</div></td>';
+                $calendar.= '<td data-cell="'. $cell_id++ .'"><div class="inner">' .
+                '<div class="notes-items"></div>' . $fillerCellBody . '</div></td>';
 
         }
 
@@ -125,7 +126,8 @@ function draw_calendar ($month, $year) {
 
             // add empty cells for any M-F.
             if ($running_day != 0 && $running_day != 6)
-                $calendar .= '<td data-cell="'. $cell_id++ .'"><div class="inner">' . $fillerCellBody . '</div></td>';
+                $calendar .= '<td data-cell="'. $cell_id++ .'"><div class="inner">' .
+                '<div class="notes-items"></div>' . $fillerCellBody . '</div></td>';
 
             $running_day++;
         }

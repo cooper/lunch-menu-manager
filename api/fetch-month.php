@@ -35,8 +35,6 @@ if ($st) {
     $st->bindValue(2, $month, SQLITE3_INTEGER);
     $results = $st->execute();
 
-    // turn into a JSON map
-    $map = array('success' => true);
     while ($row = $results->fetchArray()) {
         // e.g. note-3-0-2016 (notes for the first empty cell in March 2016)
         $map[ 'note-'.$row['month'].'-'.$row['cellID'].'-'.$row['year'] ] = array(
@@ -44,7 +42,6 @@ if ($st) {
             'timestamp' => empty2null($row['set_timestamp'])
         );
     }
-
 }
 
 // fetch the footer notes for the month, if any

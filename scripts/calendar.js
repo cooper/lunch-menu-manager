@@ -235,7 +235,7 @@ function refreshCalendar() {
     $$('table.lunch-calendar tbody td').each(function (td) {
         var menuDay   = td.retrieve('menuDay'),
             cellNotes = td.retrieve('cellNotes');
-        if (!menuDay && cellNotes)
+        if (!menuDay && cellNotes && cellNotes.length)
             td.getElement('.notes-items').setProperty('html',
                 replaceNewlines(cellNotes));
         else

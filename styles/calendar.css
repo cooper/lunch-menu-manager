@@ -83,7 +83,7 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
-table.lunch-calendar tbody td .menu-items {
+.menu-items {
     text-transform: lowercase;
 }
 

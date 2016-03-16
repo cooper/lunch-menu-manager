@@ -297,17 +297,38 @@ function createCellEditorWindow () {
 
 function saveCellNotes () {
     var win = document.getElement('.admin-window.editor');
-    if (!win || !win.td) return;
+    var td  = win.td;
+    if (!win || !td) return;
 
     // find inputs
     var area = win.getElement('textarea');
     var newNotes = area.value;
 
     // update database
-    // TODO
+    statusLoading();
+    var request = new Request.JSON({
+        url: 'functions/update-cell-notes.php',
+        onSuccess: function (data) {
+            if (data.error) {
+                statusError(data.error);
+                presentAlert('Error', 'Failed to save recent changes. Please reload the page. Error: ' + data.error);
+            }
+            else {
+                statusSuccess();
+            }
+        },
+        onError: function (text, error) {
+            statusError(error);
+            presentAlert('Error', 'Failed to save recent changes. Please reload the page. Error: ' + error);
+        }
+    }).post({
+        year:       getCurrentYear(),
+        month:      getCurrentMonth(),
+        cellID:     td.data('cell')
+    });
 
     // update calendar
-    win.td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
+    td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
 
     return true;
 }

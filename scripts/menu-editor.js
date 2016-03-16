@@ -233,6 +233,7 @@ function createEditorWindow () {
 function showCellNotesEditor (td) {
     var win = createCellEditorWindow();
     win.beforeClose = saveCellNotes;
+    win.td = td;
 
     // find inputs
     var saladInput = win.getElement('input');
@@ -296,9 +297,7 @@ function createCellEditorWindow () {
 
 function saveCellNotes () {
     var win = document.getElement('.admin-window.editor');
-    if (!win) return;
-    var td = win.retrieve('td');
-    if (!td) return;
+    if (!win || !win.td) return;
 
     // find inputs
     var area = win.getElement('textarea');
@@ -308,7 +307,7 @@ function saveCellNotes () {
     // TODO
 
     // update calendar
-    td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
+    win.td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
 
     return true;
 }

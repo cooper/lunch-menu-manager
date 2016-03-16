@@ -250,7 +250,7 @@ function showCellNotesEditor (td) {
 }
 
 function createCellEditorWindow () {
-    var win = createWindow('Cell notes editor');
+    var win = createWindow('Cell notes');
     win.addClass('editor');
 
     var clear = new Element('div', { styles: { clear: 'both' } });

@@ -1,5 +1,6 @@
 <?php
 
+require_once('functions/date-input.php');
 $theme = isset($_SESSION['theme']) ? $_SESSION['theme'] : 'crimson';
 $pdf = isset($_GET['pdf']) ? true : null;
 

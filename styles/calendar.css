@@ -79,7 +79,6 @@ table.lunch-calendar thead td {
 }
 
 table.lunch-calendar tbody td {
-    height: 100px;
     padding: 0;
     font-size: 13px;
     line-height: 1em;
@@ -92,9 +91,10 @@ table.lunch-calendar tbody td {
 }
 
 table.lunch-calendar tbody td div.inner {
+    overflow: hidden;
+    height: 90px;
     padding: 5px;
     width: auto;
-    height: 100%;
     position: relative;
 }
 
@@ -102,7 +102,7 @@ span.day-number {
     font-size: 200%;
     font-weight: bold;
     display: inline-block;
-    height: 90px;
+    height: 100%;
     float: left;
     margin-right: 5px;
     line-height: normal;

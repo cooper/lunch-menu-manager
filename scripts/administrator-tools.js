@@ -29,7 +29,7 @@ span two pages if these footnotes exceed five lines.    \
 var institutionNotes = '                                \
 This text will be displayed in the upper left of the    \
 calendar. It is useful for the name of the cafeteria or \
-the institution. Changes are applied to all months.     \
+institution. Changes are applied to all months.         \
 ';
 
 function initializeAdministatorTools() {

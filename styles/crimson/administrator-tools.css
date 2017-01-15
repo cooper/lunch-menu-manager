@@ -43,10 +43,6 @@ ul.administrator-tools li a[href]:hover {
     color: #fff;
 }
 
-.calendar-cell-edit:hover {
-    background: #222;
-}
-
 #caption-mode-toggle,
 #caption-name-edit,
 #menu-notes-edit {
@@ -56,10 +52,4 @@ ul.administrator-tools li a[href]:hover {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
-}
-
-#caption-mode-toggle:hover,
-#caption-name-edit:hover,
-#menu-notes-edit:hover {
-    background-color: #222;
 }

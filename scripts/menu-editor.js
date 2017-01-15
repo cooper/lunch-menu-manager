@@ -61,10 +61,10 @@ function showMenuEditor (menuDay) {
     saladInput.value = menuDay.salad;
 
     // update the previews
-    win.updatePreviews();
     win.getElements('.day-number').each(function (el) {
         el.setProperty('text', menuDay.day);
     });
+    win.updatePreviews();
 
     /* arrows */
 
@@ -247,7 +247,6 @@ function createEditorWindow () {
         el.addEvent('input', updatePreviews);
     });
 
-    updatePreviews();
     return win;
 }
 

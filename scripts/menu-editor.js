@@ -59,12 +59,9 @@ function showMenuEditor (menuDay) {
     breakArea.value = menuDay.breakfast;
     lunchArea.value = menuDay.lunch;
     saladInput.value = menuDay.salad;
-
-    // update the previews
     win.getElements('.day-number').each(function (el) {
         el.setProperty('text', menuDay.day);
     });
-    win.updatePreviews();
 
     /* arrows */
 
@@ -76,7 +73,7 @@ function showMenuEditor (menuDay) {
         win.parentElement.adopt(larr, rarr);
 
         // left arrow click
-        $('menu-left-arrow').addEvent('click', function (e) {
+        larr.addEvent('click', function (e) {
             e.preventDefault();
             var menuDay = win.retrieve('menuDay');
             if (menuDay && menuDay.previousDay)
@@ -84,13 +81,14 @@ function showMenuEditor (menuDay) {
         });
 
         // right arrow click
-        $('menu-right-arrow').addEvent('click', function (e) {
+        rarr.addEvent('click', function (e) {
             e.preventDefault();
             var menuDay = win.retrieve('menuDay');
             if (menuDay && menuDay.nextDay)
                 showMenuEditor(menuDay.nextDay);
         });
 
+        win.updatePreviews();
     }
 
     larr = $('menu-left-arrow');

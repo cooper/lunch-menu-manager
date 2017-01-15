@@ -102,10 +102,11 @@
     line-height: 27px;
     text-align: center;
     background-color: #FFE0E0;
-    border: 1px solid #888;
+    border: 1px solid red;
     width: 199px;
     font-size: 15px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .admin-window.editor .preview-cell {

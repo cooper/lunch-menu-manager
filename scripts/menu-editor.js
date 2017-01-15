@@ -247,6 +247,7 @@ function createEditorWindow () {
         el.addEvent('input', updatePreviews);
     });
 
+    updatePreviews();
     return win;
 }
 

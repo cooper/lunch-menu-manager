@@ -65,6 +65,7 @@ function showMenuEditor (menuDay) {
 
     /* arrows */
 
+    // this is the first presentation (not a switch of days w/ the arrows)
     var larr, rarr;
     if (presentAnyWindow(win)) {
 
@@ -88,8 +89,12 @@ function showMenuEditor (menuDay) {
                 showMenuEditor(menuDay.nextDay);
         });
 
-        win.updatePreviews();
     }
+
+    // update the previews. we have to do this down here after
+    // presentAnyWindow() because, if this is the initial presentation of the
+    // window, the heights would not yet be available for overflow calculation.
+    win.updatePreviews();
 
     larr = $('menu-left-arrow');
     rarr = $('menu-right-arrow');

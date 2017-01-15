@@ -218,9 +218,9 @@ function createEditorWindow () {
         lunchItem.setProperty('html', lunchText +
             saladText.length ? "\n" + saladText + ' salad' : '');
 
-        if (lunchItem.offsetHeight > lunchItem.parent.clientHeight)
+        if (lunchItem.offsetHeight > lunchItem.parentElement.clientHeight)
             alert("lunch too long!");
-        if (breakItem.offsetHeight > breakItem.parent.clientHeight)
+        if (breakItem.offsetHeight > breakItem.parentElement.clientHeight)
             alert("breakfast too long!");
     };
     win.updatePreviews = updatePreviews;

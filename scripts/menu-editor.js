@@ -209,9 +209,19 @@ function createEditorWindow () {
     /* typing events */
 
     var updatePreviews = function () {
-        prev2.getElement('.menu-items').setProperty('html', replaceNewlines(breakArea.value.trim()));
-        prev1.getElement('.menu-items').setProperty('html', replaceNewlines(lunchArea.value +
-            (input.value.trim().length ? "\n" + input.value.trim() + ' salad' : '')));
+        var lunchItem = prev1.getElement('.menu-items'),
+            breakItem = prev2.getElement('.menu-items'),
+            lunchText = replaceNewlines(lunchArea.value.trim()),
+            breakText = replaceNewlines(breakArea.value.trim()),
+            saladText = input.value.trim();
+        breakItem.setProperty('html', breakText);
+        lunchItem.setProperty('html', lunchText +
+            saladText.length ? "\n" + saladText + ' salad' : '');
+
+        if (lunchItem.offsetHeight > lunchItem.parent.clientHeight)
+            alert("lunch too long!");
+        if (breakItem.offsetHeight > breakItem.parent.clientHeight)
+            alert("breakfast too long!");
     };
     win.updatePreviews = updatePreviews;
 

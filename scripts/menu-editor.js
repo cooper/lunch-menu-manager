@@ -101,7 +101,8 @@ function showMenuEditor (menuDay) {
 
     // back arrow
     if (menuDay.previousDay) {
-        larr.innerHTML = '<i class="fa fa-chevron-left"></i>' + menuDay.previousDay.shortName();
+        larr.innerHTML = '<i class="fa fa-chevron-left"></i>' +
+            menuDay.previousDay.shortName();
         larr.setStyle('display', 'block');
     }
     else {
@@ -110,7 +111,8 @@ function showMenuEditor (menuDay) {
 
     // forward arrow
     if (menuDay.nextDay) {
-        rarr.innerHTML = menuDay.nextDay.shortName() + '<i class="fa fa-chevron-right right"></i>';
+        rarr.innerHTML = menuDay.nextDay.shortName() +
+            '<i class="fa fa-chevron-right right"></i>';
         rarr.setStyle('display', 'block');
     }
     else {
@@ -155,7 +157,8 @@ function saveMenu() {
         menuDay.update();
 
     // update calendar
-    menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
+    menuDay.menuItems.setProperty('html',
+        replaceNewlines(menuDay.displayText()));
 
     return true;
 }
@@ -311,7 +314,8 @@ function createCellEditorWindow () {
 
     // typing events
     var updatePreviews = function () {
-        prev1.getElement('.notes-items').setProperty('html', replaceNewlines(breakArea.value));
+        prev1.getElement('.notes-items').setProperty('html',
+            replaceNewlines(breakArea.value));
     };
     win.updatePreviews = updatePreviews;
     breakArea.addEvent('input', updatePreviews);
@@ -341,7 +345,10 @@ function saveCellNotes () {
         onSuccess: function (data) {
             if (data.error) {
                 statusError(data.error);
-                presentAlert('Error', 'Failed to save recent changes. Please reload the page. Error: ' + data.error);
+                presentAlert('Error',
+                    'Failed to save recent changes. Please reload the page. ' +
+                    'Error: ' + data.error
+                );
             }
             else {
                 statusSuccess();
@@ -349,7 +356,10 @@ function saveCellNotes () {
         },
         onError: function (text, error) {
             statusError(error);
-            presentAlert('Error', 'Failed to save recent changes. Please reload the page. Error: ' + error);
+            presentAlert('Error',
+                'Failed to save recent changes. Please reload the page. ' +
+                'Error: ' + error
+            );
         }
     }).post({
         year:       getCurrentYear(),
@@ -359,7 +369,8 @@ function saveCellNotes () {
     });
 
     // update calendar
-    td.getElement('.notes-items').setProperty('html', replaceNewlines(newNotes));
+    td.getElement('.notes-items').setProperty('html',
+        replaceNewlines(newNotes));
     td.store('cellNotes', newNotes);
 
     return true;

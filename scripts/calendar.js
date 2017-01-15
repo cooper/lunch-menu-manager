@@ -35,7 +35,10 @@ var MenuDay = new Class({
             onSuccess: function (data) {
                 if (data.error) {
                     statusError(data.error);
-                    presentAlert('Error', 'Failed to save recent changes. Please reload the page. Error: ' + data.error);
+                    presentAlert('Error',
+                        'Failed to save recent changes. Please reload the ' +
+                        'page. Error: ' + data.error
+                    );
                 }
                 else {
                     statusSuccess();
@@ -43,7 +46,10 @@ var MenuDay = new Class({
             },
             onError: function (text, error) {
                 statusError(error);
-                presentAlert('Error', 'Failed to save recent changes. Please reload the page. Error: ' + error);
+                presentAlert('Error',
+                    'Failed to save recent changes. Please reload the page. ' +
+                    'Error: ' + error
+                );
             }
         }).post({
             year:       this.year,
@@ -243,7 +249,8 @@ function refreshCalendar() {
             return;
         }
         else {
-            menuDay.menuItems.setProperty('html', replaceNewlines(menuDay.displayText()));
+            menuDay.menuItems.setProperty('html',
+                replaceNewlines(menuDay.displayText()));
         }
     });
 

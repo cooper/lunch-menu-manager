@@ -118,7 +118,10 @@ function printOrShare(msg) {
             statusSuccess();
         },
         onFailure: function (error) {
-            presentAlert('Error', 'Failed to generate PDF. Please reload the page. Error: ' + error);
+            presentAlert('Error',
+                'Failed to generate PDF. Please reload the page. ' +
+                'Error: ' + error
+            );
             statusError(error);
         }
     }).get({
@@ -136,8 +139,14 @@ function showInstitutionEditor(e) {
     if (e) e.preventDefault();
 
     var win     = createWindow('Institution name');
-    var padding = new Element('div', { class: 'admin-window-padding', text: institutionNotes });
-    var input   = new Element('input', { type: 'text', value: currentTopLeft });
+    var padding = new Element('div', {
+        class: 'admin-window-padding',
+        text:  institutionNotes
+    });
+    var input = new Element('input', {
+        type: 'text',
+        value: currentTopLeft
+    });
 
     padding.adopt(input);
     win.adopt(padding);
@@ -165,7 +174,10 @@ function saveTopLeft() {
         },
         onFailure: function (error) {
             statusError(error);
-            presentAlert('Error', 'Failed to update institution name. Please reload the page. Error: ' + error);
+            presentAlert('Error',
+                'Failed to update institution name. Please reload the page. ' +
+                'Error: ' + error
+            );
         }
     }).post({
         notes: topLeft
@@ -183,7 +195,10 @@ function showNotesEditor(e) {
     if (e) e.preventDefault();
 
     var win     = createWindow('Footnotes');
-    var padding = new Element('div', { class: 'admin-window-padding', text: footerNotes });
+    var padding = new Element('div', {
+        class: 'admin-window-padding',
+        text:  footerNotes
+    });
     var area    = new Element('textarea', { value: currentNotes });
 
     padding.adopt(area);
@@ -212,7 +227,10 @@ function saveNotes() {
         },
         onFailure: function (error) {
             statusError(error);
-            presentAlert('Error', 'Failed to update footer text. Please reload the page. Error: ' + error);
+            presentAlert('Error',
+                'Failed to update footer text. Please reload the page. ' +
+                'Error: ' + error
+            );
         }
     }).post({
         year:   getCurrentYear(),
@@ -245,7 +263,8 @@ function statusLoading() {
     $('status-text').setStyle('display', 'none');
 
     // update the icon
-    $('status-icon').setProperty('class', 'fa fa-spin fa-circle-o-notch center');
+    $('status-icon').setProperty('class',
+        'fa fa-spin fa-circle-o-notch center');
 }
 
 // a process succeeded
@@ -308,9 +327,13 @@ function createWindow (titleText) {
     var win = new Element('div', { class: 'admin-window' });
 
     // title bar
-    var title = new Element('h2', { class: 'admin-window-title' });
-    var span  = new Element('span', { text: titleText });
-    var done  = new Element('a', { class: 'admin-window-done', href: '#', text: 'Done' });
+    var title = new Element('h2',   { class: 'admin-window-title'   });
+    var span  = new Element('span', { text: titleText               });
+    var done  = new Element('a',    {
+        class:  'admin-window-done',
+        href:   '#',
+        text:   'Done'
+    });
     done.addEvent('click', closeWindow);
     title.adopt(span, done);
     win.adopt(title);
@@ -321,7 +344,10 @@ function createWindow (titleText) {
 // shortcut for simple text alerts
 function presentAlert (title, msg) {
     var win = createWindow(title);
-    var padding = new Element('div', { class: 'admin-window-padding', text: msg });
+    var padding = new Element('div', {
+        class:  'admin-window-padding',
+        text:   msg
+    });
     win.adopt(padding);
     presentAnyWindow(win);
     return win;

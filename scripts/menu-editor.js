@@ -215,7 +215,7 @@ function createEditorWindow () {
             breakText = replaceNewlines(breakArea.value.trim()),
             saladText = input.value.trim();
         if (saladText.length)
-            lunchText += '\n' + saladText + ' salad';
+            lunchText += '\n\n' + saladText + ' salad';
         breakItem.setProperty('html', breakText);
         lunchItem.setProperty('html', lunchText);
 

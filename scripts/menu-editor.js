@@ -216,7 +216,7 @@ function createEditorWindow () {
             saladText = input.value.trim();
         breakItem.setProperty('html', breakText);
         lunchItem.setProperty('html', lunchText +
-            saladText.length ? "\n" + saladText + ' salad' : '');
+            (saladText.length ? "\n" + saladText + ' salad' : ''));
 
         if (lunchItem.offsetHeight > lunchItem.parentElement.clientHeight)
             alert("lunch too long!");

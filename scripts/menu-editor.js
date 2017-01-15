@@ -192,7 +192,7 @@ function createEditorWindow () {
     var inner = new Element('div',  { class: 'inner'                    });
     var num   = new Element('span', { class: 'day-number', text: '1'    });
     var items = new Element('span', { class: 'menu-items'               });
-    var warn  = new Element('span', { class: 'warn', text: 'Too long!'  });
+    var warn  = new Element('span', { class: 'warn', text: 'Overflow'   });
     var prev1 = new Element('div',  { class: 'preview'                  });
                 inner.adopt(num, items);
                 cell.adopt(inner);

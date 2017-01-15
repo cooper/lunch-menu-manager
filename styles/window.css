@@ -98,11 +98,13 @@
 .admin-window.editor .preview span.warn {
     display: none;
     margin-top: 5px;
-    height: 30px;
-    line-height: 30px;
+    height: 27px;
+    line-height: 27px;
     text-align: center;
     background-color: #FFE0E0;
-    border: 1px solid red;
+    border: 1px solid #888;
+    width: 199px;
+    font-size: 15px;
     font-weight: bold;
 }
 

@@ -92,7 +92,7 @@ table.lunch-calendar tbody td {
 
 table.lunch-calendar tbody td div.inner {
     overflow: hidden;
-    height: 90px;
+    height: 8em;
     padding: 5px;
     width: auto;
     position: relative;

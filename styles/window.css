@@ -107,7 +107,7 @@
 
 .admin-window.editor .preview-cell .inner {
     overflow: hidden;
-    height: 90px;
+    height: 8em;
     padding: 5px;
     width: auto;
 }

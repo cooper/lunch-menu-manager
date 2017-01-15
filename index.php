@@ -36,8 +36,9 @@
             background-color: #fff;
             border: 1px solid rgb(190, 210, 220);
         }
-        input[type=submit]:hover {
+        input[type=submit]:hover, input[type=submit]:active {
             background-color: rgb(240, 250, 255);
+            color: inherit;
         }
         form {
             margin-top: 20px;
@@ -80,8 +81,8 @@
         </form>
     </div>
     <div id="footer">
-        System Revision 5 &ndash;
-        Last Updated March 15, 2016
+        System Revision 6 &ndash;
+        Last Updated January 15, 2017
     </div>
 </body>
 </html>

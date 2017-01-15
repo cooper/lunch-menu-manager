@@ -211,13 +211,13 @@ function createEditorWindow () {
     var updatePreviews = function () {
         var lunchItem = prev1.getElement('.menu-items'),
             breakItem = prev2.getElement('.menu-items'),
-            lunchText = replaceNewlines(lunchArea.value.trim()),
-            breakText = replaceNewlines(breakArea.value.trim()),
+            lunchText = lunchArea.value.trim(),
+            breakText = breakArea.value.trim(),
             saladText = input.value.trim();
         if (saladText.length)
-            lunchText += '\n\n' + saladText + ' salad';
-        breakItem.setProperty('html', breakText);
-        lunchItem.setProperty('html', lunchText);
+            lunchText += '\n' + saladText + ' salad';
+        breakItem.setProperty('html', replaceNewlines(breakText));
+        lunchItem.setProperty('html', replaceNewlines(lunchText));
 
         if (lunchItem.offsetHeight > lunchItem.parentElement.clientHeight)
             alert("lunch too long!");

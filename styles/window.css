@@ -95,6 +95,17 @@
     width: 230px;
 }
 
+.admin-window.editor .preview span.warn {
+    display: none;
+    margin-top: 5px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #FFE0E0;
+    border: 1px solid red;
+    font-weight: bold;
+}
+
 .admin-window.editor .preview-cell {
     padding: 0;
     line-height: 1em;

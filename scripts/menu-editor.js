@@ -188,14 +188,16 @@ function createEditorWindow () {
 
 
     // previews
-    var cell  = new Element('div',  { class: 'preview-cell' });
-    var inner = new Element('div',  { class: 'inner' });
-    var num   = new Element('span', { class: 'day-number', text: '1' });
-    var items = new Element('span', { class: 'menu-items' });
-    var prev1 = new Element('div',  { class: 'preview' });
+    var cell  = new Element('div',  { class: 'preview-cell'             });
+    var inner = new Element('div',  { class: 'inner'                    });
+    var num   = new Element('span', { class: 'day-number', text: '1'    });
+    var items = new Element('span', { class: 'menu-items'               });
+    var warn  = new Element('span', { class: 'warn', text: 'Too long!'  });
+    var prev1 = new Element('div',  { class: 'preview'                  });
                 inner.adopt(num, items);
                 cell.adopt(inner);
                 prev1.adopt(cell);
+                prev1.adopt(warn);
     var prev2 = prev1.clone();
 
     // wrappers
@@ -211,18 +213,29 @@ function createEditorWindow () {
     var updatePreviews = function () {
         var lunchItem = prev1.getElement('.menu-items'),
             breakItem = prev2.getElement('.menu-items'),
+            lunchWarn = prev1.getElement('.warn'),
+            breakWarn = prev2.getElement('.warn'),
             lunchText = lunchArea.value.trim(),
             breakText = breakArea.value.trim(),
             saladText = input.value.trim();
+
+        // update text
         if (saladText.length)
             lunchText += '\n' + saladText + ' salad';
         breakItem.setProperty('html', replaceNewlines(breakText));
         lunchItem.setProperty('html', replaceNewlines(lunchText));
 
+        // lunch too long
         if (lunchItem.offsetHeight > lunchItem.parentElement.clientHeight)
-            alert("lunch too long!");
+            lunchWarn.setStyle('display', 'inline-block');
+        else
+            lunchWarn.setStyle('display', 'none');
+
+        // breakfast too long
         if (breakItem.offsetHeight > breakItem.parentElement.clientHeight)
-            alert("breakfast too long!");
+            breakWarn.setStyle('display', 'inline-block');
+        else
+            breakWarn.setStyle('display', 'none');
     };
     win.updatePreviews = updatePreviews;
 

@@ -96,7 +96,6 @@
 }
 
 .admin-window.editor .preview-cell {
-    height: 100px;
     padding: 0;
     line-height: 1em;
     font-family: Helvetica, Arial, sans-serif;
@@ -107,9 +106,10 @@
 }
 
 .admin-window.editor .preview-cell .inner {
+    overflow: hidden;
+    height: 90px;
     padding: 5px;
     width: auto;
-    height: 100%;
 }
 
 .admin-window.editor .input-wrap {

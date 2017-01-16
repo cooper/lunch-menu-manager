@@ -4,7 +4,7 @@ function initializeMenuEditor() {
 
     // listen for mouse events on the cells
     $$('table.lunch-calendar tbody td div.inner').each(function (inner) {
-        var editButton = inner.getElement('.calendar-cell-edit');
+        var editButton = inner.parentElement.getElement('.calendar-cell-edit');
         inner.addEvent('mouseenter', function () {
             editButton.setStyle('display', 'block');
         });

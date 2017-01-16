@@ -86,6 +86,7 @@ table.lunch-calendar tbody td {
     line-height: 1em;
     font-family: Helvetica, Arial, sans-serif;
     cursor: default;
+    position: relative; /* for the edit button */
 }
 
 /* also remember .notes-items is used for notes cells */

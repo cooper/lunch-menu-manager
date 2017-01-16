@@ -3,18 +3,16 @@ document.addEvent('domready', initializeMenuEditor);
 function initializeMenuEditor() {
 
     // listen for mouse events on the cells
-    $$('table.lunch-calendar tbody td div.inner').each(function (inner) {
-        var editButton = inner.parentElement.getElement('.calendar-cell-edit');
-        inner.addEvent('mouseenter', function () {
+    $$('table.lunch-calendar tbody td').each(function (td) {
+
+        // edit button events
+        var editButton = td.getElement('.calendar-cell-edit');
+        td.addEvent('mouseenter', function () {
             editButton.setStyle('display', 'block');
         });
-        inner.addEvent('mouseleave', function () {
+        td.addEvent('mouseleave', function () {
             editButton.setStyle('display', 'none');
         });
-    });
-
-    // listen for clicks on the calendar days
-    $$('table.lunch-calendar tbody td').each(function (td) {
 
         // fake day
         if (!td.data('year')) {
@@ -25,14 +23,14 @@ function initializeMenuEditor() {
             return;
         }
 
-        // add click listener
+        // real day
         var menuDay = td.retrieve('menuDay');
         td.addEvent('click', function (e) {
             e.preventDefault();
             showMenuEditor(menuDay);
         });
-    });
 
+    });
 }
 
 function showMenuEditor (menuDay) {

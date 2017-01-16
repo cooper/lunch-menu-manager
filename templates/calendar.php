@@ -71,8 +71,8 @@ function draw_calendar ($month, $year) {
                           '" class="edit-button' . $today_html  . '">';
             $calendar .= '<div class="inner">';
             $calendar .=      '<span class="day-number">' . $list_day . '</span>';
-            $calendar .=      '<span class="menu-items"></span>' . $mainCellBody;
-            $calendar .= '</div></td>';
+            $calendar .=      '<span class="menu-items"></span>';
+            $calendar .= '</div>' . $mainCellBody . '</td>';
 
         }
 
@@ -128,7 +128,7 @@ function draw_calendar ($month, $year) {
             // add empty cells for any M-F.
             if ($running_day != 0 && $running_day != 6)
                 $calendar .= '<td data-cell="'. $cell_id++ .'"><div class="inner">' .
-                '<div class="notes-items"></div>' . $fillerCellBody . '</div></td>';
+                '<div class="notes-items"></div></div>' . $fillerCellBody . '</td>';
 
             $running_day++;
         }

@@ -95,15 +95,14 @@ table.lunch-calendar tbody td {
 
 .menu-items, .notes-items {
     display: inline-block;
-    width: 154px;
+    width: 155px; /* 188 (.inner) - 28 (.day-number) - 5 (.day-number padding) */
 }
 
 table.lunch-calendar tbody td div.inner {
     overflow: hidden;
     height: 8em;
     padding: 5px;
-    width: 190px;
-    position: relative;
+    width: 188px; /* 200 - 10 (padding) - 2 (borders) */
 }
 
 span.day-number {

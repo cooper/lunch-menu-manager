@@ -93,6 +93,11 @@ table.lunch-calendar tbody td {
     text-transform: lowercase;
 }
 
+.menu-items, .notes-items {
+    display: inline-block;
+    width: 178px;
+}
+
 table.lunch-calendar tbody td div.inner {
     overflow: hidden;
     height: 8em;
@@ -109,6 +114,7 @@ span.day-number {
     float: left;
     margin-right: 5px;
     line-height: normal;
+    width: 28px;
 }
 
 /* FOOTER NOTES */

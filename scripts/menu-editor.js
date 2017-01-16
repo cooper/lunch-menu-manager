@@ -314,7 +314,7 @@ function createCellEditorWindow () {
 
     // typing events
     var updatePreviews = function () {
-        var notesText = notesArea.value.trim(),
+        var notesText = notesArea.value, // do NOT trim
             notesItem = prev1.getElement('.notes-items'),
             notesWarn = prev1.getElement('.warn');
 

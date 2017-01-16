@@ -88,6 +88,7 @@ table.lunch-calendar tbody td {
     cursor: default;
 }
 
+/* also remember .notes-items is used for notes cells */
 .menu-items {
     text-transform: lowercase;
 }

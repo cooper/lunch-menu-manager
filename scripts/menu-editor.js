@@ -202,8 +202,7 @@ function createEditorWindow () {
     var prev1 = new Element('div',  { class: 'preview'                  });
                 inner.adopt(num, items);
                 cell.adopt(inner);
-                prev1.adopt(cell);
-                prev1.adopt(warn);
+                prev1.adopt(cell, warn);
     var prev2 = prev1.clone();
 
     // wrappers
@@ -266,16 +265,16 @@ function showCellNotesEditor (td) {
     win.td = td;
 
     // find inputs
-    var breakArea = win.getElement('textarea');
+    var notesArea = win.getElement('textarea');
     var notes = td.retrieve('cellNotes');
     if (typeof notes == 'string' && notes.length)
-        breakArea.setProperty('value', notes);
+        notesArea.setProperty('value', notes);
 
     // update the previews
     win.updatePreviews();
 
     presentAnyWindow(win);
-    breakArea.focus();
+    notesArea.focus();
     return win;
 }
 
@@ -286,39 +285,50 @@ function createCellEditorWindow () {
     var clear = new Element('div', { styles: { clear: 'both' } });
 
     // headings
-    var breakHead = new Element('h3', { text: 'Notes' });
-    var prevHead1 = new Element('span', { text: 'Preview' });
-    breakHead.adopt(prevHead1);
-    breakHead.setStyle('margin-top', '0');
+    var notesHead = new Element('h3',   { text: 'Notes'     });
+    var prevHead1 = new Element('span', { text: 'Preview'   });
+    notesHead.adopt(prevHead1);
+    notesHead.setStyle('margin-top', '0');
 
-    // textareas
-    var breakLeft = new Element('div', { class: 'left-side' });
-    var breakArea = new Element('textarea');
-    breakLeft.adopt(breakArea);
+    // textarea
+    var notesLeft = new Element('div', { class: 'left-side' });
+    var notesArea = new Element('textarea');
+    notesLeft.adopt(notesArea);
 
     // previews
-    var cell  = new Element('div',  { class: 'preview-cell' });
-    var inner = new Element('div',  { class: 'inner' });
-    var items = new Element('span', { class: 'notes-items' });
-    var prev1 = new Element('div',  { class: 'preview' });
+    var cell  = new Element('div',  { class: 'preview-cell'                 });
+    var inner = new Element('div',  { class: 'inner'                        });
+    var items = new Element('span', { class: 'notes-items'                  });
+    var prev1 = new Element('div',  { class: 'preview'                      });
+    var warn  = new Element('span', { class: 'warn', text: 'Overflow'       });
         inner.adopt(items);
         cell.adopt(inner);
-        prev1.adopt(cell);
+        prev1.adopt(cell, warn);
 
     // wrappers
-    var breakWrap = new Element('div', { class: 'wrap' });
-    breakWrap.adopt(breakLeft, prev1, clear.clone());
-    breakWrap.setStyle('margin-bottom', '10px');
+    var notesWrap = new Element('div', { class: 'wrap' });
+    notesWrap.adopt(notesLeft, prev1, clear.clone());
+    notesWrap.setStyle('margin-bottom', '10px');
 
-    win.adopt(breakHead, breakWrap, clear);
+    win.adopt(notesHead, notesWrap, clear);
 
     // typing events
     var updatePreviews = function () {
-        prev1.getElement('.notes-items').setProperty('html',
-            replaceNewlines(breakArea.value));
+        var notesText = notesArea.value.trim(),
+            notesItem = prev1.getElement('.notes-items'),
+            notesWarn = prev1.getElement('.warn');
+
+        // set text
+        notesItem.setProperty('html', replaceNewlines(notesText));
+
+        // notes too long
+        if (notesItem.offsetHeight > notesItem.parentElement.clientHeight)
+            notesWarn.setStyle('display', 'inline-block');
+        else
+            notesWarn.setStyle('display', 'none');
     };
     win.updatePreviews = updatePreviews;
-    breakArea.addEvent('input', updatePreviews);
+    notesArea.addEvent('input', updatePreviews);
 
     return win;
 }

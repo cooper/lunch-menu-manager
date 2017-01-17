@@ -18,7 +18,7 @@ $modes = 'mode-'.$mode;
 if ($administrator)
     $modes .= ' administrator';
 if ($pdf)
-    $modes .= 'printing';
+    $modes .= ' printing';
 
 function draw_calendar ($month, $year) {
     global $month, $year, $mainCellBody, $fillerCellBody;

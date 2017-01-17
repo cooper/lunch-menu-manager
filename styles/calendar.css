@@ -38,7 +38,7 @@ table.lunch-calendar {
 table.lunch-calendar caption {
     font-size: 30px;
     font-weight: bold;
-    padding: 15px 0;
+    padding: 12px 0;
     text-align: center;
     line-height: 40px;
     height: 40px;
@@ -48,7 +48,6 @@ table.lunch-calendar caption {
 table.lunch-calendar caption span.left,
 table.lunch-calendar caption span.right {
     display: inline-block;
-    line-height: 50px;
     font-size: 20px;
     height: 40px;
     font-weight: normal;

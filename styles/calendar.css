@@ -124,8 +124,6 @@ span.day-number {
     width: 100%;
     font-size: 90%;
     margin: 20px auto 5px auto;
-    display: table-cell;
-    vertical-align: middle;
     height: 5em;
     overflow: hidden;
     width: 1000px; /* same as calendar */

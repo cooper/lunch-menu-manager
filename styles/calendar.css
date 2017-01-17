@@ -121,7 +121,7 @@ span.day-number {
 #menu-notes {
     text-align: center;
     width: 1000px;  /* same as calendar */
-    margin: 10px auto 5px auto;
+    margin: 10px auto 0 auto;
     font-size: 13px;
     line-height: 1em;
     height: 5em;

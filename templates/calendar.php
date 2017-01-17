@@ -189,7 +189,7 @@ $consistent = $administrator || (isset($_GET['ref']) && $_GET['ref'] == 'week');
 ?>
 <div id="menu-notes">
     <?php if ($administrator): ?>
-    <div id="menu-notes-edit"><i class="fa fa-pencil"></i> Edit footer</div>
+    <div id="menu-notes-edit"><i class="fa fa-pencil"></i> Edit footnotes</div>
     <?php endif; ?>
     <span id="menu-notes-notes"><?php if ($administrator) echo "(no footer text)"; ?></span>
 </div>

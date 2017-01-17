@@ -98,6 +98,7 @@ ul.administrator-tools li a {
 #menu-notes {
     position: relative;
     cursor: pointer;
+    margin-bottom: 15px !important;
 }
 
 #menu-notes-edit {

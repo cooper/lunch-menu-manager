@@ -2,16 +2,18 @@
 
 require_once(__DIR__.'/../functions/date-input.php');
 
+$administrator = isset($administrator);
+$pdf = isset($pdf);
+
+// include edit buttons if in admin mode
 $mainCellBody = '';
 $fillerCellBody = '';
-
-$administrator = isset($administrator);
 if ($administrator) {
     $mainCellBody   = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit menu</div>';
     $fillerCellBody = '<div class="calendar-cell-edit"><i class="fa fa-pencil"></i> Edit notes</div>';
 }
 
-// calendar menu mode. defaults to lunch.
+// find calendar menu mode. defaults to lunch.
 $mode = isset($_GET['mode']) && $_GET['mode'] == 'breakfast' ?
     'breakfast' : 'lunch';
 $modes = 'mode-'.$mode;

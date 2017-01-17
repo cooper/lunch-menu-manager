@@ -122,7 +122,7 @@ span.day-number {
     text-align: center;
     width: 1000px;  /* same as calendar */
     margin: 10px auto 5px auto;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1em;
     height: 5em;
     overflow: hidden;

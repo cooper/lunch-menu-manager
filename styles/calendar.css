@@ -120,13 +120,12 @@ span.day-number {
 
 #menu-notes {
     text-align: center;
-    font-size: 12px;
-    width: 100%;
+    width: 1000px;  /* same as calendar */
     margin: 10px auto 5px auto;
-    height: 5.5em;
+    font-size: 12px;
+    line-height: 1em;
+    height: 5em;
     overflow: hidden;
-    width: 1000px; /* same as calendar */
-    line-height: 1.1em;
 }
 
 /* PUBLIC CALENDAR NAVIGATION */

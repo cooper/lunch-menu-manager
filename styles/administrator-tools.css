@@ -103,7 +103,7 @@ ul.administrator-tools li a {
 #menu-notes-edit {
     position: absolute;
     left: 35%;
-    top: -20px;
+    top: 0;
     width: 30%;
     margin: auto;
     text-align: center;

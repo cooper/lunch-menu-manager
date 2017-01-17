@@ -82,7 +82,7 @@
     </div>
     <div id="footer">
         System Revision 6 &ndash;
-        Last Updated January 15, 2017
+        Last Updated January 17, 2017
     </div>
 </body>
 </html>

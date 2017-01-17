@@ -124,7 +124,7 @@ span.day-number {
     margin: 20px auto; /* overridden when printing */
     font-size: 13px;
     line-height: 1em;
-    height: 5em;
+    max-height: 5em;
     overflow: hidden;
 }
 

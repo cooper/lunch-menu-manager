@@ -121,11 +121,15 @@ span.day-number {
 #menu-notes {
     text-align: center;
     width: 1000px;  /* same as calendar */
-    margin: 10px auto 0 auto;
+    margin: 20px auto; /* overridden when printing */
     font-size: 13px;
     line-height: 1em;
     height: 5em;
     overflow: hidden;
+}
+
+#menu-notes.printing {
+    margin: 10px auto 0 auto;
 }
 
 /* PUBLIC CALENDAR NAVIGATION */

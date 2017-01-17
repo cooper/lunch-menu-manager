@@ -124,9 +124,11 @@ span.day-number {
     width: 100%;
     font-size: 90%;
     margin: 20px auto 5px auto;
-    height: 5em;
+    height: 5.5em;
     overflow: hidden;
     width: 1000px; /* same as calendar */
+    font-size: 1em;
+    line-height: 1.1em;
 }
 
 /* PUBLIC CALENDAR NAVIGATION */

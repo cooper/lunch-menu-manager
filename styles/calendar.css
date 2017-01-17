@@ -124,6 +124,7 @@ span.day-number {
     margin: 20px auto; /* overridden when printing */
     font-size: 13px;
     line-height: 1em;
+    min-height: 30px; /* at least leave enough to show the edit button */
     max-height: 5em;
     overflow: hidden;
 }

@@ -191,7 +191,7 @@ $consistent = $administrator || (isset($_GET['ref']) && $_GET['ref'] == 'week');
     </tbody>
 </table>
 <?php
-    if (!$administrator && !isset($pdf))
+    if (!$administrator && !$pdf)
         require(__DIR__.'/footer-navigation.php');
 ?>
 <div id="menu-notes" class="<?= $modes ?>">

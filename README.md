@@ -1,6 +1,6 @@
 # LMM
 
-**LMM** (**L**unch **M**enu **M**anager) is a centralized solution for maintaining and distributing cafeteria menus. It is written in PHP and stores data in an SQLite database, making it quite portable and fairly simple to incorporate into any facility's existing web services.
+**LMM** (**L**unch **M**enu **M**anager) is a centralized solution for maintaining and distributing cafeteria menus. It is written in PHP and stores data with SQLite, making it quite portable and fairly simple to incorporate into any facility's existing web services.
 
 ## Purpose
 

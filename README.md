@@ -54,8 +54,9 @@ Clone the repository as a subdirectory in your web server's document root.
 
 Create a file called `verify_password.php` in the root directory of LMM with a single function `verify_password($username = '', $password = '')` which returns `true` or `false` for authentication. Some PHP knowledge required. I have plans for built-in authentication options in the future.
 
-## API
+## Documentation
 
-![API spec](http://i.imgur.com/jwBTfB5.png)
+Refer to the [technical documentation](doc/lmm-technical.pdf) for more detailed
+setup instructions and info about the APIs.
 
-![API spec](http://i.imgur.com/mYJRfEm.png)
+A [user instruction](doc/lmm-user-instructions.pdf) document is also provided.

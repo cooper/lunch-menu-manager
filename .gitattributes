@@ -1,2 +1,4 @@
-scripts/*.min.js linguist-vendored
-scripts/mootools.min.js linguist-vendored
+*.min.js linguist-vendored=true
+mootools.min.js linguist-vendored=true
+scripts/*.min.js linguist-vendored=true
+scripts/mootools.min.js linguist-vendored=true

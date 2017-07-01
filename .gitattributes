@@ -1,2 +1,3 @@
 scripts/*.min.js linguist-vendored
 scripts/mootools.min.js linguist-vendored
+scripts/mootools.js linguist-vendored

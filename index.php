@@ -81,8 +81,8 @@
         </form>
     </div>
     <div id="footer">
-        System Revision 6 &ndash;
-        Last Updated January 17, 2017
+        System Revision 7 &ndash;
+        Last Updated August 27, 2018
     </div>
 </body>
 </html>

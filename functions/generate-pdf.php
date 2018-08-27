@@ -3,7 +3,7 @@
 $LOGIN_REQUIRED = true;
 $html2pdf = 'www.html2pdf.it'; // can be overwritten in verify_password.php
 require_once('session.php');
-require_once('../verify_password.php');
+require_once('../verify_login.php');
 
 // determine URI for service to access
 $url = isset($_SERVER['URL']) ? $_SERVER['URL'] : $_SERVER['DOCUMENT_URI'];

@@ -52,7 +52,7 @@ Install SQLite3 and enable the necessary PHP extensions for its use. This proces
 
 Clone the repository as a subdirectory in your web server's document root.
 
-Create a file called `verify_password.php` in the root directory of LMM with a single function `verify_password($username = '', $password = '')` which returns `true` or `false` for authentication. Some PHP knowledge required. I have plans for built-in authentication options in the future.
+Create a file called `verify_login.php` in the root directory of LMM with a single function `verify_login($username = '', $password = '')` which returns `true` or `false` for authentication. Some PHP knowledge required. I have plans for built-in authentication options in the future.
 
 ## Documentation
 

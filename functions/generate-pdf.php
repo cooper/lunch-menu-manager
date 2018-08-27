@@ -24,7 +24,7 @@ $calendar_php .= "&mode={$_GET['mode']}";
 $calendar_php = urlencode($calendar_php);
 
 // redirect to generator
-$generator_url = "http://$html2pdf/?url=$calendar_php&format=Letter&margin=1cm&orientation=landscape&download=true&filename=menu-{$_GET['month']}-{$_GET['year']}.pdf";
+$generator_url = "http://$html2pdf/?url=$calendar_php&format=Letter&margin=1cm&orientation=landscape&download=true&filename=menu-{$_GET['month']}-{$_GET['year']}";
 
 echo json_encode(array('generator' => $generator_url));
 

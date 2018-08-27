@@ -1,7 +1,9 @@
 <?php
 
 $LOGIN_REQUIRED = true;
+$html2pdf = 'www.html2pdf.it'; // can be overwritten in verify_password.php
 require_once('session.php');
+require_once('../verify_password.php');
 
 // determine URI for service to access
 $url = isset($_SERVER['URL']) ? $_SERVER['URL'] : $_SERVER['DOCUMENT_URI'];
@@ -22,7 +24,7 @@ $calendar_php .= "&mode={$_GET['mode']}";
 $calendar_php = urlencode($calendar_php);
 
 // redirect to generator
-$generator_url = "http://www.html2pdf.it/?url=$calendar_php&format=Letter&margin=1cm&orientation=landscape&download=true&filename=menu-{$_GET['month']}-{$_GET['year']}.pdf";
+$generator_url = "http://$html2pdf/?url=$calendar_php&format=Letter&margin=1cm&orientation=landscape&download=true&filename=menu-{$_GET['month']}-{$_GET['year']}.pdf";
 
 echo json_encode(array('generator' => $generator_url));
 

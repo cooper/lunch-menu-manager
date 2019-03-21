@@ -178,6 +178,7 @@ function createEditorWindow () {
     var breakLeft = new Element('div', { class: 'left-side' });
     var lunchArea = new Element('textarea');
     var breakArea = new Element('textarea');
+    lunchLeft.adopt(lunchArea);
     breakLeft.adopt(breakArea);
 
 

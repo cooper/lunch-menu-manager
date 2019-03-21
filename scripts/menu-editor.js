@@ -45,7 +45,6 @@ function showMenuEditor (menuDay) {
     win.beforeClose = saveMenu;
 
     // find inputs
-    var saladInput = win.getElement('input');
     var textareas  = win.getElements('textarea');
     var breakArea  = textareas[0], lunchArea = textareas[1];
 
@@ -56,7 +55,6 @@ function showMenuEditor (menuDay) {
     // add the data
     breakArea.value = menuDay.breakfast;
     lunchArea.value = menuDay.lunch;
-    saladInput.value = menuDay.salad;
     win.getElements('.day-number').each(function (el) {
         el.setProperty('text', menuDay.day);
     });
@@ -132,23 +130,20 @@ function saveMenu() {
     if (!menuDay) return;
 
     // find inputs
-    var saladInput = win.getElement('input');
     var textareas  = win.getElements('textarea');
     var breakArea  = textareas[0], lunchArea = textareas[1];
 
     var newBreak = breakArea.value.trim(),
-        newLunch = lunchArea.value.trim(),
-        newSalad = saladInput.value.trim();
+        newLunch = lunchArea.value.trim();
 
     // nothing has changed
     if (newBreak == menuDay.breakfast &&
-        newLunch == menuDay.lunch && newSalad == menuDay.salad)
+        newLunch == menuDay.lunch)
         return false;
 
     // update the menu day object
     menuDay.breakfast = newBreak;
     menuDay.lunch = newLunch;
-    menuDay.salad = newSalad;
 
     // update in database
     if (menuDay)
@@ -176,18 +171,11 @@ function createEditorWindow () {
     breakHead.adopt(prevHead2);
     breakHead.setStyle('margin-top', '0');
 
-    // input
-    var inputWrap = new Element('div', { class: 'input-wrap' });
-    var inputSpan = new Element('span', { text: ' salad' });
-    var input = new Element('input', { type: 'text' });
-    inputWrap.adopt(input, inputSpan);
-
     // textareas
     var lunchLeft = new Element('div', { class: 'left-side' });
     var breakLeft = new Element('div', { class: 'left-side' });
     var lunchArea = new Element('textarea');
     var breakArea = new Element('textarea');
-    lunchLeft.adopt(lunchArea, inputWrap);
     breakLeft.adopt(breakArea);
 
 
@@ -219,12 +207,9 @@ function createEditorWindow () {
             lunchWarn = prev1.getElement('.warn'),
             breakWarn = prev2.getElement('.warn'),
             lunchText = lunchArea.value.trim(),
-            breakText = breakArea.value.trim(),
-            saladText = input.value.trim();
+            breakText = breakArea.value.trim();
 
         // update text
-        if (saladText.length)
-            lunchText += '\n' + saladText + ' salad';
         breakItem.setProperty('html', replaceNewlines(breakText));
         lunchItem.setProperty('html', replaceNewlines(lunchText));
 
@@ -244,8 +229,7 @@ function createEditorWindow () {
 
     Object.each({
         lunch: lunchArea,
-        breakfast: breakArea,
-        salad: input
+        breakfast: breakArea
     }, function (el, name) {
         el.addEvent('input', updatePreviews);
     });

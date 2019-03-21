@@ -19,12 +19,10 @@ var MenuDay = new Class({
         this.date  = new Date(year, month, day);
         this.breakfast = '';
         this.lunch     = '';
-        this.salad     = '';
     },
 
     // property breakfast
     // property lunch
-    // property salad
 
     // save the menu for this day
     // using Request API
@@ -56,8 +54,7 @@ var MenuDay = new Class({
             month:      this.month + 1,
             day:        this.day,
             breakfast:  this.breakfast,
-            lunch:      this.lunch,
-            salad:      this.salad
+            lunch:      this.lunch
         });
     },
 
@@ -89,8 +86,7 @@ var MenuDay = new Class({
     // if in breakfast mode, returns breakfast
     // if in lunch mode, returns lunch
     displayText: function () {
-        return getCurrentMode() == 'breakfast' ? this.breakfast :
-        this.lunch + (this.salad.length ? "\n" + this.salad + ' salad' : '');
+        return getCurrentMode() == 'breakfast' ? this.breakfast : this.lunch;
     }
 
 });
@@ -188,7 +184,7 @@ function injectCalendarData(data) {
         // inject meal info
         var dayData = data[menuDay.apiDateString()];
         if (!dayData) return;
-        ['breakfast', 'lunch', 'salad'].each(function (i) {
+        ['breakfast', 'lunch'].each(function (i) {
             menuDay[i] = !dayData[i] ? '' : dayData[i];
         });
 

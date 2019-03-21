@@ -21,7 +21,6 @@ $map = array(
     'success'   => true,
     'breakfast' => empty2null($row['breakfast']),
     'lunch'     => empty2null($row['lunch']),
-    'salad'     => empty2null($row['salad']),
     'timestamp' => empty2null($row['set_timestamp'])
 );
 

@@ -62,10 +62,8 @@ $period = new DatePeriod($monday, $interval, $friday);
         if (!isset($day_data['lunch']))
             $day_data['lunch'] = 'N/A';
 
-        // lunch + salad
+        // lunch
         $lunch = $day_data['lunch'];
-        if (isset($day_data['salad']))
-            $lunch .= "\n{$day_data['salad']} salad";
         $lunch = str_replace("\n", "<br />\n", htmlentities($lunch));
 
         // breakfast

@@ -21,7 +21,6 @@ if ($st) {
         $map[ $row['month'].'-'.$row['day'].'-'.$row['year'] ] = array(
             'breakfast' => empty2null($row['breakfast']),
             'lunch'     => empty2null($row['lunch']),
-            'salad'     => empty2null($row['salad']),
             'timestamp' => empty2null($row['set_timestamp'])
         );
     }

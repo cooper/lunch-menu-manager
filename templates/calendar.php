@@ -179,11 +179,11 @@ $consistent = $administrator || (isset($_GET['ref']) && $_GET['ref'] == 'week');
     </caption>
     <thead>
         <tr<?php if ($consistent) echo ' class="consistent"' ?>>
-            <td>Monday</td>
-            <td>Tuesday</td>
-            <td>Wednesday</td>
-            <td>Thursday</td>
-            <td>Friday</td>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
         </tr>
     </thead>
     <tbody>

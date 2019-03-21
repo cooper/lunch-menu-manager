@@ -19,10 +19,11 @@ table.lunch-calendar td {
     border: 1px solid rgb(190, 210, 220);
 }
 
-table.lunch-calendar thead td {
+table.lunch-calendar thead th {
     background-color: rgb(7, 154, 203);
     color: #fff;
     font-weight: normal;
+    border: 1px solid #;
 }
 
 table.lunch-calendar tbody td {

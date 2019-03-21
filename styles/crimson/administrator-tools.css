@@ -1,28 +1,14 @@
 div.administrator-tools-container {
     background-color: #555;
-    border-bottom: 1px solid #333;
     text-align: center;
 }
 
 ul.administrator-tools {
-    border-top: none;
     font-size: 90%;
     display: inline-block;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
-}
-
-ul.administrator-tools li {
-    border-right: 1px solid #393939;
-}
-
-ul.administrator-tools.left li:first-child, ul.administrator-tools.center li:first-child {
-    border-left: 1px solid #393939;
-}
-
-ul.administrator-tools.right li:last-child {
-    border-left: 1px solid #393939;
 }
 
 ul.administrator-tools li.logo   { background-color: #2096ce; }
@@ -45,7 +31,6 @@ ul.administrator-tools li a[href]:hover {
 #caption-mode-toggle,
 #caption-name-edit,
 #menu-notes-edit {
-    border: 1px solid #555;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     user-select: none;

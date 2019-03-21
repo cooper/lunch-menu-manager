@@ -26,6 +26,8 @@ table.lunch-calendar {
     border-collapse: collapse;
     table-layout: fixed;
     overflow-y: hidden;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid #999;
     /*white-space: nowrap;*/
 }
 
@@ -43,6 +45,7 @@ table.lunch-calendar caption {
     line-height: 40px;
     height: 40px;
     position: relative; /* edit buttons */
+    color: inherit;
 }
 
 table.lunch-calendar caption span.left,
@@ -71,12 +74,13 @@ table.lunch-calendar caption span.right {
 
 table.lunch-calendar td {
     vertical-align: top;
+    border: 1px solid #999;
 }
 
-table.lunch-calendar thead td {
+table.lunch-calendar thead th {
     text-align: center;
     padding: 8px;
-    border: none;
+    border: 1px solid;
 }
 
 table.lunch-calendar tbody td {
@@ -86,6 +90,7 @@ table.lunch-calendar tbody td {
     font-family: Helvetica, Arial, sans-serif;
     cursor: default;
     position: relative; /* for the edit button */
+    color: inherit;
 }
 
 /* also remember .notes-items is used for notes cells */
@@ -114,6 +119,7 @@ span.day-number {
     margin-right: 5px;
     line-height: normal;
     width: 28px;
+    color: inherit;
 }
 
 /* FOOTER NOTES */

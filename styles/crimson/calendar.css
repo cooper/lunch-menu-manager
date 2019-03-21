@@ -1,33 +1,10 @@
-table.lunch-calendar {
-    background-color: rgb(252, 252, 252);
-    border: 1px solid #999;
-}
-
-table.lunch-calendar caption {
-    color: inherit;
-}
-
-table.lunch-calendar thead {
+table.lunch-calendar thead th {
     color: #fff;
-}
-
-table.lunch-calendar td {
-    border: 1px solid #999;
-}
-
-table.lunch-calendar thead td {
     background-color: #333;
+    border: 1px solid #862020;
     font-weight: bold;
 }
 
-table.lunch-calendar thead tr.consistent td {
+table.lunch-calendar thead tr.consistent th {
     background-color: #862020 !important;
-}
-
-table.lunch-calendar tbody td {
-    color: inherit;
-}
-
-span.day-number {
-    color: inherit;
 }

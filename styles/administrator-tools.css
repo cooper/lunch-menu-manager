@@ -48,7 +48,7 @@ div.administrator-tools-container {
     top: 0;
     left: 0;
     right: 0;
-    height: 30px;
+    height: 40px;
     width: 100%;
     text-align: center;
     z-index: 5;
@@ -76,8 +76,8 @@ ul.administrator-tools li {
 ul.administrator-tools li a {
     display: inline-block;
     padding: 0 10px;
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     text-decoration: none;
 }
 

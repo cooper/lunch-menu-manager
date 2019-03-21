@@ -5,12 +5,10 @@
 
 .admin-window {
     background-color: #fff;
-    border: 1px solid #111;
 }
 
 .admin-window-title {
     background-color: #862020;
-    border-bottom: 1px solid #111;
     color: #fff;
 }
 
@@ -18,12 +16,10 @@
     background-color: #333;
     text-transform: uppercase;
     color: #fff;
-    border: 1px solid #222;
 }
 
 .admin-window-done:hover {
     background-color: #222;
-    border: 1px solid #111;
 }
 
 /* MENU EDITOR */
@@ -50,7 +46,6 @@
 
 #menu-left-arrow, #menu-right-arrow {
     background-color: #333;
-    border: 1px solid #222;
     color: #fff;
 }
 

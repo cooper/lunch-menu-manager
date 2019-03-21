@@ -46,7 +46,8 @@ function showMenuEditor (menuDay) {
 
     // find inputs
     var textareas  = win.getElements('textarea');
-    var breakArea  = textareas[0], lunchArea = textareas[1];
+    var breakArea  = textareas[0],
+        lunchArea  = textareas[1];
 
     // set title and store day
     win.getElement('h2 span').setProperty('text', menuDay.prettyName());
@@ -131,7 +132,8 @@ function saveMenu() {
 
     // find inputs
     var textareas  = win.getElements('textarea');
-    var breakArea  = textareas[0], lunchArea = textareas[1];
+    var breakArea  = textareas[0],
+        lunchArea  = textareas[1];
 
     var newBreak = breakArea.value.trim(),
         newLunch = lunchArea.value.trim();

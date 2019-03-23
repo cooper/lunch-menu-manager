@@ -224,14 +224,14 @@ function refreshCalendar() {
     }
 
     // top left
-    var captionLeft = $('caption-left');
+    var calName = $('calendar-name');
     if (typeof currentTopLeft != 'undefined') {
         if (currentTopLeft.length)
-            captionLeft.setStyle('opacity', 1);
-        captionLeft.setProperty('text', currentTopLeft);
+            calName.setStyle('opacity', 1);
+        calName.setProperty('text', currentTopLeft);
     }
     else {
-        captionLeft.setStyle('opacity', 0);
+        calName.setStyle('opacity', 0);
     }
 
     // update menu text

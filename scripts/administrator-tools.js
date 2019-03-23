@@ -43,12 +43,12 @@ function initializeAdministatorTools() {
     };
 
     // toggle between breakfast and lunch
-    $('caption-mode-container').addEvents({
+    $('calendar-mode-container').addEvents({
         mouseenter: function () {
-            $('caption-mode-toggle').setStyle('display', 'block');
+            $('calendar-mode-toggle').setStyle('display', 'block');
         },
         mouseleave: function () {
-            $('caption-mode-toggle').setStyle('display', 'none');
+            $('calendar-mode-toggle').setStyle('display', 'none');
         },
         click: function (e) {
             e.preventDefault();
@@ -61,19 +61,19 @@ function initializeAdministatorTools() {
             // update displayed mode
             var ucfirst1 = oldMode.charAt(0).toUpperCase() + oldMode.substr(1),
                 ucfirst2 = newMode.charAt(0).toUpperCase() + newMode.substr(1);
-            if ($('caption-mode'))
-                $('caption-mode').setProperty('text', ucfirst2 + ' menu');
+            if ($('calendar-mode'))
+                $('calendar-mode').setProperty('text', ucfirst2 + ' menu');
 
         }
     });
 
     // institution name edit
-    $('caption-left-container').addEvents({
+    $('calendar-name-container').addEvents({
         mouseenter: function () {
-            $('caption-name-edit').setStyle('display', 'block');
+            $('calendar-name-edit').setStyle('display', 'block');
         },
         mouseleave: function () {
-            $('caption-name-edit').setStyle('display', 'none');
+            $('calendar-name-edit').setStyle('display', 'none');
         },
         click: showInstitutionEditor
     });

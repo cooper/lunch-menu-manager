@@ -113,7 +113,7 @@ ul.administrator-tools li a {
     display: none;
 }
 
-#caption-mode-toggle {
+#calendar-mode-toggle {
     position: absolute;
     top: 0;
     right: 0;
@@ -127,7 +127,7 @@ ul.administrator-tools li a {
     display: none;
 }
 
-#caption-name-edit {
+#calendar-name-edit {
     position: absolute;
     top: 0;
     left: 0;
@@ -141,6 +141,6 @@ ul.administrator-tools li a {
     display: none;
 }
 
-#caption-mode-container, #caption-left-container {
+#calendar-name-container, #calendar-mode-container {
     cursor: pointer;
 }

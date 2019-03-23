@@ -7,7 +7,7 @@ table.lunch-calendar {
     border: 1px solid rgb(190, 210, 220);
 }
 
-table.lunch-calendar caption {
+#calendar-header {
     color: #111;
     user-select: none;
     -moz-user-select: none;

@@ -158,25 +158,24 @@ $consistent = $administrator || (isset($_GET['ref']) && $_GET['ref'] == 'week');
 
 ?>
 
+<div id="calendar-header">
+    <div id="calendar-mode-container">
+        <?php if ($administrator): ?>
+        <div id="calendar-mode-toggle"><i class="fa fa-leaf"></i> Toggle menu mode</div>
+        <?php endif; ?>
+        <span class="right" id="calendar-mode"><?= ucfirst($mode) ?> menu</span>
+    </div>
+
+    <div id="calendar-name-container">
+        <?php if ($administrator): ?>
+        <div id="calendar-name-edit"><i class="fa fa-pencil"></i> Edit institution</div>
+        <?php endif; ?>
+        <span class="left" id="calendar-name"></span>
+    </div>
+    <?= "$monthName $year" ?>
+</div>
+
 <table class="lunch-calendar <?= $modes ?>" data-year="<?= $year ?>" data-month="<?= $month ?>">
-    <caption>
-
-        <div id="caption-mode-container">
-            <?php if ($administrator): ?>
-            <div id="caption-mode-toggle"><i class="fa fa-leaf"></i> Toggle menu mode</div>
-            <?php endif; ?>
-            <span class="right" id="caption-mode"><?= ucfirst($mode) ?> menu</span>
-        </div>
-
-        <div id="caption-left-container">
-            <?php if ($administrator): ?>
-            <div id="caption-name-edit"><i class="fa fa-pencil"></i> Edit institution</div>
-            <?php endif; ?>
-            <span class="left" id="caption-left"></span>
-        </div>
-
-        <?= "$monthName $year" ?>
-    </caption>
     <thead>
         <tr<?php if ($consistent) echo ' class="consistent"' ?>>
             <th>Monday</th>

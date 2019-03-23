@@ -37,7 +37,7 @@ table.lunch-calendar {
     cursor: default;
 }
 
-table.lunch-calendar caption {
+#calendar-header {
     font-size: 30px;
     font-weight: bold;
     padding: 12px 0;
@@ -48,8 +48,8 @@ table.lunch-calendar caption {
     color: inherit;
 }
 
-table.lunch-calendar caption span.left,
-table.lunch-calendar caption span.right {
+#calendar-header span.left,
+#calendar-header span.right {
     display: inline-block;
     font-size: 20px;
     height: 40px;
@@ -58,14 +58,14 @@ table.lunch-calendar caption span.right {
     position: absolute;
 }
 
-table.lunch-calendar caption span.left {
+#calendar-header span.left {
     left: 2px;
     top: 20px;
     text-align: left;
     float: left;
 }
 
-table.lunch-calendar caption span.right {
+#calendar-header span.right {
     right: 2px;
     top: 20px;
     text-align: right;

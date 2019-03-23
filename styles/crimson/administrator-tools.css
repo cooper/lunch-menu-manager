@@ -28,8 +28,8 @@ ul.administrator-tools li a[href]:hover {
     color: #fff;
 }
 
-#caption-mode-toggle,
-#caption-name-edit,
+#calendar-mode-toggle,
+#calendar-name-edit,
 #menu-notes-edit {
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;

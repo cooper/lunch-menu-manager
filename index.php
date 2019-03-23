@@ -1,4 +1,5 @@
 <?php
+    require_once('verify_login.php');
     require_once('functions/session.php');
     if (isset($_SESSION['logged_in'])) {
         header('Location: administrator.php');
@@ -81,8 +82,13 @@
         </form>
     </div>
     <div id="footer">
-        System Revision 8 &ndash;
-        Last Updated March 20, 2019
+        System Revision 9 &ndash;
+        Last Updated March 23, 2019
+        <?php if ($demo_mode): ?>
+        <br />
+        <br />Demo mode credentials - <?= $demo_username ?> / <?= $demo_password ?>
+        <br />No changes will be saved
+        <? endif; ?>
     </div>
 </body>
 </html>

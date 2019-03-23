@@ -3,6 +3,10 @@
 $LOGIN_REQUIRED = true;
 require_once('session.php');
 
+// demo mode
+if (isset($_SESSION['demo']))
+    die(json_encode(array('success' => true)));
+
 $db = new SQLite3('../db/menu.db');
 if (!$db)
     die("Opening database failed");

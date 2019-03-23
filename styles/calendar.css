@@ -46,6 +46,8 @@ table.lunch-calendar {
     height: 40px;
     position: relative; /* edit buttons */
     color: inherit;
+    width: 1000px;
+    margin: 50px auto 0 auto;
 }
 
 #calendar-header span.left,
@@ -169,13 +171,13 @@ span.day-number {
     text-decoration: none;
 }
 
-/* ADMIN MODE */
+/* CHANGES TO CALENDAR WHEN IN ADMIN MODE */
 
 table.lunch-calendar.administrator tbody td {
     cursor: pointer !important;
 }
 
-table.lunch-calendar.administrator {
+#calendar-header.administrator {
     margin-top: 50px;
 }
 

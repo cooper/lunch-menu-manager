@@ -158,7 +158,7 @@ $consistent = $administrator || (isset($_GET['ref']) && $_GET['ref'] == 'week');
 
 ?>
 
-<div id="calendar-header">
+<div id="calendar-header<?php if ($administrator) echo ' administrator' ?>">
     <div id="calendar-mode-container">
         <?php if ($administrator): ?>
         <div id="calendar-mode-toggle"><i class="fa fa-leaf"></i> Toggle menu mode</div>

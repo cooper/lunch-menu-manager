@@ -30,7 +30,7 @@ Login screen
 
 Administrator calendar, crimson theme
 
-![Calendar](http://i.imgur.com/7LKHp4h.png)
+![Calendar](https://i.imgur.com/S0vlZU7.png)
 
 Menu editor, crimson theme
 

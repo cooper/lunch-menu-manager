@@ -26,7 +26,7 @@ LMM is a centralized menu solution that turns a tedious, repetitive multi-step p
 
 Login screen
 
-![Login](http://i.imgur.com/Mc1rVYy.png)
+![Login](https://i.imgur.com/42QY1iE.png)
 
 Administrator calendar, crimson theme
 
@@ -34,15 +34,15 @@ Administrator calendar, crimson theme
 
 Menu editor, crimson theme
 
-![Menu editor](http://i.imgur.com/bbjr0LH.png)
+![Menu editor](https://i.imgur.com/bCBz2px.png)
 
 Public calendar, crimson theme
 
-![Calendar](http://i.imgur.com/piJWIK1.png)
+![Calendar](https://i.imgur.com/GVoDoYw.png)
 
 Generated PDF calendar for printing
 
-![PDF](http://i.imgur.com/dOTLqTG.png)
+![PDF](https://i.imgur.com/OQ4EVm9.png)
 
 
 
@@ -60,3 +60,11 @@ Refer to the [technical documentation](doc/lmm-technical.pdf) for more detailed
 setup instructions and info about the APIs.
 
 A [user instruction](doc/lmm-user-instructions.pdf) document is also provided.
+
+## License
+
+[ISC](LICENSE)
+
+## Author
+
+[Mitchell Cooper](https://mitchellcooper.me), <mitchell@mitchellcooper.me>
